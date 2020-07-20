@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6407398bbebb88d9bb2c04963a13f1a7",
+    "content-hash": "59d5b2e6234a784278faabecf8a2e9f0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1857,6 +1857,56 @@
                 "shell"
             ],
             "time": "2020-05-03T19:32:03+00:00"
+        },
+        {
+            "name": "radiergummi/flysystem-github-storage",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Radiergummi/flysystem-github-storage.git",
+                "reference": "0e59c4507e550793936e8cd10894cf70c3da1392"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Radiergummi/flysystem-github-storage/zipball/0e59c4507e550793936e8cd10894cf70c3da1392",
+                "reference": "0e59c4507e550793936e8cd10894cf70c3da1392",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.5",
+                "league/flysystem": "^1.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0",
+                "psr/log": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Radiergummi\\FlysystemGitHub\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Moritz Friedrich",
+                    "email": "moritz.friedrich@messengerpeople.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A GitHub Storage filesystem for Flysystem.",
+            "keywords": [
+                "Flysystem",
+                "flysystem-github",
+                "github",
+                "radiergummi"
+            ],
+            "time": "2020-02-19T18:13:37+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
