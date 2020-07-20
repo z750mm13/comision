@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Mexico_City',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,11 @@ return [
         /*
          * Package Service Providers...
          */
+
+        /*
+         * Storage Service Providers...
+         */
+        App\Providers\GitHubStorageServiceProvider::class,
 
         /*
          * Application Service Providers...

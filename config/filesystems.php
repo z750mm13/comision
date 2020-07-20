@@ -65,6 +65,12 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'ghcs' => [
+            'driver' => 'ghcs',
+            'authorization_token' => env('GITHUB_API_KEY'),
+            'repository' => env('GITHUB_REPOSITORY'),
+        ],
+
     ],
 
     /*
