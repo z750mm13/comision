@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('nombre',150);
             $table->string('apellidos',150);
             $table->string('foto')->default('avatars/1/avatar-default.png');
+            $table->enum('tipo',['Integrante', 'Apoyo'])->default('Integrante');
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

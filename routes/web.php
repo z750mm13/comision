@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-//Auth::routes(['verify' => true]);
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -29,3 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
+Route::resource('cordinates', 'CordinateController');
+
+//Ruta de cordinates con rol
+Route::get('cordinates/create/{id?}', 'CordinateController@create');

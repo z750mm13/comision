@@ -1,7 +1,8 @@
-@extends('layouts.app', ['title' => __('User Profile')])
+@extends('layouts.app', ['title' => __('Perfil del usuario')])
 
 @section('content')
     @include('users.partials.header', [
+        'bg' => '../argon/img/theme/perfil.jpg',
         'title' => __('Hola') . ' '. auth()->user()->nombre. ' '. auth()->user()->apellidos,
         'description' => __('Esta es su página de perfil. Puede ver el progreso que ha logrado con su trabajo y visualizar tareas asignadas'),
         'class' => 'col-lg-7'
@@ -22,7 +23,7 @@
                     </div>
                     <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                         <div class="d-flex justify-content-between">
-                            <a href="#" class="btn btn-sm btn-info mr-4">{{ __('Admin') }}</a>
+                            <a href="#" class="btn btn-sm btn-default mr-4">{{ __('Admin') }}</a>
                             <a href="#" class="btn btn-sm btn-default float-right">{{ __('Activo') }}</a>
                         </div>
                     </div>
@@ -50,7 +51,7 @@
                                 {{ auth()->user()->nombre }}
                             </h3>
                             <div class="h5 font-weight-300">
-                                <i class="ni location_pin mr-2"></i>{{ __('Rol') }}
+                                <i class="ni location_pin mr-2"></i>{{ auth()->user()->tipo. ' de la comisión.'}}
                             </div>
                             <div class="h5 mt-4">
                                 <i class="ni business_briefcase-24 mr-2"></i>{{ __('Tecnológico Nacional de México') }}
