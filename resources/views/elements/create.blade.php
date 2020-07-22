@@ -26,6 +26,7 @@
         <input type="text" rows="5" style="resize:vertical" id="element-apellidos" name="apellidos" placeholder="Ingresa el apellido del personal" required value="{{ old('apellidos') }}" class="form-control  @if($errors->first('apellidos')) is-invalid @endif" />
         <small class="text-danger">{{ $errors->first('apellidos') }}</small>
     </div>
+    <input type="text" name="tipo" value="Integrante" hidden>
     <div class="form-group">
         <label for="element-email">Correo:</label>
         <input type="email" rows="5" style="resize:vertical" id="element-email" name="email" placeholder="Ingresa el apellido del personal" required value="{{ old('email') }}" class="form-control  @if($errors->first('email')) is-invalid @endif" />

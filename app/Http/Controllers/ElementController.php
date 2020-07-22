@@ -68,7 +68,7 @@ class ElementController extends Controller {
             'nombre' => $data['nombre'],
             'apellidos' => $data['apellidos'],
             'foto' => $data['foto'],
-            'tipo' => 'Integrante',
+            'tipo' => $data['tipo'],
             'created_at' => now(),
             'updated_at' => now()
         ]);
