@@ -67,5 +67,9 @@ class Kernel extends HttpKernel
         
         'active' => \App\Http\Middleware\CheckActive::class,
         'check' => \App\Http\Middleware\CheckRole::class,
+
+        //Element
+        'validateuniqueelement' => \App\Http\Middleware\ValidateUniqueElement::class,
+        'uniqueupdateelement' => \App\Http\Middleware\ValidateUpdateUniqueElement::class,
     ];
 }

@@ -15,6 +15,11 @@
   <div class="card bg-secondary shadow">
       <div class="card-header bg-white border-0">
           <div class="row align-items-center">
+            @if(isset($button) && $button)
+              <div class="col-md-3 offset-md-9 mt--5">
+                <a class="btn btn-primary btn-lg" href="{{$urlbutton}}" role="button">{{$button}}</a>
+              </div>
+            @endif
               <h3 class="col-12 mb-0">{{ $titlebody }}</h3>
           </div>
       </div>

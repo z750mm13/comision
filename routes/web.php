@@ -30,6 +30,17 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::resource('cordinates', 'CordinateController');
+Route::resource('elements', 'ElementController');
 
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
+// ------------------------------------------------------------------ //
+//Ruta de activación de cuentas de usuario                            //
+Route::get('elements/active/{id?}', 'ElementController@activate');    //
+//Ruta de desactivación de cuentas de usuario                         //
+Route::get('elements/inactive/{id?}', 'ElementController@inactivate');//
+//Ruta de activación de administración de usuario                     //
+Route::get('elements/admin/{id?}', 'ElementController@admin');        //
+//Ruta de desactivación de administración de usuario                  //
+Route::get('elements/noadmin/{id?}', 'ElementController@noadmin');    //
+// ------------------------------------------------------------------ //
