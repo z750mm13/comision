@@ -71,5 +71,12 @@ class Kernel extends HttpKernel
         //Element
         'validateuniqueelement' => \App\Http\Middleware\ValidateUniqueElement::class,
         'uniqueupdateelement' => \App\Http\Middleware\ValidateUpdateUniqueElement::class,
+
+        //Requirement
+        'validateuniquerequirement' => \App\Http\Middleware\ValidateUniqueRequirement::class,
+        
+        //Area
+        'validateuniquearea' => \App\Http\Middleware\ValidateUniqueArea::class,
+        'uniqueupdatearea' => \App\Http\Middleware\UniqueUpdateArea::class,
     ];
 }

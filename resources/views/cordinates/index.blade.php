@@ -1,7 +1,10 @@
 @extends('layouts.content.default.index',[
     'bg' => '../argon/img/theme/cordinates.jpg',
     'title' => 'Roles',
-    'description' => __('Los roles son los cargos que tienen los usuarios. En este caso solo se podran asignar a personas cuya cuenta este activa. En este apartado se podrá tener el control de los roles de los usuarios registrados y activos. Si decea asignarle un rol a alguna cuenta seleccione el boton de + en el rol que quiere agregar y seleccione el personal.'),
+    'descriptions' => [
+      __('Los roles son los cargos que tienen los usuarios. En este caso solo se podran asignar a personas cuya cuenta este activa. En este apartado se podrá tener el control de los roles de los usuarios registrados y activos. Si decea asignarle un rol a alguna cuenta seleccione el boton de + en el rol que quiere agregar y seleccione el personal.'),
+      __('En este apartado se podrá tener el control de los roles de los usuarios registrados y activos. Si decea asignarle un rol a alguna cuenta seleccione el boton de + en el rol que quiere agregar y seleccione el personal.')
+    ],
     'titlebody' => __('Rol de los integrantes'),
     'image' => null
 ])

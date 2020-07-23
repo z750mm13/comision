@@ -32,6 +32,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::resource('cordinates', 'CordinateController');
 Route::resource('elements', 'ElementController');
 Route::resource('helpers', 'HelperController');
+Route::resource('norms', 'NormController');
+Route::resource('requirements', 'RequirementController');
+Route::resource('areas', 'AreaController');
+Route::resource('subareas', 'SubareaController');
 
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
@@ -55,3 +59,7 @@ Route::get('helpers/admin/{id?}', 'HelperController@admin');          //
 //Ruta de desactivación de administración de usuario                  //
 Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');      //
 // ------------------------------------------------------------------ //
+// Ruta de requerimientos con id de la norma
+Route::get('requirements/create/{id?}', 'RequirementController@create');
+// Ruta de subareas con id de la area
+Route::get('subareas/create/{id?}', 'SubareaController@create');

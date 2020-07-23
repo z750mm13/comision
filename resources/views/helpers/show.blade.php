@@ -2,7 +2,7 @@
   'bg' => '../../argon/img/theme/helpers.jpg',
   'title' => $user->nombre." ".$user->apellidos,
   'image' => \Tools\Img\ToServer::getFile($user->foto),
-  'description' => $user->rol,
+  'descriptions' => [$user->rol],
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades del usuario'
 ])

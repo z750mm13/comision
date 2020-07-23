@@ -1,12 +1,11 @@
 @extends('layouts.app')
-
 @section('title', 'Cordinacion')
 
 @section('content')
 @include('users.partials.header', [
         'bg' => $bg,
         'title' => $title,
-        'description' => $description,
+        'descriptions' => $descriptions,
         'class' => 'col-lg-7',
         'image' => $image
     ])
