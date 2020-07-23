@@ -14,14 +14,13 @@ class ValidateUpdateUniqueElement
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
+    public function handle($request, Closure $next) {
         /**
          * Valida que el cambio de nombre no exista y ademas
          * si es propietario del nombre no marca la validación
          */
         Validator::make($request->all(), [
-            'nombre'=>['unique:users,nombre,'.$request->route('element').',id,apellidos,'.$request['apellidos'],],
+            'nombre'=>['unique:users,nombre,'.$request->route($request->input('route')).',id,apellidos,'.$request['apellidos'],],
         ])->validate();
 
         return $next($request);

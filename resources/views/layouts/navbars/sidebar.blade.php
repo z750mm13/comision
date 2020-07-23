@@ -97,7 +97,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
+                                <a class="nav-link" href="{{ route('helpers.index') }}">
                                     {{ __('Apoyo de la comisión') }}
                                 </a>
                             </li>
