@@ -36,6 +36,8 @@ Route::resource('norms', 'NormController');
 Route::resource('requirements', 'RequirementController');
 Route::resource('areas', 'AreaController');
 Route::resource('subareas', 'SubareaController');
+Route::resource('guards', 'GuardController');
+Route::resource('questionnaires', 'QuestionnaireController');
 
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
@@ -63,3 +65,5 @@ Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');      //
 Route::get('requirements/create/{id?}', 'RequirementController@create');
 // Ruta de subareas con id de la area
 Route::get('subareas/create/{id?}', 'SubareaController@create');
+//Ruta de guards con id de cordinate
+Route::get('guards/create/{id?}', 'GuardController@create');
