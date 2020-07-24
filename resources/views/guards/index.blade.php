@@ -1,23 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.content.default.index',[
+    'bg' => '../argon/img/theme/requirements.jpg',
+    'title' => 'Supervisores de área',
+    'descriptions' => [
+      __('Los supervisores son los encargados de piso. Encargados de realizár los recorridos y resolver los cuestionarios propuestos a fin de cada area para su evaluación.'),
+      __('En este apartado se podrá tener el control de las asignaciónes de area de cada persona que previamente tenga ya un rol asignado. Para asignar un área a una persona presione el sigiente botón o el botón + de cada usuario.')
+    ],
+    'titlebody' => __('Supervisores'),
+    'image' => null,
+    'button' => __('Asignar área a responsable'),
+    'urlbutton' => __('/guards/create')
+])
 
-@section('title', 'Supervisión')
-
-@section('content')
-
-<div class="jumbotron">
-  <h1 class="display-4">Supervisores</h1>
-  <p class="lead">Los supervisores son los encargados de piso. Encargados de realizár los recorridos y resolver los cuestionarios propuestos a fin de cada area para su evaluación.</p>
-  <hr class="my-4">
-  <p>En este apartado se podrá tener el control de las asignaciónes de area de cada persona que previamente tenga ya un rol asignado. Para asignar un área a una persona presione el sigiente botón o el botón <b>+</b> de cada usuario.</p>
-  <a class="btn btn-primary btn-lg" href="/guards/create" role="button">Asignar area a responsable</a>
-</div>
-
-<div class="container">
-<?php 
-  $elements = array(0);
-  $existe = false;
-  ?>
-
+@section('bodycontent')
 @foreach($users as $user)
 <div class="col-md-12">
 <h1>{{$user->nombre ." ". $user->apellidos}}</h1>
@@ -40,6 +34,4 @@
 <a class="col-md-12 btn btn-light btn-lg" href="/guards/create/{{$user->cordinates->first()->id}}" role="button"><i class="fas fa-plus"></i></a>
 </div>
 @endforeach
-</div>
-
 @endsection
