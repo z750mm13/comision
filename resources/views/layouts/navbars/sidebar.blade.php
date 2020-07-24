@@ -120,12 +120,12 @@
                     <div class="collapse" id="navbar-normativa">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}">
+                                <a class="nav-link" href="{{ route('norms.index') }}">
                                     {{ __('Normas') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
+                                <a class="nav-link" href="{{ route('requirements.index') }}">
                                     {{ __('Requisitos') }}
                                 </a>
                             </li>
@@ -142,13 +142,13 @@
                     <div class="collapse" id="navbar-intalaciones">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}">
-                                    {{ __('Normas') }}
+                                <a class="nav-link" href="{{ route('areas.index') }}">
+                                    {{ __('Áreas') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
-                                    {{ __('Requisitos') }}
+                                <a class="nav-link" href="{{ route('subareas.index') }}">
+                                    {{ __('Subáreas') }}
                                 </a>
                             </li>
                         </ul>

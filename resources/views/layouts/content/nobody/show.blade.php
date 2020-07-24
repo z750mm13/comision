@@ -4,9 +4,8 @@
 @include('users.partials.header', [
         'bg' => $bg,
         'title' => $title,
-        'description' => $description,
-        'class' => 'col-lg-7',
-        'image' => $image
+        'descriptions' => $descriptions,
+        'class' => 'col-lg-7'
 ])
 <div class="container-fluid mt--7">
 <div class="row">
