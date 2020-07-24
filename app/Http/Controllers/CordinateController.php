@@ -42,7 +42,7 @@ class CordinateController extends Controller {
             $users = User::whereNotIn('users.id',
                 User::select('users.id')
                     ->join('cordinates','cordinates.user_id','users.id')
-                    ->where('rol','=',$rol)
+                    ->where('cordinates.rol','=',$rol)
                     ->get()
             )->where([
                 ['active', 'true'],

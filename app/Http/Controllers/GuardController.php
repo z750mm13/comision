@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Cordinate;
 use App\Area;
 use App\Guard;
+use App\User;
 
 class GuardController extends Controller {
     
@@ -21,8 +22,21 @@ class GuardController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $cordinates = Cordinate::all();
-        return view('guards.index', compact('cordinates'));
+        $users = User::select('users.*')
+        ->distinct()
+        ->join('cordinates', 'cordinates.user_id', '=', 'users.id')
+        ->where([
+            ['tipo','Integrante'],
+            ['active','true']
+        ])
+        ->get();
+        foreach($users as $user){
+            $user['guards'] = Guard::select('guards.*')
+            ->join('cordinates', 'cordinates.id', '=', 'guards.cordinate_id')
+            ->where('cordinates.user_id', '=', $user->id)
+            ->get();
+        }
+        return view('guards.index', compact('users'));
     }
 
     /**
@@ -35,7 +49,11 @@ class GuardController extends Controller {
         $areas = null;
         if($id==null) {
             $areas = Area::all();
-            $cordinates = Cordinate::all();
+            $cordinates = Cordinate::select('cordinates.id','nombre','apellidos')
+            ->join('users', 'users.id', '=', 'cordinates.user_id')
+            ->limit(1)
+            ->distinct()
+            ->get();
         }
         else
         $areas = Area::whereNotIn('id',
@@ -80,7 +98,11 @@ class GuardController extends Controller {
      */
     public function edit($id) {
         $areas = Area::all();
-        $cordinates = Cordinate::all();
+        $cordinates = Cordinate::select('cordinates.id','nombre','apellidos')
+            ->join('users', 'users.id', '=', 'cordinates.user_id')
+            ->limit(1)
+            ->distinct()
+            ->get();
         $guard = Guard::findOrFail($id);
         return view('guards.edit', compact('guard', 'areas', 'cordinates'));
     }

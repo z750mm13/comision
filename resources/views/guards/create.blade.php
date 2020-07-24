@@ -17,7 +17,7 @@
           <select name="cordinate_id" id="guard-cordinate" require class="form-control  @if($errors->first('cordinate_id')) is-invalid @endif" >
           <option value="0">Elije un responsable</option>
           @foreach($cordinates as $cordinate)
-              <option value="{{$cordinate->id}}">{{$cordinate->element->nombre." ".$cordinate->element->apellidos}}</option>
+              <option value="{{$cordinate->id}}">{{$cordinate->nombre." ".$cordinate->apellidos}}</option>
           @endforeach
           </select>
           <small class="text-danger">{{ $errors->first('cordinate_id') }}</small>

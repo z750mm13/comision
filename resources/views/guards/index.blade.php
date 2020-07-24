@@ -18,19 +18,12 @@
   $existe = false;
   ?>
 
-@foreach($cordinates as $cordinate)
-  @foreach ($elements as $element)
-      @if($element == $cordinate->element_id)
-        <?php $existe = true; ?>
-      @endif
-  @endforeach
-
-@if(!$existe && $cordinate->element)
+@foreach($users as $user)
 <div class="col-md-12">
-<h1>{{$cordinate->element->nombre ." ". $cordinate->element->apellidos}}</h1>
+<h1>{{$user->nombre ." ". $user->apellidos}}</h1>
 </div>
 <div class="card-deck">
-  @foreach ($cordinate->guards as $guard)
+  @foreach ($user->guards as $guard)
   <div class="col-md-4 col-sm-6 col-xm-12">
   <div class="card mb-3"> <!-- Borde primario primary danger warning-->
     <div class="card-header">
@@ -44,15 +37,8 @@
   @endforeach
 </div>
 <div class="col-md-12">
-<a class="col-md-12 btn btn-light btn-lg" href="/guards/create/{{$cordinate->id}}" role="button"><i class="fas fa-plus"></i></a>
+<a class="col-md-12 btn btn-light btn-lg" href="/guards/create/{{$user->cordinates->first()->id}}" role="button"><i class="fas fa-plus"></i></a>
 </div>
-@endif
-
-<?php  
-  $elements[] = $cordinate->element_id;
-  $existe = false;
-?>
-
 @endforeach
 </div>
 

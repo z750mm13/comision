@@ -147,6 +147,12 @@
                                     {{ __('Subáreas') }}
                                 </a>
                             </li>
+                            <li class="dropdown-divider"></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('guards.index') }}">
+                                    {{ __('Encargados de las áreas') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -160,8 +166,8 @@
                     <div class="collapse" id="navbar-actividades">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}">
-                                    {{ __('Normas') }}
+                                <a class="nav-link" href="{{ route('questionnaires.index') }}">
+                                    {{ __('Cuestionarios de evaluación') }}
                                 </a>
                             </li>
                             <li class="nav-item">

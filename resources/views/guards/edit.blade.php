@@ -11,9 +11,9 @@
       <div class="form-group">
         <label for="guard-cordinate">Responsable:</label>
         <select name="cordinate_id" id="guard-cordinate" require class="form-control  @if($errors->first('cordinate_id')) is-invalid @endif" >
-        <option value="{{$guard->cordinate->id}}">{{$guard->cordinate->element->nombre}} {{$guard->cordinate->element->apellidos}}</option>
+        <option value="{{$guard->cordinate->id}}">{{$guard->cordinate->user->nombre}} {{$guard->cordinate->user->apellidos}}</option>
         @foreach($cordinates as $cordinate)
-            <option value="{{$cordinate->id}}">{{$cordinate->element->nombre." ".$cordinate->element->apellidos}}</option>
+            <option value="{{$cordinate->id}}">{{$cordinate->nombre." ".$cordinate->apellidos}}</option>
         @endforeach
         </select>
         <small class="text-danger">{{ $errors->first('cordinate_id') }}</small>
