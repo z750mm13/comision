@@ -1,5 +1,5 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/requirements.jpg',
+    'bg' => '../../argon/img/theme/targets.jpg',
     'title' => 'Asignar tipo',
     'titlelist' => 'Acciones',
     'titlebody' => 'Asignación'

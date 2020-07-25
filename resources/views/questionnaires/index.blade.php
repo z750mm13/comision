@@ -1,5 +1,5 @@
 @extends('layouts.content.default.index',[
-    'bg' => '../argon/img/theme/requirements.jpg',
+    'bg' => '../argon/img/theme/questionnaires.jpg',
     'title' => 'Cuestionarios',
     'descriptions' => [
       __('Los cuestionarios son el conjunto de preguntas asociadas a una característica de los inmuebles o áreas verdes, especificados en los requisitos de las normas. Además, fungen como los tipos o características de las áreas.'),

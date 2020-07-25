@@ -1,5 +1,5 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/areas.jpg',
+    'bg' => '../../argon/img/theme/validities.jpg',
     'title' => 'Edición de evaluación',
     'titlelist' => 'Acciones',
     'titlebody' => 'Evaluación'

@@ -14,7 +14,7 @@ if($validity) {
 }
 ?>
 @extends('layouts.content.default.index',[
-    'bg' => asset('argon').'/img/theme/areas.jpg',
+    'bg' => asset('argon').'/img/theme/reviews.jpg',
     'title' => 'Evaluación',
     'descriptions' => [
       __('En este apartado se mostrarán las áreas donde has sido asignada(o) para realizar la evaluación de correspondiente.'),

@@ -1,5 +1,5 @@
 @extends('layouts.content.default.index',[
-    'bg' => '../argon/img/theme/requirements.jpg',
+    'bg' => '../argon/img/theme/guards.jpg',
     'title' => 'Supervisores de área',
     'descriptions' => [
       __('Los supervisores son los encargados de piso. Encargados de realizár los recorridos y resolver los cuestionarios propuestos a fin de cada area para su evaluación.'),

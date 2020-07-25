@@ -1,5 +1,5 @@
 @extends('layouts.content.default.form',[
-  'bg' => '../../argon/img/theme/requirements.jpg',
+  'bg' => '../../argon/img/theme/questionnaires.jpg',
   'title' => $questionnaire->tipo,
   'titlelist' => 'Acciones',
   'descriptions' => ['Descripción: '. $questionnaire->descripcion, 'Con base a la norma: ['. $questionnaire->requirement->norm->codigo. '] '. $questionnaire->requirement->norm->titulo],

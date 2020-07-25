@@ -1,5 +1,5 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/requirements.jpg',
+    'bg' => '../../argon/img/theme/guards.jpg',
     'title' => 'Agregar supervisor',
     'titlelist' => 'Acciones',
     'titlebody' => 'Supervisor'
