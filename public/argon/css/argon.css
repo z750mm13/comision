@@ -248,7 +248,7 @@ a:hover
 {
     text-decoration: none; 
 
-    color: #0062cc;
+    color: #6ab0e5;
 }
 
 a:not([href]):not([tabindex])
@@ -2215,7 +2215,7 @@ pre code
 .table .thead-dark th
 {
     color: #f8f9fe;
-    border-color: #1f3a68; 
+    border-color: #2572bd; 
     background-color: #007bff;
 }
 
@@ -2235,7 +2235,7 @@ pre code
 .table-dark td,
 .table-dark thead th
 {
-    border-color: #1f3a68;
+    border-color: #2572bd;
 }
 .table-dark.table-bordered
 {
@@ -2992,8 +2992,8 @@ fieldset:disabled a.btn
 .btn-primary:hover
 {
     color: #fff;
-    border-color: #007bff; 
-    background-color: #007bff;
+    border-color: #4da0e1; 
+    background-color: #4da0e1;
 }
 .btn-primary:focus,
 .btn-primary.focus
@@ -3312,8 +3312,8 @@ fieldset:disabled a.btn
 .btn-default:hover
 {
     color: #fff;
-    border-color: #007bff; 
-    background-color: #007bff;
+    border-color: #4da0e1; 
+    background-color: #4da0e1;
 }
 .btn-default:focus,
 .btn-default.focus
@@ -3333,7 +3333,7 @@ fieldset:disabled a.btn
 {
     color: #fff;
     border-color: #007bff; 
-    background-color: #0b1526;
+    background-color: #13448c;
 }
 .btn-default:not(:disabled):not(.disabled):active:focus,
 .btn-default:not(:disabled):not(.disabled).active:focus,
