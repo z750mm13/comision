@@ -38,6 +38,9 @@ Route::resource('areas', 'AreaController');
 Route::resource('subareas', 'SubareaController');
 Route::resource('guards', 'GuardController');
 Route::resource('questionnaires', 'QuestionnaireController');
+Route::resource('targets', 'TargetController');
+Route::resource('validities', 'ValidityController');
+Route::resource('reviews', 'ReviewController');
 
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
@@ -67,3 +70,13 @@ Route::get('requirements/create/{id?}', 'RequirementController@create');
 Route::get('subareas/create/{id?}', 'SubareaController@create');
 //Ruta de guards con id de cordinate
 Route::get('guards/create/{id?}', 'GuardController@create');
+//Ruta de targets con id de subarea
+Route::get('targets/create/{id?}', 'TargetController@create');
+//Ruta de index del cuetionario segun tiempo
+Route::get('validities/time/{tiempo?}', 'ValidityController@index');
+//Ruta de reviews con id de target
+Route::get('reviews/create/{id?}', 'ReviewController@create');
+//Ruta de las subareas pertenecientes a un area a evaluar
+Route::get('reviews/subareas/{area_id?}', 'ReviewController@index');
+//Rupa de subareas pertenecientes a una programación
+Route::get('reviews/subareas/{area_id?}/{validity_id?}', 'ReviewController@index');

@@ -153,6 +153,11 @@
                                     {{ __('Encargados de las áreas') }}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('targets.index') }}">
+                                    {{ __('Asignacion del tipo a las áreas') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -171,8 +176,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
-                                    {{ __('Requisitos') }}
+                                <a class="nav-link" href="{{ route('validities.index') }}">
+                                    {{ __('Programa de evaliuaciones') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('reviews.index') }}">
+                                    {{ __('Realizar evaluación') }}
                                 </a>
                             </li>
                         </ul>
