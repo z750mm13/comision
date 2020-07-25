@@ -1,16 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
-class HomeController extends Controller
-{
+use App\Subarea;
+use App\Area;
+class HomeController extends Controller {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
 
@@ -19,8 +18,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
-    {
-        return view('dashboard');
+    public function index() {
+        $subareas  = Subarea::all();
+        $areas = Area::all();
+        return view('dashboard',compact('subareas','areas'));
     }
 }

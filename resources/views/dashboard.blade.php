@@ -5,6 +5,21 @@
     
     <div class="container-fluid mt--7">
         <div class="row">
+            <div class="col-xl-12 mb-5">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <h6 class="text-uppercase text-muted ls-1 mb-1">Mapa de la instalaciones</h6>
+                    <h2 class="mb-0">Unidad Alarcón</h2>
+                </div>
+                <div class="card-body">
+                    @include('components.map.map',[
+                        'subareas' => $subareas,
+                        'areas' => $areas,
+                        'unidad' => 'alarcon'
+                        ])
+                </div>
+            </div>
+            </div>
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="card bg-gradient-dark shadow">
                     <div class="card-header bg-transparent">
@@ -286,4 +301,7 @@
 @push('js')
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+    <script>
+
+    </script>
 @endpush
