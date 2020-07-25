@@ -18,7 +18,7 @@ class Reviews {
     }
 
     public static function getCurrentGuards() {
-        return auth()->user()->element()->first()
+        return auth()->user()
             ->cordinates()->first()
             ->guards()->get();
     }

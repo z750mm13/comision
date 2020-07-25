@@ -36,7 +36,7 @@
       <small class="text-danger">{{ $errors->first('questionnaire_id') }}</small>
     </div>
     <div class="form-group">
-      <input type="text" name="ciclo" hidden value="{{ Auth::user()->element->cordinates->last()->ciclo }}">
+      <input type="text" name="ciclo" hidden value="{{ Auth::user()->cordinates->last()->ciclo }}">
     </div>
     
     <div class="form-group">

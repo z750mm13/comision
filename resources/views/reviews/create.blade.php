@@ -38,7 +38,7 @@
             <div class="card-header position-relative" id="heading{{$question->id}}">
               <h5 class="mb-0">
                 <a class="btn btn-link @if($id!=0)collapsed @endif stretched-link" data-toggle="collapse" data-target="#heading{{$id}}" aria-expanded="true" aria-controls="heading{{$id}}">
-                  <b>{{$question->encabezado}}</b>
+                  {{$question->encabezado}}
                 </a>
               </h5>
             </div>

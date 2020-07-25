@@ -40,8 +40,8 @@
     <div class="p-4">
     <h4 class="font-italic">Acciones</h4>
       <ol class="list-unstyled">
-        <li><a href="/target/{{$target->id}}">Ver requisito del area</a></li>
-        <li><a href="/target">VVer requisitos de las areas</a></li>
+        <li><a href="/targets/{{$target->id}}">Ver requisito del area</a></li>
+        <li><a href="/targets">Ver requisitos de las areas</a></li>
       </ol>
     </div>
   </aside>

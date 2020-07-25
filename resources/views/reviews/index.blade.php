@@ -85,13 +85,13 @@ if($validity) {
     <p class="card-text">Se han realizado: {{$resolved}} preguntas.</p>
     @if($restante>-1)
     @if($resolved == 0)
-    <a href="/reviews/create/{{$subarea->id}}" class="btn btn-primary">Realizar evaluación</a>
+    <a href="/reviews/create/{{$subarea->id}}" class="btn btn-primary">Realizar</a>
     @else
     <div class="row">
-      <div class="col-md-8">
-        <a href="/reviews/{{$subarea->id}}/edit" class="btn btn-primary">Editar evaluación</a>
+      <div class="col-md-6">
+        <a href="/reviews/{{$subarea->id}}/edit" class="btn btn-primary">Editar</a>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <a href="#" class="btn btn-danger"onclick="
         let result =confirm('Esta seguro de eliminar la evaluación? Esta acción no tiene reversión.');
         if(result){
