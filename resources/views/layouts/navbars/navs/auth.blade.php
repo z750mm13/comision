@@ -1,5 +1,5 @@
 <!-- Top navbar -->
-<nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+<nav class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar links -->
@@ -50,7 +50,8 @@
                 <span>Support</span>
               </a>
               <div class="dropdown-divider"></div>
-              <a href="{{ route('logout') }}" class="dropdown-item">
+              <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
                 <i class="ni ni-user-run"></i>
                 <span>Logout</span>
               </a>

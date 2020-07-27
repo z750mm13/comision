@@ -48,8 +48,6 @@
         <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.1.0"></script>
-        <!-- Demo JS - remove this in your project -->
-        <script src="{{ asset('argon') }}/js/demo.min.js"></script>
         @stack('js')
     </body>
 </html>
