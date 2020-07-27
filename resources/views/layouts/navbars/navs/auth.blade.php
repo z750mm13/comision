@@ -35,7 +35,7 @@
               </div>
               <a href="{{ route('profile.edit') }}" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
-                <span>My profile</span>
+                <span>Mi perfil</span>
               </a>
               <a href="#!" class="dropdown-item">
                 <i class="ni ni-settings-gear-65"></i>
@@ -53,7 +53,7 @@
               <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
                 <i class="ni ni-user-run"></i>
-                <span>Logout</span>
+                <span>Cerrar sesión</span>
               </a>
             </div>
           </li>
