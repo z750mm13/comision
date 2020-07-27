@@ -121,17 +121,20 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('foto') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-foto">{{ __('Fotografía') }}</label><br>
-                                    <input type="file" name="foto" id="input-foto" class="{{ $errors->has('foto') ? ' is-invalid' : '' }}">
-
-                                    @if ($errors->has('foto'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('foto') }}</strong>
-                                        </span>
-                                    @endif
+                                <div class="dropzone dropzone-single mb-3 {{ $errors->has('foto') ? ' has-danger' : '' }}" data-toggle="dropzone" data-dropzone-url="http://">
+                                    <label class="form-control-label" for="input-email">{{ __('Foto') }}</label>
+                                    <div class="fallback">
+                                      <div class="custom-file">
+                                        <input type="file" name="foto" class="custom-file-input {{ $errors->has('foto') ? ' is-invalid' : '' }}" id="projectCoverUploads">
+                                        <label class="custom-file-label" for="projectCoverUploads">Seleccione la imágen</label>
+                                      </div>
+                                    </div>
+                                    <div class="dz-preview dz-preview-single">
+                                      <div class="dz-preview-cover">
+                                        <img class="dz-preview-img" src="..." alt="..." data-dz-thumbnail>
+                                      </div>
+                                    </div>
                                 </div>
-
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Guardar') }}</button>
                                 </div>
@@ -192,3 +195,7 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
+
+@push('js')
+<script src="{{asset('argon')}}/vendor/dropzone/dist/min/dropzone.min.js"></script>
+@endpush

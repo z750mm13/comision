@@ -18,5 +18,9 @@
         </div>
     </div>
 
-    <div class="container mt--10 pb-5"></div>
+    <div class="container mt--10 pb-5">
+    </div>
+    @auth()
+    @include('layouts.footers.guest')
+    @endauth
 @endsection
