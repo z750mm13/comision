@@ -29,7 +29,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link active" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-personal">
-                        <i class="ni ni-shop" style="color: #3490DC;"></i>
+                        <i class="fas fa-user" style="color: #3490DC;"></i>
                         <span class="nav-link-text">{{ __('Personal de la comisión') }}</span>
                       </a>
                       <div class="collapse show" id="navbar-personal">

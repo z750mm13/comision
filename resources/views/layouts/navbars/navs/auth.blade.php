@@ -1,5 +1,5 @@
 <!-- Top navbar -->
-<nav class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+<nav class="navbar navbar-top navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar links -->
