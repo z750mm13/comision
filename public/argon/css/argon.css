@@ -10009,7 +10009,7 @@ button.bg-darker:focus
 
 .shadow-sm
 {
-    box-shadow: 0 0 .5rem rgba(136, 152, 170, .075) !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .shadow
@@ -17559,7 +17559,7 @@ a.text-darker:focus
 
 .text-muted
 {
-    color: #8898aa !important;
+    color: #6c757d !important;
 }
 
 .text-black-50
@@ -18766,6 +18766,11 @@ a.btn-icon-only
 
     border: 0; 
     box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15);
+}
+
+.card-border
+{
+    border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .card-translucent

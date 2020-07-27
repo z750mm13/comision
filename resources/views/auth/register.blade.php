@@ -7,7 +7,7 @@
         <!-- Table -->
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
-                <div class="card bg-secondary shadow border-0">
+                <div class="card card-border bg-secondary shadow-sm">
                     <div class="card-header bg-transparent pb-5">
                         <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Solicita tu cuenta') }}</small></div>
                     </div>

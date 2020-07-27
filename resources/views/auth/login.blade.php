@@ -6,7 +6,7 @@
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
-                <div class="card bg-secondary shadow-sm border-1">
+                <div class="card bg-secondary shadow-sm card-border">
                     <div class="card-header bg-transparent pb-5">
                         <h3>Inicio de sesión</h3>
                     </div>
