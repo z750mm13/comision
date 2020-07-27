@@ -1,13 +1,13 @@
 <!-- Top navbar -->
-<nav class="navbar navbar-top navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+<nav class="navbar navbar-top navbar-expand navbar-light bg-white border-bottom">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar links -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="{{ route('home') }}">{{ __('Panel') }}</a>
+        <a class="h4 mb-0 text-black text-uppercase d-none d-lg-inline-block" href="{{ route('home') }}">{{ __('Panel') }}</a>
         <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
                 <!-- Sidenav toggler -->
-                <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                <div class="pr-3 sidenav-toggler" data-action="sidenav-pin" data-target="#sidenav-main">
                   <div class="sidenav-toggler-inner">
                     <i class="sidenav-toggler-line"></i>
                     <i class="sidenav-toggler-line"></i>
@@ -25,7 +25,7 @@
                   <img alt="Image placeholder" src="{{\Tools\Img\ToServer::getFile(auth()->user()->foto)}}">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">{{auth()->user()->nombre}}</span>
+                  <span class="mb-0 text-sm text-black font-weight-bold">{{auth()->user()->nombre}}</span>
                 </div>
               </div>
             </a>
