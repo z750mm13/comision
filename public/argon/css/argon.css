@@ -224,7 +224,7 @@ a:hover
 {
     text-decoration: none; 
 
-    color: #233dd2;
+    color: #1d68a7;
 }
 
 a:not([href]):not([tabindex])
@@ -24664,7 +24664,7 @@ button.bg-lighter:focus
 
 .bg-gradient-primary
 {
-    background: linear-gradient(87deg, #007bff 0, #60a5ee 100%) !important;
+    background: linear-gradient(87deg, #007bff 0, #1d68a7 100%) !important;
 }
 
 .bg-gradient-secondary
@@ -25020,7 +25020,7 @@ button.section-darker:focus
 
 .bg-gradient-primary
 {
-    background: linear-gradient(87deg, #007bff 0, #60a5ee 100%) !important;
+    background: linear-gradient(87deg, #007bff 0, #1d68a7 100%) !important;
 }
 
 .bg-gradient-secondary
