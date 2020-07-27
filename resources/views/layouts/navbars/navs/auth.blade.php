@@ -33,7 +33,7 @@
               <div class="dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Bienvenid@!</h6>
               </div>
-              <a href="profile" class="dropdown-item">
+              <a href="{{ route('profile.edit') }}" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
                 <span>My profile</span>
               </a>
