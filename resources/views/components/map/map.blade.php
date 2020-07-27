@@ -5,7 +5,6 @@
 @endpush
 
 @push('js')
-  <script src="assets/jquery-1.8.2.js"></script>
   <script src="{{ asset('jvectormap') }}/jquery-jvectormap.js"></script>
   <script src="{{ asset('jvectormap') }}/jquery-mousewheel.js"></script>
 
