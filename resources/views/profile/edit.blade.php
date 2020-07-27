@@ -2,7 +2,7 @@
 
 @section('content')
     @include('users.partials.header', [
-        'bg' => '../argon/img/theme/perfil.jpg',
+        'bg' => asset('argon').'/img/theme/perfil.jpg',
         'title' => __('Hola') . ' '. auth()->user()->nombre. ' '. auth()->user()->apellidos,
         'description' => __('Esta es su página de perfil. Puede ver el progreso que ha logrado con su trabajo y visualizar tareas asignadas'),
         'class' => 'col-lg-7'
@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
                 <div class="card card-profile shadow">
-                    <img src="https://argon-dashboard-pro-laravel.creative-tim.com/argon/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+                    <img src="{{ asset('argon') }}/img/theme/img-1-1000x600.jpg"" alt="Image placeholder" class="card-img-top">
                     <div class="row justify-content-center">
                         <div class="col-lg-3 order-lg-2">
                             <div class="card-profile-image">
