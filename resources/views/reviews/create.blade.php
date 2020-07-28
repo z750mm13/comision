@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/reviews.jpg',
     'title' => 'Evaluación '.$subarea->nombre." [".$subarea->area->nombre."]",
     'titlelist' => 'Acciones',
     'titlebody' => 'Evaluación',

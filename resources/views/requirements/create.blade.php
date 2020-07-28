@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/requirements.jpg',
     'title' => 'Agregar requisito',
     'titlelist' => 'Acciones',
     'titlebody' => 'Requisito',

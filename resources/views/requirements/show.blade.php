@@ -1,5 +1,4 @@
 @extends('layouts.content.nobody.show',[
-  'bg' => '../../argon/img/theme/requirements.jpg',
   'title' => 'Requisito '.$requirement->numero,
   'titlelist' => 'Acciones',
   'descriptions' => [$requirement->descripcion, 'Tipo: '. $requirement->tipo, 'Norma: '. $requirement->norm->codigo],

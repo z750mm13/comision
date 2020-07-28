@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/subareas.jpg',
     'title' => 'Edición de subárea',
     'titlelist' => 'Acciones',
     'titlebody' => $subarea->nombre.' '.$subarea->tipo,

@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-  'bg' => '../../argon/img/theme/areas.jpg',
   'title' => $area->nombre." ".$area->area,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades del área',

@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/questionnaires.jpg',
     'title' => 'Crear cuestionario',
     'titlelist' => 'Acciones',
     'titlebody' => 'Cuestionario',

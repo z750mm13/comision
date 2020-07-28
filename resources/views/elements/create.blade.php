@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/elements.jpg',
     'title' => 'Nuevo usuario',
     'titlelist' => 'Acciones',
     'titlebody' => 'Usuario',

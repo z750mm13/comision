@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-  'bg' => '../../argon/img/theme/reviews.jpg',
   'title' => $review->question->encabezado,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la evaluación',

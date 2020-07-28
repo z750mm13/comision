@@ -1,5 +1,4 @@
 @extends('layouts.content.nobody.show',[
-  'bg' => '../../argon/img/theme/cordinates.jpg',
   'title' => $cordinate->user->nombre." ".$cordinate->user->apellidos,
   'descriptions' => ['Rol que desempeña: '. $cordinate->rol],
   'image' => \Tools\Img\ToServer::getFile($cordinate->user->foto),

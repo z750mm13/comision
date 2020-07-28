@@ -17,7 +17,6 @@ else
   $estado = 'En curso';
 ?>
 @extends('layouts.content.default.form',[
-  'bg' => '../../argon/img/theme/validities.jpg',
   'title' => 'Evaluación programada',
   'descriptions' => [
     'Feha de inicio programada '. Fecha::texto(Carbon::parse($validity->inicio)),

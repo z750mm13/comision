@@ -1,5 +1,4 @@
 @extends('layouts.content.default.index',[
-    'bg' => '../argon/img/theme/norms.jpg',
     'title' => 'Normativa',
     'descriptions' => [
       __('Las normas correspondientes se mostrarán a continuación.'),

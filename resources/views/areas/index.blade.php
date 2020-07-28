@@ -1,5 +1,4 @@
 @extends('layouts.content.default.index',[
-    'bg' => '../argon/img/theme/areas.jpg',
     'title' => 'Áreas de la institución',
     'descriptions' => [
       __('Las áreas son agrupaciones de inmuebles o pertenecientes a un edificio (Edificio A, Edificio B... Etc.).'),

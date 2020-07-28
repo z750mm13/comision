@@ -1,5 +1,4 @@
 @extends('layouts.content.default.index',[
-    'bg' => '../argon/img/theme/requirements.jpg',
     'title' => 'Requerimientos',
     'descriptions' => [
       __('Los requerimientos o requisitos son aspectos particulares que se deben de cumplir de las normas enumerados según su naturaleza. Se mostrarán a continuación de manera general.'),

@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-  'bg' => '../../argon/img/theme/helpers.jpg',
   'title' => $user->nombre." ".$user->apellidos,
   'image' => \Tools\Img\ToServer::getFile($user->foto),
   'descriptions' => [$user->rol],

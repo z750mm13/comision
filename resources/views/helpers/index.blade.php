@@ -1,5 +1,4 @@
 @extends('layouts.content.default.index',[
-    'bg' => '../argon/img/theme/helpers.jpg',
     'title' => 'Apoyo de la comisión',
     'descriptions' => [
       __('El personal de apoyo de comisión son directivos que ayudan a cumplir los requisitos y necesidades de las instalaciones.'),

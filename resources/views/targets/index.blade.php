@@ -1,5 +1,4 @@
 @extends('layouts.content.default.index',[
-    'bg' => '../argon/img/theme/targets.jpg',
     'title' => 'Tipos de área',
     'descriptions' => [
       __('Los tipos de área son en otras palabras las características de cada subárea. estos tipos tienen asignados un grupo o conjunto de preguntas para su evaluación basados en la normas.'),

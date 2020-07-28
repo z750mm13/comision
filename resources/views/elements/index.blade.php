@@ -1,5 +1,4 @@
 @extends('layouts.content.default.index',[
-    'bg' => '../argon/img/theme/elements.jpg',
     'title' => 'Integrantes',
     'descriptions' => [
         __('Los integrantes de la comisión son los que interactuan con el sistema y llevan a cabo las encuestas con respecto a cada area.'),

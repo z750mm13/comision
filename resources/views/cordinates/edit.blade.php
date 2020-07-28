@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/cordinates.jpg',
     'title' => $cordinate->rol,
     'titlelist' => 'Acciones',
     'titlebody' => 'Responsable',

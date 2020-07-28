@@ -3,7 +3,6 @@
 
 @section('content')
 @include('users.partials.header', [
-        'bg' => $bg,
         'title' => $title,
         'descriptions' => $descriptions,
         'class' => 'col-lg-7',

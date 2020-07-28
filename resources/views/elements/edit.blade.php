@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/elements.jpg',
     'title' => 'Edición de usuario',
     'titlelist' => 'Acciones',
     'titlebody' => $user->nombre. ' '. $user->apellidos,

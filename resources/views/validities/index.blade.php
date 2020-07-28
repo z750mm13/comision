@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-  'bg' => '../../argon/img/theme/validities.jpg',
   'title' => 'Programación de evaluaciones',
   'descriptions' => [
       __('Las evaluaciones se podrán programar para su realización.'),

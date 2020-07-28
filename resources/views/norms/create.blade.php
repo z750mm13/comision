@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/norms.jpg',
     'title' => 'Agregar norma',
     'titlelist' => 'Acciones',
     'titlebody' => 'Norma',

@@ -1,5 +1,4 @@
 @extends('layouts.content.nobody.show',[
-  'bg' => '../../argon/img/theme/guards.jpg',
   'title' => $guard->cordinate->user->nombre." ".$guard->cordinate->user->apellidos,
   'titlelist' => 'Acciones',
   'descriptions' => ['Rol que desempeña: '. $guard->cordinate->rol, $guard->area->nombre. ' - '. $guard->area->area],

@@ -1,5 +1,4 @@
 @extends('layouts.content.default.form',[
-    'bg' => '../../argon/img/theme/guards.jpg',
     'title' => 'Edición de supervisor',
     'titlelist' => 'Acciones',
     'titlebody' => 'Supervisor ('. $guard->cordinate->user->nombre. ')',
