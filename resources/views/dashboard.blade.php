@@ -25,8 +25,8 @@
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
-                                <h2 class="text-white mb-0">Sales value</h2>
+                                <h6 class="text-uppercase text-light ls-1 mb-1">Vista general</h6>
+                                <h2 class="text-white mb-0">Avance total</h2>
                             </div>
                             <div class="col">
                                 <ul class="nav nav-pills justify-content-end">
@@ -60,8 +60,8 @@
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                                <h2 class="mb-0">Total orders</h2>
+                                <h6 class="text-uppercase text-muted ls-1 mb-1">Problemas</h6>
+                                <h2 class="mb-0">Total de problemas</h2>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Page visits</h3>
+                                <h3 class="mb-0">Avance por áreas</h3>
                             </div>
                             <div class="col text-right">
                                 <a href="#!" class="btn btn-sm btn-primary">See all</a>
@@ -179,7 +179,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Social traffic</h3>
+                                <h3 class="mb-0">Avance por normas</h3>
                             </div>
                             <div class="col text-right">
                                 <a href="#!" class="btn btn-sm btn-primary">See all</a>
