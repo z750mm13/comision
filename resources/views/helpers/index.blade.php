@@ -14,7 +14,7 @@
 @section('bodycontent')
 <h1>Usuarios activos</h1>
 <div class="card-deck">
-@foreach($actives as $element)
+@forelse($actives as $element)
   <div class="col-md-4 col-sm-6 col-xm-12">
   <div class="card mb-3"> <!-- Borde primario primary danger warning-->
     <div class="card-body text-center"> <!-- Texto primario -->
@@ -24,7 +24,13 @@
     </div>
   </div>
   </div>
-@endforeach
+  @empty
+  <div class="card mb-3"> <!-- Borde primario primary danger warning -->
+    <div class="card-body text-center"> <!-- Texto primario -->
+      <h4>No hay apoyos registrados</h4>
+    </div>
+  </div>
+@endforelse
 </div>
 
 <h1>Usuarios por aceptar</h1>
