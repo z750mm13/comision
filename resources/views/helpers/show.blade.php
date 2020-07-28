@@ -4,7 +4,8 @@
   'image' => \Tools\Img\ToServer::getFile($user->foto),
   'descriptions' => [$user->rol],
   'titlelist' => 'Acciones',
-  'titlebody' => 'Propiedades del usuario'
+  'titlebody' => 'Propiedades del usuario',
+  'personal' => 'active'
 ])
 @section('bodycontent')
 @if(Auth::user()->admin & Auth::user()->id != $user->id)

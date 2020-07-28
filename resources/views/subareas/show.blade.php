@@ -3,7 +3,8 @@
   'title' => $subarea->nombre.' '.$subarea->area->nombre,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la subárea',
-  'descriptions' => ['Ubicación del inmueble:'. $subarea->area->nombre, 'Planta: '. $subarea->area->area]
+  'descriptions' => ['Ubicación del inmueble:'. $subarea->area->nombre, 'Planta: '. $subarea->area->area],
+  'instalaciones' => 'active'
 ])
 
 @section('bodycontent')

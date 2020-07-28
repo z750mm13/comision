@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/subareas.jpg',
     'title' => 'Agregar subárea',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Subárea'
+    'titlebody' => 'Subárea',
+    'instalaciones' => 'active'
 ])
 
 @section('list')

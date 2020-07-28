@@ -2,7 +2,8 @@
   'bg' => '../../argon/img/theme/areas.jpg',
   'title' => $area->nombre." ".$area->area,
   'titlelist' => 'Acciones',
-  'titlebody' => 'Propiedades del área'
+  'titlebody' => 'Propiedades del área',
+  'instalaciones' => 'active'
 ])
 
 @section('bodycontent')

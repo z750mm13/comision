@@ -8,7 +8,8 @@
     'titlebody' => __('Tipos'),
     'image' => null,
     'button' => __('Asignar tipo a zona'),
-    'urlbutton' => __('/targets/create')
+    'urlbutton' => __('/targets/create'),
+    'instalaciones' => 'active'
 ])
 
 @section('bodycontent')

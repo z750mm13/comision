@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/reviews.jpg',
     'title' => 'Evaluacion '.$subarea->nombre." [".$subarea->area->nombre."]",
     'titlelist' => 'Acciones',
-    'titlebody' => $subarea->nombre." [".$subarea->area->nombre."] Edición"
+    'titlebody' => $subarea->nombre." [".$subarea->area->nombre."] Edición",
+    'actividades' => 'active'
 ])
 
 @section('list')

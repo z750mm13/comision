@@ -25,7 +25,8 @@ else
     'Estado de evaluación: '. $estado
   ],
   'titlelist' => 'Acciones',
-  'titlebody' => 'Propiedades del la evaluación'
+  'titlebody' => 'Propiedades del la evaluación',
+  'actividades' => 'active'
 ])
 
 @section('bodycontent')

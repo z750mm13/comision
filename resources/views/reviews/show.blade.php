@@ -3,7 +3,8 @@
   'title' => $review->question->encabezado,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la evaluación',
-  'image' => \Tools\Img\ToServer::getFile($review->evidencia)
+  'image' => \Tools\Img\ToServer::getFile($review->evidencia),
+  'actividades' => 'active'
 ])
 
 @section('bodycontent')

@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/guards.jpg',
     'title' => 'Agregar supervisor',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Supervisor'
+    'titlebody' => 'Supervisor',
+    'instalaciones' => 'active'
 ])
 
 @section('list')

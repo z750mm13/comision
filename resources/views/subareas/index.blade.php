@@ -8,7 +8,8 @@
     'titlebody' => __('Subáreas'),
     'image' => null,
     'button' => __('Agregar subárea'),
-    'urlbutton' => __('/subareas/create')
+    'urlbutton' => __('/subareas/create'),
+    'instalaciones' => 'active'
 ])
 
 @section('bodycontent')

@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/cordinates.jpg',
     'title' => $cordinate->rol,
     'titlelist' => 'Acciones',
-    'titlebody' => 'Responsable'
+    'titlebody' => 'Responsable',
+    'personal' => 'active'
 ])
 
 @section('list')

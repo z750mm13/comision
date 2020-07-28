@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/areas.jpg',
     'title' => 'Agregar área',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Área'
+    'titlebody' => 'Área',
+    'instalaciones' => 'active'
 ])
 
 @section('list')

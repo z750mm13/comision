@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/targets.jpg',
     'title' => 'Edición de tipo de área',
     'titlelist' => 'Acciones',
-    'titlebody' => $target->subarea->nombre." ".$target->subarea->area->nombre
+    'titlebody' => $target->subarea->nombre." ".$target->subarea->area->nombre,
+    'instalaciones' => 'active'
 ])
 
 @section('list')

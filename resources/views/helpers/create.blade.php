@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/helpers.jpg',
     'title' => 'Nuevo apoyo',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Usuario'
+    'titlebody' => 'Usuario',
+    'personal' => 'active'
 ])
 
 @section('list')

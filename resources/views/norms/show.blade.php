@@ -3,7 +3,8 @@
   'title' => $norm->codigo,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la norma',
-  'descriptions' => [$norm->titulo, 'Direccion: '. $norm->direccion]
+  'descriptions' => [$norm->titulo, 'Direccion: '. $norm->direccion],
+  'normativa' => 'active'
 ])
 
 @section('bodycontent')

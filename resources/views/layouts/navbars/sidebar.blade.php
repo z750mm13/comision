@@ -28,11 +28,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-personal">
+                      <a class="nav-link {{ $personal ?? '' }}" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-personal">
                         <i class="fas fa-user" style="color: #3490DC;"></i>
                         <span class="nav-link-text">{{ __('Personal de la comisión') }}</span>
                       </a>
-                      <div class="collapse show" id="navbar-personal">
+                      <div class="collapse {{ isset($personal)? 'show':'' }}" id="navbar-personal">
                         <ul class="nav nav-sm flex-column">
                           <li class="nav-item">
                               <a href="{{ route('elements.index') }}" class="nav-link">{{ __('Integrantes de la comisión') }}</a>
@@ -51,12 +51,12 @@
                     </li>
     
                     <li class="nav-item">
-                        <a class="nav-link" href="#navbar-normativa" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link {{ $normativa ?? '' }}" href="#navbar-normativa" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fas fa-book text-blue"></i>
                             <span class="nav-link-text">{{ __('Normativa') }}</span>
                         </a>
     
-                        <div class="collapse" id="navbar-normativa">
+                        <div class="collapse {{ isset($normativa)? 'show':'' }}" id="navbar-normativa">
                             <ul class="nav nav-sm flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('norms.index') }}">
@@ -73,12 +73,12 @@
                     </li>
     
                     <li class="nav-item">
-                        <a class="nav-link" href="#navbar-intalaciones" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link {{ $instalaciones ?? '' }}" href="#navbar-intalaciones" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fas fa-city text-orange"></i>
-                            <span class="nav-link-text">{{ __('Intalaciones') }}</span>
+                            <span class="nav-link-text">{{ __('Instalaciones') }}</span>
                         </a>
     
-                        <div class="collapse" id="navbar-intalaciones">
+                        <div class="collapse {{ isset($instalaciones)? 'show':'' }}" id="navbar-intalaciones">
                             <ul class="nav nav-sm flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('areas.index') }}">
@@ -106,12 +106,12 @@
                     </li>
     
                     <li class="nav-item">
-                        <a class="nav-link" href="#navbar-actividades" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link {{ $actividades ?? '' }}" href="#navbar-actividades" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fas fa-book text-info"></i>
                             <span class="nav-link-text">{{ __('Actividades') }}</span>
                         </a>
     
-                        <div class="collapse" id="navbar-actividades">
+                        <div class="collapse {{ isset($actividades)? 'show':'' }}" id="navbar-actividades">
                             <ul class="nav nav-sm flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('questionnaires.index') }}">

@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/requirements.jpg',
     'title' => 'Edición de requisito',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Requisito '.$requirement->numero
+    'titlebody' => 'Requisito '.$requirement->numero,
+    'normativa' => 'active'
 ])
 
 @section('list')

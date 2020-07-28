@@ -8,7 +8,8 @@
     'titlebody' => __('Apoyo de la comisión'),
     'image' => null,
     'button' => __('Inscribir apoyo'),
-    'urlbutton' => __('/helpers/create')
+    'urlbutton' => __('/helpers/create'),
+    'personal' => 'active'
 ])
 
 @section('bodycontent')

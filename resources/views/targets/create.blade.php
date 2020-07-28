@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/targets.jpg',
     'title' => 'Asignar tipo',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Asignación'
+    'titlebody' => 'Asignación',
+    'instalaciones' => 'active'
 ])
 
 @section('list')

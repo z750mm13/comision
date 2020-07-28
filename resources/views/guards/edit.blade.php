@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/guards.jpg',
     'title' => 'Edición de supervisor',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Supervisor ('. $guard->cordinate->user->nombre. ')'
+    'titlebody' => 'Supervisor ('. $guard->cordinate->user->nombre. ')',
+    'instalaciones' => 'active'
 ])
 
 @section('list')

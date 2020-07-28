@@ -7,7 +7,8 @@
     'Area que aplica: '. $target->subarea->nombre
   ],
   'titlelist' => 'Acciones',
-  'titlebody' => 'Propiedades del área'
+  'titlebody' => 'Propiedades del área',
+  'instalaciones' => 'active'
 ])
 
 <?php

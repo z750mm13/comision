@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/elements.jpg',
     'title' => 'Edición de usuario',
     'titlelist' => 'Acciones',
-    'titlebody' => $user->nombre. ' '. $user->apellidos
+    'titlebody' => $user->nombre. ' '. $user->apellidos,
+    'personal' => 'active'
 ])
 
 @section('list')

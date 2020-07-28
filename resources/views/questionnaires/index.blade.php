@@ -8,7 +8,8 @@
     'titlebody' => __('Cuestionarios'),
     'image' => null,
     'button' => __('Agregar cuestionario'),
-    'urlbutton' => __('/questionnaires/create')
+    'urlbutton' => __('/questionnaires/create'),
+    'actividades' => 'active'
 ])
 
 @section('bodycontent')

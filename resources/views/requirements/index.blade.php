@@ -8,7 +8,8 @@
     'titlebody' => __('Requisitos'),
     'image' => null,
     'button' => __('Agregar requisito'),
-    'urlbutton' => __('/requirements/create')
+    'urlbutton' => __('/requirements/create'),
+    'normativa' => 'active'
 ])
 
 @section('bodycontent')

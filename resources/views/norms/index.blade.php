@@ -8,7 +8,8 @@
     'titlebody' => __('Normas'),
     'image' => null,
     'button' => __('Agregar norma'),
-    'urlbutton' => __('/norms/create')
+    'urlbutton' => __('/norms/create'),
+    'normativa' => 'active'
 ])
 
 @section('bodycontent')

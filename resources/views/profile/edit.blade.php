@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('profile.update') }}" autocomplete="off" enctype="multipart/form-data">
+                        <form class="dropzone" method="post" action="{{ route('profile.update') }}" autocomplete="off" enctype="multipart/form-data">
                             @csrf
                             @method('put')
 
@@ -121,19 +121,10 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="dropzone dropzone-single mb-3 {{ $errors->has('foto') ? ' has-danger' : '' }}" data-toggle="dropzone" data-dropzone-url="http://">
-                                    <label class="form-control-label" for="input-email">{{ __('Foto') }}</label>
-                                    <div class="fallback">
-                                      <div class="custom-file">
-                                        <input type="file" name="foto" class="custom-file-input {{ $errors->has('foto') ? ' is-invalid' : '' }}" id="projectCoverUploads">
-                                        <label class="custom-file-label" for="projectCoverUploads">Seleccione la imágen</label>
-                                      </div>
-                                    </div>
-                                    <div class="dz-preview dz-preview-single">
-                                      <div class="dz-preview-cover">
-                                        <img class="dz-preview-img" src="..." alt="..." data-dz-thumbnail>
-                                      </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-foto">{{ __('Fotografía') }}</label>
+                                    <br>
+                                    <input name="foto" type="file" multiple id="input-foto" />
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Guardar') }}</button>
@@ -195,7 +186,3 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
-
-@push('js')
-<script src="{{asset('argon')}}/vendor/dropzone/dist/min/dropzone.min.js"></script>
-@endpush

@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/norms.jpg',
     'title' => 'Agregar norma',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Norma'
+    'titlebody' => 'Norma',
+    'normativa' => 'active'
 ])
 
 @section('list')

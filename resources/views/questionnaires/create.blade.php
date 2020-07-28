@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/questionnaires.jpg',
     'title' => 'Crear cuestionario',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Cuestionario'
+    'titlebody' => 'Cuestionario',
+    'actividades' => 'active'
 ])
 
 @section('list')

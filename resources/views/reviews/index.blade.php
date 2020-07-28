@@ -27,7 +27,8 @@ if($validity) {
       :'Por el momento no hay una evaluación activa.'),
     ],
     'titlebody' => __('Áreas'),
-    'image' => null
+    'image' => null,
+    'actividades' => 'active'
 ])
 
 @section('bodycontent')

@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/reviews.jpg',
     'title' => 'Evaluación '.$subarea->nombre." [".$subarea->area->nombre."]",
     'titlelist' => 'Acciones',
-    'titlebody' => 'Evaluación'
+    'titlebody' => 'Evaluación',
+    'actividades' => 'active'
 ])
 
 @section('list')
@@ -81,3 +82,7 @@
   </div>
 </form>
 @endsection
+
+@push('js')
+<script src="{{asset('argon')}}/vendor/dropzone/dist/min/dropzone.min.js"></script>
+@endpush

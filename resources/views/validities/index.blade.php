@@ -8,7 +8,8 @@
   'button' => __('Programar evaluaciones'),
   'urlbutton' => __('/validities/create'),
   'titlelist' => 'Acciones',
-  'titlebody' => 'Propiedades del área'
+  'titlebody' => 'Propiedades del área',
+  'actividades' => 'active'
 ])
 
 <?php

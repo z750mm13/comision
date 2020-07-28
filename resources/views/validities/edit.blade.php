@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/validities.jpg',
     'title' => 'Edición de evaluación',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Evaluación'
+    'titlebody' => 'Evaluación',
+    'actividades' => 'active'
 ])
 
 <?php use Carbon\Carbon; ?>

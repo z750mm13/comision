@@ -6,7 +6,8 @@
       __('En este apartado se podrá tener el control de los roles de los usuarios registrados y activos. Si decea asignarle un rol a alguna cuenta seleccione el boton de + en el rol que quiere agregar y seleccione el personal.')
     ],
     'titlebody' => __('Rol de los integrantes'),
-    'image' => null
+    'image' => null,
+    'personal' => 'active'
 ])
 
 @section('bodycontent')

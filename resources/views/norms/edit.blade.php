@@ -2,7 +2,8 @@
     'bg' => '../../argon/img/theme/norms.jpg',
     'title' => 'Edición de norma',
     'titlelist' => 'Acciones',
-    'titlebody' => $norm->codigo
+    'titlebody' => $norm->codigo,
+    'normativa' => 'active'
 ])
 
 @section('list')
