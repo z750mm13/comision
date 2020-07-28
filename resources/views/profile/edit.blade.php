@@ -33,15 +33,15 @@
                             <div class="col">
                                 <div class="card-profile-stats d-flex justify-content-center mt-md-5">
                                     <div>
-                                        <span class="heading">22</span>
+                                        <span class="heading">{{$areas}}</span>
                                         <span class="description">{{ __('Areas') }}</span>
                                     </div>
                                     <div>
-                                        <span class="heading">10</span>
+                                        <span class="heading">{{$subareas}}</span>
                                         <span class="description">{{ __('Subáreas') }}</span>
                                     </div>
                                     <div>
-                                        <span class="heading">89</span>
+                                        <span class="heading">{{$reviews}}</span>
                                         <span class="description">{{ __('Evaluaciones') }}</span>
                                     </div>
                                 </div>

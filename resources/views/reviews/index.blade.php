@@ -108,7 +108,11 @@ if($validity) {
   @endforeach
   @endif
   @else
-  <h2>No hay evaluaciones activas</h2>
+  <div class="card mb-3"> <!-- Borde primario primary danger warning -->
+    <div class="card-body text-center"> <!-- Texto primario -->
+      <h4>No hay evaluacion activa</h4>
+    </div>
+  </div>
   @endif
 </div>
 @endsection

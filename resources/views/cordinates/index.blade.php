@@ -43,7 +43,6 @@
       </div>
       </div>
     @empty
-    <p>Sin elementos</p>
     @endforelse
     <div class="col-md-12">
         <a class="col-md-12 btn btn-light btn-lg" href="/cordinates/create/Secretaría" role="button"><i class="fas fa-plus"></i></a>
