@@ -29,7 +29,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link {{ $personal ?? '' }}" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-personal">
-                        <i class="fas fa-user" style="color: #3490DC;"></i>
+                        <i class="fas fa-user text-success"></i>
                         <span class="nav-link-text">{{ __('Personal de la comisión') }}</span>
                       </a>
                       <div class="collapse {{ isset($personal)? 'show':'' }}" id="navbar-personal">
@@ -52,7 +52,7 @@
     
                     <li class="nav-item">
                         <a class="nav-link {{ $normativa ?? '' }}" href="#navbar-normativa" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="fas fa-book text-blue"></i>
+                            <i class="fas fa-book text-info"></i>
                             <span class="nav-link-text">{{ __('Normativa') }}</span>
                         </a>
     
@@ -107,7 +107,7 @@
     
                     <li class="nav-item">
                         <a class="nav-link {{ $actividades ?? '' }}" href="#navbar-actividades" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="fas fa-book text-info"></i>
+                            <i class="ni ni-archive-2 text-pink"></i>
                             <span class="nav-link-text">{{ __('Actividades') }}</span>
                         </a>
     
