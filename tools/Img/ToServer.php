@@ -28,6 +28,9 @@ class ToServer {
     }
 
     public static function getFile($file, $branch='master'){
-            return 'https://github.com/'.env('GITHUB_REPOSITORY').'/blob/'.$branch.'/'.$file.'?raw=true';
+        if(env('STORAGE_SERVICE') == 'ghcs')
+        return 'https://github.com/'.env('GITHUB_REPOSITORY').'/blob/'.$branch.'/'.$file.'?raw=true';
+        else 
+        return \Storage::disk(env('STORAGE_SERVICE'))->url($file);
     }
 }
