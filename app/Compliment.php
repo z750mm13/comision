@@ -12,6 +12,6 @@ class Compliment extends Model {
     ];
 
     public function commitment() {
-        return $this->belongsTo('App\Commitment');
+        return $this->belongsTo('App\Commitment')->withTrashed();
     }
 }

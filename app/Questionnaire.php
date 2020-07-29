@@ -18,4 +18,8 @@ class Questionnaire extends Model {
     public function questions() {
         return $this -> hasMany('App\Question');
     }
+
+    public function targets() {
+        return $this -> hasMany('App\Target');
+    }
 }

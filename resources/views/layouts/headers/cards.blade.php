@@ -8,7 +8,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Avance de hoy</h5>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Avance hasta hoy</h5>
                                     <span class="h2 font-weight-bold mb-0">350,897</span>
                                 </div>
                                 <div class="col-auto">
@@ -19,7 +19,7 @@
                             </div>
                             <p class="mt-3 mb-0 text-muted text-sm">
                                 <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                <span class="text-nowrap">Since last month</span>
+                                <span class="text-nowrap">Avance en las normas</span>
                             </p>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Problemas</h5>
-                                    <span class="h2 font-weight-bold mb-0">2,356</span>
+                                    <span class="h2 font-weight-bold mb-0">{{$problems}}</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -39,8 +39,8 @@
                                 </div>
                             </div>
                             <p class="mt-3 mb-0 text-muted text-sm">
-                                <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                                <span class="text-nowrap">Since last week</span>
+                                <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> {{(100 - $por_compliments). '%'}}</span>
+                                <span class="text-nowrap">Problemas a solucionar</span>
                             </p>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Cumplimientos</h5>
-                                    <span class="h2 font-weight-bold mb-0">924</span>
+                                    <span class="h2 font-weight-bold mb-0">{{$compliments}}</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -60,8 +60,8 @@
                                 </div>
                             </div>
                             <p class="mt-3 mb-0 text-muted text-sm">
-                                <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                                <span class="text-nowrap">Since yesterday</span>
+                                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> {{$por_compliments. '%'}}</span>
+                                <span class="text-nowrap">Problemas solucionados</span>
                             </p>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Evaluaciones</h5>
-                                    <span class="h2 font-weight-bold mb-0">49,65%</span>
+                                    <span class="h2 font-weight-bold mb-0">{{$solved}}</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -81,8 +81,8 @@
                                 </div>
                             </div>
                             <p class="mt-3 mb-0 text-muted text-sm">
-                                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                                <span class="text-nowrap">Since last month</span>
+                                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> {{$por_solved. '%'}}</span>
+                                <span class="text-nowrap">Avance de la última evaluación</span>
                             </p>
                         </div>
                     </div>

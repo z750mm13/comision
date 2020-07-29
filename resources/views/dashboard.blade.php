@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.headers.cards')
+    @include('layouts.headers.cards',
+    compact('problems', 'compliments', 'por_compliments', 'solved', 'por_solved'))
     
     <div class="container-fluid mt--7">
         <div class="row">

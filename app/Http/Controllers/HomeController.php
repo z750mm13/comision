@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Subarea;
 use App\Area;
+use App\Compliment;
+use Tools\Query\Reviews;
+use App\Review;
 class HomeController extends Controller {
     /**
      * Create a new controller instance.
@@ -21,6 +24,18 @@ class HomeController extends Controller {
     public function index() {
         $subareas  = Subarea::all();
         $areas = Area::all();
-        return view('dashboard',compact('subareas','areas'));
+        $problems = Review::select('reviews.id')
+        ->where('valor','=','false')
+        ->get()->count();
+        $compliments = Compliment::all()->count();
+        $por_compliments = ($compliments? 100 * ($problems/$compliments):0);
+        //TODO Asignar a la ultimo validate
+        //TODO Agregar avance total
+        $solved = Review::all()->count();
+        $por_solved = round(($solved/(Reviews::toResolve()? Reviews::toResolve() : 1))*100,2);
+        return view('dashboard',compact(
+            'subareas','areas','problems','compliments','por_compliments',
+            'solved', 'por_solved'
+        ));
     }
 }

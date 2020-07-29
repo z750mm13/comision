@@ -16,7 +16,7 @@ class Commitment extends Model {
     }
 
     public function review() {
-        return $this->belongsTo('App\Review');
+        return $this->belongsTo('App\Review')->withTrashed();
     }
 
     public function compliment() {
