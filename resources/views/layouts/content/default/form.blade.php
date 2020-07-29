@@ -24,7 +24,7 @@
     <div class="card bg-secondary shadow">
       <div class="card-header bg-white border-0">
           <div class="row align-items-center">
-            @if(isset($button) && $button)
+            @if(Auth::user()->admin & isset($button) && $button)
               <div class="col-md-4 offset-md-8 mt--5">
                 <a class="btn btn-primary btn-lg" href="{{$urlbutton}}" role="button">{{$button}}</a>
               </div>

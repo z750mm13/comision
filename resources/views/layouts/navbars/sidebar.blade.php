@@ -21,12 +21,16 @@
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <!-- Nav items -->
                 <ul class="navbar-nav">
+                    @if(Auth::user())
+                    @if(Auth::user()->tipo == 'Integrante')
+                    @if(Auth::user()->cordinates->count())
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">
                           <i class="ni ni-tv-2 text-primary"></i>
                           <span class="nav-link-text">{{ __('Panel') }}</span>
                         </a>
                     </li>
+                    @if(Auth::user()->admin)
                     <li class="nav-item">
                       <a class="nav-link {{ $personal ?? '' }}" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-personal">
                         <i class="fas fa-user text-success"></i>
@@ -49,7 +53,7 @@
                         </ul>
                       </div>
                     </li>
-    
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link {{ $normativa ?? '' }}" href="#navbar-normativa" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fas fa-book text-info"></i>
@@ -71,7 +75,6 @@
                             </ul>
                         </div>
                     </li>
-    
                     <li class="nav-item">
                         <a class="nav-link {{ $instalaciones ?? '' }}" href="#navbar-intalaciones" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fas fa-city text-orange"></i>
@@ -90,6 +93,7 @@
                                         {{ __('Subáreas') }}
                                     </a>
                                 </li>
+                                @if(Auth::user()->admin)
                                 <li class="dropdown-divider"></li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('guards.index') }}">
@@ -101,6 +105,7 @@
                                         {{ __('Asignacion del tipo a las áreas') }}
                                     </a>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                     </li>
@@ -113,6 +118,7 @@
     
                         <div class="collapse {{ isset($actividades)? 'show':'' }}" id="navbar-actividades">
                             <ul class="nav nav-sm flex-column">
+                                @if(Auth::user()->admin)
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('questionnaires.index') }}">
                                         {{ __('Cuestionarios de evaluación') }}
@@ -123,11 +129,13 @@
                                         {{ __('Programa de evaliuaciones') }}
                                     </a>
                                 </li>
+                                @endif
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('reviews.index') }}">
                                         {{ __('Realizar evaluación') }}
                                     </a>
                                 </li>
+                                @if(Auth::user()->admin)
                                 <li class="dropdown-divider"></li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('commitments.index') }}">
@@ -139,9 +147,37 @@
                                         {{ __('Compromisos cumplidos') }}
                                     </a>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                     </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">
+                          <i class="ni ni-tv-2 text-primary"></i>
+                          <span class="nav-link-text">{{ __('Panel') }}</span>
+                        </a>
+                    </li>
+                    @endif
+                    @elseif(Auth::user()->tipo == 'Apoyo')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">
+                          <i class="ni ni-tv-2 text-primary"></i>
+                          <span class="nav-link-text">{{ __('Inicio') }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('commitments') }}">
+                          <span class="nav-link-text">{{ __('Compromisos prometidos') }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('compliments') }}">
+                          <span class="nav-link-text">{{ __('Compromisos cumplidos') }}</span>
+                        </a>
+                    </li>
+                    @endif
+                    @endif
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
