@@ -2,9 +2,24 @@
   'title' => $review->question->encabezado,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la evaluación',
-  'image' => \Tools\Img\ToServer::getFile($review->evidencia),
-  'actividades' => 'active'
+  'actividades' => 'active',
+  'hsize' => 'col-md-10'
 ])
+
+@push('aditional')
+<div class="col-md-2">
+  <img class="rounded" src="{{\Tools\Img\ToServer::getFile($review->evidencia)}}" alt="evidencia" style="width: 10rem;" data-toggle="modal" data-target="#exampleModalCenter">
+</div>
+<div class="modal fade bg-transparent" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="bg-transparent transparent-border">
+      <div class="d-flex justify-content-center">
+        <img class="rounded" src="{{\Tools\Img\ToServer::getFile($review->evidencia)}}" alt="evidencia">
+      </div>
+    </div>
+  </div>
+</div>
+@endpush
 
 @section('bodycontent')
 <p class="lead">Estado:<br>@if($review->valor)<b class="text-success"> <i class="fas fa-check"></i> Cumple con el requisito.</b> @else <b class="text-danger"><i class="fas fa-times"></i> No cumple con el requisito.</b>@endif</p>
@@ -13,7 +28,7 @@
 @forelse($review->commitments as $commitment)
 <p class="lead">Responsable(s):
   <ul>
-    <li><a class="text-body" href="/commitments/{{$commitment->id}}">{{$commitment->helper->rol}}</a></li>
+    <li><a class="text-body" href="/commitments/{{$commitment->id}}">{{$commitment->user->rol}}</a></li>
   </ul>
 </p>
 <p class="lead">Completo: @if($commitment->compliment) <a class="text-success" href="/compliments/{{$commitment->compliment->id}}"><i class="fas fa-check"></i> Se ha cumplido.</a> @else <b class="text-danger"><i class="fas fa-times"></i> Aún no se ha cumplido.</b> @endif</h6>

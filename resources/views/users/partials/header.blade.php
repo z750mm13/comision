@@ -23,7 +23,6 @@
                 @endif
             </div>
             @else
-            @stack('aditional')
             <div class="@if(isset($hsize) && $hsize){{$hsize}}@else{{'col-md-12'}}@endif {{ $class ?? '' }}">
                 <h1 class="display-2 text-white">{{ $title }}</h1>
                 @if (isset($descriptions) && $descriptions)
@@ -36,5 +35,6 @@
             </div>
             @endif
         </div>
+        @stack('aditional')
     </div>
 </div> 

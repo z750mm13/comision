@@ -44,7 +44,7 @@ $hoy = Carbon::now()->toDateString();
         @forelse($problem->commitments as $commitment)
         <h6 class="card-title">Responsable(s):
           <ul>
-            <li>{{$commitment->helper->rol}}</li>
+            <li>{{$commitment->user->rol}}</li>
           </ul>
         </h6>
         <h6 class="card-title">Completo: @if($commitment->compliment) <b class="text-success"><i class="fas fa-check"></i> Se ha cumplido.</b> @else <b class="text-danger"><i class="fas fa-times"></i> Aún no se ha cumplido.</b> @endif</h6>

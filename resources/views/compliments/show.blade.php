@@ -27,7 +27,7 @@ use Tools\Utils\Fecha;
 </div>
 <div class="modal fade bg-transparent" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content bg-transparent transparent-border">
+    <div class="bg-transparent transparent-border">
       <div class="d-flex justify-content-center">
         <img class="rounded" src="{{\Tools\Img\ToServer::getFile($compliment->evidencia)}}" alt="evidencia">
       </div>

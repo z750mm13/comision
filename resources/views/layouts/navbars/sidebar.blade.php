@@ -150,7 +150,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="/docs/Manual.pdf">
+                        <a class="nav-link" href="{{ asset('docs') }}/Manual.pdf">
                           <i class="ni ni-spaceship"></i>
                           <span class="nav-link-text">Ayuda</span>
                         </a>
