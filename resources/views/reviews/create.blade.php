@@ -38,18 +38,18 @@
       <div class="card">
         <div class="card-header position-relative" id="heading{{$question->id}}">
           <h5 class="mb-0">
-            <a class="btn btn-link @if($id!=0)collapsed @endif stretched-link" data-toggle="collapse" data-target="#heading{{$id}}" aria-expanded="true" aria-controls="heading{{$id}}">
+            <a class="btn btn-link @if($id!=0)collapsed @endif stretched-link" data-toggle="collapse" data-target="#collapse{{$id}}" aria-expanded="true" aria-controls="collapse{{$id}}">
               {{$question->encabezado}}
             </a>
           </h5>
         </div>
     
-        <div id="heading{{$id}}" class="collapse @if($id==0)show @endif" aria-labelledby="heading{{$question->id}}" data-parent="#accordion{{$target->id}}">
+        <div id="collapse{{$id}}" class="collapse @if($id==0)show @endif" aria-labelledby="heading{{$question->id}}" data-parent="#accordion{{$target->id}}">
           <div class="card-body">
             
             <div class="form-group">
               <div class="custom-control custom-radio custom-control-inline">
-                <input data-toggle="collapse" aria-expanded="true" data-target="#heading{{$id+2}}" aria-controls="heading{{$id+2}}" required type="radio" id="customRadioInline{{$id}}" name="customRadioInline{{$question->id}}" class="custom-control-input" value="1">
+                <input data-toggle="collapse" aria-expanded="true" data-target="#collapse{{$id+2}}" aria-controls="collapse{{$id+2}}" required type="radio" id="customRadioInline{{$id}}" name="customRadioInline{{$question->id}}" class="custom-control-input" value="1">
                 <label class="custom-control-label" for="customRadioInline{{$id}}">Si</label>
               </div>
               <?php $id ++; ?>
