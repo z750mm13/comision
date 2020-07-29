@@ -22,8 +22,8 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     @if(Auth::user())
-                    @if(Auth::user()->tipo == 'Integrante')
-                    @if(Auth::user()->cordinates->count())
+                    @if(Auth::user()->tipo == 'Integrante'||Auth::user()->admin)
+                    @if(Auth::user()->cordinates->count()||Auth::user()->admin)
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">
                           <i class="ni ni-tv-2 text-primary"></i>
