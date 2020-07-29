@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Commitment extends Model {
     use SoftDeletes;
     protected $fillable = [
-        'accion','fecha_cumplimiento','review_id','helper_id',
+        'accion','fecha_cumplimiento','review_id','user_id',
     ];
 
-    public function helper() {
-        return $this->belongsTo('App\Helper');
+    public function user() {
+        return $this->belongsTo('App\User');
     }
 
     public function review() {

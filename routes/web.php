@@ -42,6 +42,8 @@ Route::resource('targets', 'TargetController');
 Route::resource('validities', 'ValidityController');
 Route::resource('reviews', 'ReviewController');
 Route::resource('problems', 'ProblemController');
+Route::resource('commitments', 'CommitmentController');
+Route::resource('compliments', 'ComplimentController');
 
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
@@ -83,3 +85,5 @@ Route::get('reviews/subareas/{area_id?}', 'ReviewController@index');
 Route::get('reviews/subareas/{area_id?}/{validity_id?}', 'ReviewController@index');
 //Ruta de problemas de areas en cierta validity
 Route::get('problems/{validity_id?}/subarea/{subarea_id?}', 'ProblemController@show');
+//Ruta de commitments con id de review
+Route::get('commitments/create/{id?}', 'CommitmentController@create');

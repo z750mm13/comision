@@ -128,6 +128,17 @@
                                         {{ __('Realizar evaluación') }}
                                     </a>
                                 </li>
+                                <li class="dropdown-divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('commitments.index') }}">
+                                        {{ __('Compromisos prometidos') }}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('compliments.index') }}">
+                                        {{ __('Compromisos cumplidos') }}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
