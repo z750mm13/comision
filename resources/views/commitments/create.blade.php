@@ -1,8 +1,8 @@
 <?php use Carbon\Carbon; ?>
 @extends('layouts.content.default.form',[
-    'title' => 'Agregar área',
+    'title' => 'Agregar compromiso',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Área',
+    'titlebody' => 'Compromiso',
     'actividades' => 'active'
 ])
 

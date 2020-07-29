@@ -1,5 +1,5 @@
 @extends('layouts.content.default.form',[
-    'title' => 'Edición de área',
+    'title' => 'Edición compromiso',
     'titlelist' => 'Acciones',
     'titlebody' => 'Compromiso',
     'actividades' => 'active'

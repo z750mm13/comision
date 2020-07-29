@@ -5,7 +5,7 @@
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             @if(isset($image) && $image)
-            <div class="col-lg-3 order-lg-2">
+            <div class="col-lg-3">
                 <div class="card-profile-image">
                     <a href="#">
                         <img src="{{$image}}" class="rounded-circle">
@@ -23,7 +23,8 @@
                 @endif
             </div>
             @else
-            <div class="col-md-12 {{ $class ?? '' }}">
+            @stack('aditional')
+            <div class="@if(isset($hsize) && $hsize){{$hsize}}@else{{'col-md-12'}}@endif {{ $class ?? '' }}">
                 <h1 class="display-2 text-white">{{ $title }}</h1>
                 @if (isset($descriptions) && $descriptions)
                 <div class="mb-5">
