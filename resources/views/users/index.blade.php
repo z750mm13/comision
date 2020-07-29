@@ -5,9 +5,9 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Argon Dashboard') }}</title>
+    <title>{{ config('app.name', 'Comisión SH') }}</title>
     <!-- Favicon -->
-    <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
+    <link href="{{ asset('argon') }}/img/brand/favicon.svg" rel="icon" type="image/png">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- Icons -->
@@ -42,11 +42,11 @@
             </a>
             <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                 <div class=" dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Welcome!</h6>
+                    <h6 class="text-overflow m-0">¡Hola!</h6>
                 </div>
                 <a href=href="{{ route('profile.edit') }}" class="dropdown-item">
                     <i class="ni ni-single-02"></i>
-                    <span>My profile</span>
+                    <span>Mi perfil</span>
                 </a>
                 <a href="#" class="dropdown-item">
                     <i class="ni ni-settings-gear-65"></i>
@@ -64,7 +64,7 @@
                 <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     <i class="ni ni-user-run"></i>
-                    <span>Logout</span>
+                    <span>Cerrar sesión</span>
                 </a>
             </div>
         </li>
