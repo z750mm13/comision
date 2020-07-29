@@ -167,12 +167,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('commitments') }}">
+                        <a class="nav-link" href="{{ route('commitments.index') }}">
                           <span class="nav-link-text">{{ __('Compromisos prometidos') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('compliments') }}">
+                        <a class="nav-link" href="{{ route('compliments.index') }}">
                           <span class="nav-link-text">{{ __('Compromisos cumplidos') }}</span>
                         </a>
                     </li>
