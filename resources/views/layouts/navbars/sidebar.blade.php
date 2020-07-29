@@ -151,7 +151,7 @@
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ asset('docs') }}/Manual.pdf">
-                          <i class="ni ni-spaceship"></i>
+                            <i class="fas fa-question"></i>
                           <span class="nav-link-text">Ayuda</span>
                         </a>
                     </li>
