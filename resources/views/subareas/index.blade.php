@@ -12,6 +12,26 @@
 ])
 
 @section('bodycontent')
+<div class="row mb-3">
+  <div class="col-3">
+    <div class="list-group " id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Unidad Alarcón</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Unidad Santa Gertrudis</a>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+        @include('components.map.subareasmap',[
+          'subareas' => $subareas,
+          'areas' => $areas
+          ])
+      </div>
+      <div class="tab-pane fade show active" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><div id="gertrudis" class="map map-big shadow-sm"></div></div>
+    </div>
+  </div>
+</div>
+
 <div class="card-deck">
   @foreach($subareas as $subarea)
     <div class="col-md-4 col-sm-6 col-xm-12">

@@ -21,8 +21,9 @@ class SubareaController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        $areas = Area::all();
         $subareas = Subarea::all();
-        return view('subareas.index', compact('subareas'));
+        return view('subareas.index', compact('subareas','areas'));
     }
 
     /**
