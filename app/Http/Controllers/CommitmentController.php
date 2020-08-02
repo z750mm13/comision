@@ -21,7 +21,7 @@ class CommitmentController extends Controller {
     public function index() {
         $commitments = null;
         if(auth()->user()->tipo == 'Integrante')
-        $commitments = Commitment::all();
+        $commitments = Commitment::orderBy('id', 'ASC')->get();
         else
         $commitments = auth()->user()->commitments;
         return view('commitments.index', compact('commitments'));
@@ -91,7 +91,7 @@ class CommitmentController extends Controller {
             ['active','true']
         ])
         ->get();
-        $reviews = Review::all();
+        $reviews = Review::orderBy('id', 'ASC')->get();
         $commitment = Commitment::findOrFail($id);
         return view('commitments.edit', compact('commitment', 'users', 'reviews'));
     }

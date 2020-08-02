@@ -26,7 +26,7 @@ class AreaController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $areas = Area::all();
+        $areas = Area::orderBy('id', 'ASC')->get();
         return view('areas.index',compact('areas'));
     }
 
@@ -118,8 +118,9 @@ class AreaController extends Controller {
      */
     public function restore(Request $request) {
         $areas = $request->input('areas');
+        if($areas)
         foreach($areas as $id)
-            Area::withTrashed()->findOrFail($id)->restore();
+            Area::onlyTrashed()->findOrFail($id)->restore();
         return redirect()->route('areas.index');
     }
 }

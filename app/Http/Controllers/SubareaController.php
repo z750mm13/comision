@@ -21,8 +21,8 @@ class SubareaController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $areas = Area::all();
-        $subareas = Subarea::all();
+        $areas = Area::orderBy('id', 'ASC')->get();
+        $subareas = Subarea::orderBy('id', 'ASC')->get();
         return view('subareas.index', compact('subareas','areas'));
     }
 
@@ -33,7 +33,7 @@ class SubareaController extends Controller {
      */
     public function create($area_id=null) {
         if($area_id == null)
-            $areas=Area::all();
+            $areas=Area::orderBy('id', 'ASC')->get();
         else
         $areas = null;
         return view('subareas.create', compact('area_id', 'areas'));
@@ -71,7 +71,7 @@ class SubareaController extends Controller {
      */
     public function edit($id) {
         $subarea = Subarea::findOrFail($id);
-        $areas = Area::all();
+        $areas = Area::orderBy('id', 'ASC')->get();
         return view('subareas.edit', compact('subarea', 'areas'));
     }
 

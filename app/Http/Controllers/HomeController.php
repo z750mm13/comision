@@ -22,16 +22,16 @@ class HomeController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index() {
-        $subareas  = Subarea::all();
-        $areas = Area::all();
+        $subareas  = Subarea::orderBy('id', 'ASC')->get();
+        $areas = Area::orderBy('id', 'ASC')->get();
         $problems = Review::select('reviews.id')
         ->where('valor','=','false')
         ->get()->count();
-        $compliments = Compliment::all()->count();
+        $compliments = Compliment::orderBy('id', 'ASC')->get()->count();
         $por_compliments = ($compliments? 100 * ($problems/$compliments):0);
         //TODO Asignar a la ultimo validate
         //TODO Agregar avance total
-        $solved = Review::all()->count();
+        $solved = Review::orderBy('id', 'ASC')->get()->count();
         $por_solved = round(($solved/(Reviews::toResolve()? Reviews::toResolve() : 1))*100,2);
         return view('dashboard',compact(
             'subareas','areas','problems','compliments','por_compliments',

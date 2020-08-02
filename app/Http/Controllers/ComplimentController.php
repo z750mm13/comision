@@ -27,7 +27,7 @@ class ComplimentController extends Controller {
         $compliments = [];
         $user = auth()->user();
         if($user->tipo == 'Integrante')
-        $compliments = Compliment::all();
+        $compliments = Compliment::orderBy('id', 'ASC')->get();
         else {
             $commitments = $user->commitments;
             //TODO Revisar consulta
@@ -47,7 +47,7 @@ class ComplimentController extends Controller {
     public function create() {
         $user = auth()->user();
         if($user->tipo == 'Integrante')
-        $commitments = Commitment::all();
+        $commitments = Commitment::orderBy('id', 'ASC')->get();
         else
         $commitments = $user->commitments;
         return view('compliments.create', compact('commitments'));
@@ -87,7 +87,7 @@ class ComplimentController extends Controller {
      */
     public function edit($id) {
         $compliment = Compliment::findOrFail($id);
-        $commitments = Commitment::all();
+        $commitments = Commitment::orderBy('id', 'ASC')->get();
         return view('compliments.edit', compact('compliment', 'commitments'));
     }
 

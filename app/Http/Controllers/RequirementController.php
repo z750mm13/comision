@@ -27,7 +27,7 @@ class RequirementController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $requirements = Requirement::all();
+        $requirements = Requirement::orderBy('id', 'ASC')->get();
         return view('requirements.index',compact('requirements'));
     }
 
@@ -41,7 +41,7 @@ class RequirementController extends Controller {
     public function create($norm_id=null) {
         $norms = null;
         if(!$norm_id){
-            $norms=Norm::all();
+            $norms=Norm::orderBy('id', 'ASC')->get();
         }
         return view('requirements.create', compact('norm_id', 'norms'));
     }
@@ -82,7 +82,7 @@ class RequirementController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $norms=Norm::all();
+        $norms=Norm::orderBy('id', 'ASC')->get();
         $requirement = Requirement::findOrFail($id);
         return view('requirements.edit', compact('requirement', 'norms'));
     }

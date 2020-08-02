@@ -50,7 +50,7 @@ class CordinateController extends Controller {
             ])
             ->get();
         else
-        $users = User::all();
+        $users = User::orderBy('id', 'ASC')->get();
         return view('cordinates.create', compact('users', 'rol'));
     }
 

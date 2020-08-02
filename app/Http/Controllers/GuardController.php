@@ -48,7 +48,7 @@ class GuardController extends Controller {
         $cordinates = null;
         $areas = null;
         if($id==null) {
-            $areas = Area::all();
+            $areas = Area::orderBy('id', 'ASC')->get();
             $cordinates = Cordinate::select('cordinates.id','nombre','apellidos')
             ->join('users', 'users.id', '=', 'cordinates.user_id')
             ->limit(1)
@@ -97,7 +97,7 @@ class GuardController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $areas = Area::all();
+        $areas = Area::orderBy('id', 'ASC')->get();
         $cordinates = Cordinate::select('cordinates.id','nombre','apellidos')
             ->join('users', 'users.id', '=', 'cordinates.user_id')
             ->limit(1)

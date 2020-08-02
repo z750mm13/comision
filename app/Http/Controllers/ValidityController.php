@@ -71,7 +71,7 @@ class ValidityController extends Controller {
      */
     public function show($id) {
         $validity = Validity::findOrFail($id);
-        $areas = Area::all();
+        $areas = Area::orderBy('id', 'ASC')->get();
         return view('validities.show', compact('validity', 'areas'));
     }
 

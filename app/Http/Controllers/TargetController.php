@@ -24,8 +24,8 @@ class TargetController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $subareas = Subarea::all();
-        $areas = Area::all();
+        $subareas = Subarea::orderBy('id', 'ASC')->get();
+        $areas = Area::orderBy('id', 'ASC')->get();
         return view('targets.index', compact('subareas','areas'));
     }
 
@@ -35,9 +35,9 @@ class TargetController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create($id=null) {
-        $questionnaires = Questionnaire::all();
+        $questionnaires = Questionnaire::orderBy('id', 'ASC')->get();
         $subareas = null;
-        if($id==null) $subareas = Subarea::all();
+        if($id==null) $subareas = Subarea::orderBy('id', 'ASC')->get();
         return view('targets.create', compact('id','questionnaires', 'subareas'));
     }
 
@@ -61,7 +61,7 @@ class TargetController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        $validities = Validity::all();
+        $validities = Validity::orderBy('id', 'ASC')->get();
         $target = Target::findOrFail($id);
         return view('targets.show', compact('target','validities'));
     }
@@ -74,8 +74,8 @@ class TargetController extends Controller {
      */
     public function edit($id) {
         $target = Target::findOrFail($id);
-        $questionnaires = Questionnaire::all();
-        $subareas = Subarea::all();
+        $questionnaires = Questionnaire::orderBy('id', 'ASC')->get();
+        $subareas = Subarea::orderBy('id', 'ASC')->get();
         return view('targets.edit', compact('target', 'questionnaires', 'subareas'));
     }
 

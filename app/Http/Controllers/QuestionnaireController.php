@@ -24,7 +24,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $questionnaires = Questionnaire::all();
+        $questionnaires = Questionnaire::orderBy('id', 'ASC')->get();
         return view('questionnaires.index',compact('questionnaires'));
     }
 
@@ -34,7 +34,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $norms = Norm::all();
+        $norms = Norm::orderBy('id', 'ASC')->get();
         return view('questionnaires.create', compact('norms'));
     }
 
@@ -85,7 +85,7 @@ class QuestionnaireController extends Controller {
      */
     public function edit($id) {
         $questionnaire = Questionnaire::findOrFail($id);
-        $norms = Norm::all();
+        $norms = Norm::orderBy('id', 'ASC')->get();
         return view('questionnaires.edit', compact('norms', 'questionnaire'));
     }
 

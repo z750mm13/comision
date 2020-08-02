@@ -27,7 +27,7 @@ class NormController extends Controller {
      */
     public function index() {
         // TODO Filtrar el uso de normas
-        $norms=Norm::all();
+        $norms=Norm::orderBy('id', 'ASC')->get();
         return view('norms.index',compact('norms'));
     }
 
