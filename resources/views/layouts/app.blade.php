@@ -7,7 +7,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Argon Dashboard') }}</title>
+        <title>{{ config('app.name', 'Comisión SH'). ((isset($title) && $title)? ' - '. $title : '') }}</title>
         <!-- Favicon -->
         <link rel="icon" href="{{ asset('argon') }}/img/brand/favicon.svg" type="image/png">
         <!-- Fonts -->
