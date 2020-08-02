@@ -12,7 +12,7 @@ class Question extends Model {
     ];
 
     public function questionnaire() {
-        return $this -> belongsTo('App\Questionnaire');
+        return $this -> belongsTo('App\Questionnaire')->withTrashed();
     }
 
     public function reviews() {

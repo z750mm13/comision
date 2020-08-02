@@ -100,4 +100,26 @@ class AreaController extends Controller {
             $area->forceDelete();
         return redirect()->route('areas.index');
     }
+
+    /**
+     * Display a listing of the deleted areas.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleted() {
+        $areas = Area::onlyTrashed()->get();
+        return view('areas.deleted',compact('areas'));
+    }
+
+    /**
+     * Display a listing of the deleted areas.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request) {
+        $areas = $request->input('areas');
+        foreach($areas as $id)
+            Area::withTrashed()->findOrFail($id)->restore();
+        return redirect()->route('areas.index');
+    }
 }

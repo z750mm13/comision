@@ -1,10 +1,10 @@
 @extends('layouts.content.default.index',[
-    'title' => 'Integrantes',
+    'title' => 'Integrantes de la comisión',
     'descriptions' => [
         __('Los integrantes de la comisión son los que interactuan con el sistema y llevan a cabo las encuestas con respecto a cada area.'),
         __('En este apartado se podrá tener el control de las cuentas de usuarios para que puedan acceder al sistema. Si decea agregar una nueva cuenta el presione siguente boton o acepte las solicitudes en la lista de abajo.')
       ],
-    'titlebody' => __('Integrantes de la comisión'),
+    'titlebody' => __('Integrantes'),
     'image' => null,
     'button' => __('Inscribir integrante'),
     'urlbutton' => __('/elements'),

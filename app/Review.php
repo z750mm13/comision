@@ -12,15 +12,15 @@ class Review extends Model {
     ];
 
     public function validity() {
-        return $this -> belongsTo('App\Validity');
+        return $this -> belongsTo('App\Validity')->withTrashed();
     }
 
     public function target() {
-        return $this -> belongsTo('App\Target');
+        return $this -> belongsTo('App\Target')->withTrashed();
     }
 
     public function question() {
-        return $this -> belongsTo('App\Question');
+        return $this -> belongsTo('App\Question')->withTrashed();
     }
 
     public function commitments() {

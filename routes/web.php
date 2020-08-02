@@ -29,27 +29,11 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
-Route::resource('cordinates', 'CordinateController');
-Route::resource('elements', 'ElementController');
-Route::resource('helpers', 'HelperController');
-Route::resource('norms', 'NormController');
-Route::resource('requirements', 'RequirementController');
-Route::resource('areas', 'AreaController');
-Route::resource('subareas', 'SubareaController');
-Route::resource('guards', 'GuardController');
-Route::resource('questionnaires', 'QuestionnaireController');
-Route::resource('targets', 'TargetController');
-Route::resource('validities', 'ValidityController');
-Route::resource('reviews', 'ReviewController');
-Route::resource('problems', 'ProblemController');
-Route::resource('commitments', 'CommitmentController');
-Route::resource('compliments', 'ComplimentController');
-
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
 // ------------------------------------------------------------------ //
 //Ruta de cuentas de usuario eliminadas                               //
-Route::get('elements/deleted', 'ElementController@activate');         //
+Route::get('elements/deleted', 'ElementController@deleted');         //
 //Ruta de activación de cuentas de usuario                            //
 Route::get('elements/active/{id?}', 'ElementController@activate');    //
 //Ruta de desactivación de cuentas de usuario                         //
@@ -69,6 +53,10 @@ Route::get('helpers/admin/{id?}', 'HelperController@admin');          //
 //Ruta de desactivación de administración de usuario                  //
 Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');      //
 // ------------------------------------------------------------------ //
+//Ruta de eliminación de áreas
+Route::get('areas/deleted', 'AreaController@deleted');
+//Ruta de restauración de áreas
+Route::post('areas/restore', 'AreaController@restore');
 // Ruta de requerimientos con id de la norma
 Route::get('requirements/create/{id?}', 'RequirementController@create');
 // Ruta de subareas con id de la area
@@ -89,3 +77,20 @@ Route::get('reviews/subareas/{area_id?}/{validity_id?}', 'ReviewController@index
 Route::get('problems/{validity_id?}/subarea/{subarea_id?}', 'ProblemController@show');
 //Ruta de commitments con id de review
 Route::get('commitments/create/{id?}', 'CommitmentController@create');
+
+
+Route::resource('cordinates', 'CordinateController');
+Route::resource('elements', 'ElementController');
+Route::resource('helpers', 'HelperController');
+Route::resource('norms', 'NormController');
+Route::resource('requirements', 'RequirementController');
+Route::resource('areas', 'AreaController');
+Route::resource('subareas', 'SubareaController');
+Route::resource('guards', 'GuardController');
+Route::resource('questionnaires', 'QuestionnaireController');
+Route::resource('targets', 'TargetController');
+Route::resource('validities', 'ValidityController');
+Route::resource('reviews', 'ReviewController');
+Route::resource('problems', 'ProblemController');
+Route::resource('commitments', 'CommitmentController');
+Route::resource('compliments', 'ComplimentController');

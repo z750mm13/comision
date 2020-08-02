@@ -7,7 +7,7 @@
   'button' => __('Programar evaluaciones'),
   'urlbutton' => __('/validities'),
   'titlelist' => 'Acciones',
-  'titlebody' => 'Propiedades del área',
+  'titlebody' => 'Propiedades',
   'actividades' => 'active'
 ])
 

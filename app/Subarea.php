@@ -12,7 +12,7 @@ class Subarea extends Model {
     ];
 
     public function area() {
-        return $this -> belongsTo('App\Area');
+        return $this -> belongsTo('App\Area')->withTrashed();
     }
 
     public function targets() {

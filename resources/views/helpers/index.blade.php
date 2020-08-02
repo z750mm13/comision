@@ -4,7 +4,7 @@
       __('El personal de apoyo de comisión son directivos que ayudan a cumplir los requisitos y necesidades de las instalaciones.'),
       __('En este apartado se podrá tener el control de las cuentas de usuarios de apoyo a la comisión para que puedan acceder al sistema. Si decea agregar una nueva cuenta presione el siguente boton.')
     ],
-    'titlebody' => __('Apoyo de la comisión'),
+    'titlebody' => __('Apoyos'),
     'image' => null,
     'button' => __('Inscribir apoyo'),
     'urlbutton' => __('/helpers'),

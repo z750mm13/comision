@@ -11,7 +11,7 @@ class Cordinate extends Model {
         'rol', 'ciclo', 'user_id'
     ];
     public function user() {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User')->withTrashed();
     }
     public function guards() {
         return $this->hasMany('App\Guard');

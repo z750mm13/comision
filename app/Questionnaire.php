@@ -12,7 +12,7 @@ class Questionnaire extends Model {
     ];
 
     public function requirement() {
-        return $this -> belongsTo('App\Requirement');
+        return $this -> belongsTo('App\Requirement')->withTrashed();
     }
 
     public function questions() {

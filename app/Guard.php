@@ -12,10 +12,10 @@ class Guard extends Model {
     ];
     
     public function cordinate() {
-        return $this->belongsTo('App\Cordinate');
+        return $this->belongsTo('App\Cordinate')->withTrashed();
     }
 
     public function area() {
-        return $this->belongsTo('App\Area');
+        return $this->belongsTo('App\Area')->withTrashed();
     }
 }
