@@ -11,7 +11,7 @@ use Tools\Utils\Fecha;
     'titlebody' => __('Compromisos'),
     'image' => null,
     'button' => __('Crear compromiso'),
-    'urlbutton' => __('/commitments/create'),
+    'urlbutton' => __('/commitments'),
     'actividades' => 'active'
 ])
 

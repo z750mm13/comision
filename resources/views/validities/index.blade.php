@@ -5,7 +5,7 @@
       __('En este apartado podrá programar las evaluaciones que se van a realizar durante el ciclo en las distintas áreas de la institución.')
   ],
   'button' => __('Programar evaluaciones'),
-  'urlbutton' => __('/validities/create'),
+  'urlbutton' => __('/validities'),
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades del área',
   'actividades' => 'active'

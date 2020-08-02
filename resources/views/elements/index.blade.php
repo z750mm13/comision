@@ -7,7 +7,7 @@
     'titlebody' => __('Integrantes de la comisión'),
     'image' => null,
     'button' => __('Inscribir integrante'),
-    'urlbutton' => __('/elements/create'),
+    'urlbutton' => __('/elements'),
     'personal' => 'active'
 ])
 

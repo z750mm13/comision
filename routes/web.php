@@ -48,6 +48,8 @@ Route::resource('compliments', 'ComplimentController');
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
 // ------------------------------------------------------------------ //
+//Ruta de cuentas de usuario eliminadas                               //
+Route::get('elements/deleted', 'ElementController@activate');         //
 //Ruta de activación de cuentas de usuario                            //
 Route::get('elements/active/{id?}', 'ElementController@activate');    //
 //Ruta de desactivación de cuentas de usuario                         //

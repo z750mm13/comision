@@ -7,7 +7,7 @@
     'titlebody' => __('Áreas'),
     'image' => null,
     'button' => __('Agregar área'),
-    'urlbutton' => __('/areas/create'),
+    'urlbutton' => __('/areas'),
     'instalaciones' => 'active'
 ])
 

@@ -11,7 +11,7 @@ use Tools\Utils\Fecha;
     'titlebody' => __('Cumplimientos'),
     'image' => null,
     'button' => __('Crear cumplimiento'),
-    'urlbutton' => __('/compliments/create'),
+    'urlbutton' => __('/compliments'),
     'actividades' => 'active'
 ])
 

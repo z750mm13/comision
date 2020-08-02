@@ -11,14 +11,20 @@
 <div class="container-fluid mt--7">
 <div class="col-xl-12 order-xl-1">
   <div class="card bg-secondary shadow">
-      <div class="card-header bg-white border-0">
-          <div class="row align-items-center">
+      <div class="card-header border-0">
+          <div class="row">
+            <div class="col-6">
+              <h3 class="mb-0">{{ $titlebody }}</h3>
+            </div>
             @if((Auth::user()->tipo == 'Apoyo' || Auth::user()->admin) && isset($button) && $button)
-              <div class="col-md-3 offset-md-9 mt--5">
-                <a class="btn btn-primary btn-lg" href="{{$urlbutton}}" role="button">{{$button}}</a>
+              <div class="col-6 text-right mt--5">
+                <a class="btn btn-primary btn-lg" href="{{$urlbutton}}/create" role="button">{{$button}}</a>
+                <a href="{{$urlbutton}}/deleted" class="btn btn-sm btn-danger btn-round btn-icon" data-toggle="tooltip" data-original-title="Elementos eliminados">
+                  <span class="btn-inner--icon"><i class="fas fa-trash"></i></span>
+                  <span class="btn-inner--text">Eliminados</span>
+                </a>
               </div>
             @endif
-              <h3 class="col-12 mb-0">{{ $titlebody }}</h3>
           </div>
       </div>
       <div class="card-body">

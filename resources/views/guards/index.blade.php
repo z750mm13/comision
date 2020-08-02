@@ -7,7 +7,7 @@
     'titlebody' => __('Supervisores'),
     'image' => null,
     'button' => __('Asignar área a responsable'),
-    'urlbutton' => __('/guards/create'),
+    'urlbutton' => __('/guards'),
     'instalaciones' => 'active'
 ])
 

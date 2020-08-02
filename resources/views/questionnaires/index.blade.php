@@ -7,7 +7,7 @@
     'titlebody' => __('Cuestionarios'),
     'image' => null,
     'button' => __('Agregar cuestionario'),
-    'urlbutton' => __('/questionnaires/create'),
+    'urlbutton' => __('/questionnaires'),
     'actividades' => 'active'
 ])
 
