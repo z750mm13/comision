@@ -22,6 +22,7 @@
                 @else
                 <div class="col-6 text-right">
                 @endif
+                @if(!isset($nodelete))
                 <a href="{{isset($urlbutton)? $urlbutton.'/deleted':'#'}}" class="btn btn-sm {{$pclassb ?? 'btn-danger'}} btn-round btn-icon" data-toggle="tooltip" data-original-title="{{$titlebody}}"
                 @if(!isset($urlbutton))
                 onclick="
@@ -36,6 +37,7 @@
                   <span class="btn-inner--icon"><i class="{{$piconb ?? 'fas fa-trash'}}"></i></span>
                   <span class="btn-inner--text">{{$pbutton ?? 'Eliminados'}}</span>
                 </a>
+                @endif
               </div>
             @endif
           </div>

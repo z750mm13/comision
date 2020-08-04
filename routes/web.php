@@ -77,9 +77,9 @@ Route::get('reviews/subareas/{area_id?}/{validity_id?}', 'ReviewController@index
 Route::get('problems/{validity_id?}/subarea/{subarea_id?}', 'ProblemController@show');
 //Ruta de commitments con id de review
 Route::get('commitments/create/{id?}', 'CommitmentController@create');
-//Ruta de eliminación de áreas
+//Ruta de eliminación de commitments
 Route::get('commitments/deleted', 'CommitmentController@deleted');
-//Ruta de restauración de áreas
+//Ruta de restauración de commitments
 Route::post('commitments/restore', 'CommitmentController@restore');
 
 

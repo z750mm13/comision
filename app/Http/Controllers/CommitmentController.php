@@ -137,7 +137,7 @@ class CommitmentController extends Controller {
     }
 
     /**
-     * Display a listing of the deleted commitments.
+     * Restore the deleted commitments
      *
      * @return \Illuminate\Http\Response
      */

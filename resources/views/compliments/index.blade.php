@@ -12,7 +12,8 @@ use Tools\Utils\Fecha;
     'image' => null,
     'button' => __('Crear cumplimiento'),
     'urlbutton' => __('/compliments'),
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'nodelete' => 'no'
 ])
 
 @section('bodycontent')
