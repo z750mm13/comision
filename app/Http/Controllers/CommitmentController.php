@@ -125,4 +125,27 @@ class CommitmentController extends Controller {
             $commitment->forceDelete();
         return redirect()->route('commitments.index');
     }
+
+    /**
+     * Display a listing of the deleted commitments.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleted() {
+        $commitments = Commitment::onlyTrashed()->get();
+        return view('commitments.deleted',compact('commitments'));
+    }
+
+    /**
+     * Display a listing of the deleted commitments.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request) {
+        $commitments = $request->input('commitments');
+        if($commitments)
+        foreach($commitments as $id)
+        Commitment::onlyTrashed()->findOrFail($id)->restore();
+        return redirect()->route('commitments.index');
+    }
 }
