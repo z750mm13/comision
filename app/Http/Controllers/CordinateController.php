@@ -121,4 +121,27 @@ class CordinateController extends Controller {
             $cordinate->forceDelete();
         return redirect()->route('cordinates.index');
     }
+
+    /**
+     * Display a listing of the deleted cordinates.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleted() {
+        $cordinates = Cordinate::onlyTrashed()->get();
+        return view('cordinates.deleted',compact('cordinates'));
+    }
+
+    /**
+     * Restore the deleted cordinates
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request) {
+        $cordinates = $request->input('cordinates');
+        if($cordinates)
+        foreach($cordinates as $id)
+        Cordinate::onlyTrashed()->findOrFail($id)->restore();
+        return redirect()->route('cordinates.index');
+    }
 }

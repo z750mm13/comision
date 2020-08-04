@@ -31,6 +31,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
+//Ruta de eliminación de cordinates
+Route::get('cordinates/deleted', 'CordinateController@deleted');
+//Ruta de restauración de cordinates
+Route::post('cordinates/restore', 'CordinateController@restore');
 // ------------------------------------------------------------------ //
 //Ruta de cuentas de usuario eliminadas                               //
 Route::get('elements/deleted', 'ElementController@deleted');         //
