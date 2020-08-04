@@ -119,7 +119,7 @@ class CommitmentController extends Controller {
      */
     public function destroy($id) {
         $commitment = Commitment::findOrFail($id);
-        if($commitment->compliment)
+        if($commitment->compliment()->withTrashed()->get()->count())
             $commitment->delete();
         else
             $commitment->forceDelete();

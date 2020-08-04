@@ -95,7 +95,7 @@ class SubareaController extends Controller {
      */
     public function destroy($id) {
         $subarea = Subarea::findOrFail($id);
-        if($subarea->targets->count())
+        if($subarea->targets()->withTrashed()->get()->count())
             $subarea->delete();
         else
             $subarea->forceDelete();

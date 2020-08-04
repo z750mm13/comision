@@ -115,7 +115,7 @@ class CordinateController extends Controller {
      */
     public function destroy($id) {
         $cordinate = Cordinate::findOrFail($id);
-        if($cordinate->guards->count())
+        if($cordinate->guards()->withTrashed()->get()->count())
             $cordinate->delete();
         else
             $cordinate->forceDelete();

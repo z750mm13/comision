@@ -154,7 +154,7 @@ class ElementController extends Controller {
         $user = User::findOrFail($id);
 
         //Pregunta si tiene dependencias
-        if($user->cordinates->count()) {
+        if($user->cordinates()->withTrashed()->get()->count()) {
             //Si tiene dependencias "elimina" el usuario, lo hará invisible
             $user->delete();
         } else {

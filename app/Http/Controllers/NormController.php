@@ -112,7 +112,7 @@ class NormController extends Controller {
      */
     public function destroy($id) {
         $norm = Norm::findOrFail($id);
-        if($norm->requirements->count())
+        if($norm->requirements()->withTrashed()->get()->count())
             $norm->delete();
         else
             $norm->forceDelete();

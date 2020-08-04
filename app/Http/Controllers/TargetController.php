@@ -101,7 +101,7 @@ class TargetController extends Controller {
      */
     public function destroy($id) {
         $target = Target::findOrFail($id);
-        if($target->reviews->count())
+        if($target->reviews()->withTrashed()->get()->count())
             $target->delete();
         else
             $target->forceDelete();

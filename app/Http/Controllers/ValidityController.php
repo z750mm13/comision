@@ -108,7 +108,7 @@ class ValidityController extends Controller {
      */
     public function destroy($id) {
         $validity = Validity::findOrFail($id);
-        if($validity->reviews->count())
+        if($validity->reviews()->withTrashed()->get()->count())
             $validity->delete();
         else
             $validity->forceDelete();

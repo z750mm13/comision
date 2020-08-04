@@ -94,7 +94,7 @@ class AreaController extends Controller {
      */
     public function destroy($id) {
         $area = Area::findOrFail($id);
-        if($area->subareas->count())
+        if($area->subareas()->withTrashed()->get()->count())
             $area->delete();
         else
             $area->forceDelete();

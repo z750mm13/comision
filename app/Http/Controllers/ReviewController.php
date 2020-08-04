@@ -169,7 +169,7 @@ class ReviewController extends Controller {
         $questions = Reviews::resolvedQuestions($subarea, Reviews::getCurrentValidity());
         
         foreach($questions as $question) {
-            if($question->commitments->count()){
+            if($question->commitments()->withTrashed()->get()->count()){
                 $question->delete();
             } else {
                 if($question->evidencia != 'img/docs/no_file.png')

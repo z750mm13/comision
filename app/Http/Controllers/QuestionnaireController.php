@@ -130,6 +130,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id) {
+        //TODO Eliminar cuestionario si no tiene ni en basura los elementos
         /**
          * Si se elimina el cuestionario
          */
