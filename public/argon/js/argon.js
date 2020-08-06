@@ -173,7 +173,7 @@ var Charts = (function() {
 		},
 		theme: {
 			'default': '#172b4d',
-			'primary': '#5e72e4',
+			'primary': '#3490dc',
 			'secondary': '#f4f5f7',
 			'info': '#11cdef',
 			'success': '#2dce89',
@@ -902,16 +902,16 @@ var BarStackedChart = (function() {
 
 		// Only for demo purposes - return a random number to generate datasets
 		var randomScalingFactor = function() {
-			return Math.round(Math.random() * 100);
+			return Math.round(Math.random() * 20);
 		};
 
 
 		// Chart data
 
 		var data = {
-			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+			labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
 			datasets: [{
-				label: 'Dataset 1',
+				label: 'Poblemas',
 				backgroundColor: Charts.colors.theme['danger'],
 				data: [
 					randomScalingFactor(),
@@ -919,26 +919,12 @@ var BarStackedChart = (function() {
 					randomScalingFactor(),
 					randomScalingFactor(),
 					randomScalingFactor(),
-					randomScalingFactor(),
 					randomScalingFactor()
 				]
 			}, {
-				label: 'Dataset 2',
+				label: 'Soluciones',
 				backgroundColor: Charts.colors.theme['primary'],
 				data: [
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor()
-				]
-			}, {
-				label: 'Dataset 3',
-				backgroundColor: Charts.colors.theme['success'],
-				data: [
-					randomScalingFactor(),
 					randomScalingFactor(),
 					randomScalingFactor(),
 					randomScalingFactor(),
@@ -947,7 +933,6 @@ var BarStackedChart = (function() {
 					randomScalingFactor()
 				]
 			}]
-
 		};
 
 
@@ -983,8 +968,6 @@ var BarStackedChart = (function() {
 		$this.data('chart', barStackedChart);
 
 	};
-
-
 	// Events
 
 	if ($chart.length) {
@@ -2205,7 +2188,7 @@ var VectorMap = (function() {
 			},
 			theme: {
 				'default': '#172b4d',
-				'primary': '#5e72e4',
+				'primary': '#3490dc',
 				'secondary': '#f4f5f7',
 				'info': '#11cdef',
 				'success': '#2dce89',

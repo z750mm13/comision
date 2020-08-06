@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="{{ asset('argon') }}/css/argon.css?v=1.1.0" type="text/css">
         @stack('css')
     </head>
-    <body class="bg-white {{ $class ?? '' }}">
+    <body class="{{ $class ?? '' }}">
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

@@ -131,6 +131,8 @@ class ElementController extends Controller {
             //Eliminación de la imagen
             if($user->foto != 'avatars/1/avatar-default.png')
             ToServer::deleteFile('', $user->foto);
+            $user->foto = $data['foto'];
+            $user->save();
         } else $data = $request->all();
 
         //Actualizacion del requisito
@@ -138,7 +140,7 @@ class ElementController extends Controller {
             $user->password = Hash::make($request->password);
             $user->save();
         }
-        $data = $request->except(['password']);
+        $data = $request->except(['password','foto']);
         $user->update($data);
         
         return view('elements.show', compact('user'));

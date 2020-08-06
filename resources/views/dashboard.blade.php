@@ -69,7 +69,7 @@
                     <div class="card-body">
                         <!-- Chart -->
                         <div class="chart">
-                            <canvas id="chart-bars" class="chart-canvas"></canvas>
+                            <canvas id="chart-bar-stacked" class="chart-canvas"></canvas>
                         </div>
                     </div>
                 </div>

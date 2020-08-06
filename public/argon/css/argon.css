@@ -95,7 +95,7 @@ body
     text-align: left;
 
     color: #525f7f;
-    background-color: #f8f9fe;
+    background-color: #F8F9FE;
 }
 
 [tabindex='-1']:focus
@@ -8446,6 +8446,11 @@ a.close.disabled
     background-color: #1d68a7 !important;
 }
 
+.fill-body
+{
+    fill: #F8F9FE !important;
+}
+
 a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
@@ -8543,6 +8548,11 @@ button.bg-dark:hover,
 button.bg-dark:focus
 {
     background-color: #0a0c0d !important;
+}
+
+.bg-default
+{
+    background-color: #1d68a7 !important;
 }
 
 .bg-default

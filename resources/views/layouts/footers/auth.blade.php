@@ -1,3 +1,3 @@
-<footer class="footer bg-white">
+<footer class="footer">
     @include('layouts.footers.nav')
 </footer>

@@ -147,6 +147,8 @@ class HelperController extends Controller {
             //Eliminación de la imagen
             if($user->foto != 'avatars/1/avatar-default.png')
             ToServer::deleteFile('', $user->foto);
+            $user->foto = $data['foto'];
+            $user->save();
         } else $data = $request->all();
 
         //Actualizacion del requisito
@@ -154,8 +156,8 @@ class HelperController extends Controller {
             $user->password = Hash::make($request->password);
             $user->save();
         }
-        if (!$request->input('rol'))$data = $request->except(['rol','password']);
-        else $data = $request->except(['password']);
+        if (!$request->input('rol'))$data = $request->except(['rol','password','foto']);
+        else $data = $request->except(['password','foto']);
         $user->update($data);
         
         return view('helpers.show', compact('user'));

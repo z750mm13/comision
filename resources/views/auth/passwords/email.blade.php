@@ -1,4 +1,4 @@
-@extends('layouts.app', ['class' => 'bg-default'])
+@extends('layouts.app')
 
 @section('content')
     @include('layouts.headers.guest')
@@ -9,7 +9,7 @@
                 <div class="card card-border bg-secondary shadow">
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
-                            <small>{{ __('Actualizar contraseña') }}</small>
+                            <small>{{ __('Recuperar contraseña') }}</small>
                         </div>
 
                         @if (session('status'))
