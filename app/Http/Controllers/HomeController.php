@@ -62,7 +62,8 @@ class HomeController extends Controller {
         $por_compliments = ($compliments? 100 * ($compliments/$problems):0);
         //TODO Asignar al ultimo validate
         //TODO Agregar avance total
-        $solved = Review::where('reviews.validity_id','=',Reviews::lastValidity()->id)
+        $lastv = Reviews::lastValidity();
+        $solved = Review::where('reviews.validity_id','=',($lastv? $lastv->id:0))
         ->orderBy('id', 'ASC')
         ->get()
         ->count();

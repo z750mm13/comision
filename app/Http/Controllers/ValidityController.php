@@ -27,16 +27,16 @@ class ValidityController extends Controller {
             if($tiempo=="proximo")
                 $validities = Validity::where([
                     ['inicio', '>', "$fecha"],
-                ])->orderBy('inicio', 'asc')->get();
+                ])->orderBy('inicio', 'desc')->get();
             if($tiempo=="realizados")
                 $validities = Validity::where([
                     ['fin', '<', $fecha],
-                ])->orderBy('inicio', 'asc')->get();
+                ])->orderBy('inicio', 'desc')->get();
         } else {
             $validities = Validity::where([
                 ['inicio', '<=', "$fecha"],
                 ['fin', '>=', "$fecha"],
-            ])->orderBy('inicio', 'asc')->get();
+            ])->orderBy('inicio', 'desc')->get();
         }
         return view('validities.index', compact('validities', 'tiempo'));
     }
