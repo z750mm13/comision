@@ -8,13 +8,17 @@ use App\Target;
 use App\Review;
 
 class Reviews {
+    public static function lastValidity() {
+        return Validity::orderBy('inicio', 'desc')->get()->first();
+    }
+
     public static function getCurrentValidity() {
         $fecha = Carbon::now()->toDateString();
 
         return Validity::where([
             ['inicio', '<=', "$fecha"],
             ['fin', '>=', "$fecha"],
-        ])->orderBy('inicio', 'asc')->get()->first();
+        ])->orderBy('inicio', 'desc')->get()->first();
     }
 
     public static function getCurrentGuards() {

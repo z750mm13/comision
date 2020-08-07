@@ -909,10 +909,21 @@ var BarStackedChart = (function() {
 		// Chart data
 
 		var data = {
-			labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+			labels: ['Enero - 2020', 'Febrero - 2020', 'Marzo - 2020', 'Abril - 2020', 'Mayo - 2020', 'Junio - 2020'],
 			datasets: [{
 				label: 'Poblemas',
 				backgroundColor: Charts.colors.theme['danger'],
+				data: [
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor()
+				]
+			}, {
+				label: 'Compromisos',
+				backgroundColor: Charts.colors.theme['warning'],
 				data: [
 					randomScalingFactor(),
 					randomScalingFactor(),

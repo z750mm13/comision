@@ -1,4 +1,5 @@
-<div id="alarcon" class="map map-big shadow-sm"></div>
+<div id="alarcon" class="map map-big"></div>
+<div id="gertrudis" class="map map-big"></div>
 
 @push('css')
 <link href="{{ asset('material') }}/css/material-dashboard.min.css" rel="stylesheet" />
@@ -44,27 +45,27 @@
   <script src="{{ asset('jvectormap') }}/data-series.js"></script>
   <script src="{{ asset('jvectormap') }}/proj.js"></script>
   <script src="{{ asset('jvectormap') }}/map.js"></script>
-  <script src="{{ asset('assets') }}/jquery-jvectormap-alarcon-es-mx.js"></script>
-  <script src="{{ asset('assets') }}/jquery-jvectormap-gertrudis-es-mx.js"></script>
+  <script src="assets/jquery-jvectormap-alarcon-es-mx.js"></script>
+  <script src="assets/jquery-jvectormap-gertrudis-es-mx.js"></script>
 <script>
     $(document).ready(function() {
-      len = {{$subareas->count()}};
-
       var nombres = {
         @foreach($subareas as $subarea)
           "{{$subarea->id}}":{
-            id:"{{$subarea->id}}",
             nombre:"{{$subarea->nombre}}",
-            area:"{{$subarea->area->nombre}}"
-          },
+            area:"{{$subarea->area->nombre}}",
+            problemas: "{{$subarea->problems}}"},
         @endforeach
       }
+      
+      let smapa = $("#alarcon");
+      smapa.show();
 
       var map = new jvm.Map({
         container: $('#alarcon'),
         map: 'alarcon',
         zoomOnScroll: false,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#F8FAFC",
         series: {
           regions: [{
             values: {
@@ -101,28 +102,25 @@
             );
           }
         },
-
         //Funcion de notas del área
         onRegionTipShow: function(event, tip, code){
           let element = nombres[code];
-          tip.html(element.nombre+" ("+element.area+")");
+          tip.html(element.nombre+" ("+element.area+")<br>Problemas: "+element.problemas);
         },
         //Función de accion del clic
         onRegionClick: function(event, code){
           console.log('region-click', code);
-          location.replace('/subareas/'+code)
         },
         onViewportChange: function(e, scale, transX, transY){
             console.log('viewportChange', scale, transX, transY);
         }
       });
 
-      var map2 = new jvm.Map({
+      var mapg = new jvm.Map({
         container: $('#gertrudis'),
         map: 'gertrudis',
         zoomOnScroll: false,
-        backgroundColor: "#ffffff",
-        //regionsSelectable: true,
+        backgroundColor: "#F8FAFC",
         series: {
           regions: [{
             values: {
@@ -159,21 +157,37 @@
             );
           }
         },
-
+        //Funcion de notas del área
         onRegionTipShow: function(event, tip, code){
           let element = nombres[code];
-          tip.html(element.nombre+" ("+element.area+")");
+          tip.html(element.nombre+" ("+element.area+")<br>"+element.problemas);
         },
+        //Función de accion del clic
         onRegionClick: function(event, code){
           console.log('region-click', code);
-          location.replace('/subareas/'+code)
-          //location.replace("/targets/create/"+code)
         },
         onViewportChange: function(e, scale, transX, transY){
             console.log('viewportChange', scale, transX, transY);
         }
-      });//
-      $('#list-profile').removeClass("show active");
+      });
+
+      // Toggle options
+      var $maptoggle = $('[data-toggle="map"]');
+	    $maptoggle.on({
+	    	'click': function() {
+          var $this = $(this);
+	    		if ($this.is('[data-update]')) {
+            if($this[0].dataset.update == 'gertrudis'){
+              $('#alarcon').hide();
+              $('#gertrudis').show();
+            } else {
+              $('#gertrudis').hide();
+              $('#alarcon').show();
+            }
+	    		}
+	    	}
+      });
+      $('#gertrudis').hide();
     });
 </script>
 @endpush

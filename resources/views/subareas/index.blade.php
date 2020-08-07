@@ -22,7 +22,7 @@
   <div class="col-9">
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-        @include('components.map.subareasmap',[
+        @include('components.map.subareas',[
           'subareas' => $subareas,
           'areas' => $areas
           ])
