@@ -30,7 +30,7 @@
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h6 class="text-uppercase text-muted ls-1 mb-1">Mapa de la instalaciones</h6>
+                                <h6 class="text-uppercase text-muted ls-1 mb-1">Instalaciones</h6>
                                 <h2 class="mb-0">Unidad</h2>
                             </div>
 
