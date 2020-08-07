@@ -195,7 +195,9 @@
 
 @push('js')
     <script src="{{ asset('argon') }}/vendor/moment/min/moment.min.js"></script>
+    <script src="{{ asset('argon') }}/vendor/moment/locale/es.js"></script>
     <script src="{{ asset('argon') }}/vendor/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="{{ asset('argon') }}/vendor/fullcalendar/dist/locale/es.js"></script>
     <script src="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
