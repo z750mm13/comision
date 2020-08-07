@@ -16,9 +16,9 @@
         <link rel="stylesheet" href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" type="text/css">
         <link rel="stylesheet" href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
         <!-- Page plugins -->
+        @stack('css')
         <!-- Argon CSS -->
         <link rel="stylesheet" href="{{ asset('argon') }}/css/argon.css?v=1.1.0" type="text/css">
-        @stack('css')
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()

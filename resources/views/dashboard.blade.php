@@ -6,7 +6,20 @@
     
     <div class="container-fluid mt--7">
         <div class="row">
-            <div class="col-xl-12 mb-5">
+            <div class="col-xl-4">
+                <div class="card widget-calendar">
+                    <!-- Card header -->
+                    <div class="card-header">
+                      <div class="h5 text-muted mb-1 widget-calendar-year"></div>
+                      <div class="h3 mb-0 widget-calendar-day"></div>
+                    </div>
+                    <!-- Card body -->
+                    <div class="card-body">
+                      <div data-toggle="widget-calendar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 mb-5">
                 <div class="card shadow">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
@@ -25,6 +38,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="card shadow">
                     <div class="card-header bg-transparent">
@@ -180,6 +194,14 @@
 @endsection
 
 @push('js')
+    <script src="{{ asset('argon') }}/vendor/moment/min/moment.min.js"></script>
+    <script src="{{ asset('argon') }}/vendor/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+@endpush
+
+@push('css')
+    <link rel="stylesheet" href="{{ asset('argon') }}/vendor/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" href="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.min.css">
 @endpush
