@@ -16,7 +16,7 @@ class Reviews {
         $anio = now()->year;
         $mes = now()->month;
         $inicio = $anio. '-'. $mes. '-01';
-        $fin = $anio. '-'. $mes. '-'. cal_days_in_month(CAL_GREGORIAN, $mes, $anio);
+        $fin = $anio. '-'. $mes. '-'. date('t', mktime(0, 0, 0, $mes, 1, $anio));
 
         return Validity::where([
             ['inicio', '<=', "$fin"],
