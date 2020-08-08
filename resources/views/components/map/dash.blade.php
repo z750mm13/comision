@@ -102,32 +102,10 @@
         onMarkerTipShow: function(event, tip, index){
           tip.html(tip.html()+'');
         },
-        onMarkerOver: function(event, index){
-          console.log('marker-over', index);
-        },
-        onMarkerOut: function(event, index){
-          console.log('marker-out', index);
-        },
-        onMarkerClick: function(event, index){
-          console.log('marker-click', index);
-        },
-        onMarkerSelected: function(event, index, isSelected, selectedMarkers){
-          console.log('marker-select', index, isSelected, selectedMarkers);
-          if (window.localStorage) {
-            window.localStorage.setItem(
-              'jvectormap-selected-markers',
-              JSON.stringify(selectedMarkers)
-            );
-          }
-        },
         //Funcion de notas del área
         onRegionTipShow: function(event, tip, code){
           let element = nombres[code];
           tip.html(element.nombre+" ("+element.area+")<br>"+element.problemas);
-        },
-        //Función de accion del clic
-        onRegionClick: function(event, code){
-          console.log('region-click', code);
         },
         onViewportChange: function(e, scale, transX, transY){
             console.log('viewportChange', scale, transX, transY);
