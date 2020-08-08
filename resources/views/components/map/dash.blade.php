@@ -119,9 +119,11 @@
           var $this = $(this);
 	    		if ($this.is('[data-update]')) {
             if($this[0].dataset.update == 'gertrudis'){
+              mapg.updateSize();
               $('#alarcon').hide();
               $('#gertrudis').show();
             } else {
+              map.updateSize();
               $('#gertrudis').hide();
               $('#alarcon').show();
             }
