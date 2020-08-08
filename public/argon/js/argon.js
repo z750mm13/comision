@@ -1432,53 +1432,6 @@ var LineChart = (function() {
 // Widget Calendar
 //
 
-
-if($('[data-toggle="widget-calendar"]')[0]) {
-    $('[data-toggle="widget-calendar"]').fullCalendar({
-				contentHeight: 'auto',
-				lang: 'es',
-        theme: false,
-        buttonIcons: {
-            prev: ' ni ni-bold-left',
-            next: ' ni ni-bold-right'
-        },
-        header: {
-            right: 'next',
-            center: 'title, ',
-            left: 'prev'
-        },
-        editable: true,
-        events: [
-            
-            {
-                title: 'Evaluación',
-                start: '2020-07-29',
-                end: '2020-08-03',
-                className: 'bg-green'
-            },
-            
-            {
-                title: 'Matriz',
-                start: '2020-08-06',
-                end: '2020-08-08',
-                className: 'bg-green'
-            },
-            
-            {
-                title: 'Tarea',
-                start: '2020-08-08',
-                end: '2020-08-10',
-                className: 'bg-green'
-            },
-        ]
-		});
-		//Display Current Date as Calendar widget header
-    var mYear = moment().format('YYYY');
-    var mDay = moment().format('dddd, MMM D');
-    $('.widget-calendar-year').html(mYear);
-    $('.widget-calendar-day').html(mDay);
-}
-
 //
 // Datatable
 //

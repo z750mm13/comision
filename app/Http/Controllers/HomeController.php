@@ -63,6 +63,9 @@ class HomeController extends Controller {
         //TODO Asignar al ultimo validate
         //TODO Agregar avance total
         $lastv = Reviews::lastValidity();
+
+        $calendar_validities = Reviews::getMonthValidities();
+        
         $solved = Review::where('reviews.validity_id','=',($lastv? $lastv->id:0))
         ->orderBy('id', 'ASC')
         ->get()
@@ -72,7 +75,7 @@ class HomeController extends Controller {
         
         return view('dashboard',compact(
             'subareas','areas','problems','compliments','por_compliments',
-            'solved', 'por_solved', 'norms'
+            'solved', 'por_solved', 'norms', 'calendar_validities'
         ));
     }
 }

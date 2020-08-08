@@ -15,7 +15,7 @@
                     </div>
                     <!-- Card body -->
                     <div class="card-body">
-                      <div data-toggle="widget-calendar"></div>
+                        @include('components.calendar.dash',compact('calendar_validities'))
                     </div>
                 </div>
             </div>
@@ -194,16 +194,6 @@
 @endsection
 
 @push('js')
-    <script src="{{ asset('argon') }}/vendor/moment/min/moment.min.js"></script>
-    <script src="{{ asset('argon') }}/vendor/moment/locale/es.js"></script>
-    <script src="{{ asset('argon') }}/vendor/fullcalendar/dist/fullcalendar.min.js"></script>
-    <script src="{{ asset('argon') }}/vendor/fullcalendar/dist/locale/es.js"></script>
-    <script src="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
-@endpush
-
-@push('css')
-    <link rel="stylesheet" href="{{ asset('argon') }}/vendor/fullcalendar/dist/fullcalendar.min.css">
-    <link rel="stylesheet" href="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.min.css">
 @endpush

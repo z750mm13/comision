@@ -12,6 +12,18 @@ class Reviews {
         return Validity::orderBy('inicio', 'desc')->get()->first();
     }
 
+    public static function getMonthValidities() {
+        $anio = now()->year;
+        $mes = now()->month;
+        $inicio = $anio. '-'. $mes. '-01';
+        $fin = $anio. '-'. $mes. '-'. cal_days_in_month(CAL_GREGORIAN, $mes, $anio);
+
+        return Validity::where([
+            ['inicio', '<=', "$fin"],
+            ['fin', '>=', "$inicio"]
+        ])->orderBy('inicio', 'desc')->get();
+    }
+
     public static function getCurrentValidity() {
         $fecha = Carbon::now()->toDateString();
 
