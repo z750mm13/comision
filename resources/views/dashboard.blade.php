@@ -127,7 +127,7 @@
                                         {{$area->area}}
                                     </td>
                                     <td>
-                                        340
+                                        {{$area->norms}}
                                     </td>
                                     <td>
                                         46,53%

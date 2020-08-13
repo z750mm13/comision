@@ -34,7 +34,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $norms = Norm::orderBy('id', 'ASC')->get();
+        $norms = Norm::orderBy('codigo', 'ASC')->get();
         return view('questionnaires.create', compact('norms'));
     }
 
@@ -85,7 +85,7 @@ class QuestionnaireController extends Controller {
      */
     public function edit($id) {
         $questionnaire = Questionnaire::findOrFail($id);
-        $norms = Norm::orderBy('id', 'ASC')->get();
+        $norms = Norm::orderBy('codigo', 'ASC')->get();
         return view('questionnaires.edit', compact('norms', 'questionnaire'));
     }
 
@@ -117,10 +117,13 @@ class QuestionnaireController extends Controller {
             }
         }
         $questionnaire->update($request->all());
+        $questionnaire->requirement_id = Norm::findOrFail($request->norm_id)
+        ->requirements->first()->id;
+        $questionnaire->save();
         
         return redirect()
-                ->route('questionnaires.index')
-                ->with('success','Cambios aplicados');
+                ->route('questionnaires.show', compact('questionnaire'))
+                ->with('success','Cuestionario actualizado correctamente');
     }
 
     /**

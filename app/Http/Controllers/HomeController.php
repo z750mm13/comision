@@ -8,6 +8,7 @@ use App\Subarea;
 use App\Area;
 use App\Compliment;
 use App\Norm;
+use App\NormsOfArea;
 use App\Review;
 
 use Tools\Query\Reviews;
@@ -36,7 +37,9 @@ class HomeController extends Controller {
                 ['questions.id', 'reviews.question_id'],
                 ['targets.id', 'reviews.target_id']
             ])
-            ->where('reviews.valor', '=', false)
+            ->where([
+                ['reviews.valor', false]
+            ])
             ->whereNotIn('reviews.id',
             Review::select('reviews.id')
             ->join('commitments', 'reviews.id', '=', 'commitments.review_id')
@@ -48,7 +51,8 @@ class HomeController extends Controller {
         ->orderBy('subareas.id', 'ASC')
         ->get();
 
-        $areas = Area::orderBy('areas.id', 'ASC')
+        $areas = NormsOfArea::select(DB::raw('id,nombre,area,color,deleted_at,created_at,updated_at,count(norm)as norms'))
+        ->groupBy('id','nombre','area','color','deleted_at','created_at','updated_at')
         ->get();
 
         $norms = Norm::orderBy('codigo', 'ASC')->limit(8)->get();
