@@ -51,7 +51,16 @@ class HomeController extends Controller {
         ->orderBy('subareas.id', 'ASC')
         ->get();
 
-        $areas = NormsOfArea::select(DB::raw('id,nombre,area,color,deleted_at,created_at,updated_at,count(norm)as norms'))
+        $sqarea = Area::select(DB::raw('areas.*, norms.id AS norm'))
+        ->distinct()
+        ->leftJoin('subareas', 'subareas.area_id', '=', 'areas.id')
+        ->leftJoin('targets', 'targets.subarea_id', '=', 'subareas.id')
+        ->leftJoin('questionnaires', 'questionnaires.id', '=', 'targets.questionnaire_id')
+        ->leftJoin('requirements', 'requirements.id', '=', 'questionnaires.requirement_id')
+        ->leftJoin('norms', 'norms.id', '=', 'requirements.norm_id');
+
+        $areas = Area::select(DB::raw('id,nombre,area,color,deleted_at,created_at,updated_at,count(norm)as norms'))
+        ->from(\DB::raw(' ( ' . $sqarea->toSql() . ' ) AS areas '))
         ->groupBy('id','nombre','area','color','deleted_at','created_at','updated_at')
         ->get();
 

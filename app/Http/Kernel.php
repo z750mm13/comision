@@ -78,5 +78,8 @@ class Kernel extends HttpKernel
         //Area
         'validateuniquearea' => \App\Http\Middleware\ValidateUniqueArea::class,
         'uniqueupdatearea' => \App\Http\Middleware\UniqueUpdateArea::class,
+
+        //Reviews
+        'activevalidity' => \App\Http\Middleware\CheckCurrentValidity::class,
     ];
 }

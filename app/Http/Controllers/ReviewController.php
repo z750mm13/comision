@@ -16,6 +16,7 @@ class ReviewController extends Controller {
         $this->middleware('active');
         $this->middleware('auth');
         $this->middleware('verified');
+        $this->middleware('activevalidity')->except(['index','show']);
     }
     
     /**
@@ -32,15 +33,17 @@ class ReviewController extends Controller {
         $validity = Validity::findOrFail($validity_id);
         $guards = Reviews::getCurrentGuards();
 
-        foreach($guards as $guard)
-            $areas[] = $guard->area;
-        if(sizeof($areas) == 0) $areas = -1;
+        $areas = $guards->select('areas.*')
+        ->join('areas', 'areas.id', '=', 'guards.area_id')
+        ->get();
+
         if(!$area_id)
             return view('reviews.index', compact('areas', 'validity'));
-        $s_area = null;
-        foreach($areas as $area)
-        if($area->id == $area_id) {$s_area = $area; break;}
-        $subareas = $s_area->subareas;
+
+        $subareas = $guards->select('subareas.*')
+        ->join('subareas', 'subareas.area_id', '=', 'areas.id')
+        ->get();
+        
         $areas = null;
         $area = Area::findOrFail($area_id);
         return view('reviews.index', compact('subareas', 'areas', 'validity', 'area'));
@@ -52,7 +55,19 @@ class ReviewController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create($id) {
-        $subarea = Subarea::findOrFail($id);
+        $subarea = Reviews::getCurrentGuards()->select('subareas.*')
+        ->table('subareas')
+        ->join('areas', 'areas.id', '=', 'guards.area_id')
+        ->join('subareas', 'subareas.area_id', '=', 'areas.id')
+        ->where('subareas.id','=',$id)
+        ->get();
+        dd($subarea);
+
+        if(!sizeof($subarea)) abort(404, "No tienes autorización para ingresar.");
+        else $subarea = $subarea[0];
+        
+        dd($subarea->targets());
+
         $validity = Reviews::getCurrentValidity();
         return view('reviews.create', compact('subarea', 'validity'));
     }

@@ -44,7 +44,7 @@ if($validity) {
 </nav>
 <div class="card-deck">
   @if($validity != null)
-  @if($areas & $areas != -1)
+  @if($areas)
   @foreach($areas as $area)
   <?php
     $resolved = sizeof(Reviews::resolvedQuestionsArea($area,$validity));
@@ -55,7 +55,7 @@ if($validity) {
       <h5 class="card-title">Area: {{$area->nombre}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Descripción del examen</h6>
       <p class="card-text">Se han realizado: {{$resolved}}</p>
-      <a class="stretched-link" href="/reviews/subareas/{{$area->id}}" class="card-link">Ver zonas a evaluar.</a>
+      <a class="stretched-link" href="/reviews/areas/{{$area->id}}" class="card-link">Ver zonas a evaluar.</a>
     </div>
   </div>
   </div>

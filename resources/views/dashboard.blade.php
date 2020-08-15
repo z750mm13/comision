@@ -102,7 +102,7 @@
                                 <h3 class="mb-0">Áreas</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                                <a href="{{ route('areas.index') }}" class="btn btn-sm btn-primary">See all</a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                                 <h3 class="mb-0">Normas</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                                <a href="{{ route('norms.index') }}" class="btn btn-sm btn-primary">See all</a>
                             </div>
                         </div>
                     </div>

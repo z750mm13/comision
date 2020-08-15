@@ -1,4 +1,4 @@
-<div id="alarcon" class="map map-big"></div>
+<div id="alarcon" class="map map-big shadow-sm"></div>
 
 
 @push('css')

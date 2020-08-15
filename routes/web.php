@@ -74,9 +74,9 @@ Route::get('validities/time/{tiempo?}', 'ValidityController@index');
 //Ruta de reviews con id de target
 Route::get('reviews/create/{id?}', 'ReviewController@create');
 //Ruta de las subareas pertenecientes a un area a evaluar
-Route::get('reviews/subareas/{area_id?}', 'ReviewController@index');
+Route::get('reviews/areas/{area_id?}', 'ReviewController@index');
 //Rupa de subareas pertenecientes a una programación
-Route::get('reviews/subareas/{area_id?}/{validity_id?}', 'ReviewController@index');
+Route::get('reviews/areas/{area_id?}/validity/{validity_id?}', 'ReviewController@index');
 //Ruta de problemas de areas en cierta validity
 Route::get('problems/{validity_id?}/subarea/{subarea_id?}', 'ProblemController@show');
 //Ruta de commitments con id de review

@@ -36,7 +36,7 @@ class Reviews {
     public static function getCurrentGuards() {
         return auth()->user()
             ->cordinates()->first()
-            ->guards()->get();
+            ->guards();
     }
 
     public static function resolvedQuestions($subarea, $validity) {
