@@ -14,8 +14,8 @@
 @section('bodycontent')
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
-    <li class="breadcrumb-item"><a href="/reviews">Evaluaciones</a></li>
+    <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+    <li class="breadcrumb-item"><a href="/reviews">Evaluación</a></li>
     <li class="breadcrumb-item"><a href="/reviews/subareas/{{$subarea->area->id}}">Zonas a evaluar</a></li>
     <li class="breadcrumb-item active" aria-current="page">Evaluando</li>
   </ol>

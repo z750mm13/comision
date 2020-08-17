@@ -9,7 +9,10 @@ use App\Review;
 
 class Reviews {
     public static function lastValidity() {
-        return Validity::orderBy('inicio', 'desc')->get()->first();
+        return Validity::orderBy('inicio', 'desc')
+        ->where('inicio','<=', now()->year. '-'. now()->month. '-'. now()->day )
+        ->get()
+        ->first();
     }
 
     public static function getMonthValidities() {
@@ -34,9 +37,7 @@ class Reviews {
     }
 
     public static function getCurrentGuards() {
-        return auth()->user()
-            ->cordinates()->first()
-            ->guards();
+        return auth()->user()->guards();
     }
 
     public static function resolvedQuestions($subarea, $validity) {

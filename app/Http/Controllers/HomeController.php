@@ -10,6 +10,7 @@ use App\Compliment;
 use App\Norm;
 use App\NormsOfArea;
 use App\Review;
+use App\Validity;
 
 use Tools\Query\Reviews;
 class HomeController extends Controller {
@@ -72,11 +73,11 @@ class HomeController extends Controller {
 
         $compliments = Compliment::orderBy('id', 'ASC')->get()->count();
 
-        $por_compliments = ($compliments? 100 * ($compliments/$problems):0);
+        $por_compliments = round(($compliments? 100 * ($compliments/$problems):0),2);
         //TODO Asignar al ultimo validate
         //TODO Agregar avance total
         $lastv = Reviews::lastValidity();
-
+        
         $calendar_validities = Reviews::getMonthValidities();
         
         $solved = Review::where('reviews.validity_id','=',($lastv? $lastv->id:0))

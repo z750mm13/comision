@@ -105,7 +105,7 @@
         //Funcion de notas del área
         onRegionTipShow: function(event, tip, code){
           let element = nombres[code];
-          tip.html(element.nombre+" ("+element.area+")<br>"+element.problemas);
+          tip.html(element.nombre+" ("+element.area+")<br>Problemas: "+element.problemas);
         },
         onViewportChange: function(e, scale, transX, transY){
             console.log('viewportChange', scale, transX, transY);

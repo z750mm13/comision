@@ -29,19 +29,17 @@ if($validity) {
     'image' => null,
     'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+@if($areas)
+<li class="breadcrumb-item active" aria-current="page">Evaluación</li>
+@else
+<li class="breadcrumb-item"><a href="/reviews">Evaluación</a></li>
+<li class="breadcrumb-item active" aria-current="page">Zonas a evaluar</li>
+@endif
+@endpush
 
 @section('bodycontent')
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
-    @if($areas)
-    <li class="breadcrumb-item active" aria-current="page">Evaluaciones</li>
-    @else
-    <li class="breadcrumb-item"><a href="/reviews">Evaluaciones</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Zonas a evaluar</li>
-    @endif
-  </ol>
-</nav>
 <div class="card-deck">
   @if($validity != null)
   @if($areas)

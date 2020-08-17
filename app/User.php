@@ -12,6 +12,7 @@ use App\Notifications\MyVerifyEmail;
 class User extends Authenticatable  implements MustVerifyEmail {
     use Notifiable;
     use SoftDeletes;
+    use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
     /**
      * The attributes that are mass assignable.
@@ -45,7 +46,21 @@ class User extends Authenticatable  implements MustVerifyEmail {
     }
 
     public function commitments() {
-        return $this->hasMany('App\Commitment');
+        return $this->hasMany(Commitment::class);
+    }
+
+    public function guards() {
+        return $this->hasManyThrough('App\Guard', 'App\Cordinate');
+    }
+
+    public function areas() {
+        return
+        $this->hasManyDeepFromRelations($this->guards(), (new Guard)->area());
+    }
+
+    public function subareas() {
+        return
+        $this->hasManyDeepFromRelations($this->areas(), (new Area)->subareas());
     }
 
     public function sendPasswordResetNotification($token) {
