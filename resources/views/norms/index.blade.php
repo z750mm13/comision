@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{$norm->asignado}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$norm->asignado}}%;"></div>
+          <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="{{$norm->asignado}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$norm->asignado}}%;"></div>
         </div>
       </div>
       <a class="stretched-link" href="/norms/{{$norm->id}}" class="card-link">Ver mas...</a>

@@ -4,6 +4,11 @@
     'titlebody' => $area->nombre.' '.$area->area,
     'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/areas">Áreas</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edición de área</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">

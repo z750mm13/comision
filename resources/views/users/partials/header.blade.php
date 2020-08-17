@@ -1,9 +1,18 @@
-<div class="header pb-8 pt-5 pt-lg-6 d-flex align-items-center" style="@if(isset($bg) && $bg)background-image: url({{$bg}});@endif background-size: cover; background-position: center top;">
+<div class="header pb-8 pt-4 d-flex align-items-center" style="@if(isset($bg) && $bg)background-image: url({{$bg}});@endif background-size: cover; background-position: center top;">
     <!-- Mask -->
     <span class="mask bg-gradient-default opacity-8"></span>
     <!-- Header container -->
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
+            <div class="col-12">
+                <h6 class="h2 text-white d-inline-block mb-0">{{$title}}</h6>
+                <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                        @stack('bread')
+                    </ol>
+                </nav>
+            </div>
+            <div class="col-12 pt-5"></div>
             @if(isset($image) && $image)
             <div class="col-lg-3">
                 <div class="card-profile-image">

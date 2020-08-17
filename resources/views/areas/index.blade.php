@@ -10,7 +10,10 @@
     'urlbutton' => __('/areas'),
     'instalaciones' => 'active'
 ])
-
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item active" aria-current="page">Áreas</li>
+@endpush
 @section('bodycontent')
 <div class="card-deck">
   @foreach($areas as $area)
