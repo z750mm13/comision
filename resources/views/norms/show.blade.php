@@ -5,6 +5,11 @@
   'descriptions' => [$norm->titulo, 'Direccion: '. $norm->direccion],
   'normativa' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/norms">Normas</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{$norm->codigo}}</li>
+@endpush
 
 @push('hd')
 <div class="progress-wrapper">
