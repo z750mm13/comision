@@ -6,6 +6,22 @@
   'normativa' => 'active'
 ])
 
+@push('hd')
+<div class="progress-wrapper">
+  <div class="progress-info">
+    <div class="progress-label">
+      <span class="bg-trasparent text-white">Asignación</span>
+    </div>
+    <div class="progress-percentage">
+      <span class="text-white">60%</span>
+    </div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+  </div>
+</div>
+@endpush
+
 @section('bodycontent')
 <div class="card-deck">
   @foreach($norm->requirements as $requirement)

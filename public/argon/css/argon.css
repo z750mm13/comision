@@ -2491,10 +2491,10 @@ pre code
 .form-control:focus
 {
     color: #8898aa;
-    border-color: #3490dc;
+    border-color: #7d868d;
     outline: 0;
     background-color: #fff;
-    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 .form-control::-ms-input-placeholder
 {
@@ -3112,7 +3112,7 @@ fieldset:disabled a.btn
 .btn-primary:focus,
 .btn-primary.focus
 {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 0 rgba(94, 114, 228, .5);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 0 rgba(52, 144, 220, .5);
 }
 .btn-primary.disabled,
 .btn-primary:disabled
@@ -3592,7 +3592,7 @@ fieldset:disabled a.btn
 .btn-outline-primary:focus,
 .btn-outline-primary.focus
 {
-    box-shadow: 0 0 0 0 rgba(94, 114, 228, .5);
+    box-shadow: 0 0 0 0 rgba(52, 144, 220, .5);
 }
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled
@@ -3612,7 +3612,7 @@ fieldset:disabled a.btn
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus
 {
-    box-shadow: 0 0 0 0 rgba(94, 114, 228, .5);
+    box-shadow: 0 0 0 0 rgba(52, 144, 220, .5);
 }
 
 .btn-outline-secondary
@@ -4876,7 +4876,7 @@ input[type='button'].btn-block
 }
 .custom-control-input:focus ~ .custom-control-label::before
 {
-    box-shadow: 0 3px 2px rgba(233, 236, 239, .05), 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 3px 2px rgba(233, 236, 239, .05), 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 .custom-control-input:focus:not(:checked) ~ .custom-control-label::before
 {
@@ -4964,12 +4964,12 @@ input[type='button'].btn-block
 
 .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before
 {
-    background-color: rgba(94, 114, 228, .5);
+    background-color: rgba(52, 144, 220, .5);
 }
 
 .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before
 {
-    background-color: rgba(94, 114, 228, .5);
+    background-color: rgba(52, 144, 220, .5);
 }
 
 .custom-radio .custom-control-label::before
@@ -4984,7 +4984,7 @@ input[type='button'].btn-block
 
 .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before
 {
-    background-color: rgba(94, 114, 228, .5);
+    background-color: rgba(52, 144, 220, .5);
 }
 
 .custom-switch
@@ -5029,7 +5029,7 @@ input[type='button'].btn-block
 }
 .custom-switch .custom-control-input:disabled:checked ~ .custom-control-label::before
 {
-    background-color: rgba(94, 114, 228, .5);
+    background-color: rgba(52, 144, 220, .5);
 }
 
 .custom-select
@@ -5131,7 +5131,7 @@ input[type='button'].btn-block
 .custom-file-input:focus ~ .custom-file-label
 {
     border-color: #3490dc;
-    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 .custom-file-input:disabled ~ .custom-file-label
 {
@@ -5207,15 +5207,15 @@ input[type='button'].btn-block
 }
 .custom-range:focus::-webkit-slider-thumb
 {
-    box-shadow: 0 0 0 1px #f8f9fe, 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 0 0 1px #f8f9fe, 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 .custom-range:focus::-moz-range-thumb
 {
-    box-shadow: 0 0 0 1px #f8f9fe, 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 0 0 1px #f8f9fe, 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 .custom-range:focus::-ms-thumb
 {
-    box-shadow: 0 0 0 1px #f8f9fe, 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 0 0 1px #f8f9fe, 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 .custom-range::-moz-focus-outer
 {
@@ -19191,7 +19191,7 @@ a.btn-icon-only
 
 .custom-checkbox .custom-control-input:disabled:checked::before
 {
-    border-color: rgba(94, 114, 228, .5);
+    border-color: rgba(52, 144, 220, .5);
 }
 
 .custom-control-label::before
@@ -19271,7 +19271,7 @@ a.btn-icon-only
 
 .custom-checkbox .custom-control-input:disabled:checked::before
 {
-    border-color: rgba(94, 114, 228, .5);
+    border-color: rgba(52, 144, 220, .5);
 }
 
 .custom-checkbox-primary .custom-control-input:checked ~ .custom-control-label::before
@@ -19432,7 +19432,7 @@ a.btn-icon-only
 
 .custom-radio .custom-control-input:disabled:checked::before
 {
-    border-color: rgba(94, 114, 228, .5);
+    border-color: rgba(52, 144, 220, .5);
 }
 
 .custom-toggle
@@ -20229,7 +20229,7 @@ textarea[resize='horizontal']
 
 .focused .input-group
 {
-    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 
 .focused .input-group-text
@@ -23738,7 +23738,7 @@ textarea[resize='horizontal']
 
     color: #3490dc;
     border-radius: 30px; 
-    background: rgba(94, 114, 228, .1);
+    background: rgba(52, 144, 220, .1);
 }
 
 .progress-percentage
@@ -27849,7 +27849,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
     border-color: #3490dc;
     outline: 0;
     background-color: #fff;
-    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 .ql-editor:focus
 {
@@ -28118,7 +28118,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 .ql-tooltip.ql-editing .ql-action::before:focus,
 .ql-tooltip.ql-editing .ql-action::before.focus
 {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 0 rgba(94, 114, 228, .5);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 0 rgba(52, 144, 220, .5);
 }
 .ql-tooltip .ql-action::before.disabled,
 .ql-tooltip .ql-action::before:disabled,
@@ -28147,7 +28147,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 .ql-tooltip.ql-editing .ql-action::before:not(:disabled):not(.disabled).active:focus,
 .show > .ql-tooltip.ql-editing .ql-action::before.dropdown-toggle:focus
 {
-    box-shadow: none, 0 0 0 0 rgba(94, 114, 228, .5);
+    box-shadow: none, 0 0 0 0 rgba(52, 144, 220, .5);
 }
 
 .ql-tooltip .ql-action::before
@@ -29429,7 +29429,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
     border-color: #3490dc;
     outline: 0;
     background-color: #fff;
-    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, .1);
+    box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(52, 144, 220, .1);
 }
 .select2-container .select2-selection--single::-ms-input-placeholder,
 .select2-container--default.select2-container--focus .select2-selection--multiple::-ms-input-placeholder,

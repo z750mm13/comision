@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Norm;
 use App\Requirements;
 use App\Questionnaire;
@@ -27,7 +28,9 @@ class NormController extends Controller {
      */
     public function index() {
         // TODO Filtrar el uso de normas
-        $norms=Norm::orderBy('codigo', 'ASC')->get();
+        $norms=Norm::select(DB::raw("norms.*, 60 as asignado"))
+        ->orderBy('codigo', 'ASC')
+        ->get();
         return view('norms.index',compact('norms'));
     }
 

@@ -19,6 +19,7 @@
                     @foreach($descriptions as $description)
                         <p class="text-white">{{ $description }}</p>
                     @endforeach
+                    @stack('hd')
                 </div>
                 @endif
             </div>
@@ -28,8 +29,9 @@
                 @if (isset($descriptions) && $descriptions)
                 <div class="mb-5">
                     @foreach($descriptions as $description)
-                            <p class="text-white">{{ $description }}</p>
+                        <p class="text-white">{{ $description }}</p>
                     @endforeach
+                    @stack('hd')
                 </div>
                 @endif
             </div>
