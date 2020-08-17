@@ -2,29 +2,13 @@
   'title' => $norm->codigo,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la norma',
-  'descriptions' => [$norm->titulo, 'Direccion: '. $norm->direccion],
+  'descriptions' => [$norm->titulo, 'Direccion: '. $norm->direccion, 'Asignación: '. '60'. '%'],
   'normativa' => 'active'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
 <li class="breadcrumb-item"><a href="/norms">Normas</a></li>
 <li class="breadcrumb-item active" aria-current="page">{{$norm->codigo}}</li>
-@endpush
-
-@push('hd')
-<div class="progress-wrapper">
-  <div class="progress-info">
-    <div class="progress-label">
-      <span class="bg-trasparent text-white">Asignación</span>
-    </div>
-    <div class="progress-percentage">
-      <span class="text-white">60%</span>
-    </div>
-  </div>
-  <div class="progress">
-    <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-  </div>
-</div>
 @endpush
 
 @section('bodycontent')
