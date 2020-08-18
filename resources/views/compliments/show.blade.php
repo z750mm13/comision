@@ -20,6 +20,11 @@ use Tools\Utils\Fecha;
   'actividades' => 'active',
   'hsize' => 'col-md-10'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/compliments">Cumplimientos</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{$compliment->commitment->user->rol. '/'. '['. $subarea->nombre."-".$subarea->area->nombre. ']'}}</li>
+@endpush
 
 @push('aditional')
 <div class="col-md-2">
