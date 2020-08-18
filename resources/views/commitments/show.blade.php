@@ -17,6 +17,11 @@ use Tools\Utils\Fecha;
   ],
   'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/commitments">Compromisos</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{$commitment->review->target->subarea->nombre." [".$commitment->review->target->subarea->area->nombre."/".$commitment->review->target->subarea->area->area."]"}}</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">

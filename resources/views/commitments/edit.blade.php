@@ -4,6 +4,12 @@
     'titlebody' => 'Compromiso',
     'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/commitments">Compromisos</a></li>
+<li class="breadcrumb-item"><a href="/commitments/{{$commitment->id}}">{{$commitment->review->target->subarea->nombre." [".$commitment->review->target->subarea->area->nombre."/".$commitment->review->target->subarea->area->area."]"}}</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edición de compromiso</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
