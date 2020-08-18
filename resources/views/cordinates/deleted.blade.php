@@ -12,6 +12,11 @@
     'piconb' => 'fas fa-trash-restore',
     'purlb' => 'restore'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/cordinates">Roles</a></li>
+<li class="breadcrumb-item active" aria-current="page">Roles eliminados</li>
+@endpush
 
 <?php
 use Carbon\Carbon;

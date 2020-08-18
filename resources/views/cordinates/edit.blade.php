@@ -4,6 +4,12 @@
     'titlebody' => 'Responsable',
     'personal' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/cordinates">Roles</a></li>
+<li class="breadcrumb-item"><a href="/cordinates/{{$cordinate->id}}">{{$cordinate->user->nombre." ".$cordinate->user->apellidos}}</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edición de rol</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">

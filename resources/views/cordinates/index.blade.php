@@ -9,6 +9,10 @@
     'personal' => 'active',
     'urlbutton' => __('/cordinates'),
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item active" aria-current="page">Roles</li>
+@endpush
 
 @section('bodycontent')
 <h1>Coordinación</h1>
