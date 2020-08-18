@@ -4,6 +4,12 @@
     'titlebody' => $norm->codigo,
     'normativa' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/norms">Normas</a></li>
+<li class="breadcrumb-item"><a href="/norms/{{$norm->id}}">{{$norm->codigo}}</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edición de norma</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
