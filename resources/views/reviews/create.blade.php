@@ -4,6 +4,12 @@
     'titlebody' => 'Evaluación',
     'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/reviews">Evaluación</a></li>
+<li class="breadcrumb-item"><a href="/reviews/areas/{{$subarea->area->id}}">Zonas a evaluar</a></li>
+<li class="breadcrumb-item active" aria-current="page">Evaluando</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
@@ -12,14 +18,6 @@
 @endsection
 
 @section('bodycontent')
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-    <li class="breadcrumb-item"><a href="/reviews">Evaluación</a></li>
-    <li class="breadcrumb-item"><a href="/reviews/subareas/{{$subarea->area->id}}">Zonas a evaluar</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Evaluando</li>
-  </ol>
-</nav>
 <form action="{{route('reviews.store')}}" method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
   {{ method_field('POST') }}

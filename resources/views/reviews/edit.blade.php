@@ -4,6 +4,12 @@
     'titlebody' => $subarea->nombre." [".$subarea->area->nombre."] Edición",
     'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/reviews">Evaluaciones</a></li>
+<li class="breadcrumb-item"><a href="/reviews/areas/{{$subarea->area->id}}">Zonas a evaluar</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edicion de evaluación</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
@@ -12,14 +18,6 @@
 @endsection
 
 @section('bodycontent')
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
-    <li class="breadcrumb-item"><a href="/reviews">Evaluaciones</a></li>
-    <li class="breadcrumb-item"><a href="/reviews/subareas/{{$subarea->area->id}}">Zonas a evaluar</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Edicion de evaluación</li>
-  </ol>
-</nav>
 <form action="{{route('reviews.update',[$subarea->id])}}" method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
   {{ method_field('PUT') }}
