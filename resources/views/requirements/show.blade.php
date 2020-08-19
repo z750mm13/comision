@@ -4,6 +4,11 @@
   'descriptions' => [$requirement->descripcion, 'Tipo: '. $requirement->tipo, 'Norma: '. $requirement->norm->codigo],
   'normativa' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/requirements">Requisitos</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{'Requisito '.$requirement->numero}}</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
