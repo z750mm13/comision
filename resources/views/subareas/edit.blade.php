@@ -4,6 +4,12 @@
     'titlebody' => $subarea->nombre.' '.$subarea->tipo,
     'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/subareas">Subáreas</a></li>
+<li class="breadcrumb-item"><a href="/subareas/{{$subarea->id}}">{{$subarea->nombre.' '.$subarea->area->nombre}}</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edición de subárea</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">

@@ -5,6 +5,11 @@
   'descriptions' => ['Ubicación del inmueble:'. $subarea->area->nombre, 'Planta: '. $subarea->area->area],
   'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/subareas">Subáreas</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{$subarea->nombre.' '.$subarea->area->nombre}}</li>
+@endpush
 
 @section('bodycontent')
 <div class="card-deck">

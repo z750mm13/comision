@@ -4,6 +4,11 @@
     'titlebody' => 'Subárea',
     'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/subareas">Subáreas</a></li>
+<li class="breadcrumb-item active" aria-current="page">Creación de subárea</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
