@@ -1,6 +1,5 @@
 @extends('layouts.content.default.form',[
   'title' => $user->nombre." ".$user->apellidos,
-  'image' => \Tools\Img\ToServer::getFile($user->foto),
   'descriptions' => [$user->rol],
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades del usuario',
@@ -10,6 +9,21 @@
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
 <li class="breadcrumb-item"><a href="/helpers">Personal de apoyo</a></li>
 <li class="breadcrumb-item active" aria-current="page">{{$user->nombre." ".$user->apellidos}}</li>
+@endpush
+
+@push('aditional')
+<div class="col-md-2">
+  <img class="rounded" src="{{\Tools\Img\ToServer::getFile($user->foto)}}" alt="evidencia" style="width: 10rem;" data-toggle="modal" data-target="#exampleModalCenter">
+</div>
+<div class="modal fade bg-transparent" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="bg-transparent transparent-border">
+      <div class="d-flex justify-content-center">
+        <img class="rounded" src="{{\Tools\Img\ToServer::getFile($user->foto)}}" alt="evidencia">
+      </div>
+    </div>
+  </div>
+</div>
 @endpush
 
 @section('bodycontent')
