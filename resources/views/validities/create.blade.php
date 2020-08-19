@@ -4,6 +4,11 @@
     'titlebody' => 'Evaluación',
     'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/validities">Evaluaciones</a></li>
+<li class="breadcrumb-item active" aria-current="page">Programación de evaluación</li>
+@endpush
 
 <?php use Carbon\Carbon; ?>
 

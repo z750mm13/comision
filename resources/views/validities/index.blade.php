@@ -4,12 +4,16 @@
       __('Las evaluaciones se podrán programar para su realización.'),
       __('En este apartado podrá programar las evaluaciones que se van a realizar durante el ciclo en las distintas áreas de la institución.')
   ],
-  'button' => __('Programar evaluaciones'),
+  'button' => __('Programar evaluación'),
   'urlbutton' => __('/validities'),
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades',
   'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item active" aria-current="page">Evaluaciones</li>
+@endpush
 
 <?php
 use Carbon\Carbon;

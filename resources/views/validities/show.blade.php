@@ -17,7 +17,7 @@ else
   $estado = 'En curso';
 ?>
 @extends('layouts.content.default.form',[
-  'title' => 'Evaluación programada',
+  'title' => 'Evaluación del '. Fecha::texto(Carbon::parse($validity->inicio)),
   'descriptions' => [
     'Feha de inicio programada '. Fecha::texto(Carbon::parse($validity->inicio)),
     'Ultimo día para realizar evaluación '. Fecha::texto(Carbon::parse($validity->fin)),
@@ -27,6 +27,11 @@ else
   'titlebody' => 'Propiedades del la evaluación',
   'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/validities">Evaluaciones</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{'Evaluación del '. Fecha::texto(Carbon::parse($validity->inicio))}}</li>
+@endpush
 
 @section('bodycontent')
 <div class="table-responsive">

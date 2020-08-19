@@ -1,11 +1,20 @@
+<?php 
+use Carbon\Carbon;
+use Tools\Utils\Fecha;
+?>
+
 @extends('layouts.content.default.form',[
     'title' => 'Edición de evaluación',
     'titlelist' => 'Acciones',
     'titlebody' => 'Evaluación',
     'actividades' => 'active'
 ])
-
-<?php use Carbon\Carbon; ?>
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/validities">Evaluaciones</a></li>
+<li class="breadcrumb-item"><a href="/validities/{{$validity->id}}">{{'Evaluación del '. Fecha::texto(Carbon::parse($validity->inicio))}}</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edición de evaluación</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
