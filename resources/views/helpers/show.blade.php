@@ -6,6 +6,12 @@
   'titlebody' => 'Propiedades del usuario',
   'personal' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/helpers">Personal de apoyo</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{$user->nombre." ".$user->apellidos}}</li>
+@endpush
+
 @section('bodycontent')
 @if(Auth::user()->admin & Auth::user()->id != $user->id)
   @if($user->active==false) <!-- helpers/active/{id?}  -->

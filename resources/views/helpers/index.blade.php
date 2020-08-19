@@ -10,6 +10,10 @@
     'urlbutton' => __('/helpers'),
     'personal' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item active" aria-current="page">Personal de apoyo</li>
+@endpush
 
 @section('bodycontent')
 <h1>Usuarios activos</h1>
