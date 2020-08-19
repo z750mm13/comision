@@ -5,6 +5,11 @@
   'titlebody' => 'Preguntas',
   'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/questionnaires">Cuestionarios</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{$questionnaire->tipo}}</li>
+@endpush
 
 @section('bodycontent')
 @foreach ($questionnaire->questions as $question)

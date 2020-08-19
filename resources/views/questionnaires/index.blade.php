@@ -10,6 +10,10 @@
     'urlbutton' => __('/questionnaires'),
     'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item active" aria-current="page">Cuestionarios</li>
+@endpush
 
 @section('bodycontent')
 <div class="card-deck">

@@ -12,6 +12,11 @@ $hoy = Carbon::now()->toDateString();
   'titlebody' => 'Problemas',
   'actividades' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/problems">Problemas</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{'Problemas de '. $subarea->area->nombre.'-'.$subarea->nombre}}</li>
+@endpush
 
 @section('bodycontent')
 <div class="container">
