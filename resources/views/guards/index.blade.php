@@ -10,6 +10,10 @@
     'urlbutton' => __('/guards'),
     'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item active" aria-current="page">Supervisores</li>
+@endpush
 
 @section('bodycontent')
 @foreach($users as $user)

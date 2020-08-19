@@ -4,6 +4,12 @@
     'titlebody' => 'Supervisor ('. $guard->cordinate->user->nombre. ')',
     'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/guards">Supervisores</a></li>
+<li class="breadcrumb-item"><a href="/guards/{{$guard->id}}">{{$guard->cordinate->user->nombre." ".$guard->cordinate->user->apellidos}}</a></li>
+<li class="breadcrumb-item active" aria-current="page">Edición de integrante</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">

@@ -4,6 +4,11 @@
   'descriptions' => ['Rol que desempeña: '. $guard->cordinate->rol, $guard->area->nombre. ' - '. $guard->area->area],
   'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/guards">Supervisores</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{$guard->cordinate->user->nombre." ".$guard->cordinate->user->apellidos}}</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
