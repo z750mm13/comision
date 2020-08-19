@@ -1,7 +1,6 @@
 @extends('layouts.content.nobody.show',[
   'title' => $cordinate->user->nombre." ".$cordinate->user->apellidos,
   'descriptions' => ['Rol que desempeña: '. $cordinate->rol],
-  'image' => \Tools\Img\ToServer::getFile($cordinate->user->foto),
   'titlelist' => 'Acciones',
   'personal' => 'active'
 ])
@@ -9,6 +8,21 @@
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
 <li class="breadcrumb-item"><a href="/cordinates">Roles</a></li>
 <li class="breadcrumb-item active" aria-current="page">{{$cordinate->user->nombre." ".$cordinate->user->apellidos}}</li>
+@endpush
+
+@push('aditional')
+<div class="col-md-2">
+  <img class="rounded" src="{{\Tools\Img\ToServer::getFile($cordinate->user->foto)}}" alt="evidencia" style="width: 10rem;" data-toggle="modal" data-target="#exampleModalCenter">
+</div>
+<div class="modal fade bg-transparent" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="bg-transparent transparent-border">
+      <div class="d-flex justify-content-center">
+        <img class="rounded" src="{{\Tools\Img\ToServer::getFile($cordinate->user->foto)}}" alt="evidencia">
+      </div>
+    </div>
+  </div>
+</div>
 @endpush
 
 @section('list')
