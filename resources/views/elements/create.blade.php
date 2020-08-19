@@ -4,6 +4,11 @@
     'titlebody' => 'Usuario',
     'personal' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/elements">Integrantes</a></li>
+<li class="breadcrumb-item active" aria-current="page">Inscripción de integrante</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">
