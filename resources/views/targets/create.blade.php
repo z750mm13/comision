@@ -4,6 +4,11 @@
     'titlebody' => 'Asignación',
     'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/targets">Tipos</a></li>
+<li class="breadcrumb-item active" aria-current="page">Asignación de tipo</li>
+@endpush
 
 @section('list')
 <ol class="list-unstyled">

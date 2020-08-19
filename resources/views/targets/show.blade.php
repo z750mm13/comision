@@ -9,6 +9,11 @@
   'titlebody' => 'Propiedades del área',
   'instalaciones' => 'active'
 ])
+@push('bread')
+<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="/targets">Tipos</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{$target->subarea->nombre." [".$target->subarea->area->nombre." ".$target->subarea->area->area."]"}}</li>
+@endpush
 
 <?php
   use Carbon\Carbon;
