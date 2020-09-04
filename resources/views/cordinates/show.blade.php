@@ -2,7 +2,8 @@
   'title' => $cordinate->user->nombre." ".$cordinate->user->apellidos,
   'descriptions' => ['Rol que desempeña: '. $cordinate->rol],
   'titlelist' => 'Acciones',
-  'personal' => 'active'
+  'personal' => 'active',
+  'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

@@ -2,7 +2,8 @@
     'title' => 'Agregar área',
     'titlelist' => 'Acciones',
     'titlebody' => 'Área',
-    'instalaciones' => 'active'
+    'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

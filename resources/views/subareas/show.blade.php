@@ -3,7 +3,8 @@
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la subárea',
   'descriptions' => ['Ubicación del inmueble:'. $subarea->area->nombre, 'Planta: '. $subarea->area->area],
-  'instalaciones' => 'active'
+  'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

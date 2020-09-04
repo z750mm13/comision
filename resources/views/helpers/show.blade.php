@@ -3,7 +3,8 @@
   'descriptions' => [$user->rol],
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades del usuario',
-  'personal' => 'active'
+  'personal' => 'active',
+  'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

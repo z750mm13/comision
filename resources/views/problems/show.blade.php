@@ -10,7 +10,8 @@ $hoy = Carbon::now()->toDateString();
   'title' => 'Problemas de '. $subarea->area->nombre.'-'.$subarea->nombre,
   'titlelist' => 'Acciones',
   'titlebody' => 'Problemas',
-  'actividades' => 'active'
+  'actividades' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

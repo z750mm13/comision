@@ -2,7 +2,8 @@
     'title' => $cordinate->rol,
     'titlelist' => 'Acciones',
     'titlebody' => 'Responsable',
-    'personal' => 'active'
+    'personal' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

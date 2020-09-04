@@ -7,7 +7,8 @@ use Tools\Utils\Fecha;
     'title' => 'Edición de evaluación',
     'titlelist' => 'Acciones',
     'titlebody' => 'Evaluación',
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
@@ -29,17 +30,52 @@ use Tools\Utils\Fecha;
     {{method_field('PUT')}}
 
     <div class="form-group">
-        <label for="validity-inicio">Fecha de inicio del cuestionario:</label>
-        <input value="{{$validity->inicio}}" type="date" style="resize:vertical" id="validity-inicio" name="inicio" required value="{{ old('inicio') }}" class="form-control  @if($errors->first('inicio')) is-invalid @endif" min="{{$validity->inicio}}"/>
-        <small class="text-danger">{{ $errors->first('inicio') }}</small>
-    </div>
-    <div class="form-group">
         <label for="validity-fin">Ultimo día de aplicación del cuestionario:</label>
-        <input value="{{$validity->fin}}" type="date" style="resize:vertical" id="validity-fin" name="fin" required value="{{ old('fin') }}" class="form-control  @if($errors->first('fin')) is-invalid @endif" min="{{$validity->inicio}}"/>
-        <small class="text-danger">{{ $errors->first('fin') }}</small>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+            </div>
+            <input name="fin" class="form-control datepicker" placeholder="Fecha final" type="text" value="{{ old('fin', Carbon::parse($validity->fin)->format('d/m/Y')) }}">
+        </div>
     </div>
     <div class="form-group">
         <input type="submit"  class="btn btn-primary " name="submit"  value="Guardar">
     </div>
 </form>
 @endsection
+
+@push('js')
+<script src="{{ asset('argon') }}/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="{{ asset('argon') }}/vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js"></script>
+<script src="{{ asset('argon') }}/vendor/moment/min/moment.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        //
+        // Bootstrap Datepicker
+        //
+        'use strict';
+        var Datepicker = (function() {
+            // Variables
+            var $datepicker = $('.datepicker');
+    
+            // Methods
+            function init($this) {
+                var options = {
+                    disableTouchKeyboard: true,
+                    autoclose: false,
+                    useCurrent: false,//2020/11/25
+                    startDate: new Date('{{Carbon::parse($validity->inicio)->format("Y/m/d")}}')
+                };
+                $this.datepicker(options);
+            }
+    
+            // Events
+            if ($datepicker.length) {
+                $datepicker.each(function() {
+                    init($(this));
+                });
+            }
+        })();
+    });
+</script>
+@endpush

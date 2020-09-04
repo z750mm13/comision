@@ -23,24 +23,7 @@
   <div class="col-xl-8 order-xl-1">
     <div class="card bg-secondary shadow">
       <div class="card-header border-0">
-          <div class="row ">
-            <div class="col-6">
-              <h3 class="mb-0">{{ $titlebody }}</h3>
-            </div>
-            @if((Auth::user()->tipo == 'Apoyo' || Auth::user()->admin) && isset($urlbutton) && $urlbutton)
-            @if (isset($button) && $button)
-            <div class="col-6 text-right mt--5">
-            <a class="btn btn-primary btn-lg" href="{{$urlbutton}}/create" role="button">{{$button}}</a>
-            @else
-            <div class="col-6 text-right">
-            @endif
-            <a href="{{$urlbutton}}/deleted" class="btn btn-sm btn-danger btn-round btn-icon" data-toggle="tooltip" data-original-title="{{$titlebody}}">
-              <span class="btn-inner--icon"><i class="fas fa-trash"></i></span>
-              <span class="btn-inner--text">Eliminados</span>
-            </a>
-          </div>
-          @endif
-          </div>
+        <h3 class="mb-0">{{ $titlebody }}</h3>          
       </div>
       <div class="card-body">
         @yield('bodycontent')

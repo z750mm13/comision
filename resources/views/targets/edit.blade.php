@@ -2,7 +2,8 @@
     'title' => 'Edición de tipo de área',
     'titlelist' => 'Acciones',
     'titlebody' => $target->subarea->nombre." ".$target->subarea->area->nombre,
-    'instalaciones' => 'active'
+    'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

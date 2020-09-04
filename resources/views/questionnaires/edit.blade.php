@@ -2,7 +2,8 @@
     'title' => 'Edición de cuestionario',
     'titlelist' => 'Acciones',
     'titlebody' => 'Cuestionario',
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

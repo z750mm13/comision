@@ -2,7 +2,8 @@
     'title' => 'Evaluacion '.$subarea->nombre." [".$subarea->area->nombre."]",
     'titlelist' => 'Acciones',
     'titlebody' => $subarea->nombre." [".$subarea->area->nombre."] Edición",
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

@@ -2,7 +2,8 @@
   'title' => 'Requisito '.$requirement->numero,
   'titlelist' => 'Acciones',
   'descriptions' => [$requirement->descripcion, 'Tipo: '. $requirement->tipo, 'Norma: '. $requirement->norm->codigo],
-  'normativa' => 'active'
+  'normativa' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

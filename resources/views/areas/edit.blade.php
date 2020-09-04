@@ -2,7 +2,8 @@
     'title' => 'Edición de área',
     'titlelist' => 'Acciones',
     'titlebody' => $area->nombre.' '.$area->area,
-    'instalaciones' => 'active'
+    'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

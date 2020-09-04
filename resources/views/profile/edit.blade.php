@@ -5,7 +5,8 @@
         'bg' => asset('argon').'/img/theme/perfil.jpg',
         'title' => __('Hola') . ' '. auth()->user()->nombre. ' '. auth()->user()->apellidos,
         'description' => __('Esta es su página de perfil. Puede ver el progreso que ha logrado con su trabajo y visualizar tareas asignadas'),
-        'class' => 'col-lg-7'
+        'class' => 'col-lg-7',
+        'nodelete' => 'no'
     ])   
 
     <div class="container-fluid mt--7">

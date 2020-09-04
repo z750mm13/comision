@@ -2,7 +2,8 @@
     'title' => 'Agregar norma',
     'titlelist' => 'Acciones',
     'titlebody' => 'Norma',
-    'normativa' => 'active'
+    'normativa' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

@@ -2,7 +2,8 @@
     'title' => 'Asignar tipo',
     'titlelist' => 'Acciones',
     'titlebody' => 'Asignación',
-    'instalaciones' => 'active'
+    'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

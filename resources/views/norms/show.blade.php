@@ -3,7 +3,8 @@
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la norma',
   'descriptions' => [$norm->titulo, 'Direccion: '. $norm->direccion, 'Asignación: '. '60'. '%'],
-  'normativa' => 'active'
+  'normativa' => 'active',
+  'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
@@ -13,12 +14,17 @@
 
 @section('bodycontent')
 <div class="card-deck">
-  @foreach($norm->requirements as $requirement)
+  @foreach($requirements as $requirement)
     <div class="col-md-4 col-sm-6 col-xm-12">
-    <div class="card border-primary mb-3"> <!-- Borde primario -->
-      <div class="card-header">{{$requirement->numero}}</div>
-      <div class="card-body text-primary"> <!-- Texto primario -->
-        <h5 class="card-title">{{substr($requirement->descripcion, 0, 37)."..."}}</h5>
+    <div class="card mb-3"> <!-- Borde primario -->
+      <div class="card-body"> <!-- Texto primario -->
+        <h3 class="card-title mb-3">Requisito {{$requirement->numero}}</h3>
+        <p class="card-text mb-4">{{substr($requirement->descripcion, 0, 37)."..."}}</p>
+        @if($requirement->questionn)
+        <p class="card-text">Estado: <b class="text-success"> <i class="fas fa-check"></i> Actualmente está en uso.</b></p>
+        @else
+        <p class="card-text">Estado: <b class="text-danger"><i class="fas fa-times"></i> Actualmente no está en uso.</b></p>
+        @endif
         <a class="stretched-link" href="/requirements/{{$requirement->id}}" class="card-link">Ver mas...</a>
       </div>
     </div>

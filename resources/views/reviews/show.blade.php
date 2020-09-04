@@ -3,7 +3,8 @@
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la evaluación',
   'actividades' => 'active',
-  'hsize' => 'col-md-10'
+  'hsize' => 'col-md-10',
+    'nodelete' => 'no'
 ])
 
 @push('aditional')

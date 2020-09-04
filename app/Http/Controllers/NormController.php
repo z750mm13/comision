@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Norm;
-use App\Requirements;
+use App\Requirement;
 use App\Questionnaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -70,7 +70,13 @@ class NormController extends Controller {
      */
     public function show($id) {
         $norm = Norm::findOrFail($id);
-        return view('norms.show', compact('norm'));
+        $requirements = Requirement::select(DB::raw('requirements.*, count(questionnaires.id) as questionn'))
+        ->leftJoin('questionnaires', 'requirements.id', '=', 'questionnaires.requirement_id')
+        ->where('requirements.norm_id','=',$norm->id)
+        ->groupBy('requirements.id')
+        ->orderBy('numero')
+        ->get();
+        return view('norms.show', compact('norm','requirements'));
     }
 
     /**

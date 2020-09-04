@@ -5,12 +5,38 @@
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             <div class="col-12">
-                <h6 class="h2 text-white d-inline-block mb-0"></h6>
-                <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                        @stack('bread')
-                    </ol>
-                </nav>
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                @stack('bread')
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6 col-5 text-right">
+                        @if(Auth::user()->tipo == 'Apoyo' || Auth::user()->admin)
+                        @if (isset($button) && $button)
+                        <a href="{{$urlbutton}}/create" class="btn btn-sm btn-neutral">{{$button}}</a>
+                        @endif
+                        @if(!isset($nodelete))
+                        <a href="{{isset($urlbutton)? $urlbutton.'/deleted':'#'}}" class="btn btn-sm btn-neutral" data-toggle="tooltip" data-original-title="{{$titlebody}}"
+                        @if(!isset($urlbutton))
+                        onclick="
+                          let result =confirm('Esta seguro de restaurar?');
+                          if(result){
+                            event.preventDefault();
+                            document.getElementById('restore-form').submit();
+                          }
+                          "
+                        @endif
+                        >
+                          <span class="btn-inner--icon"><i class="{{$piconb ?? 'fas fa-trash'}}"></i></span>
+                          <span class="btn-inner--text">{{$pbutton ?? 'Eliminados'}}</span>
+                        </a>
+                        @endif
+                        @endif
+                    </div>
+                </div>
             </div>
             <div class="col-12 pt-5"></div>
             @if(isset($image) && $image)

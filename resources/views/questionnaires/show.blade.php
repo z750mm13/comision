@@ -3,7 +3,8 @@
   'titlelist' => 'Acciones',
   'descriptions' => ['Descripción: '. $questionnaire->descripcion, 'Con base a la norma: ['. $questionnaire->requirement->norm->codigo. '] '. $questionnaire->requirement->norm->titulo],
   'titlebody' => 'Preguntas',
-  'actividades' => 'active'
+  'actividades' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

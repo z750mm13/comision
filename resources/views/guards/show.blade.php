@@ -2,7 +2,8 @@
   'title' => $guard->cordinate->user->nombre." ".$guard->cordinate->user->apellidos,
   'titlelist' => 'Acciones',
   'descriptions' => ['Rol que desempeña: '. $guard->cordinate->rol, $guard->area->nombre. ' - '. $guard->area->area],
-  'instalaciones' => 'active'
+  'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

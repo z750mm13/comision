@@ -2,7 +2,8 @@
     'title' => 'Nuevo apoyo',
     'titlelist' => 'Acciones',
     'titlebody' => 'Usuario',
-    'personal' => 'active'
+    'personal' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

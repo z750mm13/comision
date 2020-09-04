@@ -18,7 +18,8 @@ use Tools\Utils\Fecha;
     'Fecha de edicion: '. Fecha::texto(Carbon::parse($compliment->updated_at))
   ],
   'actividades' => 'active',
-  'hsize' => 'col-md-10'
+  'hsize' => 'col-md-10',
+  'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
