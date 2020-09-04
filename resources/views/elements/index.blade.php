@@ -37,7 +37,7 @@
     <div class="col-md-4 col-sm-6 col-xm-12">
     <div class="card mb-3"> <!-- Borde primario primary danger warning -->
       <div class="card-body text-center"> <!-- Texto primario -->
-        <p><img src="{{\Tools\Img\ToServer::getFile($element->foto)}}" alt="avatar" class="rounded-circle" style="width: 10rem;"></p>
+        <p><img src="{{\Tools\Img\ToServer::getFile($element->foto)}}" alt="avatar" class="rounded-circle" style="width: 130px;"></p>
         <h5 class="card-title">{{$element->nombre." ".$element->apellidos}}</h5>
         <a class="stretched-link" href="/elements/{{$element->id}}" class="card-link">Ver más...</a>
       </div>
