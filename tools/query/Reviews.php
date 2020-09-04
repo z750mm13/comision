@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Validity;
 use App\Target;
 use App\Review;
+use App\Question;
 
 class Reviews {
     public static function lastValidity() {
@@ -52,6 +53,17 @@ class Reviews {
         ->get();
     }
 
+    public static function toResolvedQuestions($subarea) {
+        return Question::select('questions.*')
+        ->join('questionnaires', 'questionnaires.id', '=', 'questions.questionnaire_id')
+        ->join('targets', 'targets.questionnaire_id', '=', 'questionnaires.id')
+        ->join('subareas', 'subareas.id', '=', 'targets.subarea_id')
+        ->where([
+            ['subareas.id', $subarea->id]
+            ])
+        ->get()->count();
+    }
+
     public static function resolvedQuestionsArea($area, $validity) {
         return Review::select('reviews.*')
         ->join('validities', 'validities.id', '=', 'reviews.validity_id')
@@ -63,6 +75,18 @@ class Reviews {
             ['validities.id', $validity->id]
             ])
         ->get();
+    }
+
+    public static function toResolvedQuestionsArea($area) {
+        return Question::select('questions.*')
+        ->join('questionnaires', 'questionnaires.id', '=', 'questions.questionnaire_id')
+        ->join('targets', 'targets.questionnaire_id', '=', 'questionnaires.id')
+        ->join('subareas', 'subareas.id', '=', 'targets.subarea_id')
+        ->join('areas', 'areas.id', '=', 'subareas.area_id')
+        ->where([
+            ['areas.id', $area->id]
+            ])
+        ->get()->count();
     }
 
     public static function toResolve() {

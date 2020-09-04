@@ -53,7 +53,7 @@ if($validity) {
     <div class="card-body text-primary"> <!-- Texto primario -->
       <h5 class="card-title">Area: {{$area->nombre}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Descripción del examen</h6>
-      <p class="card-text">Se han realizado: {{$resolved}}</p>
+      <p class="card-text">Se han realizado: {{$resolved}} de {{Reviews::toResolvedQuestionsArea($area)}}</p>
       <a class="stretched-link" href="/reviews/areas/{{$area->id}}" class="card-link">Ver zonas a evaluar.</a>
     </div>
   </div>
@@ -74,7 +74,7 @@ if($validity) {
     <div class="card-body text-primary"> <!-- Texto primario -->
       <h5 class="card-title">Nombre: {{$subarea->nombre}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Descripcion del examen</h6>
-      <p class="card-text">Se han realizado: {{$resolved}} preguntas.</p>
+      <p class="card-text">Se han realizado: {{$resolved}} preguntas de {{Reviews::toResolvedQuestions($subarea)}}.</p>
       @if($restante>-1)
       @if($resolved == 0)
       <a href="/reviews/create/{{$subarea->id}}" class="btn btn-primary">Realizar</a>

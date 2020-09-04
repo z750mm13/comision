@@ -76,7 +76,7 @@ class HomeController extends Controller {
         $por_compliments = round(($compliments? 100 * ($compliments/$problems):0),2);
         //TODO Asignar al ultimo validate
         //TODO Agregar avance total
-        $lastv = Reviews::lastValidity();
+        $lastv = Reviews::getCurrentValidity();
         
         $calendar_validities = Reviews::getMonthValidities();
         
