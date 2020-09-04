@@ -1,7 +1,7 @@
 <nav class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container px-4">
         <a class="navbar-brand" href="/">
-            <img src="{{ asset('argon') }}/img/brand/chaleco-blnc.svg" />
+            <img src="{{ asset('argon') }}/img/brand/chaleco-blnc.png" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
