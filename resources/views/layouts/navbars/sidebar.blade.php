@@ -33,7 +33,7 @@
                     @if(Auth::user()->admin)
                     <li class="nav-item">
                       <a class="nav-link {{ $personal ?? '' }}" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-personal">
-                        <i class="fas fa-user text-success"></i>
+                        <i class="fas fa-user text-red"></i>
                         <span class="nav-link-text">{{ __('Personal de la comisión') }}</span>
                       </a>
                       <div class="collapse {{ isset($personal)? 'show':'' }}" id="navbar-personal">
@@ -56,7 +56,7 @@
                     @endif
                     <li class="nav-item">
                         <a class="nav-link {{ $normativa ?? '' }}" href="#navbar-normativa" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="fas fa-book text-info"></i>
+                            <i class="fas fa-book text-orange"></i>
                             <span class="nav-link-text">{{ __('Normativa') }}</span>
                         </a>
     
@@ -77,7 +77,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ $instalaciones ?? '' }}" href="#navbar-intalaciones" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="fas fa-city text-orange"></i>
+                            <i class="fas fa-city text-yellow"></i>
                             <span class="nav-link-text">{{ __('Instalaciones') }}</span>
                         </a>
     
@@ -112,7 +112,7 @@
     
                     <li class="nav-item">
                         <a class="nav-link {{ $actividades ?? '' }}" href="#navbar-actividades" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="ni ni-archive-2 text-pink"></i>
+                            <i class="ni ni-archive-2 text-blue"></i>
                             <span class="nav-link-text">{{ __('Actividades') }}</span>
                         </a>
     
@@ -151,6 +151,30 @@
                             </ul>
                         </div>
                     </li>
+                    @if(Auth::user()->admin)
+                    <li class="nav-item">
+                      <a class="nav-link {{ $estadistica ?? '' }}" href="#navbar-estadistica" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-estadistica">
+                        <i class="ni ni-chart-pie-35 text-green"></i>
+                        <span class="nav-link-text">{{ __('Estadísticas') }}</span>
+                      </a>
+                      <div class="collapse {{ isset($estadistica)? 'show':'' }}" id="navbar-estadistica">
+                        <ul class="nav nav-sm flex-column">
+                          <li class="nav-item">
+                              <a href="{{ route('elements.index') }}" class="nav-link">{{ __('Integrantes de la comisión') }}</a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="{{ route('helpers.index') }}" class="nav-link">{{ __('Apoyo de la comisión') }}</a>
+                          </li>
+                          <li class="dropdown-divider"></li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ route('cordinates.index') }}">
+                                  {{ __('Roles') }}
+                              </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    @endif
                     @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">
