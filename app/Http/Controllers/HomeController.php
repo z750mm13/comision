@@ -74,8 +74,28 @@ class HomeController extends Controller {
         $compliments = Compliment::orderBy('id', 'ASC')->get()->count();
 
         $por_compliments = round(($compliments? 100 * ($compliments/$problems):0),2);
-        //TODO Asignar al ultimo validate
         //TODO Agregar avance total
+        //TODO Agregar grafica de avance total
+        //TODO completar tabla de áreas
+        //TODO completar tabla de normas
+        $validities = Validity::select(DB::raw('inicio, count(reviews.id) problemas, count(commitments.id) compromisos, count(compliments.id) cumplimientos'))
+        ->leftJoin('reviews', function ($join) {
+            $join->on(
+                'reviews.validity_id', '=', 'validities.id'
+            )
+            ->where([
+                ['reviews.valor', false]
+            ]);
+        })
+        ->leftJoin('commitments', 'commitments.review_id', '=', 'reviews.id')
+        ->leftJoin('compliments', 'compliments.commitment_id', '=', 'commitments.id')
+        ->where('fin','<', now()->toDateString())
+        ->groupBy('validities.id', 'inicio')
+        ->orderByDesc('inicio')
+        ->limit(6)
+        ->get();
+        $validities = $validities->reverse();
+        
         $lastv = Reviews::getCurrentValidity();
         
         $calendar_validities = Reviews::getMonthValidities();
@@ -89,7 +109,7 @@ class HomeController extends Controller {
         
         return view('dashboard',compact(
             'subareas','areas','problems','compliments','por_compliments',
-            'solved', 'por_solved', 'norms', 'calendar_validities'
+            'solved', 'por_solved', 'norms', 'calendar_validities','validities'
         ));
     }
 }

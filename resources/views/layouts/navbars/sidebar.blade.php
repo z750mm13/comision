@@ -44,7 +44,7 @@
                           <li class="nav-item">
                               <a href="{{ route('helpers.index') }}" class="nav-link">{{ __('Apoyo de la comisión') }}</a>
                           </li>
-                          <li class="dropdown-divider"></li>
+                          <hr class="my-3">
                           <li class="nav-item">
                               <a class="nav-link" href="{{ route('cordinates.index') }}">
                                   {{ __('Roles') }}
@@ -94,7 +94,7 @@
                                     </a>
                                 </li>
                                 @if(Auth::user()->admin)
-                                <li class="dropdown-divider"></li>
+                                <hr class="my-3">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('guards.index') }}">
                                         {{ __('Encargados de las áreas') }}
@@ -136,7 +136,7 @@
                                     </a>
                                 </li>
                                 @if(Auth::user()->admin)
-                                <li class="dropdown-divider"></li>
+                                <hr class="my-3">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('commitments.index') }}">
                                         {{ __('Compromisos prometidos') }}
@@ -165,7 +165,7 @@
                           <li class="nav-item">
                               <a href="{{ route('helpers.index') }}" class="nav-link">{{ __('Apoyo de la comisión') }}</a>
                           </li>
-                          <li class="dropdown-divider"></li>
+                          <hr class="my-3">
                           <li class="nav-item">
                               <a class="nav-link" href="{{ route('cordinates.index') }}">
                                   {{ __('Roles') }}

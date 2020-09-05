@@ -3,7 +3,6 @@
 @section('content')
     @include('layouts.headers.cards',
     compact('problems', 'compliments', 'por_compliments', 'solved', 'por_solved'))
-    
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-4">
@@ -86,9 +85,9 @@
                     </div>
                     <div class="card-body">
                         <!-- Chart -->
-                        <div class="chart">
-                            <canvas id="chart-bar-stacked" class="chart-canvas"></canvas>
-                        </div>
+                        @include('components.chart.problems',[
+                            'validities' => $validities
+                        ])
                     </div>
                 </div>
             </div>
@@ -102,7 +101,7 @@
                                 <h3 class="mb-0">Áreas</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="{{ route('areas.index') }}" class="btn btn-sm btn-primary">See all</a>
+                                <a href="{{ route('areas.index') }}" class="btn btn-sm btn-primary">Ver todo</a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +146,7 @@
                                 <h3 class="mb-0">Normas</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="{{ route('norms.index') }}" class="btn btn-sm btn-primary">See all</a>
+                                <a href="{{ route('norms.index') }}" class="btn btn-sm btn-primary">Ver todo</a>
                             </div>
                         </div>
                     </div>
@@ -192,8 +191,3 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
-
-@push('js')
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
-@endpush
