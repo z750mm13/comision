@@ -2,7 +2,7 @@
     'title' => 'Edición compromiso',
     'titlelist' => 'Acciones',
     'titlebody' => 'Compromiso',
-    'actividades' => 'active'
+    'actividades' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')

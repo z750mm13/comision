@@ -27,7 +27,7 @@
       </div>
       <div class="card-body">
         @yield('bodycontent')
-      </div>
+      </div>                                                                                                                                                                                      
   </div>
     
   </div>
