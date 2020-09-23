@@ -24,7 +24,7 @@
   {{ method_field('POST') }}
 
   <div class="form-group">
-    @if(Auth::user()->user == null)
+    @if(!$id)
       <label for="commitment-user">Responsable:</label>
       <select name="user_id" id="commitment-user" require class="form-control  @if($errors->first('user_id')) is-invalid @endif" >
       <option value="0">Elije un responsable</option>
@@ -34,10 +34,11 @@
       </select>
       <small class="text-danger">{{ $errors->first('user_id') }}</small>
     @else
-      <input type="text" name="user_id" hidden value="{{Auth::user()->user->id}}">
+      <input type="text" name="user_id" hidden value="{{Auth::user()->id}}">
     @endif
   </div>
   <div class="form-group">
+    @if(!$review_id)
     <label for="commitment-norm">Necesidad:</label>
     <select name="review_id" id="commitment-review" require class="form-control  @if($errors->first('review_id')) is-invalid @endif" >
     <option value="0">Elije una necesidad</option>
@@ -46,6 +47,9 @@
     @endforeach
     </select>
     <small class="text-danger">{{ $errors->first('review_id') }}</small>
+    @else
+    <input type="text" name="review_id" hidden value="{{$review_id}}">
+    @endif
   </div>
   <div class="form-group">
     <label for="commitment-fecha">Fecha:</label>

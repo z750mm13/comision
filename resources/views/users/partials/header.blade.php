@@ -2,10 +2,11 @@
     <!-- Mask -->
     <span class="mask bg-gradient-default opacity-8"></span>
     <!-- Header container -->
-    <div class="container-fluid d-flex align-items-center">
+    <div class="container-fluid align-items-center">
         <div class="row">
             <div class="col-12">
                 <div class="row align-items-center py-4">
+                    @if (!(isset($nobread) && $nobread))
                     <div class="col-lg-6 col-7">
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
@@ -13,7 +14,8 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="col-lg-6 col-5 text-right">
+                    @endif
+                    <div class="@if (!(isset($nobread) && $nobread))col-lg-6 col-5 @else col-12 @endif text-right">
                         @if(Auth::user()->tipo == 'Apoyo' || Auth::user()->admin)
                         @if (isset($button) && $button)
                         <a href="{{$urlbutton}}/create" class="btn btn-sm btn-neutral">{{$button}}</a>

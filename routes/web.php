@@ -57,6 +57,8 @@ Route::get('helpers/admin/{id?}', 'HelperController@admin');          //
 //Ruta de desactivación de administración de usuario                  //
 Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');      //
 // ------------------------------------------------------------------ //
+//commitments/review/46/create
+Route::get('commitments/review/{id?}/{review_id?}/create', 'CommitmentController@create');//
 //Ruta de eliminación de áreas
 Route::get('areas/deleted', 'AreaController@deleted');
 //Ruta de restauración de áreas

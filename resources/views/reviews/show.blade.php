@@ -1,10 +1,21 @@
-@extends('layouts.content.default.form',[
+<?php
+if($review->commitments()->count())
+$botones = [];
+else
+$botones = [
+  'button' => __('Crear compromiso'),
+  'urlbutton' => __('/commitments/review/0/'.$review->id)
+];
+?>
+
+@extends('layouts.content.default.form',$botones+[
   'title' => $review->question->encabezado,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la evaluación',
   'actividades' => 'active',
   'hsize' => 'col-md-10',
-    'nodelete' => 'no'
+  'nodelete' => 'no',
+  'nobread' => 'no'
 ])
 
 @push('aditional')

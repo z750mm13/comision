@@ -32,7 +32,7 @@ class CommitmentController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id=null) {
+    public function create($id=null, $review_id=null) {
         $users = User::select('users.*')
         ->where([
             ['tipo','Apoyo'],
@@ -40,8 +40,7 @@ class CommitmentController extends Controller {
         ])
         ->get();
         $reviews = null;
-        if($id == null) {
-            $temp = [];
+        if(!$id) {
             $reviews = Review::whereNotIn('id',
                 Review::select('reviews.id')
                     ->join('commitments', 'reviews.id', '=', 'commitments.review_id')
@@ -51,7 +50,7 @@ class CommitmentController extends Controller {
             // Reviews que tengan compromisos y no se hayan cumplido
             // Reviews que no tengan compromisos
         }
-        return view('commitments.create', compact('id', 'users', 'reviews'));
+        return view('commitments.create', compact('id', 'users', 'review_id','reviews'));
     }
 
     /**

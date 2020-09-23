@@ -15,7 +15,7 @@ use Tools\Utils\Fecha;
     'Propuesta: '. $commitment->accion,
     'Responsable: '. $commitment->user->nombre. ' ('. $commitment->user->rol. ')'
   ],
-  'actividades' => 'active'
+  'actividades' => 'active',
   'nodelete' => 'no'
 ])
 @push('bread')
