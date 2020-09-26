@@ -118,34 +118,48 @@
     
                         <div class="collapse {{ isset($actividades)? 'show':'' }}" id="navbar-actividades">
                             <ul class="nav nav-sm flex-column">
-                                @if(Auth::user()->admin)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('questionnaires.index') }}">
-                                        {{ __('Cuestionarios de evaluación') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('validities.index') }}">
-                                        {{ __('Programa de evaliuaciones') }}
-                                    </a>
-                                </li>
-                                @endif
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('reviews.index') }}">
                                         {{ __('Realizar evaluación') }}
                                     </a>
                                 </li>
                                 @if(Auth::user()->admin)
-                                <hr class="my-3">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('commitments.index') }}">
-                                        {{ __('Compromisos prometidos') }}
+                                    <a href="#nav-recorridos" class="nav-link" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-recorridos">
+                                        <i class="fas fa-walking text-orange"></i>
+                                        <span class="nav-link-text">{{__('Recorridos')}}</span>
                                     </a>
+                                    <div class="collapse show" id="nav-recorridos">
+                                      <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('questionnaires.index') }}">
+                                                {{ __('Cuestionarios') }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('validities.index') }}">
+                                                {{ __('Programación') }}
+                                            </a>
+                                        </li>
+                                      </ul>
+                                    </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('compliments.index') }}">
-                                        {{ __('Compromisos cumplidos') }}
-                                    </a>
+                                    <a href="#navbar-multilevel" class="nav-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">{{__('Compromisos')}}</a>
+                                    <div class="collapse" id="navbar-multilevel" style="">
+                                      <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('commitments.index') }}">
+                                                {{ __('Promesas') }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('compliments.index') }}">
+                                                {{ __('Cumplimientos') }}
+                                            </a>
+                                        </li>
+                                      </ul>
+                                    </div>
                                 </li>
                                 @endif
                             </ul>

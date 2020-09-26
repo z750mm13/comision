@@ -1,10 +1,9 @@
 @extends('layouts.content.default.form',[
-  'title' => 'Programación de evaluaciones',
+  'title' => 'Programación de recorridos',
   'descriptions' => [
-      __('Las evaluaciones se podrán programar para su realización.'),
-      __('En este apartado podrá programar las evaluaciones que se van a realizar durante el ciclo en las distintas áreas de la institución.')
+      __('En este apartado podrá programar los recorridos que se van a realizar durante el ciclo en las distintas áreas de la institución.')
   ],
-  'button' => __('Programar evaluación'),
+  'button' => __('Programar recorrido'),
   'urlbutton' => __('/validities'),
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades',
