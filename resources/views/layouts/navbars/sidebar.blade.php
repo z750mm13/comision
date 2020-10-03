@@ -145,7 +145,10 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#navbar-multilevel" class="nav-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">{{__('Compromisos')}}</a>
+                                    <a href="#navbar-multilevel" class="nav-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">
+                                        <i class="fas fa-handshake text-orange"></i>
+                                        <span class="nav-link-text">{{__('Compromisos')}}</span>
+                                    </a>
                                     <div class="collapse" id="navbar-multilevel" style="">
                                       <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
