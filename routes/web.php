@@ -88,6 +88,8 @@ Route::get('commitments/deleted', 'CommitmentController@deleted');
 //Ruta de restauración de commitments
 Route::post('commitments/restore', 'CommitmentController@restore');
 
+//TODO creacion crud de tareas
+//TODO creacion crud de matriz de riesgos
 
 Route::resource('cordinates', 'CordinateController');
 Route::resource('elements', 'ElementController');
@@ -104,3 +106,9 @@ Route::resource('reviews', 'ReviewController');
 Route::resource('problems', 'ProblemController');
 Route::resource('commitments', 'CommitmentController');
 Route::resource('compliments', 'ComplimentController');
+
+//TODO crear los apartados de estadisticas
+//TODO crear apartado de normas
+//TODO crear apartado de cumplimientos
+//TODO crear apartado de recorridos
+//TODO crear apartado de Tareas
