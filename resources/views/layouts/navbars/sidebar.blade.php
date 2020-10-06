@@ -32,7 +32,7 @@
                     </li>
                     @if(Auth::user()->admin)
                     <li class="nav-item">
-                      <a class="nav-link {{ $personal ?? '' }}" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-personal">
+                      <a class="nav-link {{ $personal ?? '' }}" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="{{ isset($personal)? 'true':'false' }}" aria-controls="navbar-personal">
                         <i class="fas fa-user text-info"></i>
                         <span class="nav-link-text">{{ __('Personal de la comisión') }}</span>
                       </a>
@@ -55,7 +55,7 @@
                     </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link {{ $normativa ?? '' }}" href="#navbar-normativa" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link {{ $normativa ?? '' }}" href="#navbar-normativa" data-toggle="collapse" role="button" aria-expanded="{{ isset($normativa)? 'true':'false' }}" aria-controls="navbar-examples">
                             <i class="fas fa-book text-green"></i>
                             <span class="nav-link-text">{{ __('Normativa') }}</span>
                         </a>
@@ -76,7 +76,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ $instalaciones ?? '' }}" href="#navbar-intalaciones" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link {{ $instalaciones ?? '' }}" href="#navbar-intalaciones" data-toggle="collapse" role="button" aria-expanded="{{ isset($instalaciones)? 'true':'false' }}" aria-controls="navbar-examples">
                             <i class="fas fa-city text-yellow"></i>
                             <span class="nav-link-text">{{ __('Instalaciones') }}</span>
                         </a>
@@ -111,7 +111,7 @@
                     </li>
     
                     <li class="nav-item">
-                        <a class="nav-link {{ $actividades ?? '' }}" href="#navbar-actividades" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link {{ $actividades ?? '' }}" href="#navbar-actividades" data-toggle="collapse" role="button" aria-expanded="{{ isset($actividades)? 'true':'false' }}" aria-controls="navbar-examples">
                             <i class="ni ni-archive-2 text-orange"></i>
                             <span class="nav-link-text">{{ __('Actividades') }}</span>
                         </a>
@@ -125,7 +125,7 @@
                                 </li>
                                 @if(Auth::user()->admin)
                                 <li class="nav-item">
-                                    <a href="#nav-recorridos" class="nav-link" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-recorridos">
+                                    <a href="#nav-recorridos" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="nav-recorridos">
                                         <i class="fas fa-walking text-orange"></i>
                                         <span class="nav-link-text">{{__('Recorridos')}}</span>
                                     </a>
@@ -170,7 +170,7 @@
                     </li>
                     @if(Auth::user()->admin)
                     <li class="nav-item">
-                      <a class="nav-link {{ $estadistica ?? '' }}" href="#navbar-estadistica" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-estadistica">
+                      <a class="nav-link {{ $estadistica ?? '' }}" href="#navbar-estadistica" data-toggle="collapse" role="button" aria-expanded="{{ isset($estadistica)? 'true':'false' }}" aria-controls="navbar-estadistica">
                         <i class="ni ni-chart-pie-35 text-red"></i>
                         <span class="nav-link-text">{{ __('Estadísticas') }}</span>
                       </a>
