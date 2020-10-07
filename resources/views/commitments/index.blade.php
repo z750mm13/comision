@@ -6,7 +6,7 @@ use Tools\Utils\Fecha;
     'title' => 'Compromisos',
     'descriptions' => [
       __('Los compromisos se realizan una vez realizados los recorridos. Se localizan los problemas y se hace una lista de donde se podrán asignar los responsables a resolverlos.'),
-      __('En este apartado se podrá tener el control de los compromisos. Para agregar uno presione el siguiente botón.')
+      __('En este apartado se podrá tener el control de los compromisos. Para agregar uno presione el botón superior.')
     ],
     'titlebody' => __('Compromisos'),
     'image' => null,

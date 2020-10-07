@@ -2,7 +2,7 @@
     'title' => 'Requerimientos',
     'descriptions' => [
       __('Los requerimientos o requisitos son aspectos particulares que se deben de cumplir de las normas enumerados según su naturaleza. Se mostrarán a continuación de manera general.'),
-      __('En este apartado se podrá tener el control de los requisitos. Si desea agregar un nuevo requisito presione el siguiente botón.')
+      __('En este apartado se podrá tener el control de los requisitos. Si desea agregar un nuevo requisito presione el botón superior.')
     ],
     'titlebody' => __('Requisitos'),
     'image' => null,

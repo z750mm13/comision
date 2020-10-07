@@ -6,7 +6,7 @@ use Tools\Utils\Fecha;
     'title' => 'Cumplimientos',
     'descriptions' => [
       __('Los cumplimientos se realizan a partir de los compromisos que se han realizado previamente.'),
-      __('En este apartado se podrá tener el control de los cumplimientos. Para agregar uno presione el siguiente botón.')
+      __('En este apartado se podrá tener el control de los cumplimientos. Para agregar uno presione el botón superior.')
     ],
     'titlebody' => __('Cumplimientos'),
     'image' => null,

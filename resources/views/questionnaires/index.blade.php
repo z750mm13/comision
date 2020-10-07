@@ -2,7 +2,7 @@
     'title' => 'Cuestionarios',
     'descriptions' => [
       __('Los cuestionarios son el conjunto de preguntas asociadas a una característica de los inmuebles o áreas verdes, especificados en los requisitos de las normas. Además, fungen como los tipos o características de las áreas.'),
-      __('En este apartado se podrá tener el control de los cuestionarios. Para agregar uno presione el siguiente botón.')
+      __('En este apartado se podrá tener el control de los cuestionarios. Para agregar uno presione el botón superior.')
     ],
     'titlebody' => __('Cuestionarios'),
     'image' => null,

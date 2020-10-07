@@ -145,6 +145,26 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="#navbar-riesgos" class="nav-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">
+                                        <i class="fas fa-handshake text-orange"></i>
+                                        <span class="nav-link-text">{{__('Riesgos')}}</span>
+                                    </a>
+                                    <div class="collapse" id="navbar-riesgos" style="">
+                                      <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('activities.index') }}">
+                                                {{ __('Actividades') }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('compliments.index') }}">
+                                                {{ __('Trabajando') }}
+                                            </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
                                     <a href="#navbar-multilevel" class="nav-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">
                                         <i class="fas fa-handshake text-orange"></i>
                                         <span class="nav-link-text">{{__('Compromisos')}}</span>

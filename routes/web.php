@@ -106,6 +106,7 @@ Route::resource('reviews', 'ReviewController');
 Route::resource('problems', 'ProblemController');
 Route::resource('commitments', 'CommitmentController');
 Route::resource('compliments', 'ComplimentController');
+Route::resource('activities', 'ActivityController');
 
 //TODO crear los apartados de estadisticas
 //TODO crear apartado de normas
