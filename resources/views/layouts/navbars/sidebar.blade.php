@@ -146,7 +146,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="#navbar-riesgos" class="nav-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">
-                                        <i class="fas fa-handshake text-orange"></i>
+                                        <i class="fa fa-qrcode text-orange"></i>
                                         <span class="nav-link-text">{{__('Riesgos')}}</span>
                                     </a>
                                     <div class="collapse" id="navbar-riesgos" style="">
