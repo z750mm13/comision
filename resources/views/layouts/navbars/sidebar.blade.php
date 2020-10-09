@@ -157,8 +157,8 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('compliments.index') }}">
-                                                {{ __('Trabajando') }}
+                                            <a class="nav-link" href="{{ route('evaluations.index') }}">
+                                                {{ __('Programación') }}
                                             </a>
                                         </li>
                                       </ul>

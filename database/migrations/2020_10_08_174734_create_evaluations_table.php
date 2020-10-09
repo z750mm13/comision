@@ -4,17 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateValiditiesTable extends Migration {
+class CreateEvaluationsTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create('validities', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('evaluations', function (Blueprint $table) {
+            $table->id();
             $table->date('inicio');
             $table->date('fin');
+            $table->string('descripcion');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -25,8 +26,7 @@ class CreateValiditiesTable extends Migration {
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('validities');
+    public function down() {
+        Schema::dropIfExists('evaluations');
     }
 }

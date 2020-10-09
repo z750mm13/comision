@@ -87,6 +87,8 @@ Route::get('commitments/create/{id?}', 'CommitmentController@create');
 Route::get('commitments/deleted', 'CommitmentController@deleted');
 //Ruta de restauración de commitments
 Route::post('commitments/restore', 'CommitmentController@restore');
+//Ruta de index del cuetionario segun tiempo
+Route::get('evaluations/time/{tiempo?}', 'EvaluationController@index');
 
 //TODO creacion crud de tareas
 //TODO creacion crud de matriz de riesgos
@@ -107,6 +109,7 @@ Route::resource('problems', 'ProblemController');
 Route::resource('commitments', 'CommitmentController');
 Route::resource('compliments', 'ComplimentController');
 Route::resource('activities', 'ActivityController');
+Route::resource('evaluations', 'EvaluationController');
 
 //TODO crear los apartados de estadisticas
 //TODO crear apartado de normas

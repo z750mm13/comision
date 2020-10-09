@@ -7,6 +7,12 @@ use App\Activity;
 use App\Danger;
 
 class ActivityController extends Controller {
+    function __construct() {
+        $this->middleware('active');
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('check');
+    }
     /**
      * Display a listing of the resource.
      *
