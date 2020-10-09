@@ -102,7 +102,12 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('targets.index') }}">
-                                        {{ __('Asignacion del tipo a las áreas') }}
+                                        {{ __('Propiedades de área') }}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('arrays.index') }}">
+                                        {{ __('Actividades de área') }}
                                     </a>
                                 </li>
                                 @endif

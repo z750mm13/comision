@@ -2,7 +2,7 @@
     'title' => 'Supervisores de área',
     'descriptions' => [
       __('Los supervisores son los encargados de piso. Encargados de realizár los recorridos y resolver los cuestionarios propuestos a fin de cada area para su evaluación.'),
-      __('En este apartado se podrá tener el control de las asignaciónes de area de cada persona que previamente tenga ya un rol asignado. Para asignar un área a una persona presione el sigiente botón o el botón + de cada usuario.')
+      __('En este apartado se podrá tener el control de las asignaciónes de area de cada persona que previamente tenga ya un rol asignado. Para asignar un área a una persona presione el botón superior o el botón + de cada usuario.')
     ],
     'titlebody' => __('Supervisores'),
     'image' => null,

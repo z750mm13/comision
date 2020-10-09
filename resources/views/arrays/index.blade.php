@@ -1,18 +1,18 @@
 @extends('layouts.content.default.index',[
-    'title' => 'Tipos de área',
+    'title' => 'Actividades de área',
     'descriptions' => [
-      __('Los tipos de área son en otras palabras las características de cada subárea. estos tipos tienen asignados un grupo o conjunto de preguntas para su evaluación basados en la normas.'),
-      __('En este apartado se podrá tener el control de las asignaciónes de tipos para todas las áreas la institución. Para asignar un tipo al área presione el botón superior o el botón + de cada área.')
+      __('Las actividades de área son aquellas que conllevan una lista de riesgos para cada subárea.'),
+      __('En este apartado se podrá tener el control de las asignaciónes de actividades para todas las áreas la institución. Para asignar un titulo al área presione el botón superior o el botón + de cada área.')
     ],
-    'titlebody' => __('Tipos'),
+    'titlebody' => __('Actividades'),
     'image' => null,
-    'button' => __('Asignar tipo a zona'),
-    'urlbutton' => __('/targets'),
+    'button' => __('Asignar actividad a zona'),
+    'urlbutton' => __('/arrays'),
     'instalaciones' => 'active'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item active" aria-current="page">Tipos</li>
+<li class="breadcrumb-item active" aria-current="page">Actividades</li>
 @endpush
 
 @section('bodycontent')
@@ -42,22 +42,22 @@
 <h1>{{$subarea->nombre}}</h1>
 </div>
 <div class="card-deck">
-  @foreach ($subarea->targets as $target)
+  @foreach ($subarea->arrays as $matrix)
   <div class="col-md-4 col-sm-6 col-xm-12">
   <div class="card mb-3"> <!-- Borde primario primary danger warning-->
     <div class="card-header">
-      <h5 class="card-title"><a class="stretched-link" href="/targets/{{$target->id}}" >{{$target->questionnaire->tipo}}</a></h5>
+      <h5 class="card-title"><a class="stretched-link" href="/arrays/{{$matrix->id}}" >{{$matrix->activity->titulo}}</a></h5>
     </div>
     <div class="card-body"> <!-- Texto primario -->
-      <h6 class="card-subtitle mb-2 text-muted">Descripcion del requisito</h6>
-      <p class="card-text">{{substr($target->questionnaire->descripcion, 0, 37)."..."}}</p>
+      <h6 class="card-subtitle mb-2 text-muted">Descripcion de la actividad</h6>
+      <p class="card-text">{{substr($matrix->activity->descripcion, 0, 37)."..."}}</p>
     </div>
   </div>
   </div>
   @endforeach
 </div>
 <div class="col-md-12">
-<a class="col-md-12 btn btn-light btn-lg" href="/targets/create/{{$subarea->id}}" role="button"><i class="fas fa-plus"></i></a>
+<a class="col-md-12 btn btn-light btn-lg" href="/arrays/create/{{$subarea->id}}" role="button"><i class="fas fa-plus"></i></a>
 </div>
 </div>
 @endforeach

@@ -18,4 +18,8 @@ class Subarea extends Model {
     public function targets() {
         return $this -> hasMany('App\Target');
     }
+
+    public function arrays() {
+        return $this -> hasMany('App\Matrix');
+    }
 }

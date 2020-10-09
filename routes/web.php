@@ -37,7 +37,7 @@ Route::get('cordinates/deleted', 'CordinateController@deleted');
 Route::post('cordinates/restore', 'CordinateController@restore');
 // ------------------------------------------------------------------ //
 //Ruta de cuentas de usuario eliminadas                               //
-Route::get('elements/deleted', 'ElementController@deleted');         //
+Route::get('elements/deleted', 'ElementController@deleted');          //
 //Ruta de activación de cuentas de usuario                            //
 Route::get('elements/active/{id?}', 'ElementController@activate');    //
 //Ruta de desactivación de cuentas de usuario                         //
@@ -89,7 +89,8 @@ Route::get('commitments/deleted', 'CommitmentController@deleted');
 Route::post('commitments/restore', 'CommitmentController@restore');
 //Ruta de index del cuetionario segun tiempo
 Route::get('evaluations/time/{tiempo?}', 'EvaluationController@index');
-
+//Ruta de targets con id de subarea
+Route::get('arrays/create/{id?}', 'MatrixController@create');
 //TODO creacion crud de tareas
 //TODO creacion crud de matriz de riesgos
 
@@ -110,6 +111,7 @@ Route::resource('commitments', 'CommitmentController');
 Route::resource('compliments', 'ComplimentController');
 Route::resource('activities', 'ActivityController');
 Route::resource('evaluations', 'EvaluationController');
+Route::resource('arrays', 'MatrixController');
 
 //TODO crear los apartados de estadisticas
 //TODO crear apartado de normas

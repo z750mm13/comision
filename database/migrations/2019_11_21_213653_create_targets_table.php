@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTargetsTable extends Migration
-{
+class CreateTargetsTable extends Migration {
     /**
      * Run the migrations.
      *
@@ -29,8 +28,7 @@ class CreateTargetsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('targets');
     }
 }
