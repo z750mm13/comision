@@ -45,6 +45,15 @@
     <div class="card-body">
       <label>Peligro:</label>
       <input type="text" name="peligros[]" class="form-control" placeholder="Peligro">
+      <label>Tipo:</label>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
+      </div>
     </div>
   </div>
   </div>
@@ -61,6 +70,7 @@
 
 @push('js')
 <script type="text/javascript">
+  var id = 0;
   function clonar() {
       // Clona el .form-group
       var $clone = $('#peligros .form-group').last().clone();
