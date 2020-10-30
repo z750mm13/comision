@@ -115,7 +115,6 @@ Route::resource('arrays', 'MatrixController');
 
 //TODO crear los apartados de estadisticas
 //TODO crear apartado de normas
-//TODO crear apartado de cumplimientos
 //TODO crear apartado de recorridos
 //TODO crear apartado de Tareas
 //TODO crear apartado de Matriz de riesgos

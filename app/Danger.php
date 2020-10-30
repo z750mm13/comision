@@ -9,7 +9,7 @@ class Danger extends Model {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
     protected $fillable = [
-        'titulo','activity_id'
+        'titulo','tipo','activity_id'
     ];
 
     public function area() {

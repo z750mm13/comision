@@ -43,23 +43,24 @@
   <div class="form-group">
   <div class="card">
     <div class="card-body">
-      <label>Peligro:</label>
+      <label for="nf">Peligro:</label>
       <input type="text" name="peligros[]" class="form-control" placeholder="Peligro">
-      <label>Tipo:</label>
+      <label for="nf">Tipo:</label>
+      <br>
       <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-        <label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+        <input type="radio" id="tipo0" name="pregunta0" class="custom-control-input" value="Seguridad">
+        <label type="rlabel" class="custom-control-label" for="tipo0">Seguridad</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-        <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
+        <input type="radio" id="tipo1" name="pregunta0" class="custom-control-input" value="Salud">
+        <label type="rlabel" class="custom-control-label label0" for="tipo1">Salud</label>
       </div>
     </div>
   </div>
   </div>
   </div>
   <div class="form-group">
-  <a class="col-md-12 btn btn-light btn-lg" onclick="clonar()" role="button"><i class="fas fa-plus"></i></a>
+  <a class="col-md-12 btn btn-light btn-lg" id="clone" role="button"><i class="fas fa-plus"></i></a>
   </div>
   
   <div class="form-group">
@@ -70,16 +71,35 @@
 
 @push('js')
 <script type="text/javascript">
-  var id = 0;
-  function clonar() {
-      // Clona el .form-group
+  var preguntaid = 1;
+  var tipoid = 2;
+  var forid = 1;
+  $(document).ready(function() {  
+    $("#clone").click(function () {
+      // Clona peligos
       var $clone = $('#peligros .form-group').last().clone();
       // Borra los valores de los inputs clonados
       $clone.find(':input').each(function () {
-          this.value = '';
+        if (this.type == 'radio'){
+          this.id = 'tipo'+tipoid;
+          this.name = 'pregunta'+preguntaid;
+          tipoid++;
+        } else 
+        this.value = '';
+      }).end().find('label').each(function () {
+        $(this).attr('for', function (index, old) {
+          if(old != 'nf'){
+            console.log(old);
+            forid++;
+            return 'tipo'+forid;
+          }
+          return old;
+        });
       });
-      //Clon de la ultima pregunta
+      // Añade el clon
+      preguntaid++;
       $clone.appendTo('#peligros');
-  }
+    });
+  });
 </script>
 @endpush

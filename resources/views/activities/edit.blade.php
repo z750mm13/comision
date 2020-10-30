@@ -41,20 +41,33 @@
         <h2>Peligros de la actividad</h2>
     </div>
     <div id="peligros">
+    <?php $id = 0; ?>
     @foreach ($activity->dangers as $danger)
     <div class="form-group">
         <div class="card">
           <div class="card-body">
-            <label>Peligro:</label>
+            <label for="nf">Peligro:</label>
             <input value="{{ $danger->titulo }}" type="text" name="peligros[]" class="form-control" placeholder="Peligro">
             <input type="text" name="dangers_id[]" hidden value="{{$danger->id}}">
+            <label for="nf">Tipo:</label>
+            <br>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="tipo{{$id}}" name="pregunta{{$danger->id}}" class="custom-control-input" value="Seguridad" @if($danger->tipo == "Seguridad")checked @endif>
+                <label class="custom-control-label" for="tipo{{$id}}">Seguridad</label>
+            </div>
+            <?php $id++; ?>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="tipo{{$id}}" name="pregunta{{$danger->id}}" class="custom-control-input" value="Salud" @if($danger->tipo == "Salud")checked @endif>
+                <label class="custom-control-label" for="tipo{{$id}}">Salud</label>
+            </div>
+            <?php $id++; ?>
           </div>
         </div>
     </div>
     @endforeach
     </div>
     <div class="form-group">
-        <a class="col-md-12 btn btn-light btn-lg" onclick="clonar()" role="button"><i class="fas fa-plus"></i></a>
+        <a id="clone" class="col-md-12 btn btn-light btn-lg" role="button"><i class="fas fa-plus"></i></a>
     </div>
 
     <div class="form-group">
@@ -65,18 +78,38 @@
 
 @push('js')
 <script type="text/javascript">
-    function clonar() {
-        // Clona el .form-group
+    var nuevoid = 0;
+    var opcionid = 0;
+    var forid = -1;
+    $(document).ready(function() {  
+      $("#clone").click(function () {
+        // Clona peligos
         var $clone = $('#peligros .form-group').last().clone();
         // Borra los valores de los inputs clonados
         $clone.find(':input').each(function () {
+          if (this.type == 'radio'){
+            this.id = 'opcion'+opcionid;
+            this.name = 'nuevo'+nuevoid;
+            opcionid++;
+          } else {
+            if (this.name == 'peligros[]')
+            this.name = 'nuevos[]';
             this.value = '';
+          }
+        }).end().find('label').each(function () {
+          $(this).attr('for', function (index, old) {
+            if(old != 'nf'){
+              console.log(old);
+              forid++;
+              return 'opcion'+forid;
+            }
+            return old;
+          });
         });
-        //Clon de la ultima pregunta
+        // Añade el clon
+        nuevoid++;
         $clone.appendTo('#peligros');
-    }
-    function eliminar($id){
-        var $input = document.getElementById();
-    }
-</script>
+      });
+    });
+  </script>
 @endpush

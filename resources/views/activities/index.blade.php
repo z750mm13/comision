@@ -24,7 +24,7 @@
     <div class="card-body text-primary"> <!-- Texto primario -->
       <h6 class="card-subtitle mb-2 text-muted">Descripcion del cuestionario</h6>
       <p class="card-text"><b>Caracteristicas:</b> {{ substr($activity->descripcion , 0, 15)."..." }}</p>
-      <p class="card-text"> <b>Primer peligro:</b> <br>{{ substr($activity->dangers->first()->titulo , 0, 15)."..." }}</p>
+      <p class="card-text"> <b>Primer peligro:</b> <br>{{ substr($activity->dangers->first()->tipo.' - '.$activity->dangers->first()->titulo , 0, 15)."..." }}</p>
       <a class="stretched-link" href="/activities/{{$activity->id}}" class="card-link">Ver mas...</a>
     </div>
   </div>

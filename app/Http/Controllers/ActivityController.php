@@ -43,13 +43,14 @@ class ActivityController extends Controller {
             'titulo' =>  $request->titulo,
             'descripcion' => $request->descripcion
         ]);
-
-        foreach ($request->input('peligros', []) as $peligro) {
-            if($peligro)
-            Danger::create([
-                'titulo' => $peligro,
-                'activity_id'=> $activity->id
-            ]);
+        foreach ($request->input('peligros', [])  as $i => $peligro) {
+            if($peligro){
+                Danger::create([
+                    'titulo' => $peligro,
+                    'tipo' => $request->input('pregunta'.$i),
+                    'activity_id'=> $activity->id
+                ]);
+            }
         }
 
         return redirect()
@@ -95,17 +96,26 @@ class ActivityController extends Controller {
                 $peligro_id = $peligros_id[$i];
                 if ($peligro_id){
                     Danger::findOrfail($peligro_id)->update([
-                        'titulo' => $peligro
-                    ]);
-                } else {
-                    Danger::create([
                         'titulo' => $peligro,
-                        'activity_id'=> $activity->id
+                        'tipo' => $request->input('pregunta'.$peligro_id),
                     ]);
                 }
                 
             }
         }
+        
+        if(isset($request->nuevos))
+        foreach ($request->nuevos as $i => $nuevo) {
+            if ($nuevo) {
+                Danger::create([
+                    'titulo' => $nuevo,
+                    'tipo' => $request->input('nuevo'.$i),
+                    'activity_id'=> $activity->id
+                ]);
+                
+            }
+        }
+
         $activity->update($request->all());
         
         return redirect()

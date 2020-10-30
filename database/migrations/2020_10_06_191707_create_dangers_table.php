@@ -14,6 +14,7 @@ class CreateDangersTable extends Migration {
         Schema::create('dangers', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
+            $table->enum('tipo',['Seguridad', 'Salud']);
             $table->biginteger('activity_id');
             $table->foreign('activity_id')->references('id')->on('activities')->onDelete('cascade');
             $table->softDeletes();

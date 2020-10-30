@@ -19,7 +19,7 @@
       <div class="card-body"> <!-- Texto primario -->
         <div class="row justify-content-between">
           <div class="col-10">
-            <p class="card-text">{{ $danger->titulo }}</p>
+            <p class="card-text">{{ $danger->tipo.' - '.$danger->titulo }}</p>
           </div>
           <div class="col-2">
               <button onclick="
