@@ -91,9 +91,11 @@ Route::post('commitments/restore', 'CommitmentController@restore');
 Route::get('evaluations/time/{tiempo?}', 'EvaluationController@index');
 //Ruta de targets con id de subarea
 Route::get('arrays/create/{id?}', 'MatrixController@create');
+
+//TODO creacion crud de ciclo
+//TODO creacion crud de metas
 //TODO creacion crud de tareas
 //TODO creacion crud de matriz de riesgos
-
 Route::resource('cordinates', 'CordinateController');
 Route::resource('elements', 'ElementController');
 Route::resource('helpers', 'HelperController');
