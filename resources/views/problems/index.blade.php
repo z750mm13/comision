@@ -32,7 +32,7 @@ use Tools\Utils\Fecha;
           @forelse($problem->commitments as $commitment)
               <p class="card-text">Responsable(s):
                 <ul>
-                  <li>{{$commitment->helper->rol}}</li>
+                  <li>{{$commitment->user->rol}}</li>
                 </ul>
               </p>
               <p class="card-text">Completo: @if($commitment->compliment) <b class="text-success"><i class="fas fa-check"></i> Se ha cumplido.</b> @else <b class="text-danger"><i class="fas fa-times"></i> Aún no se ha cumplido.</b> @endif</p>

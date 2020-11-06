@@ -189,6 +189,16 @@
                                       </ul>
                                     </div>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('reviews.index') }}">
+                                        {{ __('Ciclos') }}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('reviews.index') }}">
+                                        {{ __('Metas normativas') }}
+                                    </a>
+                                </li>
                                 @endif
                             </ul>
                         </div>
@@ -202,15 +212,14 @@
                       <div class="collapse {{ isset($estadistica)? 'show':'' }}" id="navbar-estadistica">
                         <ul class="nav nav-sm flex-column">
                           <li class="nav-item">
-                              <a href="{{ route('elements.index') }}" class="nav-link">{{ __('Integrantes de la comisión') }}</a>
+                              <a href="{{ __('/statistics/reviews?problema=on') }}" class="nav-link">{{ __('Recorridos') }}</a>
                           </li>
                           <li class="nav-item">
-                              <a href="{{ route('helpers.index') }}" class="nav-link">{{ __('Apoyo de la comisión') }}</a>
+                              <a href="{{ route('helpers.index') }}" class="nav-link">{{ __('Áreas') }}</a>
                           </li>
-                          <hr class="my-3">
                           <li class="nav-item">
                               <a class="nav-link" href="{{ route('cordinates.index') }}">
-                                  {{ __('Roles') }}
+                                  {{ __('Normas') }}
                               </a>
                           </li>
                         </ul>

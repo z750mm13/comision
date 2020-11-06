@@ -113,9 +113,13 @@ Route::resource('activities', 'ActivityController');
 Route::resource('evaluations', 'EvaluationController');
 Route::resource('arrays', 'MatrixController');
 
-//TODO crear los apartados de estadisticas
-//TODO crear apartado de normas
-//TODO crear apartado de recorridos
-//TODO crear apartado de areas
-//TODO crear apartado de Tareas
-//TODO crear apartado de Matriz de riesgos
+//---------------------------------------------------------------------------------//
+// TODO crear los apartados de estadisticas                                        //
+// TODO crear apartado de normas                                                   //
+// TODO crear apartado de recorridos                                               //
+ Route::get('statistics/reviews', 'ReviewStatisticController@index');              //
+ Route::post('statistics/reviews', 'ReviewStatisticController@index');             //
+// TODO crear apartado de areas                                                    //
+// TODO crear apartado de Tareas                                                   //
+// TODO crear apartado de Matriz de riesgos                                        //
+//---------------------------------------------------------------------------------//

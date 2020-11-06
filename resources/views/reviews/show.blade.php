@@ -56,6 +56,6 @@ $botones = [
 
 @section('list')
 <ol class="list-unstyled">
-  <li><a href="/reviews"><i class="fas fa-home"></i> Todas las evaluaciones</a></li>
+  <li><a href="/statistics/reviews?problema=on"><i class="fas fa-home"></i> Todas las evaluaciones</a></li>
 </ol>
 @endsection
