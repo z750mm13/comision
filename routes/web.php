@@ -94,7 +94,6 @@ Route::get('arrays/create/{id?}', 'MatrixController@create');
 //Ruta de index de ciclos segun tiempo
 Route::get('cycles/time/{tiempo?}', 'CycleController@index');
 
-//TODO creacion crud de ciclo
 //TODO creacion crud de metas
 //TODO creacion crud de tareas
 //TODO creacion crud de matriz de riesgos
