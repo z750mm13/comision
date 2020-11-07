@@ -190,7 +190,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('reviews.index') }}">
+                                    <a class="nav-link" href="{{ route('cycles.index') }}">
                                         {{ __('Ciclos') }}
                                     </a>
                                 </li>

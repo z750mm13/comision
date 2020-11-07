@@ -87,10 +87,12 @@ Route::get('commitments/create/{id?}', 'CommitmentController@create');
 Route::get('commitments/deleted', 'CommitmentController@deleted');
 //Ruta de restauración de commitments
 Route::post('commitments/restore', 'CommitmentController@restore');
-//Ruta de index del cuetionario segun tiempo
+//Ruta de index de evaluación segun tiempo
 Route::get('evaluations/time/{tiempo?}', 'EvaluationController@index');
 //Ruta de targets con id de subarea
 Route::get('arrays/create/{id?}', 'MatrixController@create');
+//Ruta de index de ciclos segun tiempo
+Route::get('cycles/time/{tiempo?}', 'CycleController@index');
 
 //TODO creacion crud de ciclo
 //TODO creacion crud de metas
@@ -114,6 +116,7 @@ Route::resource('compliments', 'ComplimentController');
 Route::resource('activities', 'ActivityController');
 Route::resource('evaluations', 'EvaluationController');
 Route::resource('arrays', 'MatrixController');
+Route::resource('cycles', 'CycleController');
 
 //---------------------------------------------------------------------------------//
 // TODO crear los apartados de estadisticas                                        //
