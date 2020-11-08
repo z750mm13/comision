@@ -93,8 +93,9 @@ Route::get('evaluations/time/{tiempo?}', 'EvaluationController@index');
 Route::get('arrays/create/{id?}', 'MatrixController@create');
 //Ruta de index de ciclos segun tiempo
 Route::get('cycles/time/{tiempo?}', 'CycleController@index');
+//Ruta de requisitos de norma json
+Route::get('goals/norms/requirements', 'GoalController@getRequirements');
 
-//TODO creacion crud de metas
 //TODO creacion crud de tareas
 //TODO creacion crud de matriz de riesgos
 Route::resource('cordinates', 'CordinateController');
@@ -116,6 +117,7 @@ Route::resource('activities', 'ActivityController');
 Route::resource('evaluations', 'EvaluationController');
 Route::resource('arrays', 'MatrixController');
 Route::resource('cycles', 'CycleController');
+Route::resource('goals', 'GoalController');
 
 //---------------------------------------------------------------------------------//
 // TODO crear los apartados de estadisticas                                        //

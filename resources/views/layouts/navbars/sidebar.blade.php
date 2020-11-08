@@ -195,7 +195,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('reviews.index') }}">
+                                    <a class="nav-link" href="{{ route('goals.index').'?cycle_id='.Tools\Query\Reviews::getCurrentCycle() }}">
                                         {{ __('Metas normativas') }}
                                     </a>
                                 </li>

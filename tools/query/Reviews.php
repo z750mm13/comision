@@ -2,6 +2,7 @@
 
 namespace Tools\Query;
 
+use App\Cycle;
 use Carbon\Carbon;
 use App\Validity;
 use App\Target;
@@ -26,6 +27,16 @@ class Reviews {
             ['inicio', '<=', "$fin"],
             ['fin', '>=', "$inicio"]
         ])->orderBy('inicio', 'desc')->get();
+    }
+
+    public static function getCurrentCycle() {
+        $fecha = Carbon::now()->toDateString();
+        $cycle = Cycle::where([
+            ['inicio', '<=', "$fecha"],
+            ['fin', '>=', "$fecha"],
+        ])->orderBy('inicio', 'desc')->get()->first();
+        $cycle = ($cycle? $cycle->id: 0);
+        return $cycle;
     }
 
     public static function getCurrentValidity() {

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Requirement extends Model {
     use SoftDeletes;
-    use SoftDeletes;
  
     protected $dates = ['deleted_at'];
 
@@ -21,5 +20,9 @@ class Requirement extends Model {
 
     public function questionnaires() {
         return $this -> hasMany('App\Questionnaire');
+    }
+
+    public function goals() {
+        return $this -> hasMany('App\Goal');
     }
 }

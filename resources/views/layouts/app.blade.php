@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{ asset('argon') }}/css/argon.css?v=1.1.0" type="text/css">
     </head>
     <body class="{{ $class ?? '' }}">
+        <div id="app">
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
@@ -36,6 +37,7 @@
         @guest()
             @include('layouts.footers.guest')
         @endguest
+        </div>
         <!-- Argon Scripts -->
         <!-- Core -->
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>

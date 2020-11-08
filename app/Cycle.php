@@ -10,4 +10,8 @@ class Cycle extends Model {
     protected $fillable = [
         'inicio','fin','codigo','descripcion'
     ];
+
+    public function goals() {
+        return $this -> hasMany('App\Goal');
+    }
 }
