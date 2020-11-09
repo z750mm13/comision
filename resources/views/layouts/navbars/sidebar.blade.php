@@ -215,7 +215,7 @@
                               <a href="{{ __('/statistics/reviews?problema=on') }}" class="nav-link">{{ __('Recorridos') }}</a>
                           </li>
                           <li class="nav-item">
-                              <a href="{{ route('helpers.index') }}" class="nav-link">{{ __('Áreas') }}</a>
+                              <a href="{{ __('/statistics/areas') }}" class="nav-link">{{ __('Áreas') }}</a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="{{ route('cordinates.index') }}">

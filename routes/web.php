@@ -126,6 +126,8 @@ Route::resource('goals', 'GoalController');
  Route::get('statistics/reviews', 'ReviewStatisticController@index');              //
  Route::post('statistics/reviews', 'ReviewStatisticController@index');             //
 // TODO crear apartado de areas                                                    //
+ Route::get('statistics/areas',  'AreaStatisticController@index');              //
+ Route::post('statistics/areas', 'AreaStatisticController@index');                 //
 // TODO crear apartado de Tareas                                                   //
 // TODO crear apartado de Matriz de riesgos                                        //
 //---------------------------------------------------------------------------------//
