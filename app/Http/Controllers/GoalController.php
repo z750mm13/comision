@@ -159,6 +159,6 @@ class GoalController extends Controller {
         foreach ($requirements as $requirement) {
             $requirementsArray[$requirement->id] = substr($requirement->numero.' '.$requirement->descripcion, 0, 100)."..." ;
         }
-        return response()->json($requirementsArray);
+        return mb_convert_encoding($requirementsArray, "UTF-8", "UTF-8");
     }
 }
