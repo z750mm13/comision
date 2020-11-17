@@ -47,7 +47,11 @@ class ComplimentController extends Controller {
     public function create() {
         $user = auth()->user();
         if($user->tipo == 'Integrante')
-        $commitments = Commitment::orderBy('id', 'ASC')->get();
+        $commitments = Commitment::select('commitments.*','compliments.evidencia')
+        ->leftJoin('compliments','compliments.commitment_id', 'commitments.id')
+        ->orderBy('id', 'ASC')
+        ->where('compliments.id','=',null)
+        ->get();
         else
         $commitments = $user->commitments;
         return view('compliments.create', compact('commitments'));

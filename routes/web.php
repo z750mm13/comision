@@ -120,13 +120,13 @@ Route::resource('cycles', 'CycleController');
 Route::resource('goals', 'GoalController');
 
 //---------------------------------------------------------------------------------//
-// TODO crear los apartados de estadisticas                                        //
+// Apartados de estadisticas                                                       //
 // TODO crear apartado de normas                                                   //
 // TODO crear apartado de recorridos                                               //
  Route::get('statistics/reviews', 'ReviewStatisticController@index');              //
  Route::post('statistics/reviews', 'ReviewStatisticController@index');             //
 // TODO crear apartado de areas                                                    //
- Route::get('statistics/areas',  'AreaStatisticController@index');              //
+ Route::get('statistics/areas',  'AreaStatisticController@index');                 //
  Route::post('statistics/areas', 'AreaStatisticController@index');                 //
 // TODO crear apartado de Tareas                                                   //
 // TODO crear apartado de Matriz de riesgos                                        //
