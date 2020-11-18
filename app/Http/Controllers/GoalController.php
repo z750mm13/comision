@@ -73,6 +73,7 @@ class GoalController extends Controller {
      */
     public function store(Request $request) {
         $goal = Goal::create($request->all());
+        $goal = $goal->requirement;
         if ($goal) {
             return redirect()
                 ->route('goals.show',compact('goal'))
@@ -145,17 +146,25 @@ class GoalController extends Controller {
     }
 
     public function getRequirements(Request $request) {
-        $usedrequirements = Requirement::select('requirements.id')
-        ->join('goals', 'goals.requirement_id', '=', 'requirements.id')
-        ->where('goals.cycle_id',Reviews::getCurrentCycle());
-        
-        if($request->requirement_id)
+        $usedrequirements = null;
+        if($request->used){
+            $usedrequirements = Requirement::select('requirements.id')
+            ->join($request->used, $request->used.'.requirement_id', '=', 'requirements.id');
+            if($request->used == 'goals')
+            $usedrequirements->where('goals.cycle_id',Reviews::getCurrentCycle());
+        }
+
+        if($request->requirement_id && $request->used)
         $usedrequirements->where('requirements.id','!=',$request->requirement_id);
 
+        if($request->used)
         $requirements = Requirement::whereNotIn('id',
             $usedrequirements->get()
             )
         ->where('norm_id', $request->norm_id)->get();
+        else
+        $requirements = Requirement::where('norm_id', $request->norm_id)->get();
+
         foreach ($requirements as $requirement) {
             $requirementsArray[$requirement->id] = substr($requirement->numero.' '.$requirement->descripcion, 0, 100)."..." ;
         }

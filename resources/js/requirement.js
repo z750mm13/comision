@@ -20,7 +20,11 @@ const app = new Vue({
             document.getElementById("requirement").disabled=true;
 
             if (this.selected_norm != '') {
-                axios.get('/goals/norms/requirements', {params: {norm_id: this.selected_norm, requirement_id: this.getOldData('requirement')} }).then((response) => {
+                axios.get('/goals/norms/requirements', {params: {
+                    norm_id: this.selected_norm,
+                    requirement_id: this.getOldData('requirement'),
+                    used: this.getUsed()
+                } }).then((response) => {
                     this.requirements = response.data;
                     document.getElementById("requirement").disabled=false;
                 });
@@ -28,6 +32,9 @@ const app = new Vue({
         },
         getOldData(type) {
             return document.getElementById(type).getAttribute('data-old');
+        },
+        getUsed() {
+            return document.getElementById('norm').getAttribute('used-data');
         }
     }
 });

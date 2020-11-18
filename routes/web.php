@@ -95,8 +95,13 @@ Route::get('arrays/create/{id?}', 'MatrixController@create');
 Route::get('cycles/time/{tiempo?}', 'CycleController@index');
 //Ruta de requisitos de norma json
 Route::get('goals/norms/requirements', 'GoalController@getRequirements');
+// Ruta de creacion de tareas con el requisito
+Route::get('tasks/create/{requirement_id?}', 'TaskController@create');
+// Ruta de cumplimiento de tarea
+Route::get('tasks/{requirement_id?}/create', 'TaskController@complete');
+//Ruta de requisitos de norma json
+Route::get('tasks/norms/requirements', 'TaskController@getRequirements');
 
-//TODO creacion crud de tareas
 //TODO creacion crud de matriz de riesgos
 Route::resource('cordinates', 'CordinateController');
 Route::resource('elements', 'ElementController');
@@ -118,6 +123,7 @@ Route::resource('evaluations', 'EvaluationController');
 Route::resource('arrays', 'MatrixController');
 Route::resource('cycles', 'CycleController');
 Route::resource('goals', 'GoalController');
+Route::resource('tasks', 'TaskController');
 
 //---------------------------------------------------------------------------------//
 // Apartados de estadisticas                                                       //

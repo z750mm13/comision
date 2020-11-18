@@ -46,7 +46,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                     </div>
-                    <input name="inicio" class="form-control @if($errors->first('inicio')) is-invalid @endif" id="enddatepicker" placeholder="Fecha de inicio" type="text" required value="{{ old('fin', Carbon::parse($validity->inicio)->format('d/m/Y')) }}">
+                    <input name="inicio" class="form-control @if($errors->first('inicio')) is-invalid @endif" id="enddatepicker" placeholder="Fecha de inicio" type="text" required value="{{ old('inicio', Carbon::parse($validity->inicio)->format('d/m/Y')) }}">
                 </div>
             </div>
         </div>

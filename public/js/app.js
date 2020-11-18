@@ -14714,7 +14714,8 @@ var app = new Vue({
         axios.get('/goals/norms/requirements', {
           params: {
             norm_id: this.selected_norm,
-            requirement_id: this.getOldData('requirement')
+            requirement_id: this.getOldData('requirement'),
+            used: this.getUsed()
           }
         }).then(function (response) {
           _this.requirements = response.data;
@@ -14724,6 +14725,9 @@ var app = new Vue({
     },
     getOldData: function getOldData(type) {
       return document.getElementById(type).getAttribute('data-old');
+    },
+    getUsed: function getUsed() {
+      return document.getElementById('norm').getAttribute('used-data');
     }
   }
 });

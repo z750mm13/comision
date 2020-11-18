@@ -25,7 +25,7 @@
     
     <div class="form-group">
         <label for="norm">Norma</label>
-        <select v-model="selected_norm" @change="loadRequirements" id="norm" data-old="{{ old('norm_id') }}"name="norm_id" class="form-control{{ $errors->has('norm_id') ? ' is-invalid' : '' }}">
+        <select v-model="selected_norm" @change="loadRequirements" id="norm" used-data="goals" data-old="{{ old('norm_id') }}"name="norm_id" class="form-control{{ $errors->has('norm_id') ? ' is-invalid' : '' }}">
             <option value="">Selecciona la norma</option>
             @foreach($norms as $norm)
             <option value="{{ $norm->id }}">

@@ -74,7 +74,7 @@
   var preguntaid = 1;
   var tipoid = 2;
   var forid = 1;
-  $(document).ready(function() {  
+  $(document).ready(function() {
     $("#clone").click(function () {
       // Clona peligos
       var $clone = $('#peligros .form-group').last().clone();
