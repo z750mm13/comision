@@ -56,7 +56,7 @@ use Tools\Utils\Fecha;
   </div>
 </div>
 <div class="d-md-none col-sm-12">
-  <a id="limpiar" href="{{__('/statistics/reviews')}}"  class="btn btn-secondary">Limpiar</a>
+  <a id="limpiar" href="/statistics/reviews"  class="btn btn-secondary">Limpiar</a>
 </div>
 <div class="d-md-none col-sm-12">
   <br>
