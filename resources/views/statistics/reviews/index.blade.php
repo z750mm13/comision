@@ -38,7 +38,7 @@ use Tools\Utils\Fecha;
     </div>
 </div>
 <div class="col-md-3 d-none d-md-block d-xl-block">
-  <a id="limpiar" href="{{__('/statistics/reviews')}}"  class="mb-2 btn btn-secondary">Limpiar</a>
+  <a id="limpiar" href="/statistics/reviews"  class="mb-2 btn btn-secondary">Limpiar</a>
   <input type="submit"  class="mb-2 btn btn-primary " name="submit"  value="Mostrar">
 </div>
 <div class="col-12">
