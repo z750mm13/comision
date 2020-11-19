@@ -137,3 +137,8 @@ Route::resource('tasks', 'TaskController');
 // TODO crear apartado de Tareas                                                   //
 // TODO crear apartado de Matriz de riesgos                                        //
 //---------------------------------------------------------------------------------//
+// TODO convertir fechas
+// Validities
+// Evaluations
+// Cycles
+// Statistics Reviews
