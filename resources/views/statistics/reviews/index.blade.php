@@ -14,7 +14,7 @@ use Tools\Utils\Fecha;
 @endpush
 
 @section('bodycontent')
-<form action="{{_('/statistics/reviews')}}" method="get" autocomplete="off" class="row">
+<form action="/statistics/reviews" method="get" autocomplete="off" class="row">
 <div class="col-md-9 col-sm-12 input-daterange datepicker row">
     <div class="col-md-6 col-sm-12">
         <div class="form-group">
