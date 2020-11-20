@@ -101,8 +101,13 @@ Route::get('tasks/create/{requirement_id?}', 'TaskController@create');
 Route::get('tasks/{requirement_id?}/create', 'TaskController@complete');
 //Ruta de requisitos de norma json
 Route::get('tasks/norms/requirements', 'TaskController@getRequirements');
+//Ruta de exams con id de target
+Route::get('exams/create/{id?}', 'ExamController@create');
+//Ruta de las subareas pertenecientes a un area a evaluar
+Route::get('exams/areas/{area_id?}', 'ExamController@index');
+//Rupa de subareas pertenecientes a una programación
+Route::get('exams/areas/{area_id?}/validity/{validity_id?}', 'ExamController@index');
 
-//TODO creacion crud de matriz de riesgos
 Route::resource('cordinates', 'CordinateController');
 Route::resource('elements', 'ElementController');
 Route::resource('helpers', 'HelperController');
@@ -124,14 +129,15 @@ Route::resource('arrays', 'MatrixController');
 Route::resource('cycles', 'CycleController');
 Route::resource('goals', 'GoalController');
 Route::resource('tasks', 'TaskController');
+Route::resource('exams', 'ExamController');
 
 //---------------------------------------------------------------------------------//
 // Apartados de estadisticas                                                       //
 // TODO crear apartado de normas                                                   //
-// TODO crear apartado de recorridos                                               //
+// Apartado de recorridos                                                          //
  Route::get('statistics/reviews', 'ReviewStatisticController@index');              //
  Route::post('statistics/reviews', 'ReviewStatisticController@index');             //
-// TODO crear apartado de areas                                                    //
+// Apartado de areas                                                               //
  Route::get('statistics/areas',  'AreaStatisticController@index');                 //
  Route::post('statistics/areas', 'AreaStatisticController@index');                 //
 // TODO crear apartado de Tareas                                                   //

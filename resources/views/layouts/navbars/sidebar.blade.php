@@ -128,6 +128,11 @@
                                         {{ __('Realizar evaluación') }}
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('exams.index') }}">
+                                        {{ __('Realizar matriz') }}
+                                    </a>
+                                </li>
                                 @if(Auth::user()->admin)
                                 <li class="nav-item">
                                     <a href="#nav-recorridos" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="nav-recorridos">
