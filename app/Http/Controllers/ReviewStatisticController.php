@@ -19,8 +19,14 @@ class ReviewStatisticController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        $inicio = $request->input('inicio');
-        $fin = $request->input('fin');
+        // TODO para la conversión
+        $inicio = null;
+        $fin = null;
+        if($request->input('inicio'))
+        $inicio = date('Y-m-d', strtotime(str_replace('/', '-', $request->input('inicio'))));
+        if($request->input('fin'))
+        $fin = date('Y-m-d', strtotime(str_replace('/', '-', $request->input('fin'))));
+        //dd($inicio.' : '.$request->input('fin'));
         $problema = $request->input('problema');
         $compromiso = $request->input('compromiso');
         $cumplimiento = $request->input('cumplimiento');
@@ -37,8 +43,8 @@ class ReviewStatisticController extends Controller {
 
         if($inicio && $fin) {
             $problems->where([
-                ['compliments.fecha', '>=', date('Y-d-m', strtotime($inicio))],
-                ['compliments.fecha', '<=', date('Y-d-m', strtotime($fin))]
+                ['compliments.fecha', '>=', $inicio],
+                ['compliments.fecha', '<=', $fin]
             ]);
         } if ($request->input('problema')){
             $problems->where('reviews.valor', 'f');
@@ -47,7 +53,7 @@ class ReviewStatisticController extends Controller {
         } if ($request->input('cumplimiento')){
             $problems->where('compliments.created_at', '!=', null);
         }
-        //dd($problems->toSql(),$problems->getBindings());
+        //dd($problems->toSql(),$problems->getBindings(), $problems->get());
         $problems = $problems->get();
         return view('statistics.reviews.index', compact('problems','inicio','fin','problema','compromiso','cumplimiento'));
     }
