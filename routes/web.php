@@ -133,14 +133,12 @@ Route::resource('exams', 'ExamController');
 
 //---------------------------------------------------------------------------------//
 // Apartados de estadisticas                                                       //
-// TODO crear apartado de normas                                                   //
 // Apartado de recorridos                                                          //
  Route::get('statistics/reviews', 'ReviewStatisticController@index');              //
  Route::post('statistics/reviews', 'ReviewStatisticController@index');             //
-// Apartado de areas                                                               //
- Route::get('statistics/areas',  'AreaStatisticController@index');                 //
- Route::post('statistics/areas', 'AreaStatisticController@index');                 //
-// TODO crear apartado de Tareas                                                   //
+// Apartado de normas                                                              //
+ Route::get('statistics/norms',  'NormStatisticController@index');                 //
+ Route::post('statistics/norms', 'NormtatisticController@index');                  //
 // TODO crear apartado de Matriz de riesgos                                        //
 //---------------------------------------------------------------------------------//
 // TODO convertir fechas
