@@ -138,7 +138,7 @@ Route::resource('exams', 'ExamController');
  Route::post('statistics/reviews', 'ReviewStatisticController@index');             //
 // Apartado de normas                                                              //
  Route::get('statistics/norms',  'NormStatisticController@index');                 //
- Route::post('statistics/norms', 'NormtatisticController@index');                  //
+ Route::post('statistics/norms', 'NormStatisticController@index');                  //
 // TODO crear apartado de Matriz de riesgos                                        //
 //---------------------------------------------------------------------------------//
 // TODO convertir fechas

@@ -205,7 +205,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('goals.index').'?cycle_id='.Tools\Query\Reviews::getCurrentCycle() }}">
+                                    <a class="nav-link" href="{{ route('goals.index') }}">
                                         {{ __('Metas normativas') }}
                                     </a>
                                 </li>
@@ -225,11 +225,11 @@
                               <a href="{{ __('/statistics/reviews?problema=on') }}" class="nav-link">{{ __('Recorridos') }}</a>
                           </li>
                           <li class="nav-item">
-                              <a href="{{ __('/statistics/areas') }}" class="nav-link">{{ __('Áreas') }}</a>
+                              <a href="/statistics/norms" class="nav-link">{{ __('Normas') }}</a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="{{ route('cordinates.index') }}">
-                                  {{ __('Normas') }}
+                                  {{ __('Matriz de riesgos') }}
                               </a>
                           </li>
                         </ul>

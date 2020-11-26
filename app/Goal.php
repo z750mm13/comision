@@ -8,14 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Goal extends Model {
     use SoftDeletes;
     protected $fillable = [
-        'requirement_id', 'cycle_id'
+        'porcentaje', 'anio'
     ];
-
-    public function requirement() {
-        return $this -> belongsTo('App\Requirement');
-    }
-
-    public function cycle() {
-        return $this -> belongsTo('App\Cycle');
-    }
 }

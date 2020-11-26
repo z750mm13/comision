@@ -13,8 +13,8 @@ class CreateGoalsTable extends Migration {
     public function up() {
         Schema::create('goals', function (Blueprint $table) {
             $table->id();
-            $table->biginteger('requirement_id');
-            $table->biginteger('cycle_id');
+            $table->integer('porcentaje');
+            $table->integer('anio');
             $table->softDeletes();
             $table->timestamps();
         });

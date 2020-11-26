@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Review;
 
-class AreaStatisticController extends Controller {
+class NormStatisticController extends Controller {
     function __construct() {
         $this->middleware('active');
         $this->middleware('auth');
@@ -19,8 +19,13 @@ class AreaStatisticController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        $inicio = $request->input('inicio');
-        $fin = $request->input('fin');
+        $inicio = null;
+        $fin = null;
+        if($request->input('inicio'))
+        $inicio = date('Y-m-d', strtotime(str_replace('/', '-', $request->input('inicio'))));
+        if($request->input('fin'))
+        $fin = date('Y-m-d', strtotime(str_replace('/', '-', $request->input('fin'))));
+        //dd($inicio.' : '.$request->input('fin'));
         $problema = $request->input('problema');
         $compromiso = $request->input('compromiso');
         $cumplimiento = $request->input('cumplimiento');
@@ -37,8 +42,8 @@ class AreaStatisticController extends Controller {
 
         if($inicio && $fin) {
             $problems->where([
-                ['compliments.fecha', '>=', date('Y-d-m', strtotime($inicio))],
-                ['compliments.fecha', '<=', date('Y-d-m', strtotime($fin))]
+                ['compliments.fecha', '>=', $inicio],
+                ['compliments.fecha', '<=', $fin]
             ]);
         } if ($request->input('problema')){
             $problems->where('reviews.valor', 'f');
@@ -47,8 +52,8 @@ class AreaStatisticController extends Controller {
         } if ($request->input('cumplimiento')){
             $problems->where('compliments.created_at', '!=', null);
         }
-        //dd($problems->toSql(),$problems->getBindings());
+        //dd($problems->toSql(),$problems->getBindings(), $problems->get());
         $problems = $problems->get();
-        return view('statistics.areas.index', compact('problems','inicio','fin','problema','compromiso','cumplimiento'));
+        return view('statistics.norms.index', compact('problems','inicio','fin','problema','compromiso','cumplimiento'));
     }
 }

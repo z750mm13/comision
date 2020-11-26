@@ -27,29 +27,8 @@ class GoalController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        $norm_id = $request->input('norm_id');
-        $cycle_id = $request->input('cycle_id');
-
-        if(!$cycle_id)abort(404, "No existe el elemento.");
-        $norms = null;
-        if(!$norm_id){
-            $norms = Norm::select('norms.*')->distinct()
-            ->join('requirements','requirements.norm_id','=','norms.id')
-            ->join('goals','goals.requirement_id','=','requirements.id')
-            ->where('goals.cycle_id','=',$cycle_id)
-            ->orderBy('codigo', 'ASC')
-            ->get();
-        } else {
-            $norms = Requirement::select('requirements.*')
-            ->join('goals','goals.requirement_id','=','requirements.id')
-            ->where([
-                ['goals.cycle_id',$cycle_id],
-                ['requirements.norm_id',$norm_id]
-            ])
-            ->orderBy('numero', 'ASC')
-            ->get();
-        }
-        return view('goals.index', compact('norm_id', 'norms','cycle_id'));
+        $goals = Goal::orderBy('anio')->get();
+        return view('goals.index', compact('goals'));
     }
 
     /**
@@ -60,9 +39,7 @@ class GoalController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $cycle_id = Reviews::getCurrentCycle();
-        $norms=Norm::orderBy('codigo', 'ASC')->get();
-        return view('goals.create', compact('norms','cycle_id'));
+        return view('goals.create');
     }
 
     /**
@@ -73,7 +50,6 @@ class GoalController extends Controller {
      */
     public function store(Request $request) {
         $goal = Goal::create($request->all());
-        $goal = $goal->requirement;
         if ($goal) {
             return redirect()
                 ->route('goals.show',compact('goal'))
@@ -91,15 +67,8 @@ class GoalController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        $cycle_id = Reviews::getCurrentCycle();
-        $goal = Goal::select('goals.*')
-        ->join('requirements','goals.requirement_id','=','requirements.id')
-        ->where([
-            ['goals.requirement_id',$id],
-            ['goals.cycle_id', $cycle_id]
-        ])
-        ->first();
-        return view('goals.show', compact('goal','cycle_id'));
+        $goal = Goal::findOrFail($id);
+        return view('goals.show', compact('goal'));
     }
 
     /**
@@ -110,9 +79,7 @@ class GoalController extends Controller {
      */
     public function edit($id) {
         $goal = Goal::findOrFail($id);
-        $norms=Norm::orderBy('codigo', 'ASC')->get();
-        $cycle_id = Reviews::getCurrentCycle();
-        return view('goals.edit', compact('cycle_id', 'goal', 'norms'));
+        return view('goals.edit', compact('goal'));
     }
 
     /**
@@ -123,13 +90,12 @@ class GoalController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        $cycle_id = Reviews::getCurrentCycle();
         //Actualizacion del requisito
         Goal::findOrFail($id)->update($request->all());
 
         //Retorno a la vista de requisito
         $goal = Goal::findOrFail($id);
-        return view('goals.show', compact('goal','cycle_id'));
+        return view('goals.show', compact('goal'));
     }
 
     /**
@@ -139,10 +105,9 @@ class GoalController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $cycle_id = Reviews::getCurrentCycle();
         $goal = Goal::findOrFail($id);
         $goal->forceDelete();
-        return redirect()->route('goals.index',['cycle_id'=>$cycle_id])->with('cycle_id');
+        return redirect()->route('goals.index');
     }
 
     public function getRequirements(Request $request) {
