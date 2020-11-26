@@ -91,8 +91,6 @@ Route::post('commitments/restore', 'CommitmentController@restore');
 Route::get('evaluations/time/{tiempo?}', 'EvaluationController@index');
 //Ruta de targets con id de subarea
 Route::get('arrays/create/{id?}', 'MatrixController@create');
-//Ruta de index de ciclos segun tiempo
-Route::get('cycles/time/{tiempo?}', 'CycleController@index');
 //Ruta de requisitos de norma json
 Route::get('goals/norms/requirements', 'GoalController@getRequirements');
 // Ruta de creacion de tareas con el requisito
@@ -126,7 +124,6 @@ Route::resource('compliments', 'ComplimentController');
 Route::resource('activities', 'ActivityController');
 Route::resource('evaluations', 'EvaluationController');
 Route::resource('arrays', 'MatrixController');
-Route::resource('cycles', 'CycleController');
 Route::resource('goals', 'GoalController');
 Route::resource('tasks', 'TaskController');
 Route::resource('exams', 'ExamController');
