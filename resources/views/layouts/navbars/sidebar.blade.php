@@ -200,11 +200,6 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('cycles.index') }}">
-                                        {{ __('Ciclos') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('goals.index') }}">
                                         {{ __('Metas normativas') }}
                                     </a>

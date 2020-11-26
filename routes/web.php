@@ -145,4 +145,3 @@ Route::resource('exams', 'ExamController');
 // Validities
 // Evaluations
 // Cycles
-// Statistics Reviews
