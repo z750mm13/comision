@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Str;
 use App\Subarea;
 use App\Area;
 use App\Compliment;
@@ -65,7 +65,20 @@ class HomeController extends Controller {
         ->groupBy('id','nombre','area','color','deleted_at','created_at','updated_at')
         ->get();
 
-        $norms = Norm::orderBy('codigo', 'ASC')->limit(8)->get();
+        $cumplimientos = Norm::select(DB::raw('norms.codigo, requirements.numero, (case when count(tasks.id) = 0 then 0 else 1 end) tareas'))
+        ->leftJoin('requirements','requirements.norm_id','=','norms.id')
+        ->leftJoin('tasks', function ($join) {
+            $join->on('tasks.requirement_id', '=','requirements.id')
+            ->where('tasks.cumplida', '=','true');
+        })
+        ->groupBy('norms.codigo','requirements.numero')
+        ->orderBy('norms.codigo');
+        $norms = Norm::select(DB::raw('codigo, sum(tareas) cumplimientos, count(tareas) avance'))
+        ->from(\DB::raw(' ('. Str::replaceArray('?', $cumplimientos->getBindings(), $cumplimientos->toSql()) .') as cumplidos' ))
+        ->groupBy('codigo')
+        ->limit(8)
+        ->withTrashed()
+        ->get();
 
         $problems = Review::select('reviews.id')
         ->where('valor','=','false')

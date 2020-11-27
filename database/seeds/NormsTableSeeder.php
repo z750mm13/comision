@@ -1054,7 +1054,7 @@ class NormsTableSeeder extends Seeder
          * NOM-011
          */
         DB::table('norms')->insert([
-            'codigo' => ' NOM-011-STPS-2001',
+            'codigo' => 'NOM-011-STPS-2001',
             'titulo' => ' Condiciones de seguridad e higiene en los centros de trabajo donde se genere ruido. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-011.pdf',
             'created_at' => Carbon::now(),
@@ -1480,7 +1480,7 @@ class NormsTableSeeder extends Seeder
          * NOM-027
          */
         DB::table('norms')->insert([
-            'codigo' => ' NOM-027-STPS-2008',
+            'codigo' => 'NOM-027-STPS-2008',
             'titulo' => 'Actividades de soldadura y corte-Condiciones de seguridad e higiene. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-027.pdf',
             'created_at' => Carbon::now(),
@@ -1858,7 +1858,7 @@ class NormsTableSeeder extends Seeder
          * NOM-04
          */
         DB::table('norms')->insert([
-            'codigo' => ' NOM-004-STPS-1999',
+            'codigo' => 'NOM-004-STPS-1999',
             'titulo' => 'Sistemas de protección y dispositivos de seguridad en la maquinaria y equipo que se utilice en los centros de trabajo. ',
             'direccion' => '',
             'created_at' => Carbon::now(),
@@ -2022,7 +2022,7 @@ class NormsTableSeeder extends Seeder
          * NOM-009
          */
         DB::table('norms')->insert([
-            'codigo' => ' NOM-009-STPS-2011',
+            'codigo' => 'NOM-009-STPS-2011',
             'titulo' => ' Condiciones de seguridad para realizar trabajos en altura.',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-009.pdf',
             'created_at' => Carbon::now(),

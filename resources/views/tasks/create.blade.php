@@ -25,7 +25,7 @@
     @if ($requirement_id == null)
     <div class="form-group">
         <label for="norm">Norma</label>
-        <select v-model="selected_norm" @change="loadRequirements" id="norm" data-old="{{ old('norm_id') }}" name="norm_id" class="form-control{{ $errors->has('norm_id') ? ' is-invalid' : '' }}">
+        <select v-model="selected_norm" @change="loadRequirements" id="norm" data-old="{{ old('norm_id') }}" name="norm_id" class="form-control{{ $errors->has('norm_id') ? ' is-invalid' : '' }}" required>
             <option value="">Selecciona la norma</option>
             @foreach($norms as $norm)
             <option value="{{ $norm->id }}">
@@ -37,7 +37,7 @@
     </div>
     <div class="form-group">
         <label for="requirement">Requisito</label>
-        <select v-model="selected_requirement" id="requirement" data-old="{{ old('requirement_id') }}" name="requirement_id" class="form-control{{ $errors->has('requirement_id') ? ' is-invalid' : '' }}">
+        <select v-model="selected_requirement" id="requirement" data-old="{{ old('requirement_id') }}" name="requirement_id" class="form-control{{ $errors->has('requirement_id') ? ' is-invalid' : '' }}" required>
             <option value="">Selecciona un requisito</option>
             <option v-for="(requirement, index) in requirements" v-bind:value="index">
                 @{{requirement}}
@@ -58,7 +58,7 @@
 
     <div class="form-group">
         <label for="task-descripcion">Descripcion:</label>
-        <textarea class="form-control" placeholder="Descripción del ciclo" name="descripcion" id="task-descripcion" rows="3"></textarea>
+        <textarea class="form-control" placeholder="Descripción del ciclo" name="descripcion" id="task-descripcion" rows="3" required></textarea>
     </div>
 
     <div class="form-group">

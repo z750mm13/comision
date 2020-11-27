@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             <div class="col-sm card">
-                                <img class="card-img-top" img data-original="{{ asset('assets') }}/images/maps/Itste-alarcon.webp" src="{{ asset('assets') }}/images/maps/Itste-gertrudis.webp" alt="Unidad Santa Gertrudis">
+                                <img class="card-img-top" img data-original="{{ asset('assets') }}/images/maps/Itste-gertrudis.webp" src="{{ asset('assets') }}/images/maps/Itste-gertrudis.webp" alt="Unidad Santa Gertrudis">
                                 <div class="card-body">
                                     <h5 class="h2 card-title mb-0">Santa Gertrudis</h5>
                                 </div>
@@ -186,8 +186,8 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">Referral</th>
-                                    <th scope="col">Visitors</th>
+                                    <th scope="col">Norma</th>
+                                    <th scope="col">Cumplimientos</th>
                                     <th scope="col">Avance</th>
                                 </tr>
                             </thead>
@@ -198,14 +198,14 @@
                                         {{$norm->codigo}}
                                     </th>
                                     <td>
-                                        1,480
+                                        {{$norm->cumplimientos}}
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <span class="mr-2">60%</span>
+                                            <span class="mr-2">{{($norm->avance/100.0)*$norm->cumplimientos}}%</span>
                                             <div>
                                                 <div class="progress">
-                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="{{($norm->avance/100.0)*$norm->cumplimientos}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($norm->avance/100.0)*$norm->cumplimientos}}%;"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -224,28 +224,6 @@
 @endsection
 @push('css')
 <link  href="{{ asset('assets') }}/vendor/viewerjs/viewer.css" rel="stylesheet">
-<style>
-    .pictures {
-      list-style: none;
-      margin: 0;
-      max-width: 30rem;
-      padding: 0;
-    }
-
-    .pictures > li {
-      border: 1px solid transparent;
-      float: left;
-      height: calc(100% / 3);
-      margin: 0 -1px -1px 0;
-      overflow: hidden;
-      width: calc(100% / 3);
-    }
-
-    .pictures > li > img {
-      cursor: zoom-in;
-      width: 100%;
-    }
-</style>
 @endpush
 @push('js')
 <script type="module" src="{{ asset('assets') }}/vendor/viewerjs/viewer.js"></script>
