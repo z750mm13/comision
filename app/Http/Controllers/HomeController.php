@@ -101,27 +101,28 @@ class HomeController extends Controller {
         //Grafica de avance total
         $totalrequisitos= Requirement::select(DB::raw('count(requirements.id) total'))
         ->where(
-            DB::raw('extract(year FROM requirements.created_at) <= '.Carbon::now()->year.' and extract(month FROM requirements.created_at) <= '.Carbon::now()->month.' and null')
+            DB::raw('extract(year FROM requirements.created_at) <= '.Carbon::now()->year.' and null')
         )->get()->first()->total;
         $meses = [];
         for($mes=1; $mes < 13; $mes++){
+            $fecha = Carbon::parse(Carbon::now()->year.'-'.$mes."-01")->addMonth();
             $cumplidos = Norm::select(DB::raw('norms.id, requirements.numero, (case when count(tasks.id) = 0 then 0 else 1 end) tareas'))
-            ->leftJoin('requirements', function ($join) use($mes) {
+            ->leftJoin('requirements', function ($join) use($fecha) {
                 $join->on('requirements.norm_id', '=','norms.id')
                 ->where(
-                    DB::raw('extract(year FROM requirements.created_at) <= '.Carbon::now()->year.' and extract(month FROM requirements.created_at) <= '.$mes.' and null')
+                    DB::raw("requirements.created_at < '".$fecha->format('Y-m-d')."' and null")
                 );
             })
-            ->leftJoin('tasks', function ($join) use($mes) {
+            ->leftJoin('tasks', function ($join) use($fecha) {
                 $join->on('tasks.requirement_id', '=','requirements.id')
                 ->where(
-                    DB::raw('tasks.cumplida = true and extract(year FROM tasks.created_at) <= '.Carbon::now()->year.' and extract(month FROM tasks.created_at) <= '.$mes.' and null')
+                    DB::raw("tasks.cumplida = true and tasks.created_at < '".$fecha->format('Y-m-d')."' and null")
                 );
             })
             ->groupBy('norms.id','requirements.numero')
             ->withTrashed()
             ->where(
-                DB::raw('extract(year FROM norms.created_at) <= '.Carbon::now()->year.' and extract(month FROM norms.created_at) <= '.$mes.' and null')
+                DB::raw("norms.created_at < '".$fecha->format('Y-m-d')."' and null")
             );
             $meses[$mes] = Norm::select(DB::raw('sum(tareas) cumplimientos'))
             ->from(\DB::raw(' ('. $cumplidos->toSql() .') as cumplidos' ))
@@ -147,6 +148,8 @@ class HomeController extends Controller {
         ->limit(5)
         ->get();
         $validities = $validities->reverse();
+
+        $goal=Norms::getCurrentGoal();
         
         $lastv = Reviews::getCurrentValidity();
         
@@ -162,7 +165,7 @@ class HomeController extends Controller {
         return view('dashboard',compact(
             'subareas','areas','problems','compliments','por_compliments',
             'solved', 'por_solved', 'norms', 'calendar_validities','validities',
-            'total', 'meses', 'totalrequisitos'
+            'total', 'meses', 'totalrequisitos', 'goal'
         ));
     }
 }

@@ -2,7 +2,7 @@
   'title' => $norm->codigo,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la norma',
-  'descriptions' => [$norm->titulo, 'Direccion: '. $norm->direccion, 'Asignación: '. '60'. '%'],
+  'descriptions' => [$norm->titulo, 'Direccion: '. $norm->direccion],
   'normativa' => 'active',
   'nodelete' => 'no'
 ])

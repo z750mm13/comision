@@ -22,7 +22,7 @@ class Requirement extends Model {
         return $this -> hasMany('App\Questionnaire');
     }
 
-    public function goals() {
-        return $this -> hasMany('App\Goal');
+    public function tasks() {
+        return $this -> hasMany('App\Task');
     }
 }

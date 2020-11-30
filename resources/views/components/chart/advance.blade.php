@@ -10,7 +10,7 @@
 var AdvanceChart = (function() {
 
 	// Variables
-	let avance = {{$totalrequisitos/100}}*({{ \Tools\Query\Norms::getCurrentGoal()? \Tools\Query\Norms::getCurrentGoal()->porcentaje : 0 }} );
+	let avance = {{$totalrequisitos/100}}*({{ $goal? $goal->porcentaje : 0 }} );
 	let saltos = avance/12;
 	var $chart = $('#advance-chart');
 	let avanceMensual = [];

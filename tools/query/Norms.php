@@ -12,5 +12,9 @@ class Norms {
     $anio = Carbon::now()->year;
 
     return Goal::where('anio', '=', "$anio")->get()->first();
-	}
+    }
+    
+	public static function getGoal($anio) {
+        return Goal::where('anio', '=', "$anio")->get()->first();
+    }
 }

@@ -119,7 +119,7 @@ class RequirementController extends Controller {
      */
     public function destroy($id) {
         $requirement = Requirement::findOrFail($id);
-        if($requirement->questionnaires()->withTrashed()->get()->count())
+        if($requirement->questionnaires()->withTrashed()->get()->count() || $requirement->tasks()->withTrashed()->get()->count())
             $requirement->delete();
         else
             $requirement->forceDelete();
