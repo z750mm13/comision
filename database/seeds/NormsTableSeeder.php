@@ -18,8 +18,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-001-STPS-2008',
             'titulo' => 'EDIFICIOS, LOCALES, INSTALACIONES Y ÁREAS EN LOS CENTROS DE TRABAJO - CONDICIONES DE SEGURIDAD',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-001.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.1',
@@ -27,8 +27,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -36,8 +36,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -45,8 +45,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.1',
@@ -54,8 +54,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.2',
@@ -63,8 +63,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.3',
@@ -72,8 +72,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => '',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.4',
@@ -81,8 +81,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.5',
@@ -90,8 +90,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.6',
@@ -99,8 +99,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -108,8 +108,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3',
@@ -117,8 +117,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.4',
@@ -126,8 +126,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.5',
@@ -135,8 +135,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.5.1',
@@ -144,8 +144,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.5.2',
@@ -153,8 +153,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.6',
@@ -162,8 +162,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Requisitos de seguridad en el centro de trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8',
@@ -171,8 +171,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Condiciones de seguridad en el funcionamiento de los sistemas de ventilación artificial ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -180,8 +180,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Condiciones de seguridad en el funcionamiento de los sistemas de ventilación artificial ',
             'frecuencia' => '',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2',
@@ -189,8 +189,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Condiciones de seguridad en el funcionamiento de los sistemas de ventilación artificial ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9',
@@ -198,8 +198,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Requisitos de seguridad para el tránsito de vehículos',
             'frecuencia' => '',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1',
@@ -207,8 +207,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Requisitos de seguridad para el tránsito de vehículos ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.2',
@@ -216,8 +216,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Requisitos de seguridad para el tránsito de vehículos ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.3',
@@ -225,8 +225,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Requisitos de seguridad para el tránsito de vehículos ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.4',
@@ -234,8 +234,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Requisitos de seguridad para el tránsito de vehículos ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.8',
@@ -245,8 +245,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Requisitos de seguridad para el tránsito de vehículos ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.9',
@@ -254,8 +254,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Requisitos de seguridad para el tránsito de vehículos ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.3',
@@ -263,8 +263,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Condiciones de seguridad en el funcionamiento de los sistemas de ventilación artificial ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -272,8 +272,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -281,8 +281,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -293,8 +293,8 @@ class NormsTableSeeder extends Seeder
             'titulo' => ' Mantenimiento de las instalaciones eléctricas en los centros de
         trabajo-Condiciones de seguridad. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-029.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.1',
@@ -304,8 +304,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -314,8 +314,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -326,8 +326,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -338,8 +338,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -347,8 +347,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -358,8 +358,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -370,8 +370,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -381,8 +381,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.10',
@@ -392,8 +392,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.11',
@@ -402,8 +402,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.12',
@@ -413,8 +413,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.13',
@@ -424,8 +424,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.14',
@@ -435,8 +435,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.15',
@@ -445,8 +445,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.16',
@@ -457,8 +457,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.17',
@@ -468,8 +468,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.18',
@@ -478,8 +478,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.19',
@@ -489,8 +489,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -517,8 +517,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Plan de trabajo y determinación de riesgos potenciales',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -547,8 +547,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Plan de trabajo y determinación de riesgos potenciales',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3',
@@ -559,8 +559,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Plan de trabajo y determinación de riesgos potenciales',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.4',
@@ -570,8 +570,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Plan de trabajo y determinación de riesgos potenciales',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -603,8 +603,8 @@ class NormsTableSeeder extends Seeder
         eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2',
@@ -617,8 +617,8 @@ class NormsTableSeeder extends Seeder
         eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.3',
@@ -634,8 +634,8 @@ class NormsTableSeeder extends Seeder
         eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4',
@@ -670,8 +670,8 @@ class NormsTableSeeder extends Seeder
         eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1',
@@ -681,8 +681,8 @@ class NormsTableSeeder extends Seeder
         eléctricas',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.2',
@@ -706,8 +706,8 @@ class NormsTableSeeder extends Seeder
         eléctricas',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.3',
@@ -725,8 +725,8 @@ class NormsTableSeeder extends Seeder
         eléctricas',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.4',
@@ -741,8 +741,8 @@ class NormsTableSeeder extends Seeder
         eléctricas',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.5',
@@ -765,8 +765,8 @@ class NormsTableSeeder extends Seeder
         eléctricas',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.1',
@@ -774,8 +774,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Condiciones de seguridad en el mantenimiento de las instalaciones eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.2',
@@ -783,8 +783,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Condiciones de seguridad en el mantenimiento de las instalaciones eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.3',
@@ -792,8 +792,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Condiciones de seguridad en el mantenimiento de las instalaciones eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.4',
@@ -801,8 +801,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Condiciones de seguridad en el mantenimiento de las instalaciones eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.5',
@@ -810,8 +810,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Condiciones de seguridad en el mantenimiento de las instalaciones eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.6',
@@ -819,8 +819,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Condiciones de seguridad en el mantenimiento de las instalaciones eléctricas ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '13.1',
@@ -847,8 +847,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '13. Plan de atención a emergencias ',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.1',
@@ -858,8 +858,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Capacitación',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.2',
@@ -887,8 +887,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Capacitación',
             'frecuencia' => ' ',
             'norm_id' => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -899,8 +899,8 @@ class NormsTableSeeder extends Seeder
             'titulo' => 'Equipo de protección personal-Selección, uso y manejo en los
         centros de trabajo. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-017.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -912,8 +912,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -926,8 +926,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -941,8 +941,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -951,8 +951,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5.1',
@@ -961,8 +961,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5.2',
@@ -971,8 +971,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -983,8 +983,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -993,8 +993,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -1003,8 +1003,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -1046,8 +1046,8 @@ class NormsTableSeeder extends Seeder
         limitaciones, mantenimiento, resguardo y disposición final del equipo de protección personal ',
             'frecuencia' => ' ',
             'norm_id' => 3,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -1057,8 +1057,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-011-STPS-2001',
             'titulo' => ' Condiciones de seguridad e higiene en los centros de trabajo donde se genere ruido. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-011.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -1068,8 +1068,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -1077,8 +1077,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -1087,8 +1087,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -1097,8 +1097,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -1108,8 +1108,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -1117,8 +1117,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -1127,8 +1127,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -1137,8 +1137,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Límites máximos permisibles de exposición a ruido ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3',
@@ -1147,8 +1147,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Límites máximos permisibles de exposición a ruido ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -1163,8 +1163,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2',
@@ -1174,8 +1174,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.1',
@@ -1189,8 +1189,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.2',
@@ -1205,8 +1205,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.3',
@@ -1214,8 +1214,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.3.1',
@@ -1224,8 +1224,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4',
@@ -1233,8 +1233,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4.1',
@@ -1245,8 +1245,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4.2',
@@ -1256,8 +1256,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4.3',
@@ -1269,8 +1269,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4.4',
@@ -1279,8 +1279,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.5',
@@ -1288,8 +1288,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.5.1',
@@ -1300,8 +1300,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.5.2',
@@ -1311,8 +1311,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.6',
@@ -1326,8 +1326,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.7',
@@ -1335,8 +1335,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.7.1',
@@ -1362,8 +1362,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.7.2',
@@ -1373,8 +1373,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.7.3',
@@ -1383,8 +1383,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.7.4',
@@ -1393,8 +1393,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.8',
@@ -1402,8 +1402,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.8.1',
@@ -1412,8 +1412,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.8.2',
@@ -1422,8 +1422,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.8.3',
@@ -1440,8 +1440,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => 'Programa de conservación de la audición ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1',
@@ -1451,8 +1451,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Centros de trabajo de nueva creación o modificación de procesos en los centros de trabajo existentes ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.2',
@@ -1462,8 +1462,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Centros de trabajo de nueva creación o modificación de procesos en los centros de trabajo existentes ',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.3',
@@ -1472,8 +1472,8 @@ class NormsTableSeeder extends Seeder
         escrito, con un análisis técnico para su implantación y en una evaluación posterior para verificar su efectividad.',
             'frecuencia' => ' ',
             'norm_id' => 4,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -1483,8 +1483,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-027-STPS-2008',
             'titulo' => 'Actividades de soldadura y corte-Condiciones de seguridad e higiene. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-027.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -1494,8 +1494,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -1506,8 +1506,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -1519,8 +1519,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5 ,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -1532,8 +1532,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -1544,8 +1544,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -1553,8 +1553,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -1564,8 +1564,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -1573,8 +1573,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.11',
@@ -1584,8 +1584,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.12',
@@ -1593,8 +1593,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.13',
@@ -1603,8 +1603,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.14',
@@ -1614,8 +1614,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.15',
@@ -1628,8 +1628,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.16',
@@ -1639,8 +1639,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.17',
@@ -1648,8 +1648,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.18',
@@ -1657,8 +1657,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8',
@@ -1666,8 +1666,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Condiciones de seguridad e higiene durante las actividades de soldadura y corte ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1',
@@ -1685,8 +1685,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Requisitos del programa de actividades de soldadura y corte ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.2',
@@ -1700,8 +1700,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Condiciones de seguridad e higiene durante las actividades de soldadura y corte ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.1',
@@ -1718,8 +1718,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Requisitos de los procedimientos de seguridad ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.2',
@@ -1749,8 +1749,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Requisitos de los procedimientos de seguridad ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.3',
@@ -1763,8 +1763,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Requisitos de los procedimientos de seguridad ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.4',
@@ -1781,8 +1781,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Requisitos de los procedimientos de seguridad ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.5',
@@ -1821,8 +1821,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Requisitos de los procedimientos de seguridad ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.6',
@@ -1850,8 +1850,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Requisitos de los procedimientos de seguridad ',
             'frecuencia' => ' ',
             'norm_id' => 5,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -1861,8 +1861,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-004-STPS-1999',
             'titulo' => 'Sistemas de protección y dispositivos de seguridad en la maquinaria y equipo que se utilice en los centros de trabajo. ',
             'direccion' => '',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -1870,8 +1870,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2.1',
@@ -1879,8 +1879,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2.2',
@@ -1888,8 +1888,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -1897,8 +1897,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -1906,8 +1906,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -1915,8 +1915,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Programa Específico de Seguridad para la Operación y Mantenimiento de la Maquinaria y Equip',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -1924,8 +1924,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Programa Específico de Seguridad para la Operación y Mantenimiento de la Maquinaria y Equip',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2.1',
@@ -1933,8 +1933,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Programa Específico de Seguridad para la Operación y Mantenimiento de la Maquinaria y Equip',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2.2',
@@ -1942,8 +1942,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Programa Específico de Seguridad para la Operación y Mantenimiento de la Maquinaria y Equip',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -1951,8 +1951,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Protectores y dispositivos de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1.1',
@@ -1960,8 +1960,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Protectores y dispositivos de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2',
@@ -1969,8 +1969,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Protectores y dispositivos de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.1',
@@ -1978,8 +1978,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Protectores y dispositivos de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.2',
@@ -1987,8 +1987,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Protectores y dispositivos de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.3',
@@ -1996,8 +1996,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Protectores y dispositivos de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.4',
@@ -2005,8 +2005,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Protectores y dispositivos de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.5',
@@ -2014,8 +2014,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Protectores y dispositivos de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 6,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -2025,8 +2025,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-009-STPS-2011',
             'titulo' => ' Condiciones de seguridad para realizar trabajos en altura.',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-009.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.1',
@@ -2034,8 +2034,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -2043,8 +2043,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -2052,8 +2052,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -2061,8 +2061,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -2070,8 +2070,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -2079,8 +2079,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -2088,8 +2088,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.11',
@@ -2097,8 +2097,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.12',
@@ -2106,8 +2106,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.13',
@@ -2115,8 +2115,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.14',
@@ -2124,8 +2124,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7',
@@ -2133,8 +2133,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -2142,8 +2142,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -2151,8 +2151,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3',
@@ -2160,8 +2160,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.6',
@@ -2169,8 +2169,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.7',
@@ -2178,8 +2178,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.8',
@@ -2187,8 +2187,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.9',
@@ -2196,8 +2196,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.10',
@@ -2205,8 +2205,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.11',
@@ -2214,8 +2214,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.12',
@@ -2223,8 +2223,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.13',
@@ -2232,8 +2232,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.14',
@@ -2241,8 +2241,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.15',
@@ -2250,8 +2250,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Medidas generales de seguridad para realizar trabajos en altura',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -2259,8 +2259,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Sistemas personales para trabajos en altura ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1.1',
@@ -2268,8 +2268,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Sistemas personales para trabajos en altura ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1.2',
@@ -2277,8 +2277,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Sistemas personales para trabajos en altura ',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.2',
@@ -2286,8 +2286,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Plataformas de elevació',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.3',
@@ -2295,8 +2295,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Plataformas de elevació',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.4',
@@ -2304,8 +2304,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Plataformas de elevació',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.5',
@@ -2313,8 +2313,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Plataformas de elevació',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.1',
@@ -2322,8 +2322,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Escaleras de mano',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.2',
@@ -2331,8 +2331,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Escaleras de mano',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.3',
@@ -2340,8 +2340,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Escaleras de mano',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.4',
@@ -2349,8 +2349,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Escaleras de mano',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '13.1',
@@ -2358,8 +2358,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '13. Redes de seguridad',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.1',
@@ -2367,8 +2367,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Seguimiento a la salud de los trabajadores',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.2',
@@ -2376,8 +2376,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Seguimiento a la salud de los trabajadores',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.3',
@@ -2385,8 +2385,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Seguimiento a la salud de los trabajadores',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '15.1',
@@ -2394,8 +2394,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '15. Plan de atención a emergencias',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '16.1',
@@ -2403,8 +2403,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '16. Capacitación, adiestramiento e información',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '16.2',
@@ -2412,8 +2412,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '16. Capacitación, adiestramiento e información',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '16.5',
@@ -2421,8 +2421,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '16. Capacitación, adiestramiento e información',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '16.6',
@@ -2430,8 +2430,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '16. Capacitación, adiestramiento e información',
             'frecuencia' => ' ',
             'norm_id' => 7,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -2441,8 +2441,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-002-STPS-2010',
             'titulo' => 'Condiciones de seguridad-Prevención y protección contra incendios en los centros de trabajo.',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-002.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.1',
@@ -2450,8 +2450,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -2459,8 +2459,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -2468,8 +2468,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -2477,8 +2477,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -2486,8 +2486,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -2495,8 +2495,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -2504,8 +2504,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.10',
@@ -2513,8 +2513,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -2522,8 +2522,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -2531,8 +2531,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3',
@@ -2540,8 +2540,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.4',
@@ -2549,8 +2549,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.5',
@@ -2558,8 +2558,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.5.1',
@@ -2567,8 +2567,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.5.2',
@@ -2576,8 +2576,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.7',
@@ -2585,8 +2585,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.9',
@@ -2594,8 +2594,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.10',
@@ -2603,8 +2603,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.11',
@@ -2612,8 +2612,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.12',
@@ -2621,8 +2621,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.13',
@@ -2630,8 +2630,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.14',
@@ -2639,8 +2639,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.15',
@@ -2648,8 +2648,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.16',
@@ -2657,8 +2657,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.17',
@@ -2666,8 +2666,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.18',
@@ -2675,8 +2675,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.19',
@@ -2684,8 +2684,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.5.3',
@@ -2693,8 +2693,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.6.2',
@@ -2702,8 +2702,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.6.1',
@@ -2711,8 +2711,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.8',
@@ -2720,8 +2720,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Condiciones de prevención y protección contra incendios ',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -2729,8 +2729,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Plan de atención a emergencias de incendio',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.1',
@@ -2738,8 +2738,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Simulacros de emergencias de incendio',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.1.1',
@@ -2747,8 +2747,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Simulacros de emergencias de incendio',
             'frecuencia' => ' ',
             'norm_id' => 8,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -2758,8 +2758,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-025-STPS-2008',
             'titulo' => ' Condiciones de iluminación en los centros de trabajo. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-025.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -2768,8 +2768,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -2778,8 +2778,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -2789,8 +2789,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -2799,8 +2799,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -2808,8 +2808,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -2818,8 +2818,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -2828,8 +2828,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -2839,8 +2839,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.10',
@@ -2849,8 +2849,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.11',
@@ -2860,8 +2860,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -2871,8 +2871,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Reconocimiento de las condiciones de iluminación ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2',
@@ -2892,8 +2892,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Reconocimiento de las condiciones de iluminación ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1',
@@ -2902,8 +2902,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Evaluación de los niveles de iluminación ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1.1',
@@ -2913,8 +2913,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Evaluación de los niveles de iluminación ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1.2',
@@ -2924,8 +2924,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Evaluación de los niveles de iluminación ',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.1',
@@ -2935,8 +2935,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Control',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.2',
@@ -2953,8 +2953,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Control',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.3',
@@ -2963,8 +2963,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Control',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.4',
@@ -2973,8 +2973,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Control',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.1',
@@ -3001,8 +3001,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Reporte del estudio',
             'frecuencia' => ' ',
             'norm_id' => 9,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -3012,8 +3012,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-006-STPS-2014',
             'titulo' => 'Manejo y almacenamiento de materiales-Condiciones de seguridad y salud en el trabajo.',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-006.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -3021,8 +3021,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -3030,8 +3030,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -3039,8 +3039,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -3048,8 +3048,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -3057,8 +3057,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -3066,8 +3066,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.10',
@@ -3075,8 +3075,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.11',
@@ -3084,8 +3084,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -3093,8 +3093,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Manejo y almacenamiento de materiales de modo manual  ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2',
@@ -3102,8 +3102,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Manejo y almacenamiento de materiales de modo manual  ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.3',
@@ -3111,8 +3111,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Manejo y almacenamiento de materiales de modo manual  ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4',
@@ -3120,8 +3120,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Manejo y almacenamiento de materiales de modo manual  ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.5',
@@ -3129,8 +3129,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Manejo y almacenamiento de materiales de modo manual  ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1',
@@ -3138,8 +3138,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Almacenamiento de materiales ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.2',
@@ -3147,8 +3147,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Almacenamiento de materiales',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.3',
@@ -3156,8 +3156,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Almacenamiento de materiales',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.4',
@@ -3167,8 +3167,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Almacenamiento de materiales',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.5',
@@ -3176,8 +3176,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Almacenamiento de materiales',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.1',
@@ -3185,8 +3185,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Vigilancia a la salud de los trabajadores ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.2',
@@ -3194,8 +3194,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Vigilancia a la salud de los trabajadores ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.3',
@@ -3203,8 +3203,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Vigilancia a la salud de los trabajadores ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.4',
@@ -3216,8 +3216,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Vigilancia a la salud de los trabajadores ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.5',
@@ -3225,8 +3225,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Vigilancia a la salud de los trabajadores ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.6',
@@ -3234,8 +3234,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Vigilancia a la salud de los trabajadores ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.7',
@@ -3243,8 +3243,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '10. Vigilancia a la salud de los trabajadores ',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.1',
@@ -3252,8 +3252,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Capacitación',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.2',
@@ -3261,8 +3261,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Capacitación',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.3',
@@ -3270,8 +3270,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Capacitación',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.6',
@@ -3279,8 +3279,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Capacitación',
             'frecuencia' => ' ',
             'norm_id' => 10,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -3291,8 +3291,8 @@ class NormsTableSeeder extends Seeder
             'titulo' => 'Condiciones térmicas elevadas o abatidas-Condiciones de
         seguridad e higiene. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-015.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -3302,8 +3302,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -3311,8 +3311,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -3321,8 +3321,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -3331,8 +3331,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -3343,8 +3343,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -3355,8 +3355,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.10',
@@ -3366,8 +3366,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -3375,8 +3375,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.1',
@@ -3385,8 +3385,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.2',
@@ -3395,8 +3395,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.3',
@@ -3405,8 +3405,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.4',
@@ -3414,8 +3414,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -3423,8 +3423,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2.1',
@@ -3433,8 +3433,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2.2',
@@ -3442,8 +3442,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2.3',
@@ -3452,8 +3452,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2.4',
@@ -3477,8 +3477,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3.1',
@@ -3497,8 +3497,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3.2',
@@ -3508,8 +3508,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3.6',
@@ -3519,8 +3519,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3.8',
@@ -3529,8 +3529,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Reconocimiento, evaluación y control ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11',
@@ -3545,8 +3545,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Registros ',
             'frecuencia' => ' ',
             'norm_id' => 11,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -3556,8 +3556,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-020-STPS-2011',
             'titulo' => 'Recipientes sujetos a presión, recipientes criogénicos y generadores de vapor o calderas - Funcionamiento - Condiciones de Seguridad. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-020.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.1',
@@ -3565,8 +3565,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -3574,8 +3574,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -3583,8 +3583,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -3592,8 +3592,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -3601,8 +3601,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -3610,8 +3610,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -3619,8 +3619,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -3628,8 +3628,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.10',
@@ -3637,8 +3637,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.11',
@@ -3646,8 +3646,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.12',
@@ -3655,8 +3655,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.14',
@@ -3664,8 +3664,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.15',
@@ -3673,8 +3673,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.16',
@@ -3682,8 +3682,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.17',
@@ -3691,8 +3691,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.1',
@@ -3700,8 +3700,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Clasificación de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.3',
@@ -3709,8 +3709,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Clasificación de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -3718,8 +3718,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '8. Listado de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1',
@@ -3727,8 +3727,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Expediente de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.2',
@@ -3736,8 +3736,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '9. Expediente de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.1',
@@ -3745,8 +3745,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.1.1',
@@ -3754,8 +3754,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.1.2',
@@ -3763,8 +3763,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.2',
@@ -3772,8 +3772,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.2.1',
@@ -3781,8 +3781,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.2.2',
@@ -3790,8 +3790,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.3',
@@ -3799,8 +3799,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.3.1',
@@ -3808,8 +3808,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '11.3.2',
@@ -3817,8 +3817,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '11. Procedimientos para la operación, revisión y mantenimiento de los equipos',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.1',
@@ -3826,8 +3826,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Condiciones de seguridad de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.1.1',
@@ -3835,8 +3835,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Condiciones de seguridad de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.1.2',
@@ -3844,8 +3844,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Condiciones de seguridad de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.2',
@@ -3853,8 +3853,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Condiciones de seguridad de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '12.2.3',
@@ -3862,8 +3862,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '12. Condiciones de seguridad de los equipos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '13.1',
@@ -3871,8 +3871,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '13. Pruebas de presión y exámenes no destructivos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '13.2',
@@ -3880,8 +3880,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '13. Pruebas de presión y exámenes no destructivos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '13.3',
@@ -3889,8 +3889,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '13. Pruebas de presión y exámenes no destructivos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '13.7',
@@ -3898,8 +3898,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '13. Pruebas de presión y exámenes no destructivos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '13.7.1',
@@ -3907,8 +3907,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '13. Pruebas de presión y exámenes no destructivos ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.1',
@@ -3916,8 +3916,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Funcionamiento de los dispositivos de relevo de presión',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.2',
@@ -3925,8 +3925,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Funcionamiento de los dispositivos de relevo de presión',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.3',
@@ -3934,8 +3934,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Funcionamiento de los dispositivos de relevo de presión',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '14.4',
@@ -3943,8 +3943,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '14. Funcionamiento de los dispositivos de relevo de presión',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '15',
@@ -3952,8 +3952,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '15. Plan de atención a emergencias ',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '17.1',
@@ -3961,8 +3961,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '17. Capacitación',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '17.2',
@@ -3970,8 +3970,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '17. Capacitación',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '18.1',
@@ -3979,8 +3979,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '18. Registros',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '18.2',
@@ -3988,8 +3988,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '18. Registros',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '18.3',
@@ -4003,8 +4003,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '18. Registros',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '18.4',
@@ -4022,8 +4022,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '18. Registros',
             'frecuencia' => ' ',
             'norm_id' => 12,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -4034,8 +4034,8 @@ class NormsTableSeeder extends Seeder
             'titulo' => 'Colores y señales de seguridad e higiene, e identificación de
         riesgos por fluidos conducidos en tuberías',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-026.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -4044,8 +4044,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -4054,8 +4054,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -4070,8 +4070,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -4081,8 +4081,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '7. Colores de seguridad y colores contrastantes',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -4094,8 +4094,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '7. Colores de seguridad y colores contrastantes',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -4105,8 +4105,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2',
@@ -4114,8 +4114,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.1',
@@ -4125,8 +4125,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.2',
@@ -4136,8 +4136,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.3',
@@ -4145,8 +4145,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.4',
@@ -4156,8 +4156,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2.5',
@@ -4168,8 +4168,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.3.1',
@@ -4186,8 +4186,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.3.2',
@@ -4202,8 +4202,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4',
@@ -4220,8 +4220,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.5',
@@ -4229,8 +4229,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.5.1',
@@ -4239,8 +4239,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.5.2',
@@ -4251,8 +4251,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.5.3',
@@ -4263,8 +4263,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.6',
@@ -4274,8 +4274,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Señales de seguridad e higiene',
             'frecuencia' => ' ',
             'norm_id' => 13,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -4286,8 +4286,8 @@ class NormsTableSeeder extends Seeder
             'titulo' => 'Sistema para la identificación y comunicación de peligros
         y riesgos por sustancias químicas peligrosas en los centros de trabajo.',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-018.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -4296,8 +4296,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 14,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -4308,8 +4308,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 14,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -4321,8 +4321,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 14,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -4336,8 +4336,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 14,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -4347,8 +4347,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Sistema de identificación ',
             'frecuencia' => ' ',
             'norm_id' => 14,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.1',
@@ -4356,8 +4356,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Sistema de identificación ',
             'frecuencia' => ' ',
             'norm_id' => 14,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1.2',
@@ -4365,8 +4365,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Sistema de identificación ',
             'frecuencia' => ' ',
             'norm_id' => 14,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -4378,8 +4378,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '7. Sistema de identificación ',
             'frecuencia' => ' ',
             'norm_id' => 14,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -4389,8 +4389,8 @@ class NormsTableSeeder extends Seeder
             'codigo' => 'NOM-030-STPS-2009',
             'titulo' => 'Servicios preventivos de seguridad y salud en el trabajoFunciones y actividades. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-030.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '4.1',
@@ -4399,8 +4399,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '4. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '4.2',
@@ -4414,8 +4414,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '4. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '4.3',
@@ -4426,8 +4426,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '4. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '4.4',
@@ -4436,8 +4436,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '4. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '4.5',
@@ -4448,8 +4448,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '4. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '4.6',
@@ -4459,8 +4459,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '4. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '4.7',
@@ -4469,8 +4469,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '4. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '4.8',
@@ -4478,8 +4478,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '4. Obligaciones del patrón ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.1',
@@ -4488,8 +4488,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -4499,8 +4499,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -4508,8 +4508,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -4520,8 +4520,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -4531,8 +4531,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -4542,8 +4542,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -4553,8 +4553,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -4563,8 +4563,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -4575,8 +4575,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '5. Funciones y actividades del responsable de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '6.1',
@@ -4593,8 +4593,8 @@ class NormsTableSeeder extends Seeder
             'tipo' => '6. Diagnóstico de seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -4612,8 +4612,8 @@ class NormsTableSeeder extends Seeder
         seguridad y salud en el trabajo ',
             'frecuencia' => ' ',
             'norm_id' => 15,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
 
         /**
@@ -4624,8 +4624,8 @@ class NormsTableSeeder extends Seeder
             'titulo' => 'Constitución, integración, organización y funcionamiento de las
         comisiones de seguridad e higiene. ',
             'direccion' => 'http://asinom.stps.gob.mx:8145/upload/noms/Nom-019.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.2',
@@ -4634,8 +4634,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.3',
@@ -4645,8 +4645,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.4',
@@ -4655,8 +4655,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.5',
@@ -4665,8 +4665,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.6',
@@ -4675,8 +4675,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.7',
@@ -4684,8 +4684,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.8',
@@ -4694,8 +4694,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.9',
@@ -4707,8 +4707,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.10',
@@ -4718,8 +4718,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.11',
@@ -4730,8 +4730,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '5.12',
@@ -4745,8 +4745,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '5. Obligaciones del patrón',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.1',
@@ -4759,8 +4759,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '7. Constitución e integración de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.2',
@@ -4770,8 +4770,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '7. Constitución e integración de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.3',
@@ -4780,8 +4780,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '7. Constitución e integración de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.4',
@@ -4805,8 +4805,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '7. Constitución e integración de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.5',
@@ -4820,8 +4820,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '7. Constitución e integración de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '7.6',
@@ -4831,8 +4831,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '7. Constitución e integración de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.1',
@@ -4840,8 +4840,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Organización de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.2',
@@ -4872,8 +4872,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Organización de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.3',
@@ -4908,8 +4908,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Organización de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '8.4',
@@ -4931,8 +4931,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '8. Organización de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.1',
@@ -4945,8 +4945,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.2',
@@ -4955,8 +4955,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.3',
@@ -4966,8 +4966,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.4',
@@ -4977,8 +4977,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.5',
@@ -4995,8 +4995,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.6',
@@ -5007,8 +5007,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.7',
@@ -5021,8 +5021,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.8',
@@ -5033,8 +5033,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.9',
@@ -5050,8 +5050,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.10',
@@ -5060,8 +5060,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.11',
@@ -5070,8 +5070,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.12',
@@ -5098,8 +5098,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '9.13',
@@ -5111,8 +5111,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '9. Funcionamiento de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.1',
@@ -5125,8 +5125,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '10. Capacitación de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.2',
@@ -5146,8 +5146,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '10. Capacitación de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
         DB::table('requirements')->insert([
             'numero' => '10.3',
@@ -5157,8 +5157,8 @@ class NormsTableSeeder extends Seeder
         'tipo' => '10. Capacitación de las comisiones',
             'frecuencia' => ' ',
             'norm_id' => 16,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'created_at' => '2020-01-01',
+            'updated_at' => '2020-01-01'
         ]);
     }
 }

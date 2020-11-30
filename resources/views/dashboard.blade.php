@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.headers.cards',
-    compact('problems', 'compliments', 'por_compliments', 'solved', 'por_solved'))
+    compact('total','problems', 'compliments', 'por_compliments', 'solved', 'por_solved'))
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-4">
@@ -30,10 +30,7 @@
                     </div>
                     <div class="card-body">
                         <!-- Chart -->
-                        <div class="chart">
-                            <!-- Chart wrapper -->
-                            <canvas id="chart-sales" class="chart-canvas"></canvas>
-                        </div>
+                        @include('components.chart.advance',compact('meses'))
                     </div>
                 </div>
             </div>
@@ -202,10 +199,10 @@
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <span class="mr-2">{{($norm->avance/100.0)*$norm->cumplimientos}}%</span>
+                                            <span class="mr-2">{{round((100/$norm->avance)*$norm->cumplimientos,2)}}%</span>
                                             <div>
                                                 <div class="progress">
-                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="{{($norm->avance/100.0)*$norm->cumplimientos}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($norm->avance/100.0)*$norm->cumplimientos}}%;"></div>
+                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="{{round((100/$norm->avance)*$norm->cumplimientos,2)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{round((100/$norm->avance)*$norm->cumplimientos,2)}}%;"></div>
                                                 </div>
                                             </div>
                                         </div>

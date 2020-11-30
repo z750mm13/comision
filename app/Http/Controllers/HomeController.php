@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 use App\Subarea;
 use App\Area;
 use App\Compliment;
 use App\Norm;
+use App\Requirement;
 use App\NormsOfArea;
 use App\Review;
 use App\Validity;
 
 use Tools\Query\Reviews;
+use Tools\Query\Norms;
+use Tools\Utils\Fecha;
 class HomeController extends Controller {
     /**
      * Create a new controller instance.
@@ -80,6 +84,13 @@ class HomeController extends Controller {
         ->withTrashed()
         ->get();
 
+        $total = Norm::select(DB::raw('sum(tareas) cumplimientos, count(tareas) avance'))
+        ->from(\DB::raw(' ('. Str::replaceArray('?', $cumplimientos->getBindings(), $cumplimientos->toSql()) .') as cumplidos' ))
+        ->limit(8)
+        ->withTrashed()
+        ->get()
+        ->first();
+
         $problems = Review::select('reviews.id')
         ->where('valor','=','false')
         ->get()->count();
@@ -87,10 +98,38 @@ class HomeController extends Controller {
         $compliments = Compliment::orderBy('id', 'ASC')->get()->count();
 
         $por_compliments = round(($compliments? 100 * ($compliments/$problems):0),2);
-        //TODO Agregar avance total
-        //TODO Agregar grafica de avance total
+        //Grafica de avance total
+        $totalrequisitos= Requirement::select(DB::raw('count(requirements.id) total'))
+        ->where(
+            DB::raw('extract(year FROM requirements.created_at) <= '.Carbon::now()->year.' and extract(month FROM requirements.created_at) <= '.Carbon::now()->month.' and null')
+        )->get()->first()->total;
+        $meses = [];
+        for($mes=1; $mes < 13; $mes++){
+            $cumplidos = Norm::select(DB::raw('norms.id, requirements.numero, (case when count(tasks.id) = 0 then 0 else 1 end) tareas'))
+            ->leftJoin('requirements', function ($join) use($mes) {
+                $join->on('requirements.norm_id', '=','norms.id')
+                ->where(
+                    DB::raw('extract(year FROM requirements.created_at) <= '.Carbon::now()->year.' and extract(month FROM requirements.created_at) <= '.$mes.' and null')
+                );
+            })
+            ->leftJoin('tasks', function ($join) use($mes) {
+                $join->on('tasks.requirement_id', '=','requirements.id')
+                ->where(
+                    DB::raw('tasks.cumplida = true and extract(year FROM tasks.created_at) <= '.Carbon::now()->year.' and extract(month FROM tasks.created_at) <= '.$mes.' and null')
+                );
+            })
+            ->groupBy('norms.id','requirements.numero')
+            ->withTrashed()
+            ->where(
+                DB::raw('extract(year FROM norms.created_at) <= '.Carbon::now()->year.' and extract(month FROM norms.created_at) <= '.$mes.' and null')
+            );
+            $meses[$mes] = Norm::select(DB::raw('sum(tareas) cumplimientos'))
+            ->from(\DB::raw(' ('. $cumplidos->toSql() .') as cumplidos' ))
+            ->withTrashed()
+            ->get()
+            ->first();
+        }
         //TODO completar tabla de áreas
-        //TODO completar tabla de normas
         $validities = Validity::select(DB::raw('inicio, count(reviews.id) problemas, count(commitments.id) compromisos, count(compliments.id) cumplimientos'))
         ->leftJoin('reviews', function ($join) {
             $join->on(
@@ -105,7 +144,7 @@ class HomeController extends Controller {
         ->where('fin','<', now()->toDateString())
         ->groupBy('validities.id', 'inicio')
         ->orderByDesc('inicio')
-        ->limit(6)
+        ->limit(5)
         ->get();
         $validities = $validities->reverse();
         
@@ -122,7 +161,8 @@ class HomeController extends Controller {
         
         return view('dashboard',compact(
             'subareas','areas','problems','compliments','por_compliments',
-            'solved', 'por_solved', 'norms', 'calendar_validities','validities'
+            'solved', 'por_solved', 'norms', 'calendar_validities','validities',
+            'total', 'meses', 'totalrequisitos'
         ));
     }
 }
