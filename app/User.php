@@ -8,11 +8,13 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Notifications\MyResetPassword;
 use App\Notifications\MyVerifyEmail;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable  implements MustVerifyEmail {
     use Notifiable;
     use SoftDeletes;
     use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
+    use HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -61,6 +63,21 @@ class User extends Authenticatable  implements MustVerifyEmail {
     public function subareas() {
         return
         $this->hasManyDeepFromRelations($this->areas(), (new Area)->subareas());
+    }
+
+    public function targets() {
+        return
+        $this->hasManyDeepFromRelations($this->subareas(), (new Subarea)->targets());
+    }
+
+    public function questionnaires() {
+        return
+        $this->hasManyDeepFromRelations($this->targets(), (new Target)->questionnaire());
+    }
+
+    public function questions() {
+        return
+        $this->hasManyDeepFromRelations($this->questionnaires(), (new Questionnaire)->questions());
     }
 
     public function sendPasswordResetNotification($token) {

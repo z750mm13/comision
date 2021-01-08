@@ -57,19 +57,19 @@ class NormStatisticController extends Controller {
             ->leftJoin('requirements', function ($join) use($fecha) {
                 $join->on('requirements.norm_id', '=','norms.id')
                 ->where(
-                    DB::raw("requirements.created_at < '".$fecha->format('Y-m-d')."' and null")
+                    DB::raw("(requirements.deleted_at is null or requirements.deleted_at < '".$fecha->format('Y-m-d')."' ) and requirements.created_at < '".$fecha->format('Y-m-d')."' and null")
                 );
             })
             ->leftJoin('tasks', function ($join) use($fecha) {
                 $join->on('tasks.requirement_id', '=','requirements.id')
                 ->where(
-                    DB::raw("tasks.cumplida = true and tasks.created_at < '".$fecha->format('Y-m-d')."' and null")
+                    DB::raw("tasks.cumplida = true and (tasks.deleted_at is null or tasks.deleted_at < '".$fecha->format('Y-m-d')."' ) and  tasks.created_at < '".$fecha->format('Y-m-d')."' and null")
                 );
             })
             ->groupBy('norms.id','requirements.numero')
             ->withTrashed()
             ->where(
-                DB::raw("norms.created_at < '".$fecha->format('Y-m-d')."' and null")
+                DB::raw("(norms.deleted_at is null or norms.deleted_at < '".$fecha->format('Y-m-d')."' ) and norms.created_at < '".$fecha->format('Y-m-d')."' and null")
             );
             $meses[$mes] = Norm::select(DB::raw('sum(tareas) cumplimientos'))
             ->from(\DB::raw(' ('. $cumpl->toSql() .') as cumplidos' ))

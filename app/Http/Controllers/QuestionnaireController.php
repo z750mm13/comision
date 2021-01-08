@@ -133,18 +133,17 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id) {
-        //TODO Eliminar cuestionario si no tiene ni en basura los elementos
+        $questionnaire = Questionnaire::findOrFail($id);
+        //TODO Eliminar cuestionario si no tiene basura
         /**
          * Si se elimina el cuestionario
          */
-        if($request->question_id == ''){
+        if($request->question_id == '') {
             $reviews = Questionnaire::select('questionnaires.id')
                 ->join('questions', 'questionnaires.id', '=', 'questions.questionnaire_id')
                 ->join('reviews', 'questions.id', '=', 'reviews.question_id')
                 ->where('questionnaires.id','=',$id)
                 ->count();
-            
-            $questionnaire = Questionnaire::findOrFail($id);
             if($reviews) {
                 foreach($questionnaire->questions as $question){
                     $question->delete();
