@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Tools\Query\Reviews;
 
 class AuthController extends Controller {
     /**
