@@ -12,7 +12,7 @@ class TasksTableSeeder extends Seeder {
     public function run() {
         $meses = [18,11,17,10,11,13,12];
         $requisito = 1;
-        for ($anio=18; $anio <= 20; $anio++) { 
+        for ($anio=18; $anio <= 21; $anio++) { 
             for($i = 0; $i < 7; $i++){
                 for ($j=0; $j < $meses[$i]; $j++) {
                     DB::table('tasks')->insert([
