@@ -26,7 +26,7 @@ class AuthController extends Controller {
             ], 401);
 
         $user = $request->user();
-        $tokenResult = $user->createToken('Personal Access Token');
+        $tokenResult = $user->createToken('Comisión SH Password Grant Client');
 
         $token = $tokenResult->token;
         if ($request->remember_me)

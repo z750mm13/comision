@@ -3,7 +3,6 @@
 namespace Tools\Img;
 
 use Illuminate\Http\Request;
-use Image;
 
 class ToServer {
     public static function saveImageFile(Request $request, $input, $route, $file) {

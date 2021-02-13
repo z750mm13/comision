@@ -2,8 +2,6 @@
 
 namespace App\Notifications;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Auth\Notifications\VerifyEmail;
 
@@ -26,6 +24,6 @@ class MyVerifyEmail extends VerifyEmail {
            ->greeting('Hola')
            ->line('Haga clic en el botón de abajo para verificar su dirección de correo electrónico.')
            ->action('Confirmar correo electrónico', $verificationUrl)
-           ->line('Si no creó una cuenta, no se requiere ninguna otra acción..');
+           ->line('Si no creó esta cuenta, no se requiere ninguna otra acción.');
    }
 }
