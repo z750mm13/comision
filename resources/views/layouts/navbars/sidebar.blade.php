@@ -250,7 +250,7 @@
                             </a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cordinates.index') }}">
+                            <a class="nav-link" href="{{ route('statistics.matrix.index') }}">
                                 <i class="fa fa-qrcode text-red"></i>
                                 <span>{{ __('Matriz de riesgos') }}</span>
                             </a>

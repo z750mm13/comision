@@ -128,17 +128,23 @@ Route::resource('goals', 'GoalController');
 Route::resource('tasks', 'TaskController');
 Route::resource('exams', 'ExamController');
 
-//---------------------------------------------------------------------------------//
-// Apartados de estadisticas                                                       //
-// Apartado de recorridos                                                          //
- Route::get('statistics/reviews', 'ReviewStatisticController@index');              //
- Route::post('statistics/reviews', 'ReviewStatisticController@index');             //
-// Apartado de normas                                                              //
- Route::get('statistics/norms',  'NormStatisticController@index');                 //
- Route::post('statistics/norms', 'NormStatisticController@index');                 //
- Route::get('statistics/norms/{id}', 'NormStatisticController@show');                   //
-// TODO crear apartado de Matriz de riesgos                                        //
-//---------------------------------------------------------------------------------//
+//----------------------------------------------------------//
+// Apartados de estadisticas                                //
+Route::prefix('statistics')->group(function () {            //
+// Apartado de recorridos                                   //
+ Route::get('reviews', 'ReviewStatisticController@index');  //
+ Route::post('reviews', 'ReviewStatisticController@index'); //
+// Apartado de normas                                       //
+ Route::get('norms',  'NormStatisticController@index');     //
+ Route::post('norms', 'NormStatisticController@index');     //
+ Route::get('norms/{id}', 'NormStatisticController@show');  //
+// TODO crear apartado de Matriz de riesgos                 //
+Route::get('matrix/{id?}', [                                      //
+	'as'=> 'statistics.matrix.index',                         //
+	'uses' => 'MatrixStatisticController@index'               //
+]);                                                         //
+});                                                         //
+//----------------------------------------------------------//
 // TODO convertir fechas
 // Validities
 // Evaluations

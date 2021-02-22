@@ -2067,6 +2067,12 @@ pre code
     background-color: #ecf6f6;
 }
 
+.table-yellow,
+.table-yellow > th,
+.table-yellow > td{
+    background-color: #fde154;
+}
+
 .table-success,
 .table-success > th,
 .table-success > td
@@ -2080,6 +2086,13 @@ pre code
 .table-success tbody + tbody
 {
     border-color: #92e6c2;
+}
+
+.table-yellow th,
+.table-yellow td,
+.table-yellow thead th,
+.table-yellow tbody + tbody {
+    background-color: #fde154;
 }
 
 .table-hover .table-success:hover
