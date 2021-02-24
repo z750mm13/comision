@@ -10,13 +10,12 @@ use App\Area;
 use App\Compliment;
 use App\Norm;
 use App\Requirement;
-use App\NormsOfArea;
 use App\Review;
 use App\Validity;
 
 use Tools\Query\Reviews;
 use Tools\Query\Norms;
-use Tools\Utils\Fecha;
+
 class HomeController extends Controller {
     /**
      * Create a new controller instance.
@@ -102,6 +101,7 @@ class HomeController extends Controller {
         })
         ->groupBy('norms.codigo','requirements.numero')
         ->orderBy('norms.codigo');
+
         $norms = Norm::select(DB::raw('codigo, sum(tareas) cumplimientos, count(tareas) avance'))
         ->from(DB::raw(' ('. Str::replaceArray('?', $cumplimientos->getBindings(), $cumplimientos->toSql()) .') as cumplidos' ))
         ->groupBy('codigo')
@@ -179,6 +179,8 @@ class HomeController extends Controller {
         $lastv = Reviews::getCurrentValidity();
         
         $calendar_validities = Reviews::getMonthValidities();
+        $calendar_tasks = Reviews::getMonthTasks();
+        $calendar_evaluations = Reviews::getMonthEvaluations();
         
         $solved = Review::where('reviews.validity_id','=',($lastv? $lastv->id:0))
         ->orderBy('id', 'ASC')
@@ -189,7 +191,7 @@ class HomeController extends Controller {
         
         return view('dashboard',compact(
             'subareas','areas','problems','compliments','por_compliments',
-            'solved', 'por_solved', 'norms', 'calendar_validities','validities',
+            'solved', 'por_solved', 'norms', 'calendar_validities', 'calendar_tasks', 'calendar_evaluations','validities',
             'total', 'meses', 'totalrequisitos', 'goal'
         ));
     }

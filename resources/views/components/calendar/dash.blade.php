@@ -32,6 +32,24 @@
                 className: 'bg-green'
             },
             @endforeach
+            @foreach($calendar_tasks as $task)
+            {
+                title: 'Cumplimiento',
+                url: '/tasks/{{$task->id}}',
+                start: '{{$task->inicio}}',
+                end: '{{Carbon\Carbon::parse($task->fin)->addDays(1)->toDateString()}}',
+                className: 'bg-blue'
+            },
+            @endforeach
+            @foreach($calendar_evaluations as $evaluation)
+            {
+                title: 'Matriz',
+                url: '/evaluations/{{$evaluation->id}}',
+                start: '{{$evaluation->inicio}}',
+                end: '{{Carbon\Carbon::parse($evaluation->fin)->addDays(1)->toDateString()}}',
+                className: 'bg-orange'
+            },
+            @endforeach
         ]
 		});
 		//Display Current Date as Calendar widget header

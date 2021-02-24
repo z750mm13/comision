@@ -14,7 +14,7 @@
                     </div>
                     <!-- Card body -->
                     <div class="card-body">
-                        @include('components.calendar.dash',compact('calendar_validities'))
+                        @include('components.calendar.dash',compact('calendar_validities','calendar_tasks','calendar_evaluations'))
                     </div>
                 </div>
             </div>

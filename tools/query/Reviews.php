@@ -3,11 +3,13 @@
 namespace Tools\Query;
 
 use App\Cycle;
+use App\Evaluation;
 use Carbon\Carbon;
 use App\Validity;
 use App\Target;
 use App\Review;
 use App\Question;
+use App\Task;
 
 class Reviews {
     public static function lastValidity() {
@@ -15,6 +17,34 @@ class Reviews {
         ->where('inicio','<=', now()->year. '-'. now()->month. '-'. now()->day )
         ->get()
         ->first();
+    }
+
+    //Month evaluations, tasks(programable, !cumplida)
+
+    public static function getMonthTasks() {
+        $anio = now()->year;
+        $mes = now()->month;
+        $inicio = $anio. '-'. $mes. '-01';
+        $fin = $anio. '-'. $mes. '-'. date('t', mktime(0, 0, 0, $mes, 1, $anio));
+
+        return Task::where([
+            ['inicio', '<=', "$fin"],
+            ['fin', '>=', "$inicio"],
+            ['programable', true], 
+            ['cumplida', false]
+        ])->orderBy('inicio', 'desc')->get();
+    }
+
+    public static function getMonthEvaluations() {
+        $anio = now()->year;
+        $mes = now()->month;
+        $inicio = $anio. '-'. $mes. '-01';
+        $fin = $anio. '-'. $mes. '-'. date('t', mktime(0, 0, 0, $mes, 1, $anio));
+
+        return Evaluation::where([
+            ['inicio', '<=', "$fin"],
+            ['fin', '>=', "$inicio"]
+        ])->orderBy('inicio', 'desc')->get();
     }
 
     public static function getMonthValidities() {

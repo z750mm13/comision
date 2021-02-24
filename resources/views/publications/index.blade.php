@@ -32,7 +32,7 @@ use Tools\Utils\Fecha;
       <small class="text-muted">Por {{$publication->user->nombre. ' '. $publication->user->apellidos}} el {{Fecha::texto(Carbon::parse($publication->created_at))}}</small>
       <p class="card-text mt-4">{{$publication->descripcion}}</p>
       @if(!$publication->visible)
-      <p class="card-text mt-4">Esta publicación no es visible</p>
+      <p class="card-text mt-4 text-muted">Esta publicación no es visible</p>
       @endif
       <a class="stretched-link" href="/publications/{{$publication->id}}" class="card-link">Ver publicación</a>
     </div>
