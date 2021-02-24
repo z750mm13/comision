@@ -141,7 +141,7 @@
                                     <th scope="col">Área</th>
                                     <th scope="col">Unidad</th>
                                     <th scope="col">Normas que aplica</th>
-                                    <th scope="col">Avance</th>
+                                    <th scope="col">Problemas sin resolver</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -153,11 +153,11 @@
                                     <td>
                                         {{$area->area}}
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         {{$area->norms}}
                                     </td>
-                                    <td>
-                                        46,53%
+                                    <td class="text-center">
+                                        {{$area->problems}}
                                     </td>
                                 </tr>
                                 @endforeach

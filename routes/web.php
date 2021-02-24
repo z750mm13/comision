@@ -138,8 +138,8 @@ Route::prefix('statistics')->group(function () {            //
  Route::get('norms',  'NormStatisticController@index');     //
  Route::post('norms', 'NormStatisticController@index');     //
  Route::get('norms/{id}', 'NormStatisticController@show');  //
-// TODO crear apartado de Matriz de riesgos                 //
-Route::get('matrix/{id?}', [                                      //
+// Apartado de Matriz de riesgos                            //
+Route::get('matrix/{id?}', [                                //
 	'as'=> 'statistics.matrix.index',                         //
 	'uses' => 'MatrixStatisticController@index'               //
 ]);                                                         //
@@ -149,3 +149,4 @@ Route::get('matrix/{id?}', [                                      //
 // Validities
 // Evaluations
 // Cycles
+// Tasks

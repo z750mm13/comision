@@ -53,8 +53,7 @@ class HomeController extends Controller {
         );
         })
         ->groupBy('subareas.id')
-        ->orderBy('subareas.id', 'ASC')
-        ->get();
+        ->orderBy('subareas.id', 'ASC')->get();
 
         $sqarea = Area::select(DB::raw('areas.*, norms.id AS norm'))
         ->distinct()
@@ -64,10 +63,36 @@ class HomeController extends Controller {
         ->leftJoin('requirements', 'requirements.id', '=', 'questionnaires.requirement_id')
         ->leftJoin('norms', 'norms.id', '=', 'requirements.norm_id');
 
-        $areas = Area::select(DB::raw('id,nombre,area,color,deleted_at,created_at,updated_at,count(norm)as norms'))
-        ->from(\DB::raw(' ( ' . $sqarea->toSql() . ' ) AS areas '))
-        ->groupBy('id','nombre','area','color','deleted_at','created_at','updated_at')
-        ->get();
+        $norms_areas = Area::select(DB::raw('id,nombre,area,color,deleted_at,created_at,updated_at,count(norm)as norms'))
+        ->from(DB::raw(' ( ' . $sqarea->toSql() . ' ) AS areas '))
+        ->groupBy('id','nombre','area','color','deleted_at','created_at','updated_at');
+
+        $problems_areas = Area::select(DB::raw('count(reviews.id) as problems,areas.*'))
+        ->join('subareas', 'subareas.area_id', '=', 'areas.id')
+        ->leftJoin('targets', 'targets.subarea_id', '=', 'subareas.id')
+        ->leftJoin('questionnaires', 'questionnaires.id', '=', 'targets.questionnaire_id')
+        ->leftJoin('questions', 'questions.questionnaire_id', '=', 'questionnaires.id')
+        ->leftJoin('reviews', function ($join) {
+            $join->on([
+                ['questions.id', 'reviews.question_id'],
+                ['targets.id', 'reviews.target_id']
+            ])
+            ->where([
+                ['reviews.valor', false]
+            ])
+            ->whereNotIn('reviews.id',
+            Review::select('reviews.id')
+            ->join('commitments', 'reviews.id', '=', 'commitments.review_id')
+            ->join('compliments', 'commitments.id', '=', 'compliments.commitment_id')
+            ->get()
+        );
+        })
+        ->groupBy('areas.id');
+
+        $areas = Area::select('norms_areas.*','problems_areas.problems')
+        ->from(DB::raw('('.Str::replaceArray('?', $norms_areas->getBindings(), $norms_areas->toSql()).') as norms_areas '))
+        ->join(DB::raw('('.Str::replaceArray('?', ['false'], $problems_areas->toSql()).') as problems_areas'), 'problems_areas.id','norms_areas.id')
+        ->withTrashed()->get();
 
         $cumplimientos = Norm::select(DB::raw('norms.codigo, requirements.numero, (case when count(tasks.id) = 0 then 0 else 1 end) tareas'))
         ->leftJoin('requirements','requirements.norm_id','=','norms.id')
@@ -78,14 +103,14 @@ class HomeController extends Controller {
         ->groupBy('norms.codigo','requirements.numero')
         ->orderBy('norms.codigo');
         $norms = Norm::select(DB::raw('codigo, sum(tareas) cumplimientos, count(tareas) avance'))
-        ->from(\DB::raw(' ('. Str::replaceArray('?', $cumplimientos->getBindings(), $cumplimientos->toSql()) .') as cumplidos' ))
+        ->from(DB::raw(' ('. Str::replaceArray('?', $cumplimientos->getBindings(), $cumplimientos->toSql()) .') as cumplidos' ))
         ->groupBy('codigo')
         ->limit(8)
         ->withTrashed()
         ->get();
 
         $total = Norm::select(DB::raw('sum(tareas) cumplimientos, count(tareas) avance'))
-        ->from(\DB::raw(' ('. Str::replaceArray('?', $cumplimientos->getBindings(), $cumplimientos->toSql()) .') as cumplidos' ))
+        ->from(DB::raw(' ('. Str::replaceArray('?', $cumplimientos->getBindings(), $cumplimientos->toSql()) .') as cumplidos' ))
         ->limit(8)
         ->withTrashed()
         ->get()
@@ -125,12 +150,12 @@ class HomeController extends Controller {
                 DB::raw("norms.created_at < '".$fecha->format('Y-m-d')."' and null")
             );
             $meses[$mes] = Norm::select(DB::raw('sum(tareas) cumplimientos'))
-            ->from(\DB::raw(' ('. $cumplidos->toSql() .') as cumplidos' ))
+            ->from(DB::raw(' ('. $cumplidos->toSql() .') as cumplidos' ))
             ->withTrashed()
             ->get()
             ->first();
         }
-        //TODO completar tabla de áreas
+        
         $validities = Validity::select(DB::raw('inicio, count(reviews.id) problemas, count(commitments.id) compromisos, count(compliments.id) cumplimientos'))
         ->leftJoin('reviews', function ($join) {
             $join->on(
