@@ -30,6 +30,12 @@
                           <span class="nav-link-text">{{ __('Panel') }}</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('publications.index') }}">
+                          <i class="ni ni-ungroup text-orange"></i>
+                          <span class="nav-link-text">{{ __('Publicaciones') }}</span>
+                        </a>
+                    </li>
                     @if(Auth::user()->admin)
                     <li class="nav-item">
                       <a class="nav-link {{ $personal ?? '' }}" href="#navbar-personal" data-toggle="collapse" role="button" aria-expanded="{{ isset($personal)? 'true':'false' }}" aria-controls="navbar-personal">
