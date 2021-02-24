@@ -25,7 +25,7 @@
         events: [
             @foreach($calendar_validities as $validity)
             {
-                title: 'Evaluación',
+                title: 'Recorrido',
                 url: '/validities/{{$validity->id}}',
                 start: '{{$validity->inicio}}',
                 end: '{{Carbon\Carbon::parse($validity->fin)->addDays(1)->toDateString()}}',

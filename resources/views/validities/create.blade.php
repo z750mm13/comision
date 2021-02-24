@@ -74,7 +74,8 @@ $(function() {
     			disableTouchKeyboard: true,
     			autoclose: false,
     			useCurrent: false,
-                startDate: Date(moment().toDate())
+                startDate: Date(moment().toDate()),
+                format: 'yyyy-mm-dd'
             };
     		$this.datepicker(options);
     	}

@@ -165,7 +165,8 @@ $(function() {
     		var options = {
     			disableTouchKeyboard: true,
     			autoclose: false,
-    			useCurrent: false
+    			useCurrent: false,
+          format: 'yyyy-mm-dd'
         };
     		$this.datepicker(options);
     	}

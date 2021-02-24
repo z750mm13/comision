@@ -19,14 +19,9 @@ class ReviewStatisticController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        // TODO para la conversión
-        $inicio = null;
-        $fin = null;
-        if($request->input('inicio'))
-        $inicio = date('Y-m-d', strtotime(str_replace('/', '-', $request->input('inicio'))));
-        if($request->input('fin'))
-        $fin = date('Y-m-d', strtotime(str_replace('/', '-', $request->input('fin'))));
-        //dd($inicio.' : '.$request->input('fin'));
+        $inicio = $request->input('inicio');
+        $fin = $request->input('fin');
+
         $problema = $request->input('problema');
         $compromiso = $request->input('compromiso');
         $cumplimiento = $request->input('cumplimiento');
@@ -40,11 +35,10 @@ class ReviewStatisticController extends Controller {
         ->leftJoin('users', 'users.id', '=', 'commitments.user_id')
         ->leftJoin('compliments', 'compliments.commitment_id', '=', 'commitments.id')
         ->orderBy('reviews.created_at');
-
         if($inicio && $fin) {
             $problems->where([
-                ['compliments.fecha', '>=', $inicio],
-                ['compliments.fecha', '<=', $fin]
+                ['reviews.created_at', '>=', $inicio],
+                ['reviews.created_at', '<=', $fin],
             ]);
         } if ($request->input('problema')){
             $problems->where('reviews.valor', 'f');
