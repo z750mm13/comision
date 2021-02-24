@@ -127,6 +127,7 @@ Route::resource('arrays', 'MatrixController');
 Route::resource('goals', 'GoalController');
 Route::resource('tasks', 'TaskController');
 Route::resource('exams', 'ExamController');
+Route::resource('publications', 'PublicationController');
 
 //----------------------------------------------------------//
 // Apartados de estadisticas                                //

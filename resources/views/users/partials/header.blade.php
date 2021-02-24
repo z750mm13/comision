@@ -16,7 +16,7 @@
                     </div>
                     @endif
                     <div class="@if (!(isset($nobread) && $nobread))col-lg-6 col-5 @else col-12 @endif text-right">
-                        @if(Auth::user()->tipo == 'Apoyo' || Auth::user()->admin)
+                        @if(Auth::user()->tipo == 'Apoyo' || Auth::user()->admin || isset($acceso_crear))
                         @if (isset($button) && $button)
                         <a href="{{$urlbutton}}/create" class="btn btn-sm btn-neutral">{{$button}}</a>
                         @endif
