@@ -19,6 +19,7 @@ class CommitmentController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        //TODO retirar deleted
         $commitments = null;
         if(auth()->user()->tipo == 'Integrante')
         $commitments = Commitment::orderBy('id', 'ASC')->get();

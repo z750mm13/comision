@@ -26,6 +26,7 @@ class AreaController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        //TODO retirar deleted
         $areas = Area::orderBy('id', 'ASC')->get();
         return view('areas.index',compact('areas'));
     }

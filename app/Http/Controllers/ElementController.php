@@ -14,6 +14,7 @@ class ElementController extends Controller {
      * Lista de middlewares aplicados a los metodos
      */
     function __construct() {
+        //TODO crear restauración
         $this->middleware('active');
         $this->middleware('validateuniqueelement')->only('store');
         $this->middleware('uniqueupdateelement')->only('update');
@@ -99,7 +100,7 @@ class ElementController extends Controller {
         if(auth()->user()->admin)
             $user = User::findOrFail($id);
         else {
-            $user = auth()->user()->get()->first(); 
+            $user = auth()->user(); 
             if($id != $user->id)
             return redirect()
                 ->route('elements.edit', compact('user'))

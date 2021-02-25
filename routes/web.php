@@ -35,28 +35,28 @@ Route::get('cordinates/create/{id?}', 'CordinateController@create');
 Route::get('cordinates/deleted', 'CordinateController@deleted');
 //Ruta de restauración de cordinates
 Route::post('cordinates/restore', 'CordinateController@restore');
-// ------------------------------------------------------------------ //
-//Ruta de cuentas de usuario eliminadas                               //
-Route::get('elements/deleted', 'ElementController@deleted');          //
-//Ruta de activación de cuentas de usuario                            //
-Route::get('elements/active/{id?}', 'ElementController@activate');    //
-//Ruta de desactivación de cuentas de usuario                         //
-Route::get('elements/inactive/{id?}', 'ElementController@inactivate');//
-//Ruta de activación de administración de usuario                     //
-Route::get('elements/admin/{id?}', 'ElementController@admin');        //
-//Ruta de desactivación de administración de usuario                  //
-Route::get('elements/noadmin/{id?}', 'ElementController@noadmin');    //
-// ------------------------------------------------------------------ //
-// ------------------------------------------------------------------ //
-//Ruta de activación de cuentas de usuario                            //
-Route::get('helpers/active/{id?}', 'HelperController@activate');      //
-//Ruta de desactivación de cuentas de usuario                         //
-Route::get('helpers/inactive/{id?}', 'HelperController@inactivate');  //
-//Ruta de activación de administración de usuario                     //
-Route::get('helpers/admin/{id?}', 'HelperController@admin');          //
-//Ruta de desactivación de administración de usuario                  //
-Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');      //
-// ------------------------------------------------------------------ //
+// --------------------------------------------------------------------//
+//Ruta de cuentas de usuario eliminadas                                //
+Route::get('elements/deleted', 'ElementController@deleted');           //
+//Ruta de activación de cuentas de usuario                             //
+Route::get('elements/active/{id?}', 'ElementController@activate');     //
+//Ruta de desactivación de cuentas de usuario                          //
+Route::get('elements/inactive/{id?}', 'ElementController@inactivate'); //
+//Ruta de activación de administración de usuario                      //
+Route::get('elements/admin/{id?}', 'ElementController@admin');         //
+//Ruta de desactivación de administración de usuario                   //
+Route::get('elements/noadmin/{id?}', 'ElementController@noadmin');     //
+// --------------------------------------------------------------------//
+// ------------------------------------------------------------------//
+//Ruta de activación de cuentas de usuario                           //
+Route::get('helpers/active/{id?}', 'HelperController@activate');     //
+//Ruta de desactivación de cuentas de usuario                        //
+Route::get('helpers/inactive/{id?}', 'HelperController@inactivate'); //
+//Ruta de activación de administración de usuario                    //
+Route::get('helpers/admin/{id?}', 'HelperController@admin');         //
+//Ruta de desactivación de administración de usuario                 //
+Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');     //
+// ------------------------------------------------------------------//
 //commitments/review/46/create
 Route::get('commitments/review/{id?}/{review_id?}/create', 'CommitmentController@create');//
 //Ruta de eliminación de áreas
@@ -146,8 +146,3 @@ Route::get('matrix/{id?}', [                                //
 ]);                                                         //
 });                                                         //
 //----------------------------------------------------------//
-// TODO convertir fechas
-// Validities
-// Evaluations
-// Cycles
-// Tasks

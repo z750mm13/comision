@@ -19,6 +19,7 @@ class CordinateController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        //TODO retirar deleted
         $cordinadores = Cordinate::where([
             ['rol', 'Coordinación']
         ])->get();

@@ -29,6 +29,7 @@ class HelperController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        //TODO crear restauración
         $actives = User::select('users.*')
             ->where([
                 ['active','true'],
@@ -108,7 +109,7 @@ class HelperController extends Controller {
         if(auth()->user()->admin)
             $user = User::findOrFail($id);
         else {
-            $user = auth()->user()->get()->first(); 
+            $user = auth()->user();
             if($id != $user->id)
             return redirect()
                 ->route('helpers.edit', compact('user'))
