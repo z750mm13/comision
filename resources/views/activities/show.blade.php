@@ -4,6 +4,7 @@
   'descriptions' => ['Descripción: '. $activity->descripcion],
   'titlebody' => 'Peligros',
   'actividades' => 'active',
+  'matriz' => 'active',
   'nodelete' => 'no'
 ])
 @push('bread')

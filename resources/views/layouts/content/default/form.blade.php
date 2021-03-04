@@ -25,6 +25,7 @@
       <div class="card-header border-0">
         <h3 class="mb-0">{{ $titlebody }}</h3>          
       </div>
+      @yield('precardbody')
       <div class="card-body">
         @yield('bodycontent')
       </div>                                                                                                                                                                                      

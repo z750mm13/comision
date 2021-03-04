@@ -3,6 +3,7 @@
     'titlelist' => 'Acciones',
     'titlebody' => 'Compromiso',
     'actividades' => 'active',
+    'compromisos' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')

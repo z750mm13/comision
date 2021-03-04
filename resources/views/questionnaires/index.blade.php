@@ -8,7 +8,8 @@
     'image' => null,
     'button' => __('Agregar cuestionario'),
     'urlbutton' => __('/questionnaires'),
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'recorridos' => 'active'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

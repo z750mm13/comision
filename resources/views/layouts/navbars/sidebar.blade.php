@@ -25,13 +25,13 @@
                     @if(Auth::user()->tipo == 'Integrante'||Auth::user()->admin)
                     @if(Auth::user()->cordinates->count()||Auth::user()->admin)
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">
+                        <a class="nav-link {{ $panel ?? '' }}" href="{{ route('home') }}">
                           <i class="ni ni-tv-2 text-primary"></i>
                           <span class="nav-link-text">{{ __('Panel') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('publications.index') }}">
+                        <a class="nav-link {{ $publicaciones ?? '' }}" href="{{ route('publications.index') }}">
                           <i class="ni ni-ungroup text-orange"></i>
                           <span class="nav-link-text">{{ __('Publicaciones') }}</span>
                         </a>
@@ -143,7 +143,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('reviews.index') }}">
                                         <i class="fas fa-tasks text-orange"></i>
-                                        <span>{{ __('Realizar evaluación') }}</span>
+                                        <span>{{ __('Realizar recorrido') }}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -154,11 +154,11 @@
                                 </li>
                                 @if(Auth::user()->admin)
                                 <li class="nav-item">
-                                    <a href="#nav-recorridos" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="nav-recorridos">
+                                    <a href="#nav-recorridos" class="nav-link {{ $recorridos ?? '' }}" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="nav-recorridos">
                                         <i class="fas fa-walking text-orange"></i>
                                         <span class="nav-link-text">{{__('Recorridos')}}</span>
                                     </a>
-                                    <div class="collapse show" id="nav-recorridos">
+                                    <div class="collapse {{ isset($recorridos)? 'show':'' }}" id="nav-recorridos">
                                       <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('questionnaires.index') }}">
@@ -176,11 +176,11 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#navbar-riesgos" class="nav-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">
+                                    <a href="#navbar-riesgos" class="nav-link {{ $matriz ?? '' }}" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">
                                         <i class="fa fa-qrcode text-orange"></i>
-                                        <span class="nav-link-text">{{__('Riesgos')}}</span>
+                                        <span class="nav-link-text">{{__('Matriz de riesgos')}}</span>
                                     </a>
-                                    <div class="collapse" id="navbar-riesgos" style="">
+                                    <div class="collapse {{ isset($matriz)? 'show':'' }}" id="navbar-riesgos" style="">
                                       <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('activities.index') }}">
@@ -198,11 +198,11 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#navbar-multilevel" class="nav-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">
+                                    <a href="#navbar-multilevel" class="nav-link {{ $compromisos ?? '' }}" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-multilevel">
                                         <i class="fas fa-handshake text-orange"></i>
                                         <span class="nav-link-text">{{__('Compromisos')}}</span>
                                     </a>
-                                    <div class="collapse" id="navbar-multilevel" style="">
+                                    <div class="collapse {{ isset($compromisos)? 'show':'' }}" id="navbar-multilevel" style="">
                                       <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('commitments.index') }}">

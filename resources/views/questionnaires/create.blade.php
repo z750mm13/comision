@@ -3,6 +3,7 @@
     'titlelist' => 'Acciones',
     'titlebody' => 'Cuestionario',
     'actividades' => 'active',
+    'recorridos' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')

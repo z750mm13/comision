@@ -13,6 +13,7 @@
       <div class="card-header border-0">
         <h3 class="mb-0">{{ $titlebody }}</h3>
       </div>
+      @yield('precardbody')
       @if(!isset($pbutton))<div class="card-body"> @endif
         @yield('bodycontent')
       @if(!isset($pbutton))</div>@endif

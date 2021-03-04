@@ -7,7 +7,8 @@
   'urlbutton' => __('/evaluations'),
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades',
-  'actividades' => 'active'
+  'actividades' => 'active',
+  'matriz' => 'active',
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

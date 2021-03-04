@@ -16,6 +16,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
     'titlelist' => 'Acciones',
     'titlebody' => 'Evaluación',
     'actividades' => 'active',
+    'recorridos' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')

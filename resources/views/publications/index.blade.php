@@ -12,7 +12,7 @@ use Tools\Utils\Fecha;
     'image' => null,
     'button' => __('Agregar publicación'),
     'urlbutton' => __('/publications'),
-    'normativa' => 'active',
+    'publicaciones' => 'active',
     'nodelete' => 'no',
     'acceso_crear'=>true
 ])

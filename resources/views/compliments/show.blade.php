@@ -18,6 +18,7 @@ use Tools\Utils\Fecha;
     'Fecha de edicion: '. Fecha::texto(Carbon::parse($compliment->updated_at))
   ],
   'actividades' => 'active',
+  'compromisos' => 'active',
   'hsize' => 'col-md-10',
   'nodelete' => 'no'
 ])

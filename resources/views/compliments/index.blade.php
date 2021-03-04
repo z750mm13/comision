@@ -13,6 +13,7 @@ use Tools\Utils\Fecha;
     'button' => __('Crear cumplimiento'),
     'urlbutton' => __('/compliments'),
     'actividades' => 'active',
+    'compromisos' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')

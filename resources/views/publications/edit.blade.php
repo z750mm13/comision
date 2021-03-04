@@ -2,7 +2,7 @@
     'title' => 'Edición de la publicación',
     'titlelist' => 'Acciones',
     'titlebody' => $publication->titulo,
-    'normativa' => 'active',
+    'publicaciones' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')

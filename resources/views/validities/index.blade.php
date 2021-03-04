@@ -7,6 +7,7 @@
   'urlbutton' => __('/validities'),
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades',
+    'recorridos' => 'active',
   'actividades' => 'active'
 ])
 @push('bread')

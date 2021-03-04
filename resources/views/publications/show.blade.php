@@ -7,7 +7,7 @@ use Tools\Utils\Fecha;
   'titlelist' => 'Acciones',
   'titlebody' => 'Documento',
   'descriptions' => [$publication->descripcion,'Por: '. $publication->user->nombre. ' '. $publication->user->apellidos],
-  'normativa' => 'active',
+  'publicaciones' => 'active',
   'nodelete' => 'no'
 ])
 @push('bread')

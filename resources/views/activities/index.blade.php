@@ -8,7 +8,8 @@
     'image' => null,
     'button' => __('Agregar actividad'),
     'urlbutton' => __('/activities'),
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'matriz' => 'active',
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

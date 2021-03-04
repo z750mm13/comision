@@ -2,7 +2,7 @@
     'title' => 'Crear publicación',
     'titlelist' => 'Acciones',
     'titlebody' => 'Publicación',
-    'normativa' => 'active',
+    'publicaciones' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')

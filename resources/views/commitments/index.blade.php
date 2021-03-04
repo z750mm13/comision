@@ -12,7 +12,8 @@ use Tools\Utils\Fecha;
     'image' => null,
     'button' => __('Crear compromiso'),
     'urlbutton' => __('/commitments'),
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'compromisos' => 'active',
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
