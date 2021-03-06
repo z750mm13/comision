@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Publication;
-use App\Norm;
+use Illuminate\Support\Facades\Validator;
 use Tools\Img\ToServer;
 
 class PublicationController extends Controller {
@@ -17,6 +17,22 @@ class PublicationController extends Controller {
         $this->middleware('auth');
         $this->middleware('verified');
     }
+
+    /**
+     * Get a validator for an incoming create or update request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data, $creado = true) {
+        if(array_key_exists('documento', $data) && !$data['documento']) unset($data['documento']);
+        return Validator::make($data, [
+            'titulo' => ['string','required', 'max:200'],
+            'descripcion' => ['required', 'string'],
+            'documento' => [($creado?'required':''),'file'],
+        ]);
+    }
+
     /**
      * Muestra una lista de los requisitos de las normas.
      *
@@ -51,6 +67,8 @@ class PublicationController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        //Validación de los campos
+        $this->validator($request->all())->validate();
         $data = ToServer::saveImage($request, 'documento', 'img/docs');
         $data ['user_id'] = auth()->user()->id;
         $data['visible'] = isset($data['visible']);
@@ -99,6 +117,7 @@ class PublicationController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
+        $this->validator($request->all(), false)->validate();
         //Busqueda de la publicacion
         $publication = Publication::where('user_id', auth()->user()->id)->findOrFail($id);
         //Optiiene los datos del formulario
