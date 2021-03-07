@@ -20,7 +20,7 @@
 @endsection
 
 @section('bodycontent')
-<form action="{{route('publications.update',[$publication->id])}}" method="POST">
+<form action="{{route('publications.update',[$publication->id])}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
       
@@ -40,7 +40,7 @@
             <a href="{{\Tools\Img\ToServer::getFile($publication->documento)}}" target="_blank" rel="noopener noreferrer"><i class="ni ni-collection"></i> Ver archivo actual</a>
         </div>
         <div class="custom-file" id="select-documento">
-          <input name="documento" type="file" class="custom-file-input @if($errors->first('documento')) is-invalid @endif" id="publication-documento" lang="es">
+          <input name="documento" type="file" class="custom-file-input @if($errors->first('documento')) is-invalid @endif" id="publication-documento" lang="es" accept="application/pdf, doc, docx, image/*">
           <label class="custom-file-label" for="publication-documento">Selecciona el archivo nuevo a compartir</label>
         </div>
         <small class="text-danger">{{ $errors->first('documento') }}</small>
@@ -60,3 +60,12 @@
     </div>
 </form>
 @endsection
+
+@push('js')
+<script>
+$('#publication-documento').on('change',function() {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName);
+})
+</script>
+@endpush

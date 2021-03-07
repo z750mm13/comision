@@ -29,7 +29,7 @@ class PublicationController extends Controller {
         return Validator::make($data, [
             'titulo' => ['string','required', 'max:200'],
             'descripcion' => ['required', 'string'],
-            'documento' => [($creado?'required':''),'file'],
+            'documento' => [($creado?'required':''),'file', 'max:20000', 'mimes:doc,docx,pdf,png,jpg,jpeg'],
         ]);
     }
 

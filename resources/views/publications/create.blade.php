@@ -35,7 +35,7 @@
   <div class="form-group">
       <label for="select-documento">Archivo</label>
       <div class="custom-file" id="select-documento">
-        <input name="documento" type="file" class="custom-file-input @if($errors->first('documento')) is-invalid @endif" id="publication-documento" lang="es" required>
+        <input name="documento" type="file" class="custom-file-input @if($errors->first('documento')) is-invalid @endif" id="publication-documento" lang="es" accept="application/pdf, doc, docx, image/*" required>
         <label class="custom-file-label" for="publication-documento">Selecciona el archivo a compartir</label>
       </div>
       <small class="text-danger">{{ $errors->first('documento') }}</small>
