@@ -188,6 +188,29 @@ class HelperController extends Controller {
         return redirect()->route('helpers.index');
     }
 
+    /**
+     * Display a listing of the deleted users.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleted() {
+        $users = User::onlyTrashed()->where('tipo','Apoyo')->get();
+        return view('helpers.deleted',compact('users'));
+    }
+
+    /**
+     * Restore a list of deleted users.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request) {
+        $users = $request->input('users');
+        if($users)
+        foreach($users as $id)
+            User::onlyTrashed()->findOrFail($id)->restore();
+        return redirect()->route('helpers.index');
+    }
+
     public function activate($id) {
         $user = User::findOrFail($id);
         $user->update([

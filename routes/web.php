@@ -38,6 +38,8 @@ Route::post('cordinates/restore', 'CordinateController@restore');
 // --------------------------------------------------------------------//
 //Ruta de cuentas de usuario eliminadas                                //
 Route::get('elements/deleted', 'ElementController@deleted');           //
+//Ruta de restauracioón de cuentas eliminadas                          //
+Route::post('elements/restore', 'ElementController@restore');          //
 //Ruta de activación de cuentas de usuario                             //
 Route::get('elements/active/{id?}', 'ElementController@activate');     //
 //Ruta de desactivación de cuentas de usuario                          //
@@ -48,6 +50,10 @@ Route::get('elements/admin/{id?}', 'ElementController@admin');         //
 Route::get('elements/noadmin/{id?}', 'ElementController@noadmin');     //
 // --------------------------------------------------------------------//
 // ------------------------------------------------------------------//
+//Ruta de cuentas de usuario eliminadas                              //
+Route::get('helpers/deleted', 'HelperController@deleted');           //
+//Ruta de restauracioón de cuentas eliminadas                        //
+Route::post('helpers/restore', 'HelperController@restore');          //
 //Ruta de activación de cuentas de usuario                           //
 Route::get('helpers/active/{id?}', 'HelperController@activate');     //
 //Ruta de desactivación de cuentas de usuario                        //

@@ -22,7 +22,7 @@ class PublicationController extends Controller {
      * Get a validator for an incoming create or update request.
      *
      * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return \Illuminate\Support\Facades\Validator
      */
     protected function validator(array $data, $creado = true) {
         if(array_key_exists('documento', $data) && !$data['documento']) unset($data['documento']);

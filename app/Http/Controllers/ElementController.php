@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
-use App\Http\Requests\CreateElementRequest;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 use Tools\Img\ToServer;
 
 class ElementController extends Controller {
@@ -14,13 +13,35 @@ class ElementController extends Controller {
      * Lista de middlewares aplicados a los metodos
      */
     function __construct() {
-        //TODO crear restauración
         $this->middleware('active');
         $this->middleware('validateuniqueelement')->only('store');
         $this->middleware('uniqueupdateelement')->only('update');
         $this->middleware('auth');
         $this->middleware('verified');
         $this->middleware('check')->only(['index','create','store','show','destroy','activate','inactivate','admin','noadmin']);
+    }
+
+    /**
+     * Get a validator for an incoming create or update request.
+     *
+     * @param  array  $data
+     * @return Illuminate\Support\Facades\Validator
+     */
+    protected function validator(array $data, $creado = true) {
+        $data = $this->remove_key($data,'foto');
+        $data = $this->remove_key($data,'password');
+        return Validator::make($data, [
+            'nombre' => [$creado?'required':'', 'string', 'max:255'],
+            'apellidos' => [$creado?'required':'', 'string', 'max:255'],
+            'email' => [$creado?'required':'', 'string', 'email', 'max:255', $creado?'unique:users':''],
+            'password' => [$creado?'required':'', 'string', 'min:8', 'confirmed'],
+            'foto' => [$creado?'required':'','image'],
+        ]);
+    }
+
+    protected function remove_key(array $data, $value) {
+        if(array_key_exists($value, $data) && !$data[$value]) unset($data[$value]);
+        return $data;
     }
 
     /**
@@ -60,7 +81,8 @@ class ElementController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateElementRequest $request) {
+    public function store(Request $request) {
+        $this->validator($request->all())->validate();
         $data = ToServer::saveImage($request, 'foto', 'avatars/1');
         $user = User::create([
             'email' => $data['email'],
@@ -117,6 +139,7 @@ class ElementController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
+        $this->validator($request->all(),false)->validate();
         $user = null;
         if(auth()->user()->admin)
             $user = User::findOrFail($id);
@@ -168,6 +191,29 @@ class ElementController extends Controller {
             $user->forceDelete();
         }
 
+        return redirect()->route('elements.index');
+    }
+
+    /**
+     * Display a listing of the deleted users.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleted() {
+        $users = User::onlyTrashed()->where('tipo','Integrante')->get(); //Apoyo
+        return view('elements.deleted',compact('users'));
+    }
+
+    /**
+     * Restore a list of deleted users.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request) {
+        $users = $request->input('users');
+        if($users)
+        foreach($users as $id)
+            User::onlyTrashed()->findOrFail($id)->restore();
         return redirect()->route('elements.index');
     }
 
