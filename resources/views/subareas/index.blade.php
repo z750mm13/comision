@@ -44,7 +44,7 @@
     </div>
   </div>
 </div>
-
+<br>
 <div class="card-deck">
   @foreach($subareas as $subarea)
     <div class="col-md-4 col-sm-6 col-xm-12">
