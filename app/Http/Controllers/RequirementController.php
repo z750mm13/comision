@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreateRequirementRequest;
 use App\Requirement;
 use App\Norm;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 
 class RequirementController extends Controller {
 
@@ -71,8 +71,11 @@ class RequirementController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
+        $ruta = null;
+        if(isset(Route::current()->action['as']))
+            $ruta = Route::current()->action['as'];
         $requirement = Requirement::findOrFail($id);
-        return view('requirements.show', compact('requirement'));
+        return view('requirements.show', compact('requirement', 'ruta'));
     }
 
     /**

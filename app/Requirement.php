@@ -25,4 +25,8 @@ class Requirement extends Model {
     public function tasks() {
         return $this -> hasMany('App\Task');
     }
+
+    public function activities() {
+        return $this -> hasMany('App\Activity');
+    }
 }

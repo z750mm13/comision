@@ -4,7 +4,7 @@
   'descriptions' => ['Descripción: '. $questionnaire->descripcion, 'Con base a la norma: ['. $questionnaire->requirement->norm->codigo. '] '. $questionnaire->requirement->norm->titulo],
   'titlebody' => 'Preguntas',
   'actividades' => 'active',
-    'recorridos' => 'active'
+    'recorridos' => 'active',
   'nodelete' => 'no'
 ])
 @push('bread')

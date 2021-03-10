@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\Requirement;
 use App\Norm;
 use App\Question;
 use App\Questionnaire;
@@ -33,9 +32,9 @@ class QuestionnaireController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create($norm_id = null) {
         $norms = Norm::orderBy('codigo', 'ASC')->get();
-        return view('questionnaires.create', compact('norms'));
+        return view('questionnaires.create', compact('norms','norm_id'));
     }
 
     /**

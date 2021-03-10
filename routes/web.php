@@ -71,6 +71,13 @@ Route::get('areas/deleted', 'AreaController@deleted');
 Route::post('areas/restore', 'AreaController@restore');
 // Ruta de requerimientos con id de la norma
 Route::get('requirements/create/{id?}', 'RequirementController@create');
+// Ruta de cuestionarios de requisitos
+Route::get('requirements/{id}/questionnaires',[
+	'as'=> 'requirements.questionnaires',
+	'uses' => 'RequirementController@show'
+]);
+//Ruta de creacion de cuestionario con requisito
+Route::get('questionnaires/create/{id?}', 'QuestionnaireController@create');
 // Ruta de subareas con id de la area
 Route::get('subareas/create/{id?}', 'SubareaController@create');
 //Ruta de guards con id de cordinate

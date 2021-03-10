@@ -66,7 +66,7 @@
   @endforeach
 </div>
 <div class="col-md-12">
-<a class="col-md-12 btn btn-light btn-lg" href="/arrays/create/{{$subarea->id}}" role="button"><i class="fas fa-plus"></i></a>
+  <a class="col-md-12 btn btn-light btn-lg" href="/arrays/create/{{$subarea->id}}" role="button"><i class="fas fa-plus"></i></a>
 </div>
 </div>
 @endforeach
