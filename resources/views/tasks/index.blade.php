@@ -44,10 +44,17 @@ use Tools\Utils\Fecha;
         @endif
         <p class="lead">Estado: 
         @if($task->cumplida)
+        @if(now()->lte(Carbon::parse($task->caducidad)))
         <b class="text-success"> <i class="fas fa-check"></i> Se ha cumplido.</b>
         </p>
+        @else
+        <b class="text-warning"> <i class="fas fa-check"></i> Se ha cumplido, pero ha caducado.</b>
+        </p>
+        @endif
         <p class="lead">
           Cumplido por: <spam class="text-body">{{$task->user->rol??$task->user->nombre.' '.$task->user->apellidos}}</spam>
+        </p>
+        <p class="lead">Caduca:<br>{{Fecha::texto(Carbon::parse($task->caducidad))}}.</p>
         @else
         <b class="text-danger"><i class="fas fa-times"></i> No se ha cumplido.</b>
         @endif

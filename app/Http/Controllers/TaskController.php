@@ -56,6 +56,7 @@ class TaskController extends Controller {
             $data['programable'] = false;
             $data['cumplida'] = true;
             $data['user_id'] = auth()->user()->id;
+            $data['caducidad'] = $this->caducidad($data['requirement_id']);
         }
         $task = Task::create($data);
         if ($task) {
@@ -66,6 +67,33 @@ class TaskController extends Controller {
         return back()
             ->WithInput()
             ->with('errors','No se ha podido crear el requisito');
+    }
+
+    private function caducidad($requirement_id) {
+        $requirement = Requirement::findOrFail($requirement_id);
+        switch ($requirement->frecuencia) {
+            case 'Semanal':
+                return now()->addWeek(1);
+                break;
+            case 'Mensual':
+                return now()->addMonth(1);
+                break;
+            case 'Bimestral':
+                return now()->addMonth(2);
+                break;
+            case 'Trimestral':
+                return now()->addMonth(3);
+                break;
+            case 'Semestral':
+                return now()->addMonth(6);
+                break;
+            case 'Anual':
+                return now()->addYear(1);
+                break;
+            default:
+                return now();
+                break;
+        }
     }
 
     /**
@@ -110,6 +138,7 @@ class TaskController extends Controller {
         
         if($request->file('evidencia') != null && $task->evidencia == 'img/docs/no_file.png'){
             $data['cumplida'] = true;
+            $data['caducidad'] = $this->caducidad($task->requirement_id);
             $data['user_id'] = auth()->user()->id;
         }
         //Actualizacion del requisito

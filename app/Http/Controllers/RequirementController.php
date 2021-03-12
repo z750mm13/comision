@@ -110,8 +110,7 @@ class RequirementController extends Controller {
         Requirement::findOrFail($id)->update($request->all());
 
         //Retorno a la vista de requisito
-        $requirement = Requirement::findOrFail($id);
-        return view('requirements.show', compact('requirement'));
+        return redirect()->route('requirements.show',[$id]);
     }
 
     /**

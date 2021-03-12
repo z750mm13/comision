@@ -50,7 +50,15 @@
     </div>
     <div class="form-group">
         <label for="requirement-frecuencia">Frecuencia:</label>
-        <input type="text" id="requirement-frecuencia" name="frecuencia" placeholder="Ingresa la frecuenciadel requisito" required spellcheck="false" value="{{$requirement->frecuencia}}" class="form-control  @if($errors->first('frecuencia')) is-invalid @endif" />
+        <select name="frecuencia" class="form-control" id="requirement-frecuencia">
+            <option>{{$requirement->frecuencia}}</option>
+            <option>Semanal</option>
+            <option>Mensual</option>
+            <option>Bimestral</option>
+            <option>Trimestral</option>
+            <option>Semestral</option>
+            <option>Anual</option>
+          </select>
         <small class="text-danger">{{ $errors->first('frecuencia') }}</small>
     </div>
     <div class="form-group">

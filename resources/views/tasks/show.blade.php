@@ -19,11 +19,17 @@ if($task->programable){
     'Descripcion previa: '.$task->descripcion,
     'Inicio: '.Fecha::texto(Carbon::parse($task->inicio)),
     'Fin: '.Fecha::texto(Carbon::parse($task->fin)),
-    'Descripcion del cumplimiento: '.($task->postdescripcion??'Sin descripción')
+    'Descripcion del cumplimiento: '.($task->postdescripcion??'Sin descripción'),
+    'Estado: '. ($task->caducidad? now()->lte(Carbon::parse($task->caducidad))? 'Se ha cumplido' : 'Se ha cumplido, pero ha caducado' : 'No se ha cumplido'),
+    'Caducidad: '. ($task->caducidad? Fecha::texto(Carbon::parse($task->caducidad)) : 'Sin caducidad'),
   ];
 } else {
   $botones = [];
-  $programa = ['','','Descripcion: '.$task->descripcion];
+  $programa = ['','',
+    'Descripcion: '.$task->descripcion,
+    'Estado: '.($task->caducidad? now()->lte(Carbon::parse($task->caducidad))? 'Se ha cumplido' : 'Se ha cumplido, pero ha caducado!' : 'No se ha cumplido'),
+    'Caducidad: '. ($task->caducidad? Fecha::texto(Carbon::parse($task->caducidad)) : 'Sin caducidad'),
+  ];
 }
 ?>
 @extends('layouts.content.default.form',$botones+[

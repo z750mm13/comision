@@ -1,15 +1,20 @@
 @extends('layouts.content.default.form',[
   'title' => 'Requisito '. $requirement->numero,
   'titlelist' => 'Acciones',
-  'descriptions' => [$requirement->descripcion, 'Tipo: '. $requirement->tipo, 'Norma: '. $requirement->norm->codigo],
+  'descriptions' => [$requirement->descripcion, 'Tipo: '. $requirement->tipo, 'Norma: '. $requirement->norm->codigo, 'Frecuencia: '. $requirement->frecuencia],
   'normativa' => 'active',
   'titlebody' => 'Propiedades del requisito '. $requirement->numero,
   'nodelete' => 'no'
 ])
 
+<?php
+use Carbon\Carbon;
+use Tools\Utils\Fecha;
+?>
+
 @push('bread')
-<li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item"><a href="/requirements">Requisitos</a></li>
+<li class="breadcrumb-item"><a href="{{route('home')}}"><i class="fas fa-home"></i></a></li>
+<li class="breadcrumb-item"><a href="{{route('requirements.index')}}">Requisitos</a></li>
 <li class="breadcrumb-item active" aria-current="page">{{'Requisito '.$requirement->numero}}</li>
 @endpush
 
@@ -21,7 +26,7 @@
         <a class="nav-link {{$ruta == 'requirements.show'?'active':''}}" href="{{route('requirements.show',[$requirement->id])}}">Cumplimientos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{$ruta == 'requirements.questionnaires'?'active':''}}" href="/requirements/{{$requirement->id}}/questionnaires">Cuestionarios</a>
+        <a class="nav-link {{$ruta == 'requirements.questionnaires'?'active':''}}" href="{{route('requirements.questionnaires',[$requirement->id])}}">Cuestionarios</a>
       </li>
     </ul>
   </li>
@@ -44,10 +49,10 @@
 
 @section('list')
 <ol class="list-unstyled">
-  <li><a href="/requirements"><i class="fas fa-home"></i> Todos los requisitos</a></li>
+  <li><a href="{{route('requirements.index')}}"><i class="fas fa-home"></i> Todos los requisitos</a></li>
   @if(Auth::user()->admin)
-  <li><a href="/requirements/create"><i class="fas fa-plus"></i> Agregar requisito</a></li>
-  <li><a href="/requirements/{{$requirement->norm->id}}/edit"><i class="fas fa-pencil-alt"></i> Editar requisto</a></li>
+  <li><a href="{{route('requirements.create')}}"><i class="fas fa-plus"></i> Agregar requisito</a></li>
+  <li><a href="{{route('requirements.edit',[$requirement->id])}}"><i class="fas fa-pencil-alt"></i> Editar requisto</a></li>
   <li><a href="#" onclick="
   let result =confirm('Esta seguro de eliminar el requisito?');
   if(result){

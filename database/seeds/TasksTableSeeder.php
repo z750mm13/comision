@@ -20,6 +20,7 @@ class TasksTableSeeder extends Seeder {
                         'descripcion'=>'Se arreglará',
                         'cumplida' => 'true',
                         'user_id' => 1,
+                        'caducidad' => now()->addWeeks(1),
                         'requirement_id' => $requisito,
                         'created_at' => '20'.$anio.'-'.($i+1).'-01',
                         'updated_at' => '20'.$anio.'-'.($i+1).'-01'
