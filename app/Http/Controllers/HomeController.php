@@ -123,6 +123,7 @@ class HomeController extends Controller {
         $compliments = Compliment::orderBy('id', 'ASC')->get()->count();
 
         $por_compliments = round(($compliments? 100 * ($compliments/$problems):0),2);
+        
         //Grafica de avance total
         $totalrequisitos= Requirement::select(DB::raw('count(requirements.id) total'))
         ->where(
@@ -141,7 +142,7 @@ class HomeController extends Controller {
             ->leftJoin('tasks', function ($join) use($fecha) {
                 $join->on('tasks.requirement_id', '=','requirements.id')
                 ->where(
-                    DB::raw("tasks.cumplida = true and tasks.created_at < '".$fecha->format('Y-m-d')."' and null")
+                    DB::raw("tasks.caducidad > '".$fecha->format('Y-m-d')."' and tasks.cumplida = true and tasks.created_at < '".$fecha->format('Y-m-d')."' and null")
                 );
             })
             ->groupBy('norms.id','requirements.numero')
