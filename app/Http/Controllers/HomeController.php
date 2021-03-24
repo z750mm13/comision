@@ -92,12 +92,16 @@ class HomeController extends Controller {
         ->from(DB::raw('('.Str::replaceArray('?', $norms_areas->getBindings(), $norms_areas->toSql()).') as norms_areas '))
         ->join(DB::raw('('.Str::replaceArray('?', ['false'], $problems_areas->toSql()).') as problems_areas'), 'problems_areas.id','norms_areas.id')
         ->withTrashed()->get();
-
+        
+        $fecha = Carbon::now();
         $cumplimientos = Norm::select(DB::raw('norms.codigo, requirements.numero, (case when count(tasks.id) = 0 then 0 else 1 end) tareas'))
         ->leftJoin('requirements','requirements.norm_id','=','norms.id')
-        ->leftJoin('tasks', function ($join) {
+        ->leftJoin('tasks', function ($join) use($fecha) {
             $join->on('tasks.requirement_id', '=','requirements.id')
-            ->where('tasks.cumplida', '=','true');
+            ->where([
+                ['tasks.caducidad', '>=', "'".$fecha->format('Y-m-d')."'"],
+                ['tasks.cumplida', '=','true']
+                ]);// TODO agregar la caducidad
         })
         ->groupBy('norms.codigo','requirements.numero')
         ->orderBy('norms.codigo');
