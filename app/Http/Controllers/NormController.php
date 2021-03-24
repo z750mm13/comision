@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Norm;
 use App\Requirement;
-use App\Questionnaire;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\CreateNormRequest;
 use App\Http\Requests\UpdateNormRequest;
@@ -70,10 +69,16 @@ class NormController extends Controller {
      */
     public function show($id) {
         $norm = Norm::findOrFail($id);
-        $requirements = Requirement::select(DB::raw('requirements.*, count(questionnaires.id) as questionn'))
+        $compliments = Requirement::select(DB::raw('requirements.id, count(tasks.id) as compliment'))
+        ->leftJoin('tasks', 'requirements.id', '=', 'tasks.requirement_id')
+        ->where('requirements.norm_id','=',$norm->id)
+        ->groupBy('requirements.id');
+        $requirements = Requirement::select(DB::raw('requirements.*, count(questionnaires.id) as questionn, cumplimiento.compliment'))
         ->leftJoin('questionnaires', 'requirements.id', '=', 'questionnaires.requirement_id')
+        ->join(DB::raw('('.Str::replaceArray('?', [$norm->id], $compliments->toSql()).') as cumplimiento'), 'requirements.id','cumplimiento.id')
         ->where('requirements.norm_id','=',$norm->id)
         ->groupBy('requirements.id')
+        ->groupBy('cumplimiento.compliment')
         ->orderBy('numero')
         ->get();
         return view('norms.show', compact('norm','requirements'));

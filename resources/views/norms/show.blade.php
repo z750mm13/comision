@@ -20,11 +20,7 @@
       <div class="card-body"> <!-- Texto primario -->
         <h3 class="card-title mb-3">Requisito {{$requirement->numero}}</h3>
         <p class="card-text mb-4">{{substr($requirement->descripcion, 0, 37)."..."}}</p>
-        @if($requirement->questionn)
-        <p class="card-text">Estado: <b class="text-success"> <i class="fas fa-check"></i> Actualmente está en uso.</b></p>
-        @else
-        <p class="card-text">Estado: <b class="text-danger"><i class="fas fa-times"></i> Actualmente no está en uso.</b></p>
-        @endif
+        <p class="card-text mb-4">Estado: Cuenta con {{$requirement->questionn? $requirement->questionn.' cuestionario'.($requirement->questionn==1?'':'s'): 'ningun cuestionario'}} y {{$requirement->compliment? $requirement->compliment.' cumplimiento'.($requirement->compliment==1?'':'s'): 'ningun cumplimiento'}}.</p>
         <a class="stretched-link" href="/requirements/{{$requirement->id}}" class="card-link">Ver mas...</a>
       </div>
     </div>
