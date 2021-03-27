@@ -30,18 +30,18 @@ use Tools\Utils\Fecha;
       <div class="row align-items-center">
         <div class="col-auto">
           <!-- Avatar -->
-          <img alt="Image placeholder" src="{{\Tools\Img\ToServer::getFile(auth()->user()->foto)}}" class="avatar avatar-xl rounded-circle">
+          <img alt="Image placeholder" src="{{\Tools\Img\ToServer::getFile($publication->user->foto)}}" class="avatar avatar-xl rounded-circle">
         </div>
         <div class="col ml--2">
           <h4 class="mb-0">
-            Judith Antonio Benito
+            {{$publication->user->nombre. ' '.$publication->user->apellidos}}
           </h4>
-          <p class="text-sm text-muted mb-0">26 de Marzo de 2021</p>
+          <p class="text-sm text-muted mb-0">{{Fecha::texto(Carbon::parse($publication->created_at))}}</p>
         </div>
       </div>
     </div>
     <div class="card-body text-primary"> <!-- Texto primario -->
-      <h5 class="h2 card-title mb-0">{{$publication->titulo}}</h5>
+      <h5 class="h2 card-title mb-0{{$publication->visible?'':' text-muted'}}">{{$publication->titulo}}</h5>
       <p class="card-text mb-4">{{$publication->descripcion}}</p>
       @if(!$publication->visible)
       <p class="card-text mt-4 text-muted">Esta publicación no es visible</p>

@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Role;
-use App\Http\Requests\CreateElementRequest;
-use Carbon\Carbon;
 use Tools\Img\ToServer;
+use Illuminate\Support\Facades\Validator;
 
 class HelperController extends Controller {
     /**
@@ -21,6 +20,31 @@ class HelperController extends Controller {
         $this->middleware('auth');
         $this->middleware('verified');
         $this->middleware('check')->only(['index','create','store','show','destroy','activate','inactivate','admin','noadmin']);
+    }
+
+    /**
+     * Get a validator for an incoming create or update request.
+     *
+     * @param  array  $data
+     * @return Illuminate\Support\Facades\Validator
+     */
+    protected function validator(array $data, $creado = true) {
+        $data = $this->remove_key($data,'foto');
+        $data = $this->remove_key($data,'password');
+        $data = $this->remove_key($data,'rol');
+        return Validator::make($data, [
+            'nombre' => [$creado?'required':'', 'string', 'max:255'],
+            'apellidos' => [$creado?'required':'', 'string', 'max:255'],
+            'rol' => [$creado?'required':'', 'string', 'max:255'],
+            'email' => [$creado?'required':'', 'string', 'email', 'max:255', $creado?'unique:users':''],
+            'password' => [$creado?'required':'', 'string', 'min:8', 'confirmed'],
+            'foto' => [$creado?'required':'','image'],
+        ]);
+    }
+
+    protected function remove_key(array $data, $value) {
+        if(array_key_exists($value, $data) && !$data[$value]) unset($data[$value]);
+        return $data;
     }
 
     /**
@@ -68,7 +92,8 @@ class HelperController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateElementRequest $request) {
+    public function store(Request $request) {
+        $this->validator($request->all())->validate();
         $data = ToServer::saveImage($request, 'foto', 'avatars/1');
         $user = User::create([
             'email' => $data['email'],
@@ -133,6 +158,7 @@ class HelperController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
+        $this->validator($request->all(),false)->validate();
         $user = null;
         if(auth()->user()->admin)
             $user = User::findOrFail($id);

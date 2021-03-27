@@ -37,7 +37,7 @@
     <div class="form-group">
         <label for="helper-rol">Rol:</label>
         <select name="rol" id="helper-rol" require class="form-control  @if($errors->first('rol')) is-invalid @endif" >
-            <option value="0">Elije un rol</option>
+            <option value="0">Elije un rol (Actual {{$user->rol}})</option>
             <option value="{{$user->rol}}">{{$user->rol}}</option>
             @foreach($roles as $rol)
             <option value="{{$rol->rol}}">{{$rol->rol}}</option>
