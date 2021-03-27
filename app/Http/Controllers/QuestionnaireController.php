@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Norm;
 use App\Question;
 use App\Questionnaire;
+use App\Requirement;
 
 class QuestionnaireController extends Controller {
 
@@ -46,8 +47,8 @@ class QuestionnaireController extends Controller {
     public function store(Request $request) {
         $questionnaire = Questionnaire::create([
             'requirement_id' => 
-                Norm::findOrFail($request->norm_id)->
-                    requirements->first()->id,
+                (isset($request->norm_id)?Norm::findOrFail($request->norm_id)->
+                    requirements->first()->id:Requirement::findOrFail($request->requirement_id)->id),
             'tipo' =>  $request->tipo,
             'descripcion' => $request->descripcion
         ]);

@@ -101,7 +101,7 @@ class HomeController extends Controller {
             ->where([
                 ['tasks.caducidad', '>=', "'".$fecha->format('Y-m-d')."'"],
                 ['tasks.cumplida', '=','true']
-                ]);// TODO agregar la caducidad
+                ]);
         })
         ->groupBy('norms.codigo','requirements.numero')
         ->orderBy('norms.codigo');

@@ -1,4 +1,4 @@
-@foreach($requirement->questionnaires as $questionnaire)
+@foreach($requirement->questionnaires()->orderByDesc('created_at')->get() as $questionnaire)
   <div class="col-sm-6 col-xm-12">
   <div class="card border-primary mb-3"> <!-- Borde primario -->
     <div class="card-header">{{$questionnaire->tipo}}</div>

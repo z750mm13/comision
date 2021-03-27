@@ -3,7 +3,7 @@ use Carbon\Carbon;
 use Tools\Utils\Fecha;
 ?>
 
-@foreach($requirement->tasks as $task)
+@foreach($requirement->tasks()->orderByDesc('created_at')->get() as $task)
 <div class="col-sm-6 col-xm-12">
   <div class="card mb-3"> <!-- Borde primario primary danger warning-->
     @if(!$task->programable)

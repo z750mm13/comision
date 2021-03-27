@@ -43,7 +43,7 @@
       <small class="text-danger">{{ $errors->first('norm_id') }}</small>
   </div>
   @else
-  <input type="text" name="norm_id" value="{{$norm_id}}" class="form-control" hidden>
+  <input type="text" name="requirement_id" value="{{$norm_id}}" class="form-control" hidden>
   @endif
   <div class="form-group">
     <label for="descripcion">Descripcion</label>
