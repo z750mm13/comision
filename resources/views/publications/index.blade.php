@@ -26,11 +26,23 @@ use Tools\Utils\Fecha;
   @foreach($publications as $publication)
   <div class="col-md-4 col-sm-6 col-xm-12">
   <div class="card border-primary mb-3"> <!-- Borde primario -->
-    <div class="card-header">{{$publication->titulo}}</div>
+    <div class="card-header">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <!-- Avatar -->
+          <img alt="Image placeholder" src="{{\Tools\Img\ToServer::getFile(auth()->user()->foto)}}" class="avatar avatar-xl rounded-circle">
+        </div>
+        <div class="col ml--2">
+          <h4 class="mb-0">
+            Judith Antonio Benito
+          </h4>
+          <p class="text-sm text-muted mb-0">26 de Marzo de 2021</p>
+        </div>
+      </div>
+    </div>
     <div class="card-body text-primary"> <!-- Texto primario -->
       <h5 class="h2 card-title mb-0">{{$publication->titulo}}</h5>
-      <small class="text-muted">Por {{$publication->user->nombre. ' '. $publication->user->apellidos}} el {{Fecha::texto(Carbon::parse($publication->created_at))}}</small>
-      <p class="card-text mt-4">{{$publication->descripcion}}</p>
+      <p class="card-text mb-4">{{$publication->descripcion}}</p>
       @if(!$publication->visible)
       <p class="card-text mt-4 text-muted">Esta publicación no es visible</p>
       @endif
