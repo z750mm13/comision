@@ -90,7 +90,7 @@ class HomeController extends Controller {
 
         $areas = Area::select('norms_areas.*','problems_areas.problems')
         ->from(DB::raw('('.Str::replaceArray('?', $norms_areas->getBindings(), $norms_areas->toSql()).') as norms_areas '))
-        ->join(DB::raw('('.Str::replaceArray('?', ['false'], $problems_areas->toSql()).') as problems_areas'), 'problems_areas.id','norms_areas.id')
+        ->join(DB::raw('('.Str::replaceArray('?', ['false',$problems_areas->getBindings()[1]], $problems_areas->toSql()).') as problems_areas'), 'problems_areas.id','norms_areas.id')
         ->withTrashed()->get();
         
         $fecha = Carbon::now();
