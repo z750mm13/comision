@@ -219,6 +219,7 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
+
 @push('css')
 <link  href="{{ asset('assets') }}/vendor/viewerjs/viewer.css" rel="stylesheet">
 @endpush

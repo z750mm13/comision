@@ -62,6 +62,11 @@ Route::get('helpers/inactive/{id?}', 'HelperController@inactivate'); //
 Route::get('helpers/admin/{id?}', 'HelperController@admin');         //
 //Ruta de desactivación de administración de usuario                 //
 Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');     //
+//Ruta de cuentas de usuario asignar rol                             //
+Route::post('helpers/setrol/{id}', [                                 //
+	'as'=> 'helpers.setrol',                                           //
+	'uses' => 'HelperController@setrol'                       //
+]);                                                                  //
 // ------------------------------------------------------------------//
 //commitments/review/46/create
 Route::get('commitments/review/{id?}/{review_id?}/create', 'CommitmentController@create');//

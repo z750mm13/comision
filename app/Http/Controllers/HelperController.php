@@ -121,6 +121,16 @@ class HelperController extends Controller {
      */
     public function show($id) {
         $user = User::findOrFail($id);
+        if(!$user->rol) {
+            $roles = Role::whereNotIn('rol',
+                User::select('users.rol')
+                    ->where([
+                        ['active','true'],
+                        ['tipo','Apoyo']
+                ])->get()
+            )->get();
+            return view('helpers.show', compact('user', 'roles'));
+        }
         return view('helpers.show', compact('user'));
     }
 
@@ -167,7 +177,7 @@ class HelperController extends Controller {
             if($id != $user->id)
             return redirect()
                 ->route('helpers.edit', compact('user'))
-                ->with('success','Este no es su perfil');
+                ->with('error','Este no es su perfil');
         }
         if ($request->file('foto') != null){
             $data = ToServer::saveImage($request, 'foto', 'avatars/1');
@@ -187,7 +197,7 @@ class HelperController extends Controller {
         else $data = $request->except(['password','foto']);
         $user->update($data);
         
-        return view('helpers.show', compact('user'));
+        return redirect()->route('helpers.index',[$user->id])->with('susses','Se ha modificado correctamente.');
     }
 
     /**
@@ -211,7 +221,7 @@ class HelperController extends Controller {
             $user->forceDelete();
         }
 
-        return redirect()->route('helpers.index');
+        return redirect()->route('helpers.index')->with('susses','Se ha eliminado a '. $user->nombre. ' '.$user->apellidos);
     }
 
     /**
@@ -239,43 +249,57 @@ class HelperController extends Controller {
 
     public function activate($id) {
         $user = User::findOrFail($id);
+        if(!$user->rol) return back()->with('error','Este usuario necesita un rol.');
         $user->update([
             'active' => true
         ]);
         return redirect()->route('helpers.index')
-        ->with('success','La cuenta de '. $user->nombre. $user->apellidos. ' se ha activado');
+        ->with('success','La cuenta de '. $user->nombre. ' '.$user->apellidos. ' se ha activado');
     }
 
     public function inactivate($id) {
         $user = User::findOrFail($id);
         if(auth()->user()->id == $user->id)
          return redirect()->route('helpers.index')
-         ->with('success','Lo sentimos, no puede realizar este cambio sobre usted.');
+         ->with('error','Lo sentimos, no puede realizar este cambio sobre usted.');
         $user->update([
             'active' => false
         ]);
         return redirect()->route('helpers.index')
-        ->with('success','La cuenta de '. $user->nombre. $user->apellidos. ' se ha desactivado');
+        ->with('success','La cuenta de '. $user->nombre. ' '.$user->apellidos. ' se ha desactivado');
     }
 
     public function admin($id) {
         $user = User::findOrFail($id);
+        if(!$user->rol) return back()->with('error','Este usuario necesita un rol.');
         $user->update([
             'admin' => true
         ]);
         return redirect()->route('helpers.index')
-        ->with('success','La cuenta de '. $user->nombre. $user->apellidos. ' se ha ascendido');
+        ->with('success','La cuenta de '. $user->nombre. ' '.$user->apellidos. ' se ha ascendido');
     }
 
     public function noadmin($id) {
         $user = User::findOrFail($id);
         if(auth()->user()->id == $user->id)
          return redirect()->route('helpers.index')
-         ->with('success','Lo sentimos, no puede realizar este cambio sobre usted.');
+         ->with('error','Lo sentimos, no puede realizar este cambio sobre usted.');
         $user->update([
             'admin' => false
         ]);
         return redirect()->route('helpers.index')
-        ->with('success','La cuenta de '. $user->nombre. $user->apellidos. ' se ha degradado');
+        ->with('success','La cuenta de '. $user->nombre. ' '.$user->apellidos. ' se ha degradado');
+    }
+
+    public function setrol(Request $request, $id) {
+        $rol = $request->input('rol');
+        $user = User::findOrFail($id);
+        if($user->rol) return back()->with('error','Este usuario ya tiene un rol.');
+        if($rol == 'null' || $rol == null) {
+            return back()->with('error','No se selecciono el rol.');
+        }
+        $user->rol = $rol;
+        $user->save();
+        return back()->with('success','Se ha asignado el rol correctamente.');
     }
 }

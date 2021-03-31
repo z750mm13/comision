@@ -59,6 +59,9 @@ use Illuminate\Support\Facades\DB;
                   ->union($solicitudes)
                   ->union($cumplimientos);
                 }
+                if(Auth::user()->tipo == 'Apoyo'){
+                  $notificaciones = $cumplimientos->where('user_id',Auth::user()->id);
+                }
               $notificaciones = $notificaciones->limit(10)->orderByDesc('fecha')->get();
               ?>
               <div class="px-3 py-3">

@@ -16,12 +16,17 @@
         <link rel="stylesheet" href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" type="text/css">
         <link rel="stylesheet" href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
         <!-- Page plugins -->
+        <link rel="stylesheet" href="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.min.css">
         @stack('css')
         <!-- Argon CSS -->
         <link rel="stylesheet" href="{{ asset('argon') }}/css/argon.css?v=1.1.0" type="text/css">
     </head>
     <body class="{{ $class ?? '' }}">
         <div id="app">
+        @include('messages.modals',[
+            'success'=>session()->has('success')?session()->get('success'):null,
+            'error'=>session()->has('error')?session()->get('error'):null
+        ])
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

@@ -275,20 +275,32 @@
                     @endif
                     @elseif(Auth::user()->tipo == 'Apoyo')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">
+                        <a class="nav-link {{ $panel ?? '' }}" href="{{ route('home') }}">
                           <i class="ni ni-tv-2 text-primary"></i>
-                          <span class="nav-link-text">{{ __('Inicio') }}</span>
+                          <span class="nav-link-text">{{ __('Panel') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('commitments.index') }}">
-                          <span class="nav-link-text">{{ __('Compromisos prometidos') }}</span>
+                        <a class="nav-link {{ $actividades ?? '' }}" href="#navbar-actividades" data-toggle="collapse" role="button" aria-expanded="{{ isset($actividades)? 'true':'false' }}" aria-controls="navbar-examples">
+                            <i class="ni ni-archive-2 text-orange"></i>
+                            <span class="nav-link-text">{{ __('Actividades') }}</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('compliments.index') }}">
-                          <span class="nav-link-text">{{ __('Compromisos cumplidos') }}</span>
-                        </a>
+                        <div class="collapse {{ isset($actividades)? 'show':'' }}" id="navbar-actividades">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('commitments.index') }}">
+                                        <i class="fas fa-handshake text-orange"></i>
+                                        <span>{{ __('Promesas') }}</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('compliments.index') }}">
+                                        <i class="fas fa-child text-orange"></i>
+                                        <samp>{{ __('Cumplimientos') }}</samp>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     @endif
                     @endif

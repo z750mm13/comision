@@ -29,6 +29,20 @@
 
 @section('bodycontent')
 @if(Auth::user()->admin & Auth::user()->id != $user->id)
+  @if(!$user->rol)
+  <form class="form-group form-inline" action="{{route('helpers.setrol',[$user->id])}}" method="post">
+    @csrf
+    @method('post')
+    <label class="my-1 mr-2 col" for="rol">Rol</label>
+    <select name="rol" class="custom-select my-1 mr-sm-2 col-9" id="rol">
+      <option selected value="null">Selecciona el rol</option>
+      @foreach($roles as $rol)
+      <option value="{{$rol->rol}}">{{$rol->rol}}</option>
+      @endforeach
+    </select>
+    <button type="submit" class="btn btn-primary my-1 col">Asignar</button>
+  </form>
+  @endif
   @if($user->active==false) <!-- helpers/active/{id?}  -->
   <div class="form-group">
     <a id="" class="btn btn-primary" href="/helpers/active/{{$user->id}}" role="button">Activar cuenta</a>

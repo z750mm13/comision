@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Subarea;
 use App\Area;
+use App\Commitment;
 use App\Compliment;
 use App\Norm;
 use App\Requirement;
@@ -32,6 +33,7 @@ class HomeController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index() {
+        if(auth()->user()->tipo == 'Apoyo') return $this->helpers();
         $subareas  = Subarea::select(DB::raw('count(reviews.id) as problems, subareas.*'))
         ->leftJoin('targets', 'targets.subarea_id', '=', 'subareas.id')
         ->leftJoin('questionnaires', 'questionnaires.id', '=', 'targets.questionnaire_id')
@@ -199,5 +201,25 @@ class HomeController extends Controller {
             'solved', 'por_solved', 'norms', 'calendar_validities', 'calendar_tasks', 'calendar_evaluations','validities',
             'total', 'meses', 'totalrequisitos', 'goal'
         ));
+    }
+
+    public function helpers() {
+        $user_id = auth()->user()->id;
+        $commitments = Commitment::select('id','fecha_cumplimiento')
+        ->where('user_id',$user_id)->get();
+
+        $cumplimientos = Compliment::select(DB::raw('EXTRACT(MONTH FROM fecha) mes, count(compliments.id) total'))
+        ->join('commitments','commitments.id','=','compliments.commitment_id')
+        ->where(DB::raw('user_id = '.$user_id.' and EXTRACT(YEAR FROM fecha) = 2021 and "compliments"."deleted_at"'))
+        ->groupBy('mes')->orderBy('mes')->get();
+
+        $problemas = Commitment::select(DB::raw('EXTRACT(MONTH FROM fecha_cumplimiento) mes, count(commitments.id) total'))
+        ->leftJoin('compliments','commitments.id','=','compliments.commitment_id')
+        ->where([
+            ['user_id',$user_id],
+            ['compliments.id',null]
+        ])->groupBy('mes')->orderBy('mes')->get();
+
+        return view('homes.helpers', compact('commitments','cumplimientos','problemas'));
     }
 }
