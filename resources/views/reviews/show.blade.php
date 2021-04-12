@@ -4,7 +4,7 @@ $botones = [];
 else
 $botones = [
   'button' => __('Crear compromiso'),
-  'urlbutton' => __('/commitments/review/0/'.$review->id)
+  'urlbutton' => __('/commitments/review/'.(Auth::user()->tipo == 'Apoyo'?Auth::user()->id:0).'/'.$review->id)
 ];
 ?>
 

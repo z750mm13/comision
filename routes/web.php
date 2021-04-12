@@ -101,8 +101,11 @@ Route::get('reviews/areas/{area_id?}/validity/{validity_id?}', 'ReviewController
 Route::get('problems/{validity_id?}/subarea/{subarea_id?}', 'ProblemController@show');
 //Ruta de commitments con id de review
 Route::get('commitments/create/{id?}', 'CommitmentController@create');
-//Ruta de eliminación de commitments
-Route::get('commitments/deleted', 'CommitmentController@deleted');
+//Ruta de lista de problemas
+Route::get('commitments/problems', [
+	'as' => 'commitments.problems',
+	'uses'=>'CommitmentController@index'
+	]);
 //Ruta de restauración de commitments
 Route::post('commitments/restore', 'CommitmentController@restore');
 //Ruta de index de evaluación segun tiempo
@@ -123,6 +126,8 @@ Route::get('exams/create/{id?}', 'ExamController@create');
 Route::get('exams/areas/{area_id?}', 'ExamController@index');
 //Rupa de subareas pertenecientes a una programación
 Route::get('exams/areas/{area_id?}/validity/{validity_id?}', 'ExamController@index');
+//Ruta de cumplimientos con id de compromiso
+Route::get('compliments/{commitment_id?}/create', 'ComplimentController@create');
 
 Route::resource('cordinates', 'CordinateController');
 Route::resource('elements', 'ElementController');

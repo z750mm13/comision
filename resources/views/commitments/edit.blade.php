@@ -24,7 +24,9 @@
 <form action="{{route('commitments.update',[$commitment->id])}}" method="POST">
     {{ csrf_field() }}
     {{ method_field('PUT') }}
-
+    @if(Auth::user()->tipo == 'Apoyo')
+    <input type="text" name="user_id" hidden value="{{Auth::user()->id}}">
+    @else
     <div class="form-group">
         <label for="commitment-user">Responsable:</label>
         <select name="user_id" id="commitment-user" require class="form-control  @if($errors->first('user_id')) is-invalid @endif" >
@@ -35,6 +37,7 @@
         </select>
         <small class="text-danger">{{ $errors->first('user_id') }}</small>
     </div>
+    @endif
     <div class="form-group">
         <label for="commitment-norm">Necesidad:</label>
         <select name="review_id" id="commitment-review" require class="form-control  @if($errors->first('review_id')) is-invalid @endif" >

@@ -23,6 +23,9 @@
     {{csrf_field()}}
     {{method_field('POST')}}
 
+    @if($commitment_id)
+    <input type="text" name="commitment_id" hidden value="{{$commitment_id}}">
+    @else
     <div class="form-group">
         <label for="requirement-norm">Compromiso:</label>
         <select name="commitment_id" id="commitment-compliment" require class="form-control  @if($errors->first('commitment_id')) is-invalid @endif" >
@@ -33,6 +36,7 @@
         </select>
         <small class="text-danger">{{ $errors->first('commitment_id') }}</small>
     </div>
+    @endif
     <div class="form-group">
     <div class="custom-file">
         <input type="file" class="custom-file-input" id="customFile" name="evidencia" lang="es" accept=".jpg,.png">

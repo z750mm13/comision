@@ -25,7 +25,9 @@
   {{ method_field('POST') }}
 
   <div class="form-group">
-    @if(!$id)
+    @if(Auth::user()->tipo == 'Apoyo')
+    <input type="text" name="user_id" hidden value="{{Auth::user()->id}}">
+    @elseif(!$id)
       <label for="commitment-user">Responsable:</label>
       <select name="user_id" id="commitment-user" require class="form-control  @if($errors->first('user_id')) is-invalid @endif" >
       <option value="0">Elije un responsable</option>

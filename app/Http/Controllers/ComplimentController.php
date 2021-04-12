@@ -44,7 +44,7 @@ class ComplimentController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create($commitment_id=null) {
         $user = auth()->user();
         if($user->tipo == 'Integrante')
         $commitments = Commitment::select('commitments.*','compliments.evidencia')
@@ -52,9 +52,16 @@ class ComplimentController extends Controller {
         ->orderBy('id', 'ASC')
         ->where('compliments.id','=',null)
         ->get();
-        else
-        $commitments = $user->commitments;
-        return view('compliments.create', compact('commitments'));
+        else {
+            if($commitment_id == null)
+                $commitments = $user->commitments;
+            else {
+                $commitments = Commitment::findOrFail($commitment_id);
+                if($commitments->user_id != auth()->user()->id || $commitments->compliment) return redirect()->
+                    route('compliments.index')->with('error','No se ha podido encontrar el recurso');
+            }
+        }
+        return view('compliments.create', compact('commitments','commitment_id'));
     }
 
     /**

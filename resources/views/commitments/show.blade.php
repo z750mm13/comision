@@ -1,8 +1,17 @@
 <?php
+if($commitment->compliment)
+$botones = [];
+else
+$botones = [
+  'button' => __('Cumplir compromiso'),
+  'urlbutton' => __('/compliments/'.$commitment->id)
+];
+?>
+<?php
 use Carbon\Carbon;
 use Tools\Utils\Fecha;
 ?>
-@extends('layouts.content.nobody.show',[
+@extends('layouts.content.nobody.show',$botones+[
   'title' => 'Area: '.
           $commitment->review->target->subarea->nombre." [".
           $commitment->review->target->subarea->area->nombre."/".$commitment->review->target->subarea->area->area."]",

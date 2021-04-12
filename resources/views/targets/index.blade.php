@@ -35,10 +35,7 @@
   <div class="col-12">
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-        @include('components.map.targetsmap',[
-          'subareas' => $subareas,
-          'areas' => $areas
-          ])
+        @include('components.map.targetsmap')
       </div>
       <div class="tab-pane fade show active" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><div id="gertrudis" class="map map-big shadow-sm"></div></div>
     </div>

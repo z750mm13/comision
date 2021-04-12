@@ -1,7 +1,3 @@
-<?php
-use Carbon\Carbon;
-use Tools\Utils\Fecha;
-?>
 @extends('layouts.content.default.index',[
     'title' => 'Compromisos',
     'descriptions' => [
@@ -20,31 +16,43 @@ use Tools\Utils\Fecha;
 <li class="breadcrumb-item active" aria-current="page">Compromisos</li>
 @endpush
 
+@section('precardbody')
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link {{$ruta == 'commitments.index'?'active':''}}" href="{{route('commitments.index')}}">Mis compromisos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{$ruta == 'commitments.problems'?'active':''}}" href="{{route('commitments.problems')}}">Problemas</a>
+      </li>
+    </ul>
+  </li>
+  @if($ruta == 'commitments.problems')
+  <li class="list-group-item">
+    <ul class="nav nav-pills">
+      <li class="nav-item" data-toggle="map" data-target="#map-progress" data-update='alarcon' data-prefix="$" data-suffix="k">
+        <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+          <span class="d-none d-md-block">Alarcón</span>
+          <span class="d-md-none">A</span>
+        </a>
+      </li>
+      <li class="nav-item"  data-toggle="map" data-target="#map-progress" data-update='gertrudis' data-prefix="$" data-suffix="k">
+        <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+          <span class="d-none d-md-block">Santa Gertrudis</span>
+          <span class="d-md-none">S</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  @endif
+</ul>
+@endsection
+
 @section('bodycontent')
-<div class="card-deck">
-  @forelse($commitments as $commitment)
-  <div class="col-md-4 col-sm-6 col-xm-12">
-  <div class="card border-primary mb-3"> <!-- Borde primario -->
-    <div class="card-header">{{$commitment->user->nombre. ' ('. $commitment->user->rol. ')'}}</div>
-    <div class="card-body text-primary"> <!-- Texto primario -->
-      <h6 class="card-subtitle mb-2 text-muted">Descripcion del compromiso</h6>
-      <p class="card-text">Fecha de observación:<br>{{Fecha::texto(Carbon::parse($commitment->review->created_at))}}</p>
-      <p class="card-text">Fecha de cumplimiento:<br>{{Fecha::texto(Carbon::parse($commitment->fecha_cumplimiento))}}</p>
-      <p class="card-text">Area:<br>{{
-        $commitment->review->target->subarea->nombre." [".
-        $commitment->review->target->subarea->area->nombre."/".$commitment->review->target->subarea->area->area."]"
-      }}</p>
-      <p class="card-text">Accion a realizar:<br>{{$commitment->accion}}</p>
-      <a class="stretched-link" href="/commitments/{{$commitment->id}}" class="card-link">Ver mas...</a>
-    </div>
-  </div>
-  </div>
-  @empty
-  <div class="card mb-3"> <!-- Borde primario primary danger warning -->
-    <div class="card-body text-center"> <!-- Texto primario -->
-      <h4>No existen compromisos</h4>
-    </div>
-  </div>
-  @endforelse
-</div>
+@if($ruta == 'commitments.index')
+    @include('commitments.body.commitments')
+@elseif($ruta == 'commitments.problems')
+    @include('commitments.body.problems')
+@endif
 @endsection
