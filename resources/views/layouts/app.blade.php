@@ -39,6 +39,7 @@
                 @yield('content')
             </div>
 
+            @auth
             <div class="modal fade" id="modal-soporte" tabindex="-1" role="dialog" aria-labelledby="modal-default" style="display: none;" aria-hidden="true">
                     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                         <div class="modal-content">
@@ -91,6 +92,7 @@
                         </div>
                     </div>
               </div>
+              @endauth
         @guest()
             @include('layouts.footers.guest')
         @endguest
