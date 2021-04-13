@@ -68,8 +68,8 @@ use Illuminate\Support\Facades\DB;
                 <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">{{$notificaciones->count()}}</strong> notificaciones.</h6>
               </div>
               <!-- List group -->
-              @foreach($notificaciones as $notificacion)
               <div class="list-group list-group-flush">
+              @foreach($notificaciones as $notificacion)
                 <a href="{{$notificacion->id?route($notificacion->url,[$notificacion->id]):route($notificacion->url)}}" class="list-group-item list-group-item-action">
                   <div class="row align-items-center">
                     <div class="col-auto">

@@ -39,6 +39,9 @@ use Tools\Utils\Fecha;
   <li><a href="/commitments"><i class="fas fa-home"></i> Todos los compromisos</a></li>
   <li><a href="/commitments/create"><i class="fas fa-plus"></i> Agregar compromisos</a></li>
   <li><a href="/commitments/{{$commitment->id}}/edit"><i class="fas fa-pencil-alt"></i> Editar compromiso</a></li>
+  @if($commitment->compliment)
+  <li><a href="/compliments/{{$commitment->compliment->id}}"><i class="ni ni-check-bold"></i> Ver cumplimiento</a></li>
+  @endif
   <li><a href="#" onclick="
   let result =confirm('Esta seguro de eliminar el requisito?');
   if(result){

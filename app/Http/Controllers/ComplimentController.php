@@ -54,7 +54,10 @@ class ComplimentController extends Controller {
         ->get();
         else {
             if($commitment_id == null)
-                $commitments = $user->commitments;
+                $commitments = $user->commitments()->select('commitments.*')
+                ->leftJoin('compliments','compliments.commitment_id', 'commitments.id')
+                ->orderBy('commitments.id', 'ASC')
+                ->where('compliments.id','=',null)->get();
             else {
                 $commitments = Commitment::findOrFail($commitment_id);
                 if($commitments->user_id != auth()->user()->id || $commitments->compliment) return redirect()->
