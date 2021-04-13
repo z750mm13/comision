@@ -119,16 +119,12 @@ use Illuminate\Support\Facades\DB;
                 <span>Mi perfil</span>
               </a>
               <a href="#!" class="dropdown-item">
-                <i class="ni ni-settings-gear-65"></i>
-                <span>Settings</span>
-              </a>
-              <a href="#!" class="dropdown-item">
                 <i class="ni ni-calendar-grid-58"></i>
-                <span>Activity</span>
+                <span>Actividades</span>
               </a>
-              <a href="#!" class="dropdown-item">
+              <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-soporte">
                 <i class="ni ni-support-16"></i>
-                <span>Support</span>
+                <span>Soporte</span>
               </a>
               <div class="dropdown-divider"></div>
               <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
@@ -141,4 +137,4 @@ use Illuminate\Support\Facades\DB;
         </ul>
       </div>
     </div>
-  </nav>
+</nav>

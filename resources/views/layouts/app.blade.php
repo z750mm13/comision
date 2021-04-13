@@ -34,11 +34,63 @@
             @include('layouts.navbars.sidebar')
         @endauth
         
-        <div class="main-content">
-            @include('layouts.navbars.navbar')
-            @yield('content')
-        </div>
+            <div class="main-content">
+                @include('layouts.navbars.navbar')
+                @yield('content')
+            </div>
 
+            <div class="modal fade" id="modal-soporte" tabindex="-1" role="dialog" aria-labelledby="modal-default" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="modal-title-default">Soporte técnico</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h1 class="display-1 text-center" style="color:#52757F"><i class="fas fa-headset"></i></h1>
+                                <p>El desarrollo del sistema fue en la modalidad de residencia profesional por lo que el funcionamiento del mismo solo está limitado a los requisitos recabados para ello.</p>
+                                <p>Para ponerse en contacto con el desarrollador dejamos a su dispocición los siguentes medios:</p>
+                                <div class="px-lg-6">
+                                    <ul class="list-unstyled my-4">
+                                        <li class="list-group-item">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <!-- Avatar -->
+                                                    <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                                                        <i class="ni ni-email-83"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col ml--1">
+                                                    <h4 class="mb-0">
+                                                        <a href="mailto:331.regino@gmai.com">331.Regino@gmai.com</a>
+                                                    </h4>
+                                                    <span><h4><a href="mailto:maurir_@hotmail.com">Maurir_@hotmail.com</a></h4></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col ml--3">
+                                                    <h4 class="pl-2"><a href="https://www.facebook.com/mauricio.hasselo" target="_blank">Mauricio Hasselo</a></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                    </div>
+              </div>
         @guest()
             @include('layouts.footers.guest')
         @endguest
