@@ -61,9 +61,9 @@ var AdvanceChart = (function() {
         }, {
             label: 'Arreglo de problemas',
             data: cumplimientos,
-
-            // Changes this dataset to become a line
-            type: 'line'
+            // Changes this dataset to become a line bar
+            type: 'bar',
+						backgroundColor: Charts.colors.theme['primary']
         }],
         labels: meses
 		};
