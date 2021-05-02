@@ -1,6 +1,6 @@
 @extends('layouts.content.default.form',[
   'title' => $user->nombre." ".$user->apellidos,
-  'descriptions' => [$user->rol],
+  'descriptions' => ['Rol '.$user->rol,'Correo: '.$user->email],
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades del usuario',
   'personal' => 'active',

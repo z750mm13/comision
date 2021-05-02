@@ -37,5 +37,6 @@ Route::group([
  */
 Route::group(['middleware' => 'auth:api'], function() {
     Route::get('resources', 'ApiMovileResourceController@resources');
+    Route::post('reviews', 'ApiMovileResourceController@uploadReviews');
 });
 //Reviews

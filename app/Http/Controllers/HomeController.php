@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Subarea;
 use App\Area;
+use App\Target;
 use App\Commitment;
 use App\Compliment;
 use App\Norm;
