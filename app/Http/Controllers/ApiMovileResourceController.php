@@ -8,6 +8,7 @@ use Tools\Query\Reviews;
 use Tools\Img\ToServer;
 use App\Target;
 use App\Review;
+use App\Subarea;
 
 class ApiMovileResourceController extends Controller {
     /**
@@ -49,6 +50,13 @@ class ApiMovileResourceController extends Controller {
         $reviews = $request->all();
         $reviews = $reviews['_array'];
         $validity = Reviews::getCurrentValidity();
+        if(!$validity)
+            return response()->json([
+                'code'=>404,
+                'message'=>"No existe evaluación activa",
+                'duplicados'=>0,
+                'agregadas'=>[]
+            ]);
         if(!$this->suyas($reviews, $request->user()))
             return response()->json([
                 'code'=>404,
@@ -58,16 +66,17 @@ class ApiMovileResourceController extends Controller {
         
         $targets = array_column(Target::select('targets.id')->distinct()
         ->join('reviews', 'reviews.target_id','=', 'targets.id')
-        ->where('validity_id',$validity->id)->get()->toArray(),'id');
+        ->where('validity_id',$validity?$validity->id:0)->get()->toArray(),'id');
 
         $targets_repetidas = [];
+        $realizadas = [];
         foreach ($reviews as $review) {
             if (in_array($review['target_id'], $targets)) array_push($targets_repetidas, $review['target_id']);
             else {
                 if(!$review['evidencia']) $evidencia = [];
                 else
                 $evidencia = ['evidencia'=>ToServer::put($review['evidencia'],'jpg', 'img/docs')];
-                
+                array_push($realizadas, $review['target_id']);
                 Review::create($evidencia+[
                     'valor' => $review['valor'],
                     'descripcion' => $review['descripcion'],
@@ -77,11 +86,16 @@ class ApiMovileResourceController extends Controller {
                 ]);
             }
         }
+        
+        $subareas = Subarea::select('subareas.id', 'subareas.area_id')
+        ->join('targets', 'targets.subarea_id', 'subareas.id')
+        ->whereIn('targets.id',$realizadas)->get();
 
         return response()->json([
             'code'=>200,
-            'message'=>"Datos almacenados correctamente.",
-            'duplicados'=>array_unique($targets_repetidas)
+            'message'=>"Datos almacenados correctamente (".$subareas->count().").",
+            'duplicados'=>array_unique($targets_repetidas),
+            'agregadas'=>$subareas
         ]);
     }
 
