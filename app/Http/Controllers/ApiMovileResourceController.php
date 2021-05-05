@@ -22,7 +22,7 @@ class ApiMovileResourceController extends Controller {
         //Areas
         $areas = $request->user()->areas;
         //Subareas
-        $subareas = $request->user()->subareas()->select(DB::raw('subareas.*, (case when count(reviews.id) = 0 then 0 else 3 end) estado'))
+        $subareas = $request->user()->subareas()->select(DB::raw('subareas.*, (case when count(reviews.id) = 0 then 0 else 2 end) estado, count(targets.id) as cuestionarios'))
         ->leftJoin('targets', 'targets.subarea_id', '=', 'subareas.id')
         ->leftJoin('reviews', function ($join) use($validity) {
             $join->on('reviews.target_id', 'targets.id')
