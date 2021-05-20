@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class ToServer {
+    public static function save($route, $file) {
+        if($file.''!=''&&$file.'')
+        return \Storage::disk(env('STORAGE_SERVICE'))->put($route, $file);
+        else return null;
+    }
     public static function saveImageFile(Request $request, $input, $route, $file) {
         //Se modifican los datos;
         $data[$input] = \Storage::disk(env('STORAGE_SERVICE'))->put($route, $file);

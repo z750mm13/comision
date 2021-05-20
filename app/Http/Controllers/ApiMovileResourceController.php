@@ -46,9 +46,10 @@ class ApiMovileResourceController extends Controller {
             'validity' => $validity
         ]);
     }
+    
     public function uploadReviews(Request $request) {
         $reviews = $request->all();
-        $reviews = $reviews['_array'];
+        $reviews = $this->armar($reviews, intval($request->input('total')));
         $validity = Reviews::getCurrentValidity();
         if(!$validity)
             return response()->json([
@@ -60,7 +61,9 @@ class ApiMovileResourceController extends Controller {
         if(!$this->suyas($reviews, $request->user()))
             return response()->json([
                 'code'=>404,
-                'message'=>"No tienes autorización para ingresar."
+                'message'=>"No tienes autorización para registrar estas evaluaciones.",
+                'duplicados'=>0,
+                'agregadas'=>[]
             ])
         ;
         
@@ -70,12 +73,12 @@ class ApiMovileResourceController extends Controller {
 
         $targets_repetidas = [];
         $realizadas = [];
+
         foreach ($reviews as $review) {
             if (in_array($review['target_id'], $targets)) array_push($targets_repetidas, $review['target_id']);
             else {
-                if(!$review['evidencia']) $evidencia = [];
-                else
-                $evidencia = ['evidencia'=>ToServer::put($review['evidencia'],'jpg', 'img/docs')];
+                $evidencia = ['evidencia'=>ToServer::save('img/docs',$review['evidencia'])];
+                if(!$evidencia['evidencia'])$evidencia = [];
                 array_push($realizadas, $review['target_id']);
                 Review::create($evidencia+[
                     'valor' => $review['valor'],
@@ -97,6 +100,20 @@ class ApiMovileResourceController extends Controller {
             'duplicados'=>array_unique($targets_repetidas),
             'agregadas'=>$subareas
         ]);
+    }
+
+    private function armar($reviews, $size) {
+        $salida = [];
+        for ($i = 0; $i < $size; $i++){
+            array_push($salida,[
+                'valor' => intval($reviews['valor'.$i]),
+                'descripcion' => $reviews['descripcion'.$i]=='null'?null:$reviews['descripcion'.$i],
+                'evidencia' => $reviews['evidencia'.$i]=='null'?null:$reviews['evidencia'.$i],
+                'question_id' => $reviews['question_id'.$i],
+                'target_id' => $reviews['target_id'.$i]
+            ]);
+        }
+        return $salida;
     }
 
     private function suyas($reviews, $user) {
