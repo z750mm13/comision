@@ -3,6 +3,10 @@
 @section('content')
     <div class="header bg-gradient-primary py-7 py-lg-8">
         <div class="container">
+            @include('messages.modals',[
+                'success'=>session()->has('success')?session()->get('success'):null,
+                'error'=>session()->has('error')?session()->get('error'):null
+            ])
             <div class="header-body text-center mt-7 mb-7">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
@@ -19,10 +23,6 @@
     </div>
 
     <div class="container mt--10 pb-5">
-        @include('messages.modals',[
-            'success'=>session()->has('success')?session()->get('success'):null,
-            'error'=>session()->has('error')?session()->get('error'):null
-        ])
     </div>
     @auth()
     @include('layouts.footers.guest')

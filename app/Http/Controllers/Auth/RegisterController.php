@@ -91,7 +91,18 @@ class RegisterController extends Controller
             $user = $this->create($data))
         );
 
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath())->with('success','Usuario registrado correctamente. Ahora solo espere a que el coordinador acepte su solicitud.');
+        return $this->registered($request, $user)??redirect($this->redirectPath());
+    }
+
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function registered(Request $request, $user) {
+        return redirect('login')->with('success',$user->nombre.' '.$user->apellidos.' su cuenta se ha registrado correctamente. Ahora solo espere a que la coordinación acepte su solicitud.');
     }
 }
