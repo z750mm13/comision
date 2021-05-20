@@ -92,6 +92,6 @@ class RegisterController extends Controller
         );
 
         return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
+                        ?: redirect($this->redirectPath())->with('success','Usuario registrado correctamente. Ahora solo espere a que el coordinador acepte su solicitud.');
     }
 }

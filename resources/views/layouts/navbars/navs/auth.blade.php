@@ -118,10 +118,6 @@ use Illuminate\Support\Facades\DB;
                 <i class="ni ni-single-02"></i>
                 <span>Mi perfil</span>
               </a>
-              <a href="#!" class="dropdown-item">
-                <i class="ni ni-calendar-grid-58"></i>
-                <span>Actividades</span>
-              </a>
               <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-soporte">
                 <i class="ni ni-support-16"></i>
                 <span>Soporte</span>

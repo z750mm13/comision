@@ -19,6 +19,10 @@
     </div>
 
     <div class="container mt--10 pb-5">
+        @include('messages.modals',[
+            'success'=>session()->has('success')?session()->get('success'):null,
+            'error'=>session()->has('error')?session()->get('error'):null
+        ])
     </div>
     @auth()
     @include('layouts.footers.guest')
