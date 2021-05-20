@@ -2,7 +2,7 @@
     'title' => 'Normativa',
     'descriptions' => [
       __('Las normas correspondientes se mostrarán a continuación.'),
-      __('En este apartado se podrá tener el control de las normas. Si desea agregar una nueva presione el botón superior.')
+      __(auth()->user()->admin?'En este apartado se podrá tener el control de las normas. Si desea agregar una nueva presione el botón superior.':'')
     ],
     'titlebody' => __('Normas'),
     'image' => null,

@@ -2,7 +2,7 @@
     'title' => 'Subáreas',
     'descriptions' => [
       __('Las subáreas son inmuebles pertenecientes a un edificio (Edificio A, Edificio B... Etc.).'),
-      __('En este apartado se podrá tener el control de las subáreas de la institución. Para agregar una subárea presione el botón superior.')
+      __(auth()->user()->admin?'En este apartado se podrá tener el control de las subáreas de la institución. Para agregar una subárea presione el botón superior.':'')
     ],
     'titlebody' => __('Subáreas'),
     'image' => null,

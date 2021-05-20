@@ -1,7 +1,7 @@
 @extends('layouts.content.default.form',[
   'title' => 'Requisito '. $requirement->numero,
   'titlelist' => 'Acciones',
-  'descriptions' => [$requirement->descripcion, 'Tipo: '. $requirement->tipo, 'Norma: '. $requirement->norm->codigo, 'Frecuencia: '. $requirement->frecuencia],
+  'descriptions' => [$requirement->descripcion, 'Tipo: '. $requirement->tipo, 'Norma: '. $requirement->norm->codigo, auth()->user()->admin?'Frecuencia: '. $requirement->frecuencia:''],
   'normativa' => 'active',
   'titlebody' => 'Propiedades del requisito '. $requirement->numero,
   'nodelete' => 'no'
@@ -18,6 +18,7 @@ use Tools\Utils\Fecha;
 <li class="breadcrumb-item active" aria-current="page">{{'Requisito '.$requirement->numero}}</li>
 @endpush
 
+@if(Auth::user()->admin)
 @section('precardbody')
 <ul class="list-group list-group-flush">
   <li class="list-group-item">
@@ -46,6 +47,15 @@ use Tools\Utils\Fecha;
 </div>
 </div>
 @endsection
+@else
+@section('bodycontent')
+<div class="card mb-3"> <!-- Borde primario primary danger warning -->
+  <div class="card-body text-center"> <!-- Texto primario -->
+    <h4>Por el momento no se detectaron propiedades adicionales.</h4>
+  </div>
+</div>
+@endsection
+@endif
 
 @section('list')
 <ol class="list-unstyled">

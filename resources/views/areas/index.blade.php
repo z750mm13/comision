@@ -2,7 +2,7 @@
     'title' => 'Áreas de la institución',
     'descriptions' => [
       __('Las áreas son agrupaciones de inmuebles o pertenecientes a un edificio (Edificio A, Edificio B... Etc.).'),
-      __('En este apartado se podrá tener el control de las áreas de la institución. Para agregar un área presione el botón superior.')
+      __(auth()->user()->admin?'En este apartado se podrá tener el control de las áreas de la institución. Para agregar un área presione el botón superior.':'')
     ],
     'titlebody' => __('Áreas'),
     'image' => null,

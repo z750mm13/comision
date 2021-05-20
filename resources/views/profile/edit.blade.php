@@ -23,12 +23,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="btn btn-sm btn-default mr-4">{{ __('Admin') }}</a>
-                            <a href="#" class="btn btn-sm btn-default float-right">{{ __('Activo') }}</a>
-                        </div>
-                    </div>
                     <div class="card-body pt-0 pt-md-4">
                         <div class="row">
                             <div class="col">
@@ -61,9 +55,6 @@
                             <div>
                                 <i class="ni education_hat mr-2"></i>{{ __('Campus Teposcolula') }}
                             </div>
-                            <hr class="my-4" />
-                            <p>{{ __('Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.') }}</p>
-                            <a href="#">{{ __('Show more') }}</a>
                         </div>
                     </div>
                 </div>
@@ -122,10 +113,17 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group{{ $errors->has('foto') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-foto">{{ __('Fotografía') }}</label>
-                                    <br>
-                                    <input name="foto" type="file" multiple id="input-foto" />
+                                    <div class="custom-file" id="select-foto">
+                                        <input accept="image/jpeg" name="foto" type="file" class="custom-file-input @if($errors->first('foto')) is-invalid @endif" id="foto" lang="es" accept="application/pdf, doc, docx, image/*" required>
+                                        <label class="custom-file-label" for="foto">Selecciona la foto</label>
+                                      </div>
+                                    @if ($errors->has('foto'))
+                                        <span class="invalid-feedback" style="display: block;" role="alert">
+                                            <strong>{{ $errors->first('foto') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Guardar') }}</button>
@@ -187,3 +185,12 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
+
+@push('js')
+<script>
+$('#foto').on('change',function() {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName);
+})
+</script>
+@endpush

@@ -20,7 +20,9 @@
       <div class="card-body"> <!-- Texto primario -->
         <h3 class="card-title mb-3">Requisito {{$requirement->numero}}</h3>
         <p class="card-text mb-4">{{substr($requirement->descripcion, 0, 37)."..."}}</p>
+        @if(Auth::user()->admin)
         <p class="card-text mb-4">Estado: Cuenta con {{$requirement->questionn? $requirement->questionn.' cuestionario'.($requirement->questionn==1?'':'s'): 'ningun cuestionario'}} y {{$requirement->compliment? $requirement->compliment.' cumplimiento'.($requirement->compliment==1?'':'s'): 'ningun cumplimiento'}}.</p>
+        @endif
         <a class="stretched-link" href="/requirements/{{$requirement->id}}" class="card-link">Ver mas...</a>
       </div>
     </div>
