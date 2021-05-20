@@ -42,7 +42,10 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text text-gray-dark"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Contraseña') }}" type="password" required>
+                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="pass" placeholder="{{ __('Contraseña') }}" type="password" required>
+                                    <div class="input-group-append" id="eye">
+                                      <span class="input-group-text" id="eyec"><i class="fas fa-eye"></i></span>
+                                    </div>
                                 </div>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -80,3 +83,18 @@
         </div>
     </div>
 @endsection
+@push('js')
+<script>
+    $("#eye").click(function(){
+        let pass = $('#pass');
+        let eye = $('#eyec');
+        if(pass.prop('type') === 'password') {
+            eye.addClass('text-gray-dark');
+            pass.prop('type', 'text');
+        } else {
+            eye.removeClass('text-gray-dark');
+            pass.prop('type', 'password');
+        }
+   });
+ </script>
+@endpush
