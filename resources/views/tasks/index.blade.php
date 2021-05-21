@@ -14,7 +14,7 @@ use Tools\Utils\Fecha;
     'button' => __('Agregar tarea'),
     'urlbutton' => __('/tasks'),
     'actividades' => 'active',
-  'nodelete' => 'no'
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

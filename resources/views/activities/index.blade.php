@@ -10,6 +10,7 @@
     'urlbutton' => __('/activities'),
     'actividades' => 'active',
     'matriz' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

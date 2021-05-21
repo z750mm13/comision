@@ -8,7 +8,8 @@
     'image' => null,
     'button' => __('Agregar meta'),
     'urlbutton' => __('/goals'),
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

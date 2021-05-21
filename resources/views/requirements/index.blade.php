@@ -8,7 +8,8 @@
     'image' => null,
     'button' => __('Agregar requisito'),
     'urlbutton' => __('/requirements'),
-    'normativa' => 'active'
+    'normativa' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

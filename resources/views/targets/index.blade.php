@@ -8,7 +8,8 @@
     'image' => null,
     'button' => __('Asignar tipo a zona'),
     'urlbutton' => __('/targets'),
-    'instalaciones' => 'active'
+    'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
