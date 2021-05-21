@@ -65,7 +65,7 @@ Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');     //
 //Ruta de cuentas de usuario asignar rol                             //
 Route::post('helpers/setrol/{id}', [                                 //
 	'as'=> 'helpers.setrol',                                           //
-	'uses' => 'HelperController@setrol'                       //
+	'uses' => 'HelperController@setrol'                                //
 ]);                                                                  //
 // ------------------------------------------------------------------//
 //commitments/review/46/create
