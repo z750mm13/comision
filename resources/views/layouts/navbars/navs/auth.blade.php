@@ -25,13 +25,7 @@ use Illuminate\Support\Facades\DB;
               </div>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="ni ni-bell-55"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
-              <!-- Dropdown header -->
-              <?php
+          <?php
               $solicitudes = User::select(DB::raw("nombre||' '||apellidos as titulo, 'Ha solicitado unirse como '||tipo as descripcion, created_at as fecha, CASE WHEN tipo='Integrante' THEN 'elements.index' ELSE 'helpers.index' END as url, null as id, 'ni ni-single-02' as icono, 'bg-gradient-green ' as color"))
               ->where('active',false);
               $recorridos = Validity::select(DB::raw("'Recorrido' as titulo, 'Se aproxima un recorrido' as descripcion, inicio as fecha, 'validities.show' as url, id, 'fas fa-walking' as icono, 'bg-gradient-orange ' as color"))
@@ -63,7 +57,13 @@ use Illuminate\Support\Facades\DB;
                   $notificaciones = $cumplimientos->where('user_id',Auth::user()->id);
                 }
               $notificaciones = $notificaciones->limit(10)->orderByDesc('fecha')->get();
-              ?>
+          ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="ni ni-bell-55"></i>@if($notificaciones->count())<sup><span class="badge badge-pill badge-danger">{{$notificaciones->count()}}</span></sup>@endif
+            </a>
+            <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
+              <!-- Dropdown header -->
               <div class="px-3 py-3">
                 <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">{{$notificaciones->count()}}</strong> notificaciones.</h6>
               </div>

@@ -29,7 +29,7 @@
                 url: '/validities/{{$validity->id}}',
                 start: '{{$validity->inicio}}',
                 end: '{{Carbon\Carbon::parse($validity->fin)->addDays(1)->toDateString()}}',
-                className: 'bg-green'
+                className: 'bg-gradient-green'
             },
             @endforeach
             @foreach($calendar_tasks as $task)
@@ -38,7 +38,7 @@
                 url: '/tasks/{{$task->id}}',
                 start: '{{$task->inicio}}',
                 end: '{{Carbon\Carbon::parse($task->fin)->addDays(1)->toDateString()}}',
-                className: 'bg-blue'
+                className: 'bg-gradient-info'
             },
             @endforeach
             @foreach($calendar_evaluations as $evaluation)
@@ -47,7 +47,7 @@
                 url: '/evaluations/{{$evaluation->id}}',
                 start: '{{$evaluation->inicio}}',
                 end: '{{Carbon\Carbon::parse($evaluation->fin)->addDays(1)->toDateString()}}',
-                className: 'bg-orange'
+                className: 'bg-gradient-orange'
             },
             @endforeach
         ]

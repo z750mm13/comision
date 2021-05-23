@@ -6529,8 +6529,8 @@ a.badge:focus
 
 .badge-danger
 {
-    color: #f80031;
-    background-color: #fdd1da;
+    color: #fff;
+    background-color: #f5365c;
 }
 .badge-danger[href]:hover,
 .badge-danger[href]:focus
