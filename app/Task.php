@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Task extends Model {
     use SoftDeletes;
     protected $fillable = [
-        'programable','descripcion','inicio','fin','cumplida','evidencia','postdescripcion','requirement_id','user_id','caducidad',
+        'programable','descripcion','inicio','fin','cumplida','evidencia','postdescripcion','requirement_id','user_id','caducidad','next_task',
     ];
     
     public function requirement() {
@@ -24,6 +24,6 @@ class Task extends Model {
     }
 
     public function previous() {
-        return $this->belongsTo(Task::class, 'next_task', 'id');
+        return $this->belongsTo(Task::class, 'id', 'next_task');
     }
 }

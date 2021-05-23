@@ -8,6 +8,7 @@
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
 <li class="breadcrumb-item"><a href="/tasks">Cumplimientos</a></li>
+@if(isset($task))<li class="breadcrumb-item"><a href="/tasks/{{$task->id}}">{{$task->requirement->norm->codigo.' - '.$task->requirement->numero}}</a></li>@endif
 <li class="breadcrumb-item active" aria-current="page">Creación de cumplimiento</li>
 @endpush
 
@@ -22,7 +23,7 @@
     {{csrf_field()}}
     {{method_field('POST')}}
     
-    @if (isset($requirement_id) && !isset($task))
+    @if (!isset($requirement_id) && !isset($task))
     <div class="form-group">
         <label for="norm">Norma</label>
         <select v-model="selected_norm" @change="loadRequirements" id="norm" data-old="{{ old('norm_id') }}" name="norm_id" class="form-control{{ $errors->has('norm_id') ? ' is-invalid' : '' }}" required>
@@ -51,9 +52,10 @@
         @endif
     </div>
     @else
-    <div class="form-group">
-        <input type="hidden" class="form-control" name="requirement_id" value="{{isset($task)?$task->requirement_id:$requirement_id}}">
-    </div>
+    @if(isset($task))
+    <input type="hidden" name="task" value="{{$task->id}}">
+    @endif
+    <input type="hidden" name="requirement_id" value="{{isset($task)?$task->requirement_id:$requirement_id}}">
     @endif
 
     <div class="form-group">
@@ -97,8 +99,8 @@
 
     <div id="archivo" class="form-group">
         <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile" name="evidencia" lang="es" accept=".jpg,.png" required>
-            <label class="custom-file-label" for="customFile">Evidencia</label>
+            <input type="file" class="custom-file-input" id="evidencia" name="evidencia" lang="es" accept=".jpg,.png" required>
+            <label class="custom-file-label" for="evidencia">Evidencia</label>
         </div>
         <small class="text-danger">{{ $errors->first('evidencia') }}</small>
     </div>
@@ -121,8 +123,8 @@
             if(btnProgramable.is(":checked")){
                 $('#inicio').prop('required',true);
                 $('#fin').prop('required',true);
-                $('#customFile').prop('required',false);
-                $('#customFile').val('');
+                $('#evidencia').prop('required',false);
+                $('#evidencia').val('');
                 $('#fechas').show('fast','linear','slow');
                 $('#archivo').hide('fast','linear','slow');
             } else {
@@ -130,7 +132,7 @@
                 $('#fin').prop('required',false);
                 $('#inicio').val('');
                 $('#fin').val('');
-                $('#customFile').prop('required',true);
+                $('#evidencia').prop('required',true);
                 $('#fechas').hide('fast','linear','slow');
                 $('#archivo').show('fast','linear','slow');
             }
@@ -168,5 +170,14 @@
         })();
     });
     //
+</script>
+@endpush
+
+@push('js')
+<script>
+$('#evidencia').on('change',function() {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName);
+})
 </script>
 @endpush

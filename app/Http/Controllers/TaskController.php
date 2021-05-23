@@ -22,7 +22,7 @@ class TaskController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $tasks = Task::all();
+        $tasks = Task::where('next_task',null)->orderBy('id')->get();
         return view('tasks.index', compact('tasks'));
     }
 
@@ -67,10 +67,15 @@ class TaskController extends Controller {
             $data['user_id'] = auth()->user()->id;
             $data['caducidad'] = $this->caducidad($data['requirement_id']);
         }
-        $task = Task::create($data);
-        if ($task) {
+        $newtask = Task::create($data);
+        if($request->exists('task')) {
+            $task = Task::findOrFail($request->input('task'));
+            $task->next_task = $newtask->id;
+            $task->save();
+        }
+        if ($newtask) {
             return redirect()
-                ->route('tasks.show',compact('task'))
+                ->route('tasks.show',[$newtask->id])
                 ->with('success','Requisito agregado satisfactoriamente');
         }
         return back()
@@ -166,6 +171,11 @@ class TaskController extends Controller {
      */
     public function destroy($id) {
         $task = Task::findOrFail($id);
+        $anterior = $task->previous;
+        $siguiente = $task->next;
+        if($anterior&&$siguiente) $anterior->next_task = $siguiente->id;
+        else if($anterior) $anterior->next_task = null;
+        if($anterior) $anterior->save();
         if($task->evidencia != 'img/docs/no_file.png')
         ToServer::deleteFile('', $task->evidencia);
         $task->forceDelete();
