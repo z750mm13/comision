@@ -9,7 +9,6 @@ use App\Requirement;
 use App\Norm;
 
 class TaskController extends Controller {
-
     function __construct() {
         $this->middleware('active');
         $this->middleware('auth');
@@ -39,6 +38,16 @@ class TaskController extends Controller {
         $norms = null;
         
         return view('tasks.create', compact('requirement_id', 'norms'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function renovate($task_id) {
+        $task = Task::findOrFail($task_id);
+        return view('tasks.create', compact('task'));
     }
 
     /**

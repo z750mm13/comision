@@ -23,6 +23,7 @@ class CreateTasksTable extends Migration {
             $table->string('postdescripcion')->nullable();
             $table->biginteger('requirement_id');
             $table->biginteger('user_id')->nullable();
+            $table->biginteger('next_task')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

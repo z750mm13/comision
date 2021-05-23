@@ -120,6 +120,11 @@ Route::get('tasks/create/{requirement_id?}', 'TaskController@create');
 Route::get('tasks/{requirement_id?}/create', 'TaskController@complete');
 //Ruta de requisitos de norma json
 Route::get('tasks/norms/requirements', 'TaskController@getRequirements');
+// Ruta de creacion de tareas apartir de la renovación
+Route::get('tasks/renovate/{task_id}/create', [
+	'as' => 'tasks.renovate',
+	'uses'=>'TaskController@renovate'
+	]);
 //Ruta de exams con id de target
 Route::get('exams/create/{id?}', 'ExamController@create');
 //Ruta de las subareas pertenecientes a un area a evaluar

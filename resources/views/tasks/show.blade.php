@@ -3,7 +3,7 @@ use Carbon\Carbon;
 use Tools\Utils\Fecha;
 ?>
 <?php
-if($task->programable){
+if($task->programable) {
   if($task->evidencia == 'img/docs/no_file.png')
     $botones = [
       'button' => __('Cumplir requisito'),
@@ -35,7 +35,7 @@ if($task->programable){
 @extends('layouts.content.default.form',$botones+[
   'title' => 'Requisito '.$task->requirement->numero,
   'titlelist' => 'Acciones',
-  'titlebody' => 'Propiedades de la tarea',
+  'titlebody' => 'Propiedades del cumplimiento',
   'descriptions' => [
     'Norma:'. $task->requirement->norm->codigo.' '.$task->requirement->norm->titulo,
     'Requisito: '. $task->requirement->numero.' '.$task->requirement->descripcion
@@ -45,32 +45,27 @@ if($task->programable){
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item"><a href="/tasks">Tareas</a></li>
+<li class="breadcrumb-item"><a href="/tasks">Cumplimientos</a></li>
 <li class="breadcrumb-item active" aria-current="page">{{$task->requirement->norm->codigo.' - '.$task->requirement->numero}}</li>
 @endpush
 
 @push('aditional')
-<div class="col-md-2">
-  <img class="rounded" src="{{\Tools\Img\ToServer::getFile($task->evidencia)}}" alt="evidencia" style="width: 10rem;" data-toggle="modal" data-target="#exampleModalCenter">
-</div>
-<div class="modal fade bg-transparent" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="bg-transparent transparent-border">
-      <div class="d-flex justify-content-center">
-        <img class="rounded" src="{{\Tools\Img\ToServer::getFile($task->evidencia)}}" alt="evidencia">
-      </div>
-    </div>
-  </div>
+<div class="col-md-2" id="galley">
+  <img class="rounded" data-original="{{\Tools\Img\ToServer::getFile($task->evidencia)}}" src="{{\Tools\Img\ToServer::getFile($task->evidencia)}}" alt="evidencia" style="width: 10rem;">
 </div>
 @endpush
 
+@section('btn-bar')
+<a href="{{route('tasks.renovate',[$task->id])}}" class="btn btn-sm btn-neutral">Renovar</a>
+@endsection
+
 @section('list')
 <ol class="list-unstyled">
-  <li><a href="/tasks"><i class="fas fa-home"></i> Tareas</a></li>
-  <li><a href="/tasks/create"><i class="fas fa-plus"></i> Agregar tarea</a></li>
-  <li><a href="/tasks/{{$task->id}}/edit"><i class="fas fa-pencil-alt"></i> Editar tarea</a></li>
+  <li><a href="/tasks"><i class="fas fa-home"></i> Cumplimientos</a></li>
+  <li><a href="/tasks/create"><i class="fas fa-plus"></i> Crear cumplimiento</a></li>
+  <li><a href="/tasks/{{$task->id}}/edit"><i class="fas fa-pencil-alt"></i> Editar cumplimiento</a></li>
   <li><a href="#" onclick="
-  let result =confirm('Esta seguro de eliminar la tarea?');
+  let result =confirm('Esta seguro de eliminar cumplimiento?');
   if(result){
     event.preventDefault();
     document.getElementById('delete-form').submit();
@@ -82,3 +77,21 @@ if($task->programable){
   </form>
 </ol>
 @endsection
+
+@push('css')
+<link  href="{{ asset('assets') }}/vendor/viewerjs/viewer.css" rel="stylesheet">
+@endpush
+@push('js')
+<script type="module" src="{{ asset('assets') }}/vendor/viewerjs/viewer.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+      var galley = document.getElementById('galley');
+      var viewer = new Viewer(galley, {
+        url: 'data-original',
+        title: function (image) {
+          return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
+        },
+      });
+    });
+</script>
+@endpush

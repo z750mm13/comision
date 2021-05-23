@@ -10,13 +10,20 @@ class Task extends Model {
     protected $fillable = [
         'programable','descripcion','inicio','fin','cumplida','evidencia','postdescripcion','requirement_id','user_id','caducidad',
     ];
-    //
-
+    
     public function requirement() {
         return $this -> belongsTo('App\Requirement')->withTrashed();
     }
 
     public function user() {
         return $this -> belongsTo('App\User')->withTrashed();
+    }
+
+    public function next() {
+        return $this->hasOne(Task::class, 'id', 'next_task');
+    }
+
+    public function previous() {
+        return $this->belongsTo(Task::class, 'next_task', 'id');
     }
 }

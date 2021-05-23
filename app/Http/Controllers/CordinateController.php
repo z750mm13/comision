@@ -62,9 +62,9 @@ class CordinateController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $cordinate = Cordinate::create($request->all());
+        Cordinate::create($request->all());
         return redirect()
-                ->route('cordinates.show',compact('cordinate'))
+                ->route('cordinates.index')
                 ->with('success','Rol asignado correctamente');
     }
 

@@ -1,19 +1,19 @@
 @extends('layouts.content.default.form',[
-    'title' => 'Agregar tarea',
+    'title' => 'Agregar cumplimiento',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Tarea',
+    'titlebody' => 'Cumplimiento',
     'actividades' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item"><a href="/tasks">Tareas</a></li>
-<li class="breadcrumb-item active" aria-current="page">Creación de tarea</li>
+<li class="breadcrumb-item"><a href="/tasks">Cumplimientos</a></li>
+<li class="breadcrumb-item active" aria-current="page">Creación de cumplimiento</li>
 @endpush
 
 @section('list')
 <ol class="list-unstyled">
-    <li><a href="/tasks">Ver tareas</a></li>
+    <li><a href="/tasks">Ver cumplimientos</a></li>
 </ol>
 @endsection
 
@@ -22,7 +22,7 @@
     {{csrf_field()}}
     {{method_field('POST')}}
     
-    @if ($requirement_id == null)
+    @if (isset($requirement_id) && !isset($task))
     <div class="form-group">
         <label for="norm">Norma</label>
         <select v-model="selected_norm" @change="loadRequirements" id="norm" data-old="{{ old('norm_id') }}" name="norm_id" class="form-control{{ $errors->has('norm_id') ? ' is-invalid' : '' }}" required>
@@ -52,7 +52,7 @@
     </div>
     @else
     <div class="form-group">
-        <input type="hidden" class="form-control" name="requirement_id" value="{{$requirement_id}}">
+        <input type="hidden" class="form-control" name="requirement_id" value="{{isset($task)?$task->requirement_id:$requirement_id}}">
     </div>
     @endif
 

@@ -14,7 +14,7 @@
 
 @push('aditional')
 <div class="col-md-2" id="galley">
-  <img class="rounded" img data-original="{{\Tools\Img\ToServer::getFile($user->foto)}}" src="{{\Tools\Img\ToServer::getFile($user->foto)}}" alt="evidencia" style="width: 10rem;">
+  <img class="rounded" data-original="{{\Tools\Img\ToServer::getFile($user->foto)}}" src="{{\Tools\Img\ToServer::getFile($user->foto)}}" alt="evidencia" style="width: 10rem;">
 </div>
 @endpush
 

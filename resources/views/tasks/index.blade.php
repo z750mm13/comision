@@ -4,21 +4,21 @@ use Tools\Utils\Fecha;
 ?>
 
 @extends('layouts.content.default.index',[
-    'title' => 'Tareas',
+    'title' => 'Cumplimiento normativo',
     'descriptions' => [
-      __('Las tareas son cumplimientos directos de las normas (capacitaciones, simulacros y evidencias).'),
-      __('En este apartado se podrá tener el control de las tareas. Para agregar una tarea presione el botón superior.')
+      __('Cumplimientos directos de las normas (capacitaciones, simulacros y evidencias).'),
+      __('En este apartado se podrá tener el control de los cumplimientos directos de requisitos. Para agregar un cumplimiento presione el botón superior.')
     ],
-    'titlebody' => __('Tareas'),
+    'titlebody' => __('Cumplimientos'),
     'image' => null,
-    'button' => __('Agregar tarea'),
+    'button' => __('Cumplir requisito'),
     'urlbutton' => __('/tasks'),
     'actividades' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item active" aria-current="page">Tareas</li>
+<li class="breadcrumb-item active" aria-current="page">Cumplimientos</li>
 @endpush
 
 @section('bodycontent')

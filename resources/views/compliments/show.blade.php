@@ -29,17 +29,8 @@ use Tools\Utils\Fecha;
 @endpush
 
 @push('aditional')
-<div class="col-md-2">
-  <img class="rounded" src="{{\Tools\Img\ToServer::getFile($compliment->evidencia)}}" alt="evidencia" style="width: 10rem;" data-toggle="modal" data-target="#exampleModalCenter">
-</div>
-<div class="modal fade bg-transparent" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="bg-transparent transparent-border">
-      <div class="d-flex justify-content-center">
-        <img class="rounded" src="{{\Tools\Img\ToServer::getFile($compliment->evidencia)}}" alt="evidencia">
-      </div>
-    </div>
-  </div>
+<div class="col-md-2" id="galley">
+  <img class="rounded" data-original="{{\Tools\Img\ToServer::getFile($compliment->evidencia)}}" src="{{\Tools\Img\ToServer::getFile($compliment->evidencia)}}" alt="evidencia" style="width: 10rem;">
 </div>
 @endpush
 
@@ -61,3 +52,21 @@ use Tools\Utils\Fecha;
   </form>
 </ol>
 @endsection
+
+@push('css')
+<link  href="{{ asset('assets') }}/vendor/viewerjs/viewer.css" rel="stylesheet">
+@endpush
+@push('js')
+<script type="module" src="{{ asset('assets') }}/vendor/viewerjs/viewer.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+      var galley = document.getElementById('galley');
+      var viewer = new Viewer(galley, {
+        url: 'data-original',
+        title: function (image) {
+          return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
+        },
+      });
+    });
+</script>
+@endpush
