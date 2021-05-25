@@ -58,7 +58,7 @@ class NormController extends Controller {
         }
         return back()
             ->WithiInput()
-            ->with('errors','No se ha podido crear la norma');
+            ->with('error','No se ha podido crear la norma');
     }
 
     /**
@@ -115,7 +115,8 @@ class NormController extends Controller {
         Norm::findOrFail($id)->update($request->all());
 
         //Una vez actualizada la norma regresa a la vista principal de normas
-        return redirect()->route('norms.index');
+        return redirect()->route('norms.index')
+        ->with('success','Norma actualizada satisfactoriamente');
     }
 
     /**
@@ -130,6 +131,7 @@ class NormController extends Controller {
             $norm->delete();
         else
             $norm->forceDelete();
-        return redirect()->route('norms.index');
+        return redirect()->route('norms.index')
+        ->with('success','Norma eliminada satisfactoriamente');
     }
 }

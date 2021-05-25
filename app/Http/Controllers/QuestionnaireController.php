@@ -155,7 +155,8 @@ class QuestionnaireController extends Controller {
                 }
                 $questionnaire->forceDelete();
             }
-            return redirect()->route('questionnaires.index');
+            return redirect()->route('questionnaires.index')
+            ->with('success','Cuestionario eliminado correctamente');
         }
 
         /**

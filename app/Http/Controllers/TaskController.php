@@ -76,11 +76,11 @@ class TaskController extends Controller {
         if ($newtask) {
             return redirect()
                 ->route('tasks.show',[$newtask->id])
-                ->with('success','Requisito agregado satisfactoriamente');
+                ->with('success','Cumplimiento agregado satisfactoriamente');
         }
         return back()
             ->WithInput()
-            ->with('errors','No se ha podido crear el requisito');
+            ->with('error','No se ha podido crear el cumplimiento');
     }
 
     private function caducidad($requirement_id) {
@@ -160,7 +160,7 @@ class TaskController extends Controller {
         
         return redirect()
                 ->route('tasks.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Cumplimiento actualizado satisfactoriamente');
     }
 
     /**
@@ -179,7 +179,8 @@ class TaskController extends Controller {
         if($task->evidencia != 'img/docs/no_file.png')
         ToServer::deleteFile('', $task->evidencia);
         $task->forceDelete();
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')
+        ->with('success','Cumplimiento eliminado satisfactoriamente');
     }
 
     /**

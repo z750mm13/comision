@@ -60,7 +60,7 @@ class RequirementController extends Controller {
         }
         return back()
             ->WithiInput()
-            ->with('errors','No se ha podido crear el requisito');
+            ->with('error','No se ha podido crear el requisito');
     }
 
     /**
@@ -109,7 +109,8 @@ class RequirementController extends Controller {
         Requirement::findOrFail($id)->update($request->all());
 
         //Retorno a la vista de requisito
-        return redirect()->route('requirements.show',[$id]);
+        return redirect()->route('requirements.show',[$id])
+        ->with('success','Requisito actualizado satisfactoriamente');
     }
 
     /**
@@ -124,6 +125,7 @@ class RequirementController extends Controller {
             $requirement->delete();
         else
             $requirement->forceDelete();
-        return redirect()->route('requirements.index');
+        return redirect()->route('requirements.index')
+        ->with('success','Requisito eliminado satisfactoriamente');
     }
 }

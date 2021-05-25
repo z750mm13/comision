@@ -80,7 +80,7 @@ class PublicationController extends Controller {
         }
         return back()
             ->WithiInput()
-            ->with('errors','No se ha podido publicar el documento. Espacio insuficiente');
+            ->with('error','No se ha podido publicar el documento. Espacio insuficiente');
     }
 
     /**
@@ -136,7 +136,8 @@ class PublicationController extends Controller {
 
         //Retorno a la vista de la publicacion
         $publication = Publication::findOrFail($id);
-        return redirect()->route('publications.show',[$publication->id]);
+        return redirect()->route('publications.show',[$publication->id])
+        ->with('success','Publicación actualizada satisfactoriamente');
     }
 
     /**
@@ -149,6 +150,7 @@ class PublicationController extends Controller {
         $publication = Publication::where('user_id', auth()->user()->id)->findOrFail($id);
         ToServer::deleteFile('', $publication->documento);
         $publication->delete();
-        return redirect()->route('publications.index');
+        return redirect()->route('publications.index')
+        ->with('success','Publicación eliminada satisfactoriamente');
     }
 }

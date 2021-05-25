@@ -138,8 +138,8 @@ class ExamController extends Controller {
         }
         
         return redirect()
-                ->route('exams.index')
-                ->with('success','Cambios aplicados');
+            ->route('exams.index')
+            ->with('success','Cuestionario actualizado correctamente');
     }
 
     /**

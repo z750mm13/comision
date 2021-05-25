@@ -91,7 +91,7 @@ class MatrixController extends Controller {
         Matrix::findOrFail($id)->update($request->all());
         return redirect()
                 ->route('arrays.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Matriz actualizada satisfactoriamente');
     }
 
     /**
@@ -102,10 +102,8 @@ class MatrixController extends Controller {
      */
     public function destroy($id) {
         $matrix = Matrix::findOrFail($id);
-        //if($matrix->reviews()->withTrashed()->get()->count())
-          //  $matrix->delete();
-        //else
-            $matrix->forceDelete();
-        return redirect()->route('arrays.index');
+        $matrix->forceDelete();
+        return redirect()->route('arrays.index')
+        ->with('success','Matriz eliminada satisfactoriamente');
     }
 }

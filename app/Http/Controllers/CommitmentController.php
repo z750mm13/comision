@@ -99,7 +99,7 @@ class CommitmentController extends Controller {
         $commitment = Commitment::create($request->all());
         return redirect()
                 ->route('commitments.show', compact('commitment'))
-                ->with('success','Agregado correctamente');
+                ->with('success','Compromiso agregado correctamente');
     }
 
     /**
@@ -148,7 +148,7 @@ class CommitmentController extends Controller {
         
         return redirect()
                 ->route('commitments.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Compromiso actualizado correctamente');
     }
 
     /**
@@ -163,6 +163,7 @@ class CommitmentController extends Controller {
             $commitment->delete();
         else
             $commitment->forceDelete();
-        return redirect()->route('commitments.index');
+        return redirect()->route('commitments.index')
+        ->with('success','Compromiso eliminado correctamente');
     }
 }

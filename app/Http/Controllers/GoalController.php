@@ -53,11 +53,11 @@ class GoalController extends Controller {
         if ($goal) {
             return redirect()
                 ->route('goals.show',compact('goal'))
-                ->with('success','Requisito agregado satisfactoriamente');
+                ->with('success','Cumplimiento agregado satisfactoriamente');
         }
         return back()
             ->WithiInput()
-            ->with('errors','No se ha podido crear el requisito');
+            ->with('error','No se ha podido crear el requisito');
     }
 
     /**
@@ -95,7 +95,8 @@ class GoalController extends Controller {
 
         //Retorno a la vista de requisito
         $goal = Goal::findOrFail($id);
-        return view('goals.show', compact('goal'));
+        return view('goals.show', compact('goal'))
+        ->with('success','Cumplimiento actualizado satisfactoriamente');
     }
 
     /**
@@ -107,7 +108,8 @@ class GoalController extends Controller {
     public function destroy($id) {
         $goal = Goal::findOrFail($id);
         $goal->forceDelete();
-        return redirect()->route('goals.index');
+        return redirect()->route('goals.index')
+        ->with('success','Cumplimiento eliminado satisfactoriamente');
     }
 
     public function getRequirements(Request $request) {

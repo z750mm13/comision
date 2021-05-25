@@ -98,7 +98,7 @@ class ElementController extends Controller {
 
         return redirect()
                 ->route('elements.index')
-                ->with('success','Personal registrado satisfactoriamente');
+                ->with('success','Integrante registrado satisfactoriamente');
     }
 
     /**
@@ -148,7 +148,7 @@ class ElementController extends Controller {
             if($id != $user->id)
             return redirect()
                 ->route('elements.edit', compact('user'))
-                ->with('success','Este no es su perfil');
+                ->with('error','Este no es su perfil');
         }
         if ($request->file('foto') != null){
             $data = ToServer::saveImage($request, 'foto', 'avatars/1');
@@ -167,7 +167,8 @@ class ElementController extends Controller {
         $data = $request->except(['password','foto']);
         $user->update($data);
         
-        return view('elements.show', compact('user'));
+        return view('elements.show', compact('user'))
+        ->with('success','Integrante actualizado satisfactoriamente');
     }
 
     /**
@@ -191,7 +192,8 @@ class ElementController extends Controller {
             $user->forceDelete();
         }
 
-        return redirect()->route('elements.index');
+        return redirect()->route('elements.index')
+        ->with('success','Integrante eliminado satisfactoriamente');
     }
 
     /**
@@ -214,7 +216,8 @@ class ElementController extends Controller {
         if($users)
         foreach($users as $id)
             User::onlyTrashed()->findOrFail($id)->restore();
-        return redirect()->route('elements.index');
+        return redirect()->route('elements.index')
+        ->with('success','Integrante restaurado satisfactoriamente');
     }
 
     public function activate($id) {
@@ -230,7 +233,7 @@ class ElementController extends Controller {
         $user = User::findOrFail($id);
         if(auth()->user()->id == $user->id)
          return redirect()->route('elements.index')
-         ->with('success','Lo sentimos, no puede realizar este cambio sobre usted.');
+         ->with('error','Lo sentimos, no puede realizar este cambio sobre usted.');
         $user->update([
             'active' => false
         ]);
@@ -251,7 +254,7 @@ class ElementController extends Controller {
         $user = User::findOrFail($id);
         if(auth()->user()->id == $user->id)
          return redirect()->route('elements.index')
-         ->with('success','Lo sentimos, no puede realizar este cambio sobre usted.');
+         ->with('error','Lo sentimos, no puede realizar este cambio sobre usted.');
         $user->update([
             'admin' => false
         ]);

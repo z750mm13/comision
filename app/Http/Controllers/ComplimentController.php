@@ -79,7 +79,7 @@ class ComplimentController extends Controller {
         $compliment = Compliment::create($data);
         return redirect()
                 ->route('compliments.show', compact('compliment'))
-                ->with('success','Elemento agregado correctamente');
+                ->with('success','Cumplimiento agregado correctamente');
     }
 
     /**
@@ -126,7 +126,7 @@ class ComplimentController extends Controller {
         
         return redirect()
                 ->route('compliments.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Cumplimiento actualizado correctamente');
     }
 
     /**
@@ -139,6 +139,7 @@ class ComplimentController extends Controller {
         $compliment = Compliment::findOrFail($id);
         ToServer::deleteFile('', $compliment->evidencia);
         $compliment->forceDelete();
-        return redirect()->route('compliments.index');
+        return redirect()->route('compliments.index')
+        ->with('success','Cumplimiento eliminado correctamente');
     }
 }

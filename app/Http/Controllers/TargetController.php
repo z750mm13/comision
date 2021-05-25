@@ -51,7 +51,7 @@ class TargetController extends Controller {
         $target = Target::create($request->all());
         return redirect()
         ->route('targets.show',compact('target'))
-        ->with('success','Subárea agregada satisfactoriamente');
+        ->with('success','Propiedad agregada satisfactoriamente');
     }
 
     /**
@@ -90,7 +90,7 @@ class TargetController extends Controller {
         Target::findOrFail($id)->update($request->all());
         return redirect()
                 ->route('targets.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Propiedad actualizada satisfactoriamente');
     }
 
     /**
@@ -105,6 +105,7 @@ class TargetController extends Controller {
             $target->delete();
         else
             $target->forceDelete();
-        return redirect()->route('targets.index');
+        return redirect()->route('targets.index')
+        ->with('success','Propiedad eliminada satisfactoriamente');
     }
 }

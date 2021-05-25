@@ -105,7 +105,7 @@ class CordinateController extends Controller {
         Cordinate::findOrFail($id)->update($request->all());
         return redirect()
                 ->route('cordinates.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Rol actualizado correctamente');
     }
 
     /**
@@ -120,7 +120,8 @@ class CordinateController extends Controller {
             $cordinate->delete();
         else
             $cordinate->forceDelete();
-        return redirect()->route('cordinates.index');
+        return redirect()->route('cordinates.index')
+        ->with('success','Rol eliminado correctamente');
     }
 
     /**
@@ -143,6 +144,7 @@ class CordinateController extends Controller {
         if($cordinates)
         foreach($cordinates as $id)
         Cordinate::onlyTrashed()->findOrFail($id)->restore();
-        return redirect()->route('cordinates.index');
+        return redirect()->route('cordinates.index')
+        ->with('success','Rol restaurado correctamente');
     }
 }
