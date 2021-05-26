@@ -32,8 +32,8 @@
         let result =confirm('¿Está seguro que quiere a elejir a {{$user->nombre}}?');
         if(result){
           event.preventDefault();
-          document.getUserById('user_id').value = '{{$user->id}}';
-          document.getUserById('save-form').submit();
+          document.getElementById('user_id').value = '{{$user->id}}';
+          document.getElementById('save-form').submit();
         }
         " class="card-link">Elejir</a>
       </div>
