@@ -89,6 +89,11 @@ Route::get('subareas/create/{id?}', 'SubareaController@create');
 Route::get('guards/create/{id?}', 'GuardController@create');
 //Ruta de targets con id de subarea
 Route::get('targets/create/{id?}', 'TargetController@create');
+//Ruta de targets con preguntas
+Route::get('targets/{id?}/questionnaire', [
+	'as' => 'targets.questionnaire',
+	'uses'=>'TargetController@show'
+]);
 //Ruta de index del cuetionario segun tiempo
 Route::get('validities/time/{tiempo?}', 'ValidityController@index');
 //Ruta de reviews con id de target
@@ -124,7 +129,7 @@ Route::get('tasks/norms/requirements', 'TaskController@getRequirements');
 Route::get('tasks/renovate/{task_id}/create', [
 	'as' => 'tasks.renovate',
 	'uses'=>'TaskController@renovate'
-	]);
+]);
 //Ruta de exams con id de target
 Route::get('exams/create/{id?}', 'ExamController@create');
 //Ruta de las subareas pertenecientes a un area a evaluar

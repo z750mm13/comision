@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use App\Target;
 use App\Questionnaire;
 use App\Subarea;
@@ -61,9 +62,13 @@ class TargetController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        $validities = Validity::orderBy('id', 'ASC')->get();
+        $ruta = null;
+        if(isset(Route::current()->action['as']))
+            $ruta = Route::current()->action['as'];
         $target = Target::findOrFail($id);
-        return view('targets.show', compact('target','validities'));
+        if($ruta != 'targets.show') return view('targets.show', compact('ruta','target'));
+        $validities = Validity::orderBy('id', 'ASC')->get();
+        return view('targets.show', compact('ruta','target','validities'));
     }
 
     /**
