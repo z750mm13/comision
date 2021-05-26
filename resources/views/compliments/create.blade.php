@@ -39,8 +39,8 @@
     @endif
     <div class="form-group">
     <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile" name="evidencia" lang="es" accept=".jpg,.png">
-        <label class="custom-file-label" for="customFile">Evidencia</label>
+        <input type="file" class="custom-file-input" name="evidencia" id="evidencia" lang="es" accept=".jpg,.png">
+        <label class="custom-file-label" for="evidencia">Evidencia</label>
     </div>
         <small class="text-danger">{{ $errors->first('evidencia') }}</small>
     </div>
@@ -49,3 +49,12 @@
     </div>
 </form>
 @endsection
+
+@push('js')
+<script>
+$('#evidencia').on('change',function() {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName);
+})
+</script>
+@endpush

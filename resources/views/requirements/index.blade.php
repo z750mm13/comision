@@ -16,11 +16,26 @@
 <li class="breadcrumb-item active" aria-current="page">Requisitos</li>
 @endpush
 
+@section('precardbody')
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <div class="form-group">
+      <div class="input-group input-group-merge">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+        </div>
+        <input name="busqueda" id="busqueda" class="form-control" placeholder="Buscar" type="text">
+      </div>
+    </div>
+  </li>
+</ul>
+@endsection
+
 @section('bodycontent')
 <div class="card-deck">
   @foreach($requirements as $requirement)
   <div class="col-md-4 col-sm-6 col-xm-12">
-  <div class="card border-primary mb-3"> <!-- Borde primario -->
+  <div class="card mb-3" id="{{$requirement->id}}"> <!-- Borde primario -->
     <div class="card-header">{{$requirement->numero}}</div>
     <div class="card-body text-primary"> <!-- Texto primario -->
       <h5 class="card-title">Norma: {{$requirement->norm->codigo}}</h5>
@@ -33,3 +48,13 @@
   @endforeach
   </div>
 @endsection
+
+@push('js')
+<script>
+  $('#busqueda').keyup(function () {
+    $('.card').removeClass('d-none');
+    var filter = $(this).val(); // get the value of the input, which we filter on
+    $('.card-deck').find('.card .card-body h5:not(:contains("'+filter+'"))').parent().parent().addClass('d-none');
+})
+</script>
+@endpush

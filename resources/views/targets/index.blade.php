@@ -2,7 +2,7 @@
     'title' => 'Tipos de área',
     'descriptions' => [
       __('Los tipos de área son en otras palabras las características de cada subárea. estos tipos tienen asignados un grupo o conjunto de preguntas para su evaluación basados en la normas.'),
-      __('En este apartado se podrá tener el control de las asignaciónes de tipos para todas las áreas la institución. Para asignar un tipo al área presione el botón superior o el botón + de cada área.')
+      __('En este apartado se podrá tener el control de las asignaciónes de tipos para todas las áreas de la institución. Para asignar un tipo al área presione el botón superior o el botón + de cada área.')
     ],
     'titlebody' => __('Tipos'),
     'image' => null,

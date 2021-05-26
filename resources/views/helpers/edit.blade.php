@@ -55,8 +55,8 @@
     <label for="element-foto">Anterior:</label>
     <p><img src="{{\Tools\Img\ToServer::getFile($user->foto)}}" alt="avatar" class="rounded-circle" style="width: 5rem;"></p>
     <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile" name="foto" lang="es" accept=".jpg,.png">
-        <label class="custom-file-label" for="customFile">Foto de perfil</label>
+        <input type="file" class="custom-file-input" name="foto" id="foto" lang="es" accept=".jpg,.png">
+        <label class="custom-file-label" for="foto">Foto de perfil</label>
     </div>
         <small class="text-danger">{{ $errors->first('foto')}}</small>
     </div>
@@ -65,3 +65,12 @@
     </div>
 </form>
 @endsection
+
+@push('js')
+<script>
+$('#foto').on('change',function() {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName);
+})
+</script>
+@endpush

@@ -174,3 +174,11 @@ Route::get('matrix/{id?}', [                                //
 ]);                                                         //
 });                                                         //
 //----------------------------------------------------------//
+/**
+ * Busqueda
+ *- Requisitos
+ *- Subáreas
+ *- Compromisos / Problemas
+ *- Cumplimientos
+ *- Cumplimientos normativos
+ */
