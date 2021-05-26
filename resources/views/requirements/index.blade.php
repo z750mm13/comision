@@ -38,7 +38,7 @@
   <div class="card mb-3"> <!-- Borde primario -->
     <div class="card-header">{{$requirement->numero}}</div>
     <div class="card-body text-primary"> <!-- Texto primario -->
-      <h4 hidden>{{$requirement->id}} {{$requirement->numero}} {{$requirement->norm->codigo}} {{substr($requirement->descripcion, 0, 37)}}</h4>
+      <h4 hidden>{{strtolower($requirement->id)}} {{strtolower($requirement->numero)}} {{strtolower($requirement->norm->codigo)}} {{strtolower(substr($requirement->descripcion, 0, 37))}}</h4>
       <h5 class="card-title">Norma: {{$requirement->norm->codigo}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Descripcion del requisito</h6>
       <p class="card-text">{{substr($requirement->descripcion, 0, 37)."..."}}</p>
@@ -55,6 +55,7 @@
   $('#busqueda').keyup(function (){
     $('.col-md-4.col-sm-6.col-xm-12').show();
     var filter = $(this).val(); // optiene el valor de la busqueda
+    filter = filter.toLowerCase();
     $('.card-deck').find('.col-md-4.col-sm-6.col-xm-12 .card .card-body h4:not(:contains("'+filter+'"))').parent().parent().parent().hide();
 })
 </script>

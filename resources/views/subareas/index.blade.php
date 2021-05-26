@@ -45,15 +45,26 @@
     </div>
   </div>
 </div>
+<div class="col-12">
+  <div class="form-group">
+    <div class="input-group input-group-merge">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+      </div>
+      <input name="busqueda" id="busqueda" class="form-control" placeholder="Buscar" type="text">
+    </div>
+  </div>
+</div>
 <br>
 <div class="card-deck">
   @foreach($subareas as $subarea)
     <div class="col-md-4 col-sm-6 col-xm-12">
-    <div class="card mb-3"> <!-- Borde primario primary danger warning-->
+    <div class="card mb-3">
       <div class="card-header">
         <h5 class="card-title">{{$subarea->nombre}}</h5>
       </div>
-      <div class="card-body"> <!-- Texto primario -->
+      <div class="card-body">
+        <h4 hidden>{{strtolower($subarea->area->nombre)}} {{strtolower($subarea->nombre)}} {{strtolower($subarea->id)}}</h4>
         <h6 class="card-subtitle mb-2 text-muted">Area: {{$subarea->area->nombre}}</h6>
         <a class="stretched-link" href="/subareas/{{$subarea->id}}" class="card-link">Ver mas...</a>
       </div>
@@ -62,3 +73,14 @@
   @endforeach
 </div>
 @endsection
+
+@push('js')
+<script>
+  $('#busqueda').keyup(function (){
+    $('.col-md-4.col-sm-6.col-xm-12').show();
+    let filter = $(this).val(); // optiene el valor de la busqueda
+    filter = filter.toLowerCase();
+    $('.card-deck').find('.col-md-4.col-sm-6.col-xm-12 .card .card-body h4:not(:contains("'+filter+'"))').parent().parent().parent().hide();
+})
+</script>
+@endpush

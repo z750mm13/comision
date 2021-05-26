@@ -181,9 +181,7 @@ Route::get('matrix/{id?}', [                                //
 //----------------------------------------------------------//
 /**
  * Busqueda
- *- Requisitos
- *- Subáreas
- *- Compromisos / Problemas
+ *- Compromisos
  *- Cumplimientos
  *- Cumplimientos normativos
  */

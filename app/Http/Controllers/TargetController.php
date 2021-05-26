@@ -49,9 +49,9 @@ class TargetController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $target = Target::create($request->all());
+        Target::create($request->all());
         return redirect()
-        ->route('targets.show',compact('target'))
+        ->route('targets.index')
         ->with('success','Propiedad agregada satisfactoriamente');
     }
 
