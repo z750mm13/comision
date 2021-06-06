@@ -1,6 +1,5 @@
 <div id="alarcon" class="map map-big shadow-sm"></div>
 
-
 @push('css')
 <link href="{{ asset('material') }}/css/material-dashboard.min.css" rel="stylesheet" />
 @endpush
@@ -80,6 +79,7 @@
           subarea.hide();
           subarea = $("#"+nombres[code].id);
           subarea.show();
+          $('#subarea').val("0");
         },
         onViewportChange: function(e, scale, transX, transY){
             console.log('viewportChange', scale, transX, transY);
@@ -138,12 +138,21 @@
           subarea.hide();
           subarea = $("#"+nombres[code].id);
           subarea.show();
-          //location.replace("/targets/create/"+code)
+          $('#subarea').val("0");
         },
         onViewportChange: function(e, scale, transX, transY){
             console.log('viewportChange', scale, transX, transY);
         }
       });//
+
+      $('#subarea').change(function () {
+        if(this.value!=0) {
+          console.log('region-click', this.value);
+          subarea.hide();
+          subarea = $("#"+nombres[this.value].id);
+          subarea.show();
+        }
+      });
       $('#list-profile').removeClass("show active");
     });
 </script>

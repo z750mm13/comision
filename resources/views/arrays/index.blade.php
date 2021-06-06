@@ -26,6 +26,9 @@
       <li class="nav-item">
         <a class="nav-link" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Unidad Santa Gertrudis</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" id="list-other-list" data-toggle="list" href="#list-other" role="tab" aria-controls="other">Otras áreas</a>
+      </li>
     </ul>
   </li>
 </ul>
@@ -42,6 +45,19 @@
           ])
       </div>
       <div class="tab-pane fade show active" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><div id="gertrudis" class="map map-big shadow-sm"></div></div>
+      <div class="tab-pane fade" id="list-other" role="tabpanel" aria-labelledby="list-profile-list">
+        <div id="otro" class="">
+          <div class="form-group">
+            <label for="target-subarea">Area de aplicacion:</label>
+            <select id="subarea" id="target-subarea" class="form-control">
+              <option value="0">Elije un area</option>
+              @foreach($subareas_no_map as $subarea)
+              <option value="{{$subarea->id}}">{{$subarea->nombre." ".$subarea->area->nombre}}</option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

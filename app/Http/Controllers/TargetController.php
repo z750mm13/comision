@@ -27,7 +27,8 @@ class TargetController extends Controller {
     public function index() {
         $subareas = Subarea::orderBy('id', 'ASC')->get();
         $areas = Area::orderBy('id', 'ASC')->get();
-        return view('targets.index', compact('subareas','areas'));
+        $subareas_no_map = Subarea::where('id','>',118)->orderBy('id', 'ASC')->get();
+        return view('targets.index', compact('subareas','areas','subareas_no_map'));
     }
 
     /**
