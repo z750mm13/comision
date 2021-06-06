@@ -20,8 +20,4 @@ class Matrix extends Model {
     public function activity() {
         return $this -> belongsTo('App\Activity');
     }
-    //Todo completar
-    //public function reviews() {
-        //return $this -> hasMany('App\Review');
-    //}
 }

@@ -31,8 +31,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
-//Ruta de eliminación de cordinates
-Route::get('cordinates/deleted', 'CordinateController@deleted');
 //Ruta de restauración de cordinates
 Route::post('cordinates/restore', 'CordinateController@restore');
 // --------------------------------------------------------------------//
@@ -69,9 +67,7 @@ Route::post('helpers/setrol/{id}', [                                 //
 ]);                                                                  //
 // ------------------------------------------------------------------//
 //commitments/review/46/create
-Route::get('commitments/review/{id?}/{review_id?}/create', 'CommitmentController@create');//
-//Ruta de eliminación de áreas
-Route::get('areas/deleted', 'AreaController@deleted');
+Route::get('commitments/review/{id?}/{review_id?}/create', 'CommitmentController@create');
 //Ruta de restauración de áreas
 Route::post('areas/restore', 'AreaController@restore');
 // Ruta de requerimientos con id de la norma
