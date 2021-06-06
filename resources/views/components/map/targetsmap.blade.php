@@ -76,9 +76,9 @@
         //Función de accion del clic
         onRegionClick: function(event, code){
           console.log('region-click', code);
-          subarea.hide();
+          subarea.hide('fast','linear','slow');
           subarea = $("#"+nombres[code].id);
-          subarea.show();
+          subarea.show('fast','linear','slow');
           $('#subarea').val("0");
         },
         onViewportChange: function(e, scale, transX, transY){
@@ -135,9 +135,9 @@
         },
         onRegionClick: function(event, code){
           console.log('region-click', code);
-          subarea.hide();
+          subarea.hide('fast','linear','slow');
           subarea = $("#"+nombres[code].id);
-          subarea.show();
+          subarea.show('fast','linear','slow');
           $('#subarea').val("0");
         },
         onViewportChange: function(e, scale, transX, transY){
@@ -148,9 +148,9 @@
       $('#subarea').change(function () {
         if(this.value!=0) {
           console.log('region-click', this.value);
-          subarea.hide();
+          subarea.hide('fast','linear','slow');
           subarea = $("#"+nombres[this.value].id);
-          subarea.show();
+          subarea.show('fast','linear','slow');
         }
       });
       $('#list-profile').removeClass("show active");

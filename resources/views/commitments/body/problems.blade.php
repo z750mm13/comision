@@ -1,9 +1,25 @@
 <div class="col-12">
-    <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-            @include('components.map.problems')
-        </div>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+      @include('components.map.problems')
     </div>
+    <div class="tab-pane fade show active" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+      <div id="gertrudis" class="map map-big shadow-sm"></div>
+    </div>
+    <div class="tab-pane fade" id="list-other" role="tabpanel" aria-labelledby="list-other-list">
+      <div id="otro">
+        <div class="form-group">
+          <label for="target-subarea">Area de aplicacion:</label>
+          <select id="subarea" id="target-subarea" class="form-control">
+            <option value="0">Elije un area</option>
+            @foreach($subareas_no_map as $subarea)
+            <option value="{{$subarea->id}}">{{$subarea->nombre." ".$subarea->area->nombre}}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 @foreach($subareas as $subarea)
 <div id="{{$subarea->id}}" class="col-md-12" style="display: none;">

@@ -29,19 +29,26 @@
       </li>
     </ul>
   </li>
+
   @if($ruta == 'commitments.problems')
   <li class="list-group-item">
     <ul class="nav nav-pills">
-      <li class="nav-item" data-toggle="map" data-target="#map-progress" data-update='alarcon' data-prefix="$" data-suffix="k">
-        <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+      <li class="nav-item">
+        <a class="nav-link active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">
           <span class="d-none d-md-block">Alarcón</span>
           <span class="d-md-none">A</span>
         </a>
       </li>
-      <li class="nav-item"  data-toggle="map" data-target="#map-progress" data-update='gertrudis' data-prefix="$" data-suffix="k">
-        <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+      <li class="nav-item">
+        <a class="nav-link" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
           <span class="d-none d-md-block">Santa Gertrudis</span>
           <span class="d-md-none">S</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="list-other-list" data-toggle="list" href="#list-other" role="tab" aria-controls="other">
+          <span class="d-none d-md-block">Otras áreas</span>
+          <span class="d-md-none">O</span>
         </a>
       </li>
     </ul>

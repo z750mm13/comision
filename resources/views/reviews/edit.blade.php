@@ -72,7 +72,7 @@
               <div class="form-group">
                 @if($solved->evidencia!=null)<p><img data-original="{{\Tools\Img\ToServer::getFile($solved->evidencia)}}" src="{{\Tools\Img\ToServer::getFile($solved->evidencia)}}" class="rounded" style="width: 5rem;" alt="{{$question->encabezado}}"></p>@endif
                 <label for="evidence">Evidencia</label>
-                <input type="file" class="form-control-file" id="evidence" name="evidence{{$solved->id}}">
+                <input type="file" class="form-control-file" id="evidence" name="evidence{{$solved->id}}" accept=".jpg,.png">
               </div>
             </div>
           </div>

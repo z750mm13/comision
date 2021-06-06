@@ -63,7 +63,7 @@
             </div>
             <div class="form-group">
               <label for="evidence">Evidencia</label>
-              <input type="file" class="form-control-file" id="evidence" name="evidence{{$data}}">
+              <input type="file" class="form-control-file" id="evidence" name="evidence{{$data}}" accept=".jpg,.png">
             </div>
           </div>
         </div>

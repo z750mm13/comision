@@ -25,6 +25,7 @@ class CommitmentController extends Controller {
      */
     public function index() {
         $areas = Area::all();
+        $subareas_no_map = Subarea::where('id','>',118)->orderBy('id', 'ASC')->get();
         $subareas  = Subarea::select(DB::raw('count(reviews.id) as problems, subareas.*'))
         ->leftJoin('targets', 'targets.subarea_id', '=', 'subareas.id')
         ->leftJoin('questionnaires', 'questionnaires.id', '=', 'targets.questionnaire_id')
@@ -55,7 +56,7 @@ class CommitmentController extends Controller {
         $commitments = Commitment::orderBy('id', 'ASC')->get();
         else
         $commitments = auth()->user()->commitments;
-        return view('commitments.index', compact('commitments', 'ruta', 'areas', 'subareas'));
+        return view('commitments.index', compact('commitments', 'ruta', 'areas', 'subareas','subareas_no_map'));
     }
 
     /**
