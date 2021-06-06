@@ -29,7 +29,6 @@
       </li>
     </ul>
   </li>
-
   @if($ruta == 'commitments.problems')
   <li class="list-group-item">
     <ul class="nav nav-pills">
@@ -52,6 +51,17 @@
         </a>
       </li>
     </ul>
+  </li>
+  @else
+  <li class="list-group-item">
+    <div class="form-group">
+      <div class="input-group input-group-merge">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+        </div>
+        <input name="busqueda" id="busqueda" class="form-control" placeholder="Buscar" type="text">
+      </div>
+    </div>
   </li>
   @endif
 </ul>

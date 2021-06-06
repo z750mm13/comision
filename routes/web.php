@@ -179,9 +179,3 @@ Route::get('matrix/{id?}', [                                //
 ]);                                                         //
 });                                                         //
 //----------------------------------------------------------//
-/**
- * Busqueda
- *- Compromisos
- *- Cumplimientos
- *- Cumplimientos normativos
- */

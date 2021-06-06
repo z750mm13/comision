@@ -5,9 +5,18 @@ use Tools\Utils\Fecha;
 <div class="card-deck">
   @forelse($commitments as $commitment)
   <div class="col-md-4 col-sm-6 col-xm-12">
-  <div class="card border-primary mb-3"> <!-- Borde primario -->
+  <div class="card border-primary mb-3">
     <div class="card-header">{{$commitment->user->nombre. ' ('. $commitment->user->rol. ')'}}</div>
-    <div class="card-body text-primary"> <!-- Texto primario -->
+    <div class="card-body text-primary">
+      <h4 hidden>
+        {{strtolower($commitment->user->nombre)}}
+        {{strtolower($commitment->user->rol)}}
+        {{strtolower(Fecha::texto(Carbon::parse($commitment->review->created_at)))}}
+        {{$commitment->compliment? 's':'no s'}}e ha cumplido
+        {{strtolower($commitment->review->target->subarea->nombre)}}
+        {{strtolower($commitment->review->target->subarea->area->nombre)}}
+        {{strtolower($commitment->review->target->subarea->area->area)}}
+      </h4>
       <h6 class="card-subtitle mb-2 text-muted">Descripcion del compromiso</h6>
       <p class="card-text">Fecha de observación:<br>{{Fecha::texto(Carbon::parse($commitment->review->created_at))}}</p>
       <p class="card-text">Fecha de cumplimiento:<br>{{Fecha::texto(Carbon::parse($commitment->fecha_cumplimiento))}}</p>
@@ -29,3 +38,14 @@ use Tools\Utils\Fecha;
   </div>
   @endforelse
 </div>
+
+@push('js')
+<script>
+  $('#busqueda').keyup(function (){
+    $('.col-md-4.col-sm-6.col-xm-12').show();
+    var filter = $(this).val(); // optiene el valor de la busqueda
+    filter = filter.toLowerCase();
+    $('.card-deck').find('.col-md-4.col-sm-6.col-xm-12 .card .card-body h4:not(:contains("'+filter+'"))').parent().parent().parent().hide();
+})
+</script>
+@endpush
