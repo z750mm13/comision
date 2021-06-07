@@ -1,3 +1,8 @@
+<?php
+use Carbon\Carbon;
+use Tools\Utils\Fecha;
+?>
+
 @forelse ($validities as $validity)
   <div class="col-md-4 col-sm-6 col-xm-12">
   <div class="card mb-3"> <!-- Borde primario primary danger warning-->

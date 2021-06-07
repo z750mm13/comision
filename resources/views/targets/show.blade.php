@@ -16,11 +16,6 @@
 <li class="breadcrumb-item active" aria-current="page">{{$target->subarea->nombre." [".$target->subarea->area->nombre." ".$target->subarea->area->area."]"}}</li>
 @endpush
 
-<?php
-  use Carbon\Carbon;
-  use Tools\Utils\Fecha;
-?>
-
 @section('precardbody')
 <ul class="list-group list-group-flush">
   <li class="list-group-item">
