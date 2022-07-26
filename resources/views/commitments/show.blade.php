@@ -1,8 +1,17 @@
 <?php
+if($commitment->compliment)
+$botones = [];
+else
+$botones = [
+  'button' => __('Cumplir compromiso'),
+  'urlbutton' => __('/compliments/'.$commitment->id)
+];
+?>
+<?php
 use Carbon\Carbon;
 use Tools\Utils\Fecha;
 ?>
-@extends('layouts.content.nobody.show',[
+@extends('layouts.content.nobody.show',$botones+[
   'title' => 'Area: '.
           $commitment->review->target->subarea->nombre." [".
           $commitment->review->target->subarea->area->nombre."/".$commitment->review->target->subarea->area->area."]",
@@ -16,6 +25,7 @@ use Tools\Utils\Fecha;
     'Responsable: '. $commitment->user->nombre. ' ('. $commitment->user->rol. ')'
   ],
   'actividades' => 'active',
+  'compromisos' => 'active',
   'nodelete' => 'no'
 ])
 @push('bread')
@@ -29,6 +39,9 @@ use Tools\Utils\Fecha;
   <li><a href="/commitments"><i class="fas fa-home"></i> Todos los compromisos</a></li>
   <li><a href="/commitments/create"><i class="fas fa-plus"></i> Agregar compromisos</a></li>
   <li><a href="/commitments/{{$commitment->id}}/edit"><i class="fas fa-pencil-alt"></i> Editar compromiso</a></li>
+  @if($commitment->compliment)
+  <li><a href="/compliments/{{$commitment->compliment->id}}"><i class="ni ni-check-bold"></i> Ver cumplimiento</a></li>
+  @endif
   <li><a href="#" onclick="
   let result =confirm('Esta seguro de eliminar el requisito?');
   if(result){

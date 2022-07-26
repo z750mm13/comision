@@ -3,6 +3,7 @@
     'titlelist' => 'Acciones',
     'titlebody' => 'Evaluación',
     'actividades' => 'active',
+    'matriz' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')
@@ -78,7 +79,8 @@ $(function() {
     			disableTouchKeyboard: true,
     			autoclose: false,
     			useCurrent: false,
-                startDate: Date(moment().toDate())
+                startDate: Date(moment().toDate()),
+                format: 'yyyy-mm-dd'
             };
     		$this.datepicker(options);
     	}

@@ -118,7 +118,7 @@ class GuardController extends Controller {
         Guard::findOrFail($id)->update($request->all());
         return redirect()
                 ->route('guards.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Asignación actualizada correctamente');
     }
 
     /**
@@ -129,6 +129,7 @@ class GuardController extends Controller {
      */
     public function destroy($id) {
         Guard::findOrFail($id)->forceDelete();
-        return redirect()->route('guards.index');
+        return redirect()->route('guards.index')
+        ->with('success','Asignación eliminada correctamente');
     }
 }

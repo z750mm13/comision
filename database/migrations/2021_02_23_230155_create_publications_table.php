@@ -4,20 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCyclesTable extends Migration {
+class CreatePublicationsTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create('cycles', function (Blueprint $table) {
+        Schema::create('publications', function (Blueprint $table) {
             $table->id();
-            $table->date('inicio');
-            $table->date('fin');
-            $table->string('codigo');
+            $table->string('documento');
+            $table->string('titulo');
             $table->string('descripcion');
-            $table->softDeletes();
+            $table->boolean('visible')->default(true);
+            $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateCyclesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('cycles');
+        Schema::dropIfExists('publications');
     }
 }

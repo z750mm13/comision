@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use App\Target;
 use App\Questionnaire;
 use App\Subarea;
@@ -26,7 +27,8 @@ class TargetController extends Controller {
     public function index() {
         $subareas = Subarea::orderBy('id', 'ASC')->get();
         $areas = Area::orderBy('id', 'ASC')->get();
-        return view('targets.index', compact('subareas','areas'));
+        $subareas_no_map = Subarea::where('id','>',118)->orderBy('id', 'ASC')->get();
+        return view('targets.index', compact('subareas','areas','subareas_no_map'));
     }
 
     /**
@@ -48,10 +50,10 @@ class TargetController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $target = Target::create($request->all());
+        Target::create($request->all());
         return redirect()
-        ->route('targets.show',compact('target'))
-        ->with('success','Subárea agregada satisfactoriamente');
+        ->route('targets.index')
+        ->with('success','Propiedad agregada satisfactoriamente');
     }
 
     /**
@@ -61,9 +63,13 @@ class TargetController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        $validities = Validity::orderBy('id', 'ASC')->get();
+        $ruta = null;
+        if(isset(Route::current()->action['as']))
+            $ruta = Route::current()->action['as'];
         $target = Target::findOrFail($id);
-        return view('targets.show', compact('target','validities'));
+        if($ruta != 'targets.show') return view('targets.show', compact('ruta','target'));
+        $validities = Validity::orderBy('id', 'ASC')->get();
+        return view('targets.show', compact('ruta','target','validities'));
     }
 
     /**
@@ -90,7 +96,7 @@ class TargetController extends Controller {
         Target::findOrFail($id)->update($request->all());
         return redirect()
                 ->route('targets.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Propiedad actualizada satisfactoriamente');
     }
 
     /**
@@ -105,6 +111,7 @@ class TargetController extends Controller {
             $target->delete();
         else
             $target->forceDelete();
-        return redirect()->route('targets.index');
+        return redirect()->route('targets.index')
+        ->with('success','Propiedad eliminada satisfactoriamente');
     }
 }

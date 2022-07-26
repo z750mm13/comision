@@ -31,46 +31,65 @@ Route::group(['middleware' => 'auth'], function () {
 
 //Ruta de cordinates con rol
 Route::get('cordinates/create/{id?}', 'CordinateController@create');
-//Ruta de eliminación de cordinates
-Route::get('cordinates/deleted', 'CordinateController@deleted');
 //Ruta de restauración de cordinates
 Route::post('cordinates/restore', 'CordinateController@restore');
-// ------------------------------------------------------------------ //
-//Ruta de cuentas de usuario eliminadas                               //
-Route::get('elements/deleted', 'ElementController@deleted');          //
-//Ruta de activación de cuentas de usuario                            //
-Route::get('elements/active/{id?}', 'ElementController@activate');    //
-//Ruta de desactivación de cuentas de usuario                         //
-Route::get('elements/inactive/{id?}', 'ElementController@inactivate');//
-//Ruta de activación de administración de usuario                     //
-Route::get('elements/admin/{id?}', 'ElementController@admin');        //
-//Ruta de desactivación de administración de usuario                  //
-Route::get('elements/noadmin/{id?}', 'ElementController@noadmin');    //
-// ------------------------------------------------------------------ //
-// ------------------------------------------------------------------ //
-//Ruta de activación de cuentas de usuario                            //
-Route::get('helpers/active/{id?}', 'HelperController@activate');      //
-//Ruta de desactivación de cuentas de usuario                         //
-Route::get('helpers/inactive/{id?}', 'HelperController@inactivate');  //
-//Ruta de activación de administración de usuario                     //
-Route::get('helpers/admin/{id?}', 'HelperController@admin');          //
-//Ruta de desactivación de administración de usuario                  //
-Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');      //
-// ------------------------------------------------------------------ //
+// --------------------------------------------------------------------//
+//Ruta de cuentas de usuario eliminadas                                //
+Route::get('elements/deleted', 'ElementController@deleted');           //
+//Ruta de restauracioón de cuentas eliminadas                          //
+Route::post('elements/restore', 'ElementController@restore');          //
+//Ruta de activación de cuentas de usuario                             //
+Route::get('elements/active/{id?}', 'ElementController@activate');     //
+//Ruta de desactivación de cuentas de usuario                          //
+Route::get('elements/inactive/{id?}', 'ElementController@inactivate'); //
+//Ruta de activación de administración de usuario                      //
+Route::get('elements/admin/{id?}', 'ElementController@admin');         //
+//Ruta de desactivación de administración de usuario                   //
+Route::get('elements/noadmin/{id?}', 'ElementController@noadmin');     //
+// --------------------------------------------------------------------//
+// ------------------------------------------------------------------//
+//Ruta de cuentas de usuario eliminadas                              //
+Route::get('helpers/deleted', 'HelperController@deleted');           //
+//Ruta de restauracioón de cuentas eliminadas                        //
+Route::post('helpers/restore', 'HelperController@restore');          //
+//Ruta de activación de cuentas de usuario                           //
+Route::get('helpers/active/{id?}', 'HelperController@activate');     //
+//Ruta de desactivación de cuentas de usuario                        //
+Route::get('helpers/inactive/{id?}', 'HelperController@inactivate'); //
+//Ruta de activación de administración de usuario                    //
+Route::get('helpers/admin/{id?}', 'HelperController@admin');         //
+//Ruta de desactivación de administración de usuario                 //
+Route::get('helpers/noadmin/{id?}', 'HelperController@noadmin');     //
+//Ruta de cuentas de usuario asignar rol                             //
+Route::post('helpers/setrol/{id}', [                                 //
+	'as'=> 'helpers.setrol',                                           //
+	'uses' => 'HelperController@setrol'                                //
+]);                                                                  //
+// ------------------------------------------------------------------//
 //commitments/review/46/create
-Route::get('commitments/review/{id?}/{review_id?}/create', 'CommitmentController@create');//
-//Ruta de eliminación de áreas
-Route::get('areas/deleted', 'AreaController@deleted');
+Route::get('commitments/review/{id?}/{review_id?}/create', 'CommitmentController@create');
 //Ruta de restauración de áreas
 Route::post('areas/restore', 'AreaController@restore');
 // Ruta de requerimientos con id de la norma
 Route::get('requirements/create/{id?}', 'RequirementController@create');
+// Ruta de cuestionarios de requisitos
+Route::get('requirements/{id}/questionnaires',[
+	'as'=> 'requirements.questionnaires',
+	'uses' => 'RequirementController@show'
+]);
+//Ruta de creacion de cuestionario con requisito
+Route::get('questionnaires/create/{id?}', 'QuestionnaireController@create');
 // Ruta de subareas con id de la area
 Route::get('subareas/create/{id?}', 'SubareaController@create');
 //Ruta de guards con id de cordinate
 Route::get('guards/create/{id?}', 'GuardController@create');
 //Ruta de targets con id de subarea
 Route::get('targets/create/{id?}', 'TargetController@create');
+//Ruta de targets con preguntas
+Route::get('targets/{id?}/questionnaire', [
+	'as' => 'targets.questionnaire',
+	'uses'=>'TargetController@show'
+]);
 //Ruta de index del cuetionario segun tiempo
 Route::get('validities/time/{tiempo?}', 'ValidityController@index');
 //Ruta de reviews con id de target
@@ -83,16 +102,17 @@ Route::get('reviews/areas/{area_id?}/validity/{validity_id?}', 'ReviewController
 Route::get('problems/{validity_id?}/subarea/{subarea_id?}', 'ProblemController@show');
 //Ruta de commitments con id de review
 Route::get('commitments/create/{id?}', 'CommitmentController@create');
-//Ruta de eliminación de commitments
-Route::get('commitments/deleted', 'CommitmentController@deleted');
+//Ruta de lista de problemas
+Route::get('commitments/problems', [
+	'as' => 'commitments.problems',
+	'uses'=>'CommitmentController@index'
+	]);
 //Ruta de restauración de commitments
 Route::post('commitments/restore', 'CommitmentController@restore');
 //Ruta de index de evaluación segun tiempo
 Route::get('evaluations/time/{tiempo?}', 'EvaluationController@index');
 //Ruta de targets con id de subarea
 Route::get('arrays/create/{id?}', 'MatrixController@create');
-//Ruta de index de ciclos segun tiempo
-Route::get('cycles/time/{tiempo?}', 'CycleController@index');
 //Ruta de requisitos de norma json
 Route::get('goals/norms/requirements', 'GoalController@getRequirements');
 // Ruta de creacion de tareas con el requisito
@@ -101,8 +121,20 @@ Route::get('tasks/create/{requirement_id?}', 'TaskController@create');
 Route::get('tasks/{requirement_id?}/create', 'TaskController@complete');
 //Ruta de requisitos de norma json
 Route::get('tasks/norms/requirements', 'TaskController@getRequirements');
+// Ruta de creacion de tareas apartir de la renovación
+Route::get('tasks/renovate/{task_id}/create', [
+	'as' => 'tasks.renovate',
+	'uses'=>'TaskController@renovate'
+]);
+//Ruta de exams con id de target
+Route::get('exams/create/{id?}', 'ExamController@create');
+//Ruta de las subareas pertenecientes a un area a evaluar
+Route::get('exams/areas/{area_id?}', 'ExamController@index');
+//Rupa de subareas pertenecientes a una programación
+Route::get('exams/areas/{area_id?}/validity/{validity_id?}', 'ExamController@index');
+//Ruta de cumplimientos con id de compromiso
+Route::get('compliments/{commitment_id?}/create', 'ComplimentController@create');
 
-//TODO creacion crud de matriz de riesgos
 Route::resource('cordinates', 'CordinateController');
 Route::resource('elements', 'ElementController');
 Route::resource('helpers', 'HelperController');
@@ -121,19 +153,25 @@ Route::resource('compliments', 'ComplimentController');
 Route::resource('activities', 'ActivityController');
 Route::resource('evaluations', 'EvaluationController');
 Route::resource('arrays', 'MatrixController');
-Route::resource('cycles', 'CycleController');
 Route::resource('goals', 'GoalController');
 Route::resource('tasks', 'TaskController');
+Route::resource('exams', 'ExamController');
+Route::resource('publications', 'PublicationController');
 
-//---------------------------------------------------------------------------------//
-// Apartados de estadisticas                                                       //
-// TODO crear apartado de normas                                                   //
-// TODO crear apartado de recorridos                                               //
- Route::get('statistics/reviews', 'ReviewStatisticController@index');              //
- Route::post('statistics/reviews', 'ReviewStatisticController@index');             //
-// TODO crear apartado de areas                                                    //
- Route::get('statistics/areas',  'AreaStatisticController@index');                 //
- Route::post('statistics/areas', 'AreaStatisticController@index');                 //
-// TODO crear apartado de Tareas                                                   //
-// TODO crear apartado de Matriz de riesgos                                        //
-//---------------------------------------------------------------------------------//
+//----------------------------------------------------------//
+// Apartados de estadisticas                                //
+Route::prefix('statistics')->group(function () {            //
+// Apartado de recorridos                                   //
+ Route::get('reviews', 'ReviewStatisticController@index');  //
+ Route::post('reviews', 'ReviewStatisticController@index'); //
+// Apartado de normas                                       //
+ Route::get('norms',  'NormStatisticController@index');     //
+ Route::post('norms', 'NormStatisticController@index');     //
+ Route::get('norms/{id}', 'NormStatisticController@show');  //
+// Apartado de Matriz de riesgos                            //
+Route::get('matrix/{id?}', [                                //
+	'as'=> 'statistics.matrix.index',                         //
+	'uses' => 'MatrixStatisticController@index'               //
+]);                                                         //
+});                                                         //
+//----------------------------------------------------------//

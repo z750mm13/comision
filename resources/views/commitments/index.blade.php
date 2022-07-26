@@ -1,7 +1,3 @@
-<?php
-use Carbon\Carbon;
-use Tools\Utils\Fecha;
-?>
 @extends('layouts.content.default.index',[
     'title' => 'Compromisos',
     'descriptions' => [
@@ -12,38 +8,69 @@ use Tools\Utils\Fecha;
     'image' => null,
     'button' => __('Crear compromiso'),
     'urlbutton' => __('/commitments'),
-    'actividades' => 'active'
+    'actividades' => 'active',
+    'compromisos' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
 <li class="breadcrumb-item active" aria-current="page">Compromisos</li>
 @endpush
 
+@section('precardbody')
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link {{$ruta == 'commitments.index'?'active':''}}" href="{{route('commitments.index')}}">Mis compromisos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{$ruta == 'commitments.problems'?'active':''}}" href="{{route('commitments.problems')}}">Problemas</a>
+      </li>
+    </ul>
+  </li>
+  @if($ruta == 'commitments.problems')
+  <li class="list-group-item">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">
+          <span class="d-none d-md-block">Alarcón</span>
+          <span class="d-md-none">A</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
+          <span class="d-none d-md-block">Santa Gertrudis</span>
+          <span class="d-md-none">S</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="list-other-list" data-toggle="list" href="#list-other" role="tab" aria-controls="other">
+          <span class="d-none d-md-block">Otras áreas</span>
+          <span class="d-md-none">O</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  @else
+  <li class="list-group-item">
+    <div class="form-group">
+      <div class="input-group input-group-merge">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+        </div>
+        <input name="busqueda" id="busqueda" class="form-control" placeholder="Buscar" type="text">
+      </div>
+    </div>
+  </li>
+  @endif
+</ul>
+@endsection
+
 @section('bodycontent')
-<div class="card-deck">
-  @forelse($commitments as $commitment)
-  <div class="col-md-4 col-sm-6 col-xm-12">
-  <div class="card border-primary mb-3"> <!-- Borde primario -->
-    <div class="card-header">{{$commitment->user->nombre. ' ('. $commitment->user->rol. ')'}}</div>
-    <div class="card-body text-primary"> <!-- Texto primario -->
-      <h6 class="card-subtitle mb-2 text-muted">Descripcion del compromiso</h6>
-      <p class="card-text">Fecha de observación:<br>{{Fecha::texto(Carbon::parse($commitment->review->created_at))}}</p>
-      <p class="card-text">Fecha de cumplimiento:<br>{{Fecha::texto(Carbon::parse($commitment->fecha_cumplimiento))}}</p>
-      <p class="card-text">Area:<br>{{
-        $commitment->review->target->subarea->nombre." [".
-        $commitment->review->target->subarea->area->nombre."/".$commitment->review->target->subarea->area->area."]"
-      }}</p>
-      <p class="card-text">Accion a realizar:<br>{{$commitment->accion}}</p>
-      <a class="stretched-link" href="/commitments/{{$commitment->id}}" class="card-link">Ver mas...</a>
-    </div>
-  </div>
-  </div>
-  @empty
-  <div class="card mb-3"> <!-- Borde primario primary danger warning -->
-    <div class="card-body text-center"> <!-- Texto primario -->
-      <h4>No existen compromisos</h4>
-    </div>
-  </div>
-  @endforelse
-</div>
+@if($ruta == 'commitments.index')
+    @include('commitments.body.commitments')
+@elseif($ruta == 'commitments.problems')
+    @include('commitments.body.problems')
+@endif
 @endsection

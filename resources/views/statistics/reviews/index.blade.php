@@ -14,7 +14,7 @@ use Tools\Utils\Fecha;
 @endpush
 
 @section('bodycontent')
-<form action="{{_('/statistics/reviews')}}" method="get" autocomplete="off" class="row">
+<form action="/statistics/reviews" method="get" autocomplete="off" class="row">
 <div class="col-md-9 col-sm-12 input-daterange datepicker row">
     <div class="col-md-6 col-sm-12">
         <div class="form-group">
@@ -38,7 +38,7 @@ use Tools\Utils\Fecha;
     </div>
 </div>
 <div class="col-md-3 d-none d-md-block d-xl-block">
-  <a id="limpiar" href="{{__('/statistics/reviews')}}"  class="mb-2 btn btn-secondary">Limpiar</a>
+  <a id="limpiar" href="/statistics/reviews" class="mb-2 btn btn-secondary">Limpiar</a>
   <input type="submit"  class="mb-2 btn btn-primary " name="submit"  value="Mostrar">
 </div>
 <div class="col-12">
@@ -56,7 +56,7 @@ use Tools\Utils\Fecha;
   </div>
 </div>
 <div class="d-md-none col-sm-12">
-  <a id="limpiar" href="{{__('/statistics/reviews')}}"  class="btn btn-secondary">Limpiar</a>
+  <a id="limpiar" href="/statistics/reviews"  class="btn btn-secondary">Limpiar</a>
 </div>
 <div class="d-md-none col-sm-12">
   <br>
@@ -165,7 +165,8 @@ $(function() {
     		var options = {
     			disableTouchKeyboard: true,
     			autoclose: false,
-    			useCurrent: false
+    			useCurrent: false,
+          format: 'yyyy-mm-dd'
         };
     		$this.datepicker(options);
     	}

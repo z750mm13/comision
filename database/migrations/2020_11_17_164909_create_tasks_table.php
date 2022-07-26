@@ -18,10 +18,12 @@ class CreateTasksTable extends Migration {
             $table->date('inicio')->nullable();
             $table->date('fin')->nullable();
             $table->string('evidencia')->default('img/docs/no_file.png');
+            $table->date('caducidad')->nullable();
             $table->boolean('cumplida')->default(false);
             $table->string('postdescripcion')->nullable();
             $table->biginteger('requirement_id');
             $table->biginteger('user_id')->nullable();
+            $table->biginteger('next_task')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

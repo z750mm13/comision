@@ -30,7 +30,7 @@
   @foreach ($subarea->targets as $target)
   <div class="card mb-3">
     <div class="card-header">{{$target->questionnaire->tipo}}</div>
-      <div class="card-body">
+      <div class="card-body"  id="galley">
       <div id="accordion{{$target->id}}">
         @foreach ($target->questionnaire->questions as $question)
         <?php $solved = null; ?>
@@ -70,11 +70,10 @@
                 <input value="{{$solved->descripcion}}" type="text" name="description{{$solved->id}}" id="description" class="form-control" placeholder="Descripcion de la evaluación"  class="text-muted">
               </div>
               <div class="form-group">
-                @if($solved->evidencia!=null)<p><img src="{{\Tools\Img\ToServer::getFile($solved->evidencia)}}" alt="avatar" class="rounded-circle" style="width: 5rem;"></p>@endif
+                @if($solved->evidencia!=null)<p><img data-original="{{\Tools\Img\ToServer::getFile($solved->evidencia)}}" src="{{\Tools\Img\ToServer::getFile($solved->evidencia)}}" class="rounded" style="width: 5rem;" alt="{{$question->encabezado}}"></p>@endif
                 <label for="evidence">Evidencia</label>
-                <input type="file" class="form-control-file" id="evidence" name="evidence{{$solved->id}}">
+                <input type="file" class="form-control-file" id="evidence" name="evidence{{$solved->id}}" accept=".jpg,.png">
               </div>
-
             </div>
           </div>
         </div>
@@ -92,3 +91,21 @@
   
 </form>
 @endsection
+
+@push('css')
+<link  href="{{ asset('assets') }}/vendor/viewerjs/viewer.css" rel="stylesheet">
+@endpush
+@push('js')
+<script type="module" src="{{ asset('assets') }}/vendor/viewerjs/viewer.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+      var galley = document.getElementById('galley');
+      var viewer = new Viewer(galley, {
+        url: 'data-original',
+        title: function (image) {
+          return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
+        },
+      });
+    });
+</script>
+@endpush

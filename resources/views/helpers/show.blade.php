@@ -1,6 +1,6 @@
 @extends('layouts.content.default.form',[
   'title' => $user->nombre." ".$user->apellidos,
-  'descriptions' => [$user->rol],
+  'descriptions' => ['Rol '.$user->rol,'Correo: '.$user->email],
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades del usuario',
   'personal' => 'active',
@@ -13,22 +13,27 @@
 @endpush
 
 @push('aditional')
-<div class="col-md-2">
-  <img class="rounded" src="{{\Tools\Img\ToServer::getFile($user->foto)}}" alt="evidencia" style="width: 10rem;" data-toggle="modal" data-target="#exampleModalCenter">
-</div>
-<div class="modal fade bg-transparent" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="bg-transparent transparent-border">
-      <div class="d-flex justify-content-center">
-        <img class="rounded" src="{{\Tools\Img\ToServer::getFile($user->foto)}}" alt="evidencia">
-      </div>
-    </div>
-  </div>
+<div class="col-md-2" id="galley">
+  <img class="rounded" data-original="{{\Tools\Img\ToServer::getFile($user->foto)}}" src="{{\Tools\Img\ToServer::getFile($user->foto)}}" alt="evidencia" style="width: 10rem;">
 </div>
 @endpush
 
 @section('bodycontent')
 @if(Auth::user()->admin & Auth::user()->id != $user->id)
+  @if(!$user->rol)
+  <form class="form-group form-inline" action="{{route('helpers.setrol',[$user->id])}}" method="post">
+    @csrf
+    @method('post')
+    <label class="my-1 mr-2 col" for="rol">Rol</label>
+    <select name="rol" class="custom-select my-1 mr-sm-2 col-9" id="rol">
+      <option selected value="null">Selecciona el rol</option>
+      @foreach($roles as $rol)
+      <option value="{{$rol->rol}}">{{$rol->rol}}</option>
+      @endforeach
+    </select>
+    <button type="submit" class="btn btn-primary my-1 col">Asignar</button>
+  </form>
+  @endif
   @if($user->active==false) <!-- helpers/active/{id?}  -->
   <div class="form-group">
     <a id="" class="btn btn-primary" href="/helpers/active/{{$user->id}}" role="button">Activar cuenta</a>
@@ -71,3 +76,21 @@
   @endif
 </ol>
 @endsection
+
+@push('css')
+<link  href="{{ asset('assets') }}/vendor/viewerjs/viewer.css" rel="stylesheet">
+@endpush
+@push('js')
+<script type="module" src="{{ asset('assets') }}/vendor/viewerjs/viewer.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+      var galley = document.getElementById('galley');
+      var viewer = new Viewer(galley, {
+        url: 'data-original',
+        title: function (image) {
+          return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
+        },
+      });
+    });
+</script>
+@endpush

@@ -27,7 +27,8 @@ else
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la evaluación',
   'actividades' => 'active',
-    'nodelete' => 'no'
+  'matriz' => 'active',
+  'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

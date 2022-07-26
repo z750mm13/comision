@@ -8,7 +8,8 @@
     'image' => null,
     'button' => __('Asignar área a responsable'),
     'urlbutton' => __('/guards'),
-    'instalaciones' => 'active'
+    'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>

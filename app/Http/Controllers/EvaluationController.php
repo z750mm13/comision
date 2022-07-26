@@ -94,7 +94,7 @@ class EvaluationController extends Controller {
         Evaluation::findOrFail($id)->update($request->all());
         return redirect()
                 ->route('evaluations.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Evaluación actualizada satisfactoriamente');
     }
 
     /**
@@ -105,12 +105,9 @@ class EvaluationController extends Controller {
      */
     public function destroy($id) {
         $evaluation = Evaluation::findOrFail($id);
-        //if($evaluation->reviews()->withTrashed()->get()->count())
-          //  $evaluation->delete();
-        //else
             $evaluation->forceDelete();
         return redirect()
                 ->route('evaluations.index')
-                ->with('success','Elemento eliminado');
+                ->with('success','Evaluación eliminada satisfactoriamente');
     }
 }

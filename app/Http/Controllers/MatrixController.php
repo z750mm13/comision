@@ -26,7 +26,8 @@ class MatrixController extends Controller {
     public function index() {
         $subareas = Subarea::orderBy('id', 'ASC')->get();
         $areas = Area::orderBy('id', 'ASC')->get();
-        return view('arrays.index', compact('subareas','areas'));
+        $subareas_no_map = Subarea::where('id','>',118)->orderBy('id', 'ASC')->get();
+        return view('arrays.index', compact('subareas','areas','subareas_no_map'));
     }
 
     /**
@@ -91,7 +92,7 @@ class MatrixController extends Controller {
         Matrix::findOrFail($id)->update($request->all());
         return redirect()
                 ->route('arrays.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Matriz actualizada satisfactoriamente');
     }
 
     /**
@@ -102,10 +103,8 @@ class MatrixController extends Controller {
      */
     public function destroy($id) {
         $matrix = Matrix::findOrFail($id);
-        //if($matrix->reviews()->withTrashed()->get()->count())
-          //  $matrix->delete();
-        //else
-            $matrix->forceDelete();
-        return redirect()->route('arrays.index');
+        $matrix->forceDelete();
+        return redirect()->route('arrays.index')
+        ->with('success','Matriz eliminada satisfactoriamente');
     }
 }

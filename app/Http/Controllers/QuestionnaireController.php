@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\Requirement;
 use App\Norm;
 use App\Question;
 use App\Questionnaire;
+use App\Requirement;
 
 class QuestionnaireController extends Controller {
 
@@ -33,9 +33,9 @@ class QuestionnaireController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create($norm_id = null) {
         $norms = Norm::orderBy('codigo', 'ASC')->get();
-        return view('questionnaires.create', compact('norms'));
+        return view('questionnaires.create', compact('norms','norm_id'));
     }
 
     /**
@@ -47,8 +47,8 @@ class QuestionnaireController extends Controller {
     public function store(Request $request) {
         $questionnaire = Questionnaire::create([
             'requirement_id' => 
-                Norm::findOrFail($request->norm_id)->
-                    requirements->first()->id,
+                (isset($request->norm_id)?Norm::findOrFail($request->norm_id)->
+                    requirements->first()->id:Requirement::findOrFail($request->requirement_id)->id),
             'tipo' =>  $request->tipo,
             'descripcion' => $request->descripcion
         ]);
@@ -133,18 +133,17 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id) {
-        //TODO Eliminar cuestionario si no tiene ni en basura los elementos
+        $questionnaire = Questionnaire::findOrFail($id);
+        //TODO Eliminar cuestionario si no tiene basura
         /**
          * Si se elimina el cuestionario
          */
-        if($request->question_id == ''){
+        if($request->question_id == '') {
             $reviews = Questionnaire::select('questionnaires.id')
                 ->join('questions', 'questionnaires.id', '=', 'questions.questionnaire_id')
                 ->join('reviews', 'questions.id', '=', 'reviews.question_id')
                 ->where('questionnaires.id','=',$id)
                 ->count();
-            
-            $questionnaire = Questionnaire::findOrFail($id);
             if($reviews) {
                 foreach($questionnaire->questions as $question){
                     $question->delete();
@@ -156,7 +155,8 @@ class QuestionnaireController extends Controller {
                 }
                 $questionnaire->forceDelete();
             }
-            return redirect()->route('questionnaires.index');
+            return redirect()->route('questionnaires.index')
+            ->with('success','Cuestionario eliminado correctamente');
         }
 
         /**

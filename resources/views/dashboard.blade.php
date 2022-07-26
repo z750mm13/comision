@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.app', ['panel' => 'active'])
 
 @section('content')
     @include('layouts.headers.cards',
-    compact('problems', 'compliments', 'por_compliments', 'solved', 'por_solved'))
+    compact('total','problems', 'compliments', 'por_compliments', 'solved', 'por_solved'))
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-4">
@@ -14,7 +14,7 @@
                     </div>
                     <!-- Card body -->
                     <div class="card-body">
-                        @include('components.calendar.dash',compact('calendar_validities'))
+                        @include('components.calendar.dash',compact('calendar_validities','calendar_tasks','calendar_evaluations'))
                     </div>
                 </div>
             </div>
@@ -30,10 +30,7 @@
                     </div>
                     <div class="card-body">
                         <!-- Chart -->
-                        <div class="chart">
-                            <!-- Chart wrapper -->
-                            <canvas id="chart-sales" class="chart-canvas"></canvas>
-                        </div>
+                        @include('components.chart.advance',compact('meses'))
                     </div>
                 </div>
             </div>
@@ -58,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-sm card">
-                                <img class="card-img-top" img data-original="{{ asset('assets') }}/images/maps/Itste-alarcon.webp" src="{{ asset('assets') }}/images/maps/Itste-gertrudis.webp" alt="Unidad Santa Gertrudis">
+                                <img class="card-img-top" img data-original="{{ asset('assets') }}/images/maps/Itste-gertrudis.webp" src="{{ asset('assets') }}/images/maps/Itste-gertrudis.webp" alt="Unidad Santa Gertrudis">
                                 <div class="card-body">
                                     <h5 class="h2 card-title mb-0">Santa Gertrudis</h5>
                                 </div>
@@ -144,7 +141,7 @@
                                     <th scope="col">Área</th>
                                     <th scope="col">Unidad</th>
                                     <th scope="col">Normas que aplica</th>
-                                    <th scope="col">Avance</th>
+                                    <th scope="col">Problemas sin resolver</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -156,11 +153,11 @@
                                     <td>
                                         {{$area->area}}
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         {{$area->norms}}
                                     </td>
-                                    <td>
-                                        46,53%
+                                    <td class="text-center">
+                                        {{$area->problems}}
                                     </td>
                                 </tr>
                                 @endforeach
@@ -186,8 +183,8 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">Referral</th>
-                                    <th scope="col">Visitors</th>
+                                    <th scope="col">Norma</th>
+                                    <th scope="col">Cumplimientos</th>
                                     <th scope="col">Avance</th>
                                 </tr>
                             </thead>
@@ -198,14 +195,14 @@
                                         {{$norm->codigo}}
                                     </th>
                                     <td>
-                                        1,480
+                                        {{$norm->cumplimientos}}
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <span class="mr-2">60%</span>
+                                            <span class="mr-2">{{round((100/$norm->avance)*$norm->cumplimientos,2)}}%</span>
                                             <div>
                                                 <div class="progress">
-                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="{{round((100/$norm->avance)*$norm->cumplimientos,2)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{round((100/$norm->avance)*$norm->cumplimientos,2)}}%;"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -222,30 +219,9 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
+
 @push('css')
 <link  href="{{ asset('assets') }}/vendor/viewerjs/viewer.css" rel="stylesheet">
-<style>
-    .pictures {
-      list-style: none;
-      margin: 0;
-      max-width: 30rem;
-      padding: 0;
-    }
-
-    .pictures > li {
-      border: 1px solid transparent;
-      float: left;
-      height: calc(100% / 3);
-      margin: 0 -1px -1px 0;
-      overflow: hidden;
-      width: calc(100% / 3);
-    }
-
-    .pictures > li > img {
-      cursor: zoom-in;
-      width: 100%;
-    }
-</style>
 @endpush
 @push('js')
 <script type="module" src="{{ asset('assets') }}/vendor/viewerjs/viewer.js"></script>

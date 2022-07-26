@@ -9,7 +9,6 @@ use App\Requirement;
 use App\Norm;
 
 class TaskController extends Controller {
-
     function __construct() {
         $this->middleware('active');
         $this->middleware('auth');
@@ -23,7 +22,7 @@ class TaskController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $tasks = Task::all();
+        $tasks = Task::where('next_task',null)->orderBy('id')->get();
         return view('tasks.index', compact('tasks'));
     }
 
@@ -42,6 +41,16 @@ class TaskController extends Controller {
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function renovate($task_id) {
+        $task = Task::findOrFail($task_id);
+        return view('tasks.create', compact('task'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -56,16 +65,49 @@ class TaskController extends Controller {
             $data['programable'] = false;
             $data['cumplida'] = true;
             $data['user_id'] = auth()->user()->id;
+            $data['caducidad'] = $this->caducidad($data['requirement_id']);
         }
-        $task = Task::create($data);
-        if ($task) {
+        $newtask = Task::create($data);
+        if($request->exists('task')) {
+            $task = Task::findOrFail($request->input('task'));
+            $task->next_task = $newtask->id;
+            $task->save();
+        }
+        if ($newtask) {
             return redirect()
-                ->route('tasks.show',compact('task'))
-                ->with('success','Requisito agregado satisfactoriamente');
+                ->route('tasks.show',[$newtask->id])
+                ->with('success','Cumplimiento agregado satisfactoriamente');
         }
         return back()
             ->WithInput()
-            ->with('errors','No se ha podido crear el requisito');
+            ->with('error','No se ha podido crear el cumplimiento');
+    }
+
+    private function caducidad($requirement_id) {
+        $requirement = Requirement::findOrFail($requirement_id);
+        switch ($requirement->frecuencia) {
+            case 'Semanal':
+                return now()->addWeek(1);
+                break;
+            case 'Mensual':
+                return now()->addMonth(1);
+                break;
+            case 'Bimestral':
+                return now()->addMonth(2);
+                break;
+            case 'Trimestral':
+                return now()->addMonth(3);
+                break;
+            case 'Semestral':
+                return now()->addMonth(6);
+                break;
+            case 'Anual':
+                return now()->addYear(1);
+                break;
+            default:
+                return now();
+                break;
+        }
     }
 
     /**
@@ -110,6 +152,7 @@ class TaskController extends Controller {
         
         if($request->file('evidencia') != null && $task->evidencia == 'img/docs/no_file.png'){
             $data['cumplida'] = true;
+            $data['caducidad'] = $this->caducidad($task->requirement_id);
             $data['user_id'] = auth()->user()->id;
         }
         //Actualizacion del requisito
@@ -117,7 +160,7 @@ class TaskController extends Controller {
         
         return redirect()
                 ->route('tasks.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Cumplimiento actualizado satisfactoriamente');
     }
 
     /**
@@ -128,10 +171,16 @@ class TaskController extends Controller {
      */
     public function destroy($id) {
         $task = Task::findOrFail($id);
+        $anterior = $task->previous;
+        $siguiente = $task->next;
+        if($anterior&&$siguiente) $anterior->next_task = $siguiente->id;
+        else if($anterior) $anterior->next_task = null;
+        if($anterior) $anterior->save();
         if($task->evidencia != 'img/docs/no_file.png')
         ToServer::deleteFile('', $task->evidencia);
         $task->forceDelete();
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')
+        ->with('success','Cumplimiento eliminado satisfactoriamente');
     }
 
     /**

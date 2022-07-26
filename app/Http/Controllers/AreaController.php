@@ -26,6 +26,7 @@ class AreaController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        //TODO retirar deleted
         $areas = Area::orderBy('id', 'ASC')->get();
         return view('areas.index',compact('areas'));
     }
@@ -83,7 +84,8 @@ class AreaController extends Controller {
      */
     public function update(CreateAreaRequest $request, $id) {
         Area::findOrFail($id)->update($request->all());
-        return redirect()->route('areas.index');
+        return redirect()->route('areas.index')
+        ->with('success','Area actualizada satisfactoriamente');
     }
 
     /**
@@ -98,7 +100,8 @@ class AreaController extends Controller {
             $area->delete();
         else
             $area->forceDelete();
-        return redirect()->route('areas.index');
+        return redirect()->route('areas.index')
+        ->with('success','Area eliminada satisfactoriamente');
     }
 
     /**
@@ -121,6 +124,7 @@ class AreaController extends Controller {
         if($areas)
         foreach($areas as $id)
             Area::onlyTrashed()->findOrFail($id)->restore();
-        return redirect()->route('areas.index');
+        return redirect()->route('areas.index')
+        ->with('success','Area/s restaurada/s satisfactoriamente');
     }
 }

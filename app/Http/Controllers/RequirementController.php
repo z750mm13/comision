@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\CreateRequirementRequest;
 use App\Requirement;
 use App\Norm;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 
 class RequirementController extends Controller {
 
@@ -61,7 +60,7 @@ class RequirementController extends Controller {
         }
         return back()
             ->WithiInput()
-            ->with('errors','No se ha podido crear el requisito');
+            ->with('error','No se ha podido crear el requisito');
     }
 
     /**
@@ -71,8 +70,11 @@ class RequirementController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
+        $ruta = null;
+        if(isset(Route::current()->action['as']))
+            $ruta = Route::current()->action['as'];
         $requirement = Requirement::findOrFail($id);
-        return view('requirements.show', compact('requirement'));
+        return view('requirements.show', compact('requirement', 'ruta'));
     }
 
     /**
@@ -107,8 +109,8 @@ class RequirementController extends Controller {
         Requirement::findOrFail($id)->update($request->all());
 
         //Retorno a la vista de requisito
-        $requirement = Requirement::findOrFail($id);
-        return view('requirements.show', compact('requirement'));
+        return redirect()->route('requirements.show',[$id])
+        ->with('success','Requisito actualizado satisfactoriamente');
     }
 
     /**
@@ -119,10 +121,11 @@ class RequirementController extends Controller {
      */
     public function destroy($id) {
         $requirement = Requirement::findOrFail($id);
-        if($requirement->questionnaires()->withTrashed()->get()->count())
+        if($requirement->questionnaires()->withTrashed()->get()->count() || $requirement->tasks()->withTrashed()->get()->count())
             $requirement->delete();
         else
             $requirement->forceDelete();
-        return redirect()->route('requirements.index');
+        return redirect()->route('requirements.index')
+        ->with('success','Requisito eliminado satisfactoriamente');
     }
 }

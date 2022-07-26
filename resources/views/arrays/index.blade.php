@@ -8,22 +8,35 @@
     'image' => null,
     'button' => __('Asignar actividad a zona'),
     'urlbutton' => __('/arrays'),
-    'instalaciones' => 'active'
+    'instalaciones' => 'active',
+    'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
 <li class="breadcrumb-item active" aria-current="page">Actividades</li>
 @endpush
 
+@section('precardbody')
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="list-home-list" data-toggle="pill" href="#list-home" role="tab" aria-controls="home">Unidad Alarcón</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Unidad Santa Gertrudis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="list-other-list" data-toggle="list" href="#list-other" role="tab" aria-controls="other">Otras áreas</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+@endsection
+
 @section('bodycontent')
 <div class="row">
-  <div class="col-3">
-    <div class="list-group " id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Unidad Alarcón</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Unidad Santa Gertrudis</a>
-    </div>
-  </div>
-  <div class="col-9">
+  <div class="col-12">
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
         @include('components.map.targetsmap',[
@@ -32,10 +45,23 @@
           ])
       </div>
       <div class="tab-pane fade show active" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><div id="gertrudis" class="map map-big shadow-sm"></div></div>
+      <div class="tab-pane fade" id="list-other" role="tabpanel" aria-labelledby="list-profile-list">
+        <div id="otro" class="">
+          <div class="form-group">
+            <label for="target-subarea">Area de aplicacion:</label>
+            <select id="subarea" id="target-subarea" class="form-control">
+              <option value="0">Elije un area</option>
+              @foreach($subareas_no_map as $subarea)
+              <option value="{{$subarea->id}}">{{$subarea->nombre." ".$subarea->area->nombre}}</option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
+<br>
 @foreach($subareas as $subarea)
 <div id="{{$subarea->id}}" class="col-md-12" style="display: none;">
 <div class="col-md-12">
@@ -57,7 +83,7 @@
   @endforeach
 </div>
 <div class="col-md-12">
-<a class="col-md-12 btn btn-light btn-lg" href="/arrays/create/{{$subarea->id}}" role="button"><i class="fas fa-plus"></i></a>
+  <a class="col-md-12 btn btn-light btn-lg" href="/arrays/create/{{$subarea->id}}" role="button"><i class="fas fa-plus"></i></a>
 </div>
 </div>
 @endforeach

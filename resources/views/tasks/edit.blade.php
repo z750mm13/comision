@@ -12,7 +12,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
 ?>
 
 @extends('layouts.content.default.form',[
-    'title' => 'Edición de tarea',
+    'title' => 'Edición de cumplimiento',
     'titlelist' => 'Acciones',
     'titlebody' => 'Requisito '.$task->requirement->numero,
     'actividades' => 'active',
@@ -20,15 +20,15 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item"><a href="/tasks">Tareas</a></li>
+<li class="breadcrumb-item"><a href="/tasks">Cumplimientos</a></li>
 <li class="breadcrumb-item"><a href="/tasks/{{$task->id}}">{{$task->requirement->norm->codigo.' - '.$task->requirement->numero}}</a></li>
-<li class="breadcrumb-item active" aria-current="page">Edición de tarea</li>
+<li class="breadcrumb-item active" aria-current="page">Edición de cumplimiento</li>
 @endpush
 
 @section('list')
 <ol class="list-unstyled">
-    <li><a href="/tasks/{{$task->id}}">Ver tarea</a></li>
-    <li><a href="/tasks">Todas las tareas</a></li>
+    <li><a href="/tasks/{{$task->id}}">Ver cumplimiento</a></li>
+    <li><a href="/tasks">Todos los cumplimientos</a></li>
 </ol>
 @endsection
 
@@ -97,7 +97,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
         </div>
         @elseif($fin>=0)
         <div class="form-group">
-            <label for="task-fin">Ultimo día de aplicación de la tarea:</label>
+            <label for="task-fin">Ultimo día de aplicación de la cumplimiento:</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
@@ -109,7 +109,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
         <div class="card mb-3"> <!-- Borde primario primary danger warning -->
             <div class="card-body text-center"> <!-- Texto primario -->
                 <h3>Lo sentimos</h3>
-                <h4>No se pueden modificar las fechas de tareas pasadas</h4>
+                <h4>No se pueden modificar las fechas de cumplimientos pasadas</h4>
             </div>
         </div>
         @endif
@@ -157,7 +157,8 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
                     disableTouchKeyboard: true,
                     autoclose: false,
                     useCurrent: false,//2020/11/25
-                    startDate: fecha
+                    startDate: fecha,
+                    format: 'yyyy-mm-dd'
                 };
                 $this.datepicker(options);
             }

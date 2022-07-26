@@ -16,7 +16,7 @@ class CreateRequirementsTable extends Migration {
             $table->string('numero', 150);
             $table->text('descripcion');
             $table->string('tipo');
-            $table->string('frecuencia')->nullable();
+            $table->enum('frecuencia',['Semanal', 'Mensual', 'Bimestral', 'Trimestral', 'Semestral', 'Anual'])->default('Semanal');
             $table->bigInteger('norm_id')->unsigned();
             $table->foreign('norm_id')->references('id')->on('norms')->onDelete('cascade');
             $table->unique(array('norm_id', 'numero'));

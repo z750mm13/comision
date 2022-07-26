@@ -3,6 +3,7 @@
     'titlelist' => 'Acciones',
     'titlebody' => 'Cuestionario',
     'actividades' => 'active',
+    'recorridos' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')
@@ -30,6 +31,7 @@
     <input type="text" name="tipo" placeholder="Tipo de cuestionario" required value="{{ old('tipo') }}" class="form-control  @if($errors->first('tipo')) is-invalid @endif">
     <small class="text-danger">{{ $errors->first('tipo') }}</small>
   </div>
+  @if(!$norm_id)
   <div class="form-group">
       <label for="questionnaire-norm">Norma:</label>
       <select name="norm_id" id="questionnaire-norm" require class="form-control  @if($errors->first('norm_id')) is-invalid @endif" >
@@ -40,6 +42,9 @@
       </select>
       <small class="text-danger">{{ $errors->first('norm_id') }}</small>
   </div>
+  @else
+  <input type="text" name="requirement_id" value="{{$norm_id}}" class="form-control" hidden>
+  @endif
   <div class="form-group">
     <label for="descripcion">Descripcion</label>
     <textarea name="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>

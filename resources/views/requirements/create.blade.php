@@ -37,7 +37,7 @@
     
   <div class="form-group">
       <label for="requirement-numero">Numero:</label>
-      <input type="text" id="requirement-numero" name="numero" placeholder="Ingrese el numerodel requisito" required spellcheck="false" value="{{ old('numero') }}" class="form-control  @if($errors->first('numero')) is-invalid @endif" />
+      <input type="text" id="requirement-numero" name="numero" placeholder="Ingrese el numero del requisito" required spellcheck="false" value="{{ old('numero') }}" class="form-control  @if($errors->first('numero')) is-invalid @endif" />
       <small class="text-danger">{{ $errors->first('numero') }}</small>
   </div>
   <div class="form-group">
@@ -47,12 +47,19 @@
   </div>
   <div class="form-group">
       <label for="requirement-tipo">Tipo:</label>
-      <input type="text" id="requirement-tipo" name="tipo" placeholder="Selecione el tipode requisito" required spellcheck="false" value="{{ old('tipo') }}" class="form-control  @if($errors->first('tipo')) is-invalid @endif" />
+      <input type="text" id="requirement-tipo" name="tipo" placeholder="Tipo de requisito" required spellcheck="false" value="{{ old('tipo') }}" class="form-control  @if($errors->first('tipo')) is-invalid @endif" />
       <small class="text-danger">{{ $errors->first('tipo') }}</small>
   </div>
   <div class="form-group">
       <label for="requirement-frecuencia">Frecuencia:</label>
-      <input type="text" id="requirement-frecuencia" name="frecuencia" placeholder="Ingresa la frecuenciadel requisito" required spellcheck="false" value="{{ old('frecuencia') }}" class="form-control  @if($errors->first('frecuencia')) is-invalid @endif" />
+      <select name="frecuencia" class="form-control" id="requirement-frecuencia">
+        <option>Semanal</option>
+        <option>Mensual</option>
+        <option>Bimestral</option>
+        <option>Trimestral</option>
+        <option>Semestral</option>
+        <option>Anual</option>
+      </select>
       <small class="text-danger">{{ $errors->first('frecuencia') }}</small>
   </div>
   <div class="form-group">

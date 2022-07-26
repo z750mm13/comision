@@ -105,7 +105,7 @@ class ReviewController extends Controller {
         }
         return redirect()
         ->route('reviews.index')
-        ->with('success','Cuestionario salvado correctamente');;
+        ->with('success','Cuestionario salvado correctamente');
     }
 
     /**
@@ -163,7 +163,7 @@ class ReviewController extends Controller {
         
         return redirect()
                 ->route('reviews.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Cuestionario actualizado correctamente');
     }
 
     /**
@@ -187,6 +187,6 @@ class ReviewController extends Controller {
         }
         return redirect()
         ->route('reviews.index')
-        ->with('success','Cuestionario eliminado');
+        ->with('success','Cuestionario eliminado correctamente');
     }
 }

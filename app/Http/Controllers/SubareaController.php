@@ -84,7 +84,8 @@ class SubareaController extends Controller {
      */
     public function update(Request $request, $id) {
         Subarea::findOrFail($id)->update($request->all());
-        return redirect()->route('subareas.index');
+        return redirect()->route('subareas.index')
+        ->with('success','Subárea actualizada satisfactoriamente');
     }
 
     /**
@@ -99,6 +100,7 @@ class SubareaController extends Controller {
             $subarea->delete();
         else
             $subarea->forceDelete();
-        return redirect()->route('subareas.index');
+        return redirect()->route('subareas.index')
+        ->with('success','Subárea eliminada satisfactoriamente');
     }
 }

@@ -21,6 +21,7 @@ class ReviewStatisticController extends Controller {
     public function index(Request $request) {
         $inicio = $request->input('inicio');
         $fin = $request->input('fin');
+
         $problema = $request->input('problema');
         $compromiso = $request->input('compromiso');
         $cumplimiento = $request->input('cumplimiento');
@@ -34,11 +35,10 @@ class ReviewStatisticController extends Controller {
         ->leftJoin('users', 'users.id', '=', 'commitments.user_id')
         ->leftJoin('compliments', 'compliments.commitment_id', '=', 'commitments.id')
         ->orderBy('reviews.created_at');
-
         if($inicio && $fin) {
             $problems->where([
-                ['compliments.fecha', '>=', date('Y-d-m', strtotime($inicio))],
-                ['compliments.fecha', '<=', date('Y-d-m', strtotime($fin))]
+                ['reviews.created_at', '>=', $inicio],
+                ['reviews.created_at', '<=', $fin],
             ]);
         } if ($request->input('problema')){
             $problems->where('reviews.valor', 'f');
@@ -47,7 +47,7 @@ class ReviewStatisticController extends Controller {
         } if ($request->input('cumplimiento')){
             $problems->where('compliments.created_at', '!=', null);
         }
-        //dd($problems->toSql(),$problems->getBindings());
+        //dd($problems->toSql(),$problems->getBindings(), $problems->get());
         $problems = $problems->get();
         return view('statistics.reviews.index', compact('problems','inicio','fin','problema','compromiso','cumplimiento'));
     }

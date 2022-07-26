@@ -7,6 +7,7 @@
     'titlebody' => __('Compromisos'),
     'image' => null,
     'actividades' => 'active',
+    'compromisos' => 'active',
     'pbutton' => 'Restaurar',
     'pclassb' => 'btn-primary',
     'piconb' => 'fas fa-trash-restore',

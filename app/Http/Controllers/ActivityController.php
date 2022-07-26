@@ -55,7 +55,7 @@ class ActivityController extends Controller {
 
         return redirect()
                 ->route('activities.index')
-                ->with('success','Actividas creada correctamente');
+                ->with('success','Actividad creada correctamente');
     }
 
     /**
@@ -135,24 +135,12 @@ class ActivityController extends Controller {
          */
         $activity = Activity::findOrFail($id);
         if($request->danger_id == ''){
-            /** $reviews = Activity::select('activities.id')
-                ->join('dangers', 'activities.id', '=', 'dangers.activity_id')
-                ->join('reviews', 'dangers.id', '=', 'reviews.danger_id')
-                ->where('activities.id','=',$id)
-                ->count();**/
-            
-            /**if($reviews) {
-                foreach($activity->dangers as $danger){
-                    $danger->delete();
-                }
-                $activity->delete();
-            } else {**/
-                foreach($activity->dangers as $danger){
-                    $danger->forceDelete();
-                }
-                $activity->forceDelete();
-            //}
-            return redirect()->route('activities.index');
+            foreach($activity->dangers as $danger){
+                $danger->forceDelete();
+            }
+            $activity->forceDelete();
+            return redirect()->route('activities.index')
+            ->with('success','Actividad eliminada correctamente');
         }
 
         /**
@@ -165,10 +153,8 @@ class ActivityController extends Controller {
         
         $danger = Danger::findOrFail($request->danger_id);
         $activity_id = $danger->activity_id;
-        //if($danger->reviews()->count())
-            //$danger->delete();
-        //else
-            $danger->forceDelete();
-        return redirect()->route('activities.show', [$activity_id]);
+        $danger->forceDelete();
+        return redirect()->route('activities.show', [$activity_id])
+        ->with('success','Actividad eliminada correctamente');
     }
 }

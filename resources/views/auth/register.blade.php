@@ -92,12 +92,10 @@
                                 </div>
                             </div>
                             <div class="form-group{{ $errors->has('foto') ? ' has-danger' : '' }}">
-                                <div class="input-group input-group-alternative">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Fotografía</span>
-                                    </div>
-                                    <input class="custom-file-input{{ $errors->has('foto') ? ' is-invalid' : '' }}" type="file" name="foto" required>
-                                </div>
+                                <div class="custom-file" id="select-foto">
+                                    <input accept="image/jpeg" name="foto" type="file" class="custom-file-input @if($errors->first('foto')) is-invalid @endif" id="foto" lang="es" accept="application/pdf, doc, docx, image/*" required>
+                                    <label class="custom-file-label" for="foto">Selecciona la foto del nuevo usuario</label>
+                                  </div>
                                 @if ($errors->has('foto'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
                                         <strong>{{ $errors->first('foto') }}</strong>
@@ -119,3 +117,12 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+<script>
+$('#foto').on('change',function() {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName);
+})
+</script>
+@endpush

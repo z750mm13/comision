@@ -16,6 +16,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
     'titlelist' => 'Acciones',
     'titlebody' => 'Evaluación',
     'actividades' => 'active',
+    'matriz' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')
@@ -107,7 +108,8 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
                     disableTouchKeyboard: true,
                     autoclose: false,
                     useCurrent: false,//2020/11/25
-                    startDate: fecha
+                    startDate: fecha,
+                    format: 'yyyy-mm-dd'
                 };
                 $this.datepicker(options);
             }

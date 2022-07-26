@@ -16,28 +16,28 @@
 <li class="breadcrumb-item active" aria-current="page">{{$target->subarea->nombre." [".$target->subarea->area->nombre." ".$target->subarea->area->area."]"}}</li>
 @endpush
 
-<?php
-  use Carbon\Carbon;
-  use Tools\Utils\Fecha;
-?>
+@section('precardbody')
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link {{$ruta == 'targets.show'?'active':''}}" href="{{route('targets.show',[$target->id])}}">Evaluaciones</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{$ruta == 'targets.questionnaire'?'active':''}}" href="{{route('targets.questionnaire',[$target->id])}}">Cuestionario</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+@endsection
 
 @section('bodycontent')
 <div class="card-deck">
-  @foreach ($validities as $validity)
-  <div class="col-md-4 col-sm-6 col-xm-12">
-  <div class="card mb-3"> <!-- Borde primario primary danger warning-->
-    <div class="card-header">
-      <h5 class="card-title">{{Fecha::texto(Carbon::parse($validity->inicio))}}</h5>
-    </div>
-    <div class="card-body"> <!-- Texto primario -->
-      <h6 class="card-subtitle mb-2">Descripcion de la evalución</h6>
-      <p class="card-text">Fecha de inicio: {{Fecha::texto(Carbon::parse($validity->inicio))}}</p>
-      <p class="card-text">Fecha final: {{Fecha::texto(Carbon::parse($validity->fin))}}</p>
-      <a class="stretched-link" href="/problems/{{$validity->id}}/subarea/{{$target->subarea->id}}">Ver detalles</a>
-    </div>
-  </div>
-  </div>
-  @endforeach
+  @if($ruta == 'targets.show')
+    @include('targets.deck.evaluations')
+  @elseif($ruta == 'targets.questionnaire')
+    @include('targets.deck.questionnaire')
+  @endif
 </div>
 @endsection
 

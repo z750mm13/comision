@@ -20,7 +20,7 @@
   let result =confirm('Esta seguro de eliminar al responsabilidad?');
   if(result){
     event.preventDefault();
-    document.getuserById('delete-form').submit();
+    document.getElementById('delete-form').submit();
   }
   "><i class="fas fa-trash-alt"></i> Eliminar responsabilidad</a></li>
   <form action="{{ route('guards.destroy',[$guard->id]) }}" id="delete-form" method="post" style="display:none">

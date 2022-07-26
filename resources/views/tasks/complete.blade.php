@@ -12,7 +12,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
 ?>
 
 @extends('layouts.content.default.form',[
-    'title' => 'Cumplir tarea',
+    'title' => 'Cumplir cumplimiento',
     'titlelist' => 'Acciones',
     'titlebody' => 'Requisito '.$task->requirement->numero,
     'actividades' => 'active',
@@ -20,15 +20,15 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item"><a href="/tasks">Tareas</a></li>
+<li class="breadcrumb-item"><a href="/tasks">Cumplimientos</a></li>
 <li class="breadcrumb-item"><a href="/tasks/{{$task->id}}">{{$task->requirement->norm->codigo.' - '.$task->requirement->numero}}</a></li>
-<li class="breadcrumb-item active" aria-current="page">Cumplimiento de tarea</li>
+<li class="breadcrumb-item active" aria-current="page">Evidencia de cumplimiento</li>
 @endpush
 
 @section('list')
 <ol class="list-unstyled">
-    <li><a href="/tasks/{{$task->id}}">Ver tarea</a></li>
-    <li><a href="/tasks">Todas las tareas</a></li>
+    <li><a href="/tasks/{{$task->id}}">Ver cumplimiento</a></li>
+    <li><a href="/tasks">Todos los cumplimientos</a></li>
 </ol>
 @endsection
 
@@ -40,7 +40,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
     @if($task->programable)
     <div class="form-group">
         <label for="task-descripcion">Descripcion:</label>
-        <textarea class="form-control" placeholder="Descripción de la tarea" name="postdescripcion" id="task-descripcion" rows="3">{{$task->postdescripcion??''}}</textarea>
+        <textarea class="form-control" placeholder="Descripción del cumplimiento" name="postdescripcion" id="task-descripcion" rows="3">{{$task->postdescripcion??''}}</textarea>
     </div>
     <div id="archivo" class="form-group">
         <div class="custom-file">
@@ -53,7 +53,7 @@ $fin = $hoy->diffInDays($ffin) * ($hoy->diff($ffin)->invert? -1: 1);
     <div class="card mb-3"> <!-- Borde primario primary danger warning -->
         <div class="card-body text-center"> <!-- Texto primario -->
             <h3>Lo sentimos</h3>
-            <h4>No se pueden cumplir con la tarea que no tiene fechas de programación</h4>
+            <h4>No se pueden evidenciar cumplimientos que no tiene fechas de programación</h4>
         </div>
     </div>
     @endif

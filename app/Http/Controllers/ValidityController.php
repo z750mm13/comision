@@ -97,7 +97,7 @@ class ValidityController extends Controller {
         Validity::findOrFail($id)->update($request->all());
         return redirect()
                 ->route('validities.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Programacion actualizada satisfactoriamente');
     }
 
     /**
@@ -114,6 +114,6 @@ class ValidityController extends Controller {
             $validity->forceDelete();
         return redirect()
                 ->route('validities.index')
-                ->with('success','Elemento eliminado');
+                ->with('success','Programacion eliminada satisfactoriamente');
     }
 }

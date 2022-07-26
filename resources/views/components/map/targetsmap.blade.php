@@ -1,6 +1,5 @@
 <div id="alarcon" class="map map-big shadow-sm"></div>
 
-
 @push('css')
 <link href="{{ asset('material') }}/css/material-dashboard.min.css" rel="stylesheet" />
 @endpush
@@ -77,9 +76,10 @@
         //Función de accion del clic
         onRegionClick: function(event, code){
           console.log('region-click', code);
-          subarea.hide();
+          subarea.hide('fast','linear','slow');
           subarea = $("#"+nombres[code].id);
-          subarea.show();
+          subarea.show('fast','linear','slow');
+          $('#subarea').val("0");
         },
         onViewportChange: function(e, scale, transX, transY){
             console.log('viewportChange', scale, transX, transY);
@@ -135,15 +135,24 @@
         },
         onRegionClick: function(event, code){
           console.log('region-click', code);
-          subarea.hide();
+          subarea.hide('fast','linear','slow');
           subarea = $("#"+nombres[code].id);
-          subarea.show();
-          //location.replace("/targets/create/"+code)
+          subarea.show('fast','linear','slow');
+          $('#subarea').val("0");
         },
         onViewportChange: function(e, scale, transX, transY){
             console.log('viewportChange', scale, transX, transY);
         }
       });//
+
+      $('#subarea').change(function () {
+        if(this.value!=0) {
+          console.log('region-click', this.value);
+          subarea.hide('fast','linear','slow');
+          subarea = $("#"+nombres[this.value].id);
+          subarea.show('fast','linear','slow');
+        }
+      });
       $('#list-profile').removeClass("show active");
     });
 </script>

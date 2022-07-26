@@ -1,24 +1,23 @@
 @extends('layouts.content.default.form',[
-  'title' => 'Requisito '. $goal->requirement->numero,
+  'title' => 'Proyección del año '. $goal->anio,
   'titlelist' => 'Acciones',
   'titlebody' => 'Propiedades de la meta',
   'descriptions' => [
-    'Ciclo de aplicación: '. $goal->cycle->codigo,
-    'Norma: '. $goal->requirement->norm->codigo,
-    'Requisito: '. $goal->requirement->numero
+    'Año de aplicación: '. $goal->anio,
+    'Porcentaje estomado: '. $goal->porcentaje.'%'
   ],
-  'normativa' => 'active',
+  'actividades' => 'active',
   'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item"><a href="/goals?cycle_id={{$cycle_id}}">Metas</a></li>
-<li class="breadcrumb-item active" aria-current="page">Meta {{$goal->id}}</li>
+<li class="breadcrumb-item"><a href="/goals">Metas</a></li>
+<li class="breadcrumb-item active" aria-current="page">Meta del {{$goal->anio}}</li>
 @endpush
 
 @section('list')
 <ol class="list-unstyled">
-  <li><a href="/goals?cycle_id={{$cycle_id}}"><i class="fas fa-home"></i> Todas las metas</a></li>
+  <li><a href="/goals"><i class="fas fa-home"></i> Todas las metas</a></li>
   @if(Auth::user()->admin)
   <li><a href="/goals/{{$goal->id}}/edit"><i class="fas fa-pencil-alt"></i> Editar</a></li>
   <li><a href="#" onclick="

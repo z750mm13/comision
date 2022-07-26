@@ -44,7 +44,7 @@ class ComplimentController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create($commitment_id=null) {
         $user = auth()->user();
         if($user->tipo == 'Integrante')
         $commitments = Commitment::select('commitments.*','compliments.evidencia')
@@ -52,9 +52,19 @@ class ComplimentController extends Controller {
         ->orderBy('id', 'ASC')
         ->where('compliments.id','=',null)
         ->get();
-        else
-        $commitments = $user->commitments;
-        return view('compliments.create', compact('commitments'));
+        else {
+            if($commitment_id == null)
+                $commitments = $user->commitments()->select('commitments.*')
+                ->leftJoin('compliments','compliments.commitment_id', 'commitments.id')
+                ->orderBy('commitments.id', 'ASC')
+                ->where('compliments.id','=',null)->get();
+            else {
+                $commitments = Commitment::findOrFail($commitment_id);
+                if($commitments->user_id != auth()->user()->id || $commitments->compliment) return redirect()->
+                    route('compliments.index')->with('error','No se ha podido encontrar el recurso');
+            }
+        }
+        return view('compliments.create', compact('commitments','commitment_id'));
     }
 
     /**
@@ -69,7 +79,7 @@ class ComplimentController extends Controller {
         $compliment = Compliment::create($data);
         return redirect()
                 ->route('compliments.show', compact('compliment'))
-                ->with('success','Elemento agregado correctamente');
+                ->with('success','Cumplimiento agregado correctamente');
     }
 
     /**
@@ -116,7 +126,7 @@ class ComplimentController extends Controller {
         
         return redirect()
                 ->route('compliments.index')
-                ->with('success','Cambios aplicados');
+                ->with('success','Cumplimiento actualizado correctamente');
     }
 
     /**
@@ -129,6 +139,7 @@ class ComplimentController extends Controller {
         $compliment = Compliment::findOrFail($id);
         ToServer::deleteFile('', $compliment->evidencia);
         $compliment->forceDelete();
-        return redirect()->route('compliments.index');
+        return redirect()->route('compliments.index')
+        ->with('success','Cumplimiento eliminado correctamente');
     }
 }

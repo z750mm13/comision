@@ -3,6 +3,7 @@
     'titlelist' => 'Acciones',
     'titlebody' => 'Actividad',
     'actividades' => 'active',
+    'matriz' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')

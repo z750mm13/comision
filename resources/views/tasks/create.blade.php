@@ -1,19 +1,20 @@
 @extends('layouts.content.default.form',[
-    'title' => 'Agregar tarea',
+    'title' => 'Agregar cumplimiento',
     'titlelist' => 'Acciones',
-    'titlebody' => 'Tarea',
+    'titlebody' => 'Cumplimiento',
     'actividades' => 'active',
     'nodelete' => 'no'
 ])
 @push('bread')
 <li class="breadcrumb-item"><a href="/home"><i class="fas fa-home"></i></a></li>
-<li class="breadcrumb-item"><a href="/tasks">Tareas</a></li>
-<li class="breadcrumb-item active" aria-current="page">Creación de tarea</li>
+<li class="breadcrumb-item"><a href="/tasks">Cumplimientos</a></li>
+@if(isset($task))<li class="breadcrumb-item"><a href="/tasks/{{$task->id}}">{{$task->requirement->norm->codigo.' - '.$task->requirement->numero}}</a></li>@endif
+<li class="breadcrumb-item active" aria-current="page">Creación de cumplimiento</li>
 @endpush
 
 @section('list')
 <ol class="list-unstyled">
-    <li><a href="/tasks">Ver tareas</a></li>
+    <li><a href="/tasks">Ver cumplimientos</a></li>
 </ol>
 @endsection
 
@@ -22,10 +23,10 @@
     {{csrf_field()}}
     {{method_field('POST')}}
     
-    @if ($requirement_id == null)
+    @if (!isset($requirement_id) && !isset($task))
     <div class="form-group">
         <label for="norm">Norma</label>
-        <select v-model="selected_norm" @change="loadRequirements" id="norm" data-old="{{ old('norm_id') }}" name="norm_id" class="form-control{{ $errors->has('norm_id') ? ' is-invalid' : '' }}">
+        <select v-model="selected_norm" @change="loadRequirements" id="norm" data-old="{{ old('norm_id') }}" name="norm_id" class="form-control{{ $errors->has('norm_id') ? ' is-invalid' : '' }}" required>
             <option value="">Selecciona la norma</option>
             @foreach($norms as $norm)
             <option value="{{ $norm->id }}">
@@ -37,7 +38,7 @@
     </div>
     <div class="form-group">
         <label for="requirement">Requisito</label>
-        <select v-model="selected_requirement" id="requirement" data-old="{{ old('requirement_id') }}" name="requirement_id" class="form-control{{ $errors->has('requirement_id') ? ' is-invalid' : '' }}">
+        <select v-model="selected_requirement" id="requirement" data-old="{{ old('requirement_id') }}" name="requirement_id" class="form-control{{ $errors->has('requirement_id') ? ' is-invalid' : '' }}" required>
             <option value="">Selecciona un requisito</option>
             <option v-for="(requirement, index) in requirements" v-bind:value="index">
                 @{{requirement}}
@@ -51,14 +52,15 @@
         @endif
     </div>
     @else
-    <div class="form-group">
-        <input type="hidden" class="form-control" name="requirement_id" value="{{$requirement_id}}">
-    </div>
+    @if(isset($task))
+    <input type="hidden" name="task" value="{{$task->id}}">
+    @endif
+    <input type="hidden" name="requirement_id" value="{{isset($task)?$task->requirement_id:$requirement_id}}">
     @endif
 
     <div class="form-group">
         <label for="task-descripcion">Descripcion:</label>
-        <textarea class="form-control" placeholder="Descripción del ciclo" name="descripcion" id="task-descripcion" rows="3"></textarea>
+        <textarea class="form-control" placeholder="Descripción del ciclo" name="descripcion" id="task-descripcion" rows="3" required></textarea>
     </div>
 
     <div class="form-group">
@@ -97,8 +99,8 @@
 
     <div id="archivo" class="form-group">
         <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile" name="evidencia" lang="es" accept=".jpg,.png" required>
-            <label class="custom-file-label" for="customFile">Evidencia</label>
+            <input type="file" class="custom-file-input" id="evidencia" name="evidencia" lang="es" accept=".jpg,.png" required>
+            <label class="custom-file-label" for="evidencia">Evidencia</label>
         </div>
         <small class="text-danger">{{ $errors->first('evidencia') }}</small>
     </div>
@@ -121,8 +123,8 @@
             if(btnProgramable.is(":checked")){
                 $('#inicio').prop('required',true);
                 $('#fin').prop('required',true);
-                $('#customFile').prop('required',false);
-                $('#customFile').val('');
+                $('#evidencia').prop('required',false);
+                $('#evidencia').val('');
                 $('#fechas').show('fast','linear','slow');
                 $('#archivo').hide('fast','linear','slow');
             } else {
@@ -130,7 +132,7 @@
                 $('#fin').prop('required',false);
                 $('#inicio').val('');
                 $('#fin').val('');
-                $('#customFile').prop('required',true);
+                $('#evidencia').prop('required',true);
                 $('#fechas').hide('fast','linear','slow');
                 $('#archivo').show('fast','linear','slow');
             }
@@ -153,7 +155,8 @@
                     disableTouchKeyboard: true,
                     autoclose: false,
                     useCurrent: false,
-                    startDate: Date(moment().toDate())
+                    startDate: Date(moment().toDate()),
+                    format: 'yyyy-mm-dd'
                 };
                 $this.datepicker(options);
             }
@@ -167,5 +170,14 @@
         })();
     });
     //
+</script>
+@endpush
+
+@push('js')
+<script>
+$('#evidencia').on('change',function() {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName);
+})
 </script>
 @endpush

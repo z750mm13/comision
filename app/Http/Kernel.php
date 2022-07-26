@@ -81,5 +81,8 @@ class Kernel extends HttpKernel
 
         //Reviews
         'activevalidity' => \App\Http\Middleware\CheckCurrentValidity::class,
+
+        //Exams
+        'activeevaluation' => \App\Http\Middleware\CheckCurrentEvaluation::class,
     ];
 }
